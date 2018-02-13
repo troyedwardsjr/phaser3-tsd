@@ -1,4 +1,4 @@
-#Phaser 3 Typescript Definition files.
+# Phaser 3 Typescript Definition files.
 
 Generate: 
 
