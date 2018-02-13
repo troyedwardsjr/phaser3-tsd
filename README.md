@@ -1,6 +1,10 @@
 # Phaser 3 Typescript Definition files.
 
-Generate: 
+## Warning
+
+This project is currently a work in progress, and the generator needs some modification.
+
+## Generate
 
 ```
 npm install jsdoc -g
