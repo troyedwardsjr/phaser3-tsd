@@ -4,8 +4,6 @@ bower_components/
 
 # Build files
 build/*
-out/*
-src-out/*
 
 # Eclipse
 .compare/
