@@ -63,7 +63,7 @@ const transpiler = (() => {
 		const usefulData = JSON.parse(result.stdout);
 		convert(phaserModuleDOM, usefulData);
 		//console.log(phaserModuleDOM.members);
-		//console.log(dom.emit(phaserModuleDOM));
+		console.log(dom.emit(phaserModuleDOM));
 	})
 })();
 

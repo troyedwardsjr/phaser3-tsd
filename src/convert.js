@@ -1,3 +1,26 @@
+const dom = require('dts-dom');
+
+const convertMethods = () => ({
+
+	params: (params) => {
+		let paramsDOM = [];
+		if (params) {
+			paramsDOM = params.map((param) => {
+				return dom.create.parameter(param.name, param.type.names[0]);
+			})
+		}
+		return paramsDOM;
+	},
+
+	returns: (returns) => {
+		let returnsDOM = dom.type.void;
+		if (returns) {
+			returnsDOM = rtn.type.names[0];//rtn.type.names[0]
+		}
+		return returnsDOM;
+	}
+
+});
 
 const convert = (phaserModuleDOM, usefulData) => {
 	usefulData.forEach((docObj) => {
@@ -8,14 +31,20 @@ const convert = (phaserModuleDOM, usefulData) => {
 				})
 				.members.push(dom.create.method(
 					docObj.name,
-					[dom.create.parameter('x', dom.type.number)],
-					dom.type.void,
-					dom.DeclarationFlags.Optional));
+					convertMethods().params(docObj.params),
+					convertMethods().returns(docObj.returns),
+					dom.DeclarationFlags.Static // scope:
+				));
 				//.members.push(dom.create.const(docObj.name, 'any'));
 				break;
 		}
 	});
 }
+/*
+[dom.create.parameter('x', dom.type.number)],
+					dom.type.void,
+					dom.DeclarationFlags.Optional));
+					*/
 
 module.exports = convert;
 
