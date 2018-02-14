@@ -5,6 +5,6 @@ This project is currently a work in progress, and the generator still requires s
 
 ## Generate
 ```
-npm install jsdoc -g
-jsdoc -t jsdoc-tsd/src-out/core -r ./src-name -d types/out-name.d.ts
+npm install 
+node index.js
 ```

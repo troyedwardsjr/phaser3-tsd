@@ -4,6 +4,42 @@ const dom = require('dts-dom');
 const fs = require('fs');
 const path = require('path');
 
+// Phaser source namespaces.
+const phaserSrcNs = [
+	'Actions', 
+	'Animation', 
+	'Cache', 
+	'Cameras', 
+	'Class', 
+	'Create', 
+	'Curves', 
+	'Data', 
+	'Display', 
+	'DOM', 
+	'EventEmitter', 
+	'Game',
+	'GameObjects', 
+	'Geom', 
+	'Input', 
+	'Loader', 
+	'Math', 
+	'Physics', 
+	'Scene', 
+	'Scenes', 
+	'Sound', 
+	'Structs', 
+	'Textures', 
+	'Tilemaps', 
+	'Time', 
+	'Tweens', 
+	'Utils'
+];
+
+// Create standard wrapper declarations.
+const phaserPkgModuleDOM = dom.create.module('phaser');
+const phaserClassDOM = dom.create.class('Phaser');
+const phaserModuleDOM = dom.create.namespace('Phaser');
+
 const readPhaserSrc = (dir) =>
   fs.readdirSync(dir)
     .reduce((files, file) =>
@@ -21,27 +57,33 @@ const convertJS = (jsFile) => {
 	});
 }
 
-const transpile = () => {
-
+const transpile = (usefulData) => {
+	usefulData.forEach((docObj) => {
+		switch (docObj.kind) {
+			case 'function':
+				phaserModuleDOM.members.push(dom.create.function(docObj.name));
+				break;
+		}
+	});
 }
 
 const transpiler = (() => {
 	//readPhaserSrc("./phaser-src/").forEach((jsFile) => {
 	//	convertJS(jsFile);
 	//});
-	
-	parser(jsFile, function(error, jsdocOutput) {
-		const usefulData = jsdocParse(readPhaserSrc("./phaser-src/")[0]);
-		console.log(usefulData);
+
+	// Create namespace for each src namespace.
+	phaserSrcNs.forEach((cls) => {
+		phaserModuleDOM.members.push(dom.create.class(cls, 0));
 	});
 
-	const phaserPkgModule = dom.create.module('phaser');
-	const phaserClass = dom.create.class('Phaser');
-	const phaserNamespace = dom.create.namespace('Phaser');
-	
-	console.log(dom.emit(phaserPkgModule));
-	console.log(dom.emit(phaserClass));
-	console.log(dom.emit(phaserNamespace));
+	var srcFileName = readPhaserSrc("./phaser-src/")[0];
+	parser(srcFileName, function(error, jsdocOutput) {
+		const usefulData = jsdocParse(jsdocOutput);
+		transpile(usefulData);
+	});
 
-	//phaserNamespace.members.push();
+	console.log(dom.emit(phaserPkgModuleDOM));
+	console.log(dom.emit(phaserClassDOM));
+	console.log(dom.emit(phaserModuleDOM));
 })();
