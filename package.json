@@ -6,7 +6,9 @@
   "dependencies": {
     "dts-dom": "^2.0.1",
     "jsdoc-parse": "^3.0.1",
-    "jsdoc3-parser": "^1.1.0"
+    "jsdoc3-parser": "^1.1.0",
+    "process-promises": "^1.0.0",
+    "split": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {

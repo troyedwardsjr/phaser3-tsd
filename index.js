@@ -3,6 +3,12 @@ const jsdocParse = require('jsdoc-parse');
 const dom = require('dts-dom');
 const fs = require('fs');
 const path = require('path');
+const testParser = require('./src/parser');
+
+// Create standard wrapper declarations.
+const phaserPkgModuleDOM = dom.create.module('phaser');
+const phaserClassDOM = dom.create.class('Phaser');
+const phaserModuleDOM = dom.create.namespace('Phaser');
 
 // Phaser source namespaces.
 const phaserSrcNs = [
@@ -35,11 +41,6 @@ const phaserSrcNs = [
 	'Utils'
 ];
 
-// Create standard wrapper declarations.
-const phaserPkgModuleDOM = dom.create.module('phaser');
-const phaserClassDOM = dom.create.class('Phaser');
-const phaserModuleDOM = dom.create.namespace('Phaser');
-
 const readPhaserSrc = (dir) =>
   fs.readdirSync(dir)
     .reduce((files, file) =>
@@ -58,16 +59,34 @@ const convertJS = (jsFile) => {
 }
 
 const transpile = (usefulData) => {
+	
 	usefulData.forEach((docObj) => {
+		//console.log(docObj.params[0])
 		switch (docObj.kind) {
 			case 'function':
-				phaserModuleDOM.members.push(dom.create.function(docObj.name));
+				phaserModuleDOM.members.find((elm) => {
+					return elm.name == 'Actions';
+				})
+				.members.push(dom.create.method(
+					docObj.name,
+					[dom.create.parameter('x', dom.type.number)],
+					dom.type.void,
+					dom.DeclarationFlags.Optional));
+				//.members.push(dom.create.const(docObj.name, 'any'));
 				break;
 		}
 	});
 }
 
+const promiseTest = () => {
+	return new Promise((resolve, reject) => {
+		resolve(dom.emit(phaserModuleDOM));
+	});
+}
+
+
 const transpiler = (() => {
+
 	//readPhaserSrc("./phaser-src/").forEach((jsFile) => {
 	//	convertJS(jsFile);
 	//});
@@ -76,14 +95,19 @@ const transpiler = (() => {
 	phaserSrcNs.forEach((cls) => {
 		phaserModuleDOM.members.push(dom.create.class(cls, 0));
 	});
-
+	
 	var srcFileName = readPhaserSrc("./phaser-src/")[0];
-	parser(srcFileName, function(error, jsdocOutput) {
-		const usefulData = jsdocParse(jsdocOutput);
-		transpile(usefulData);
-	});
 
+	testParser(srcFileName).then(result => {
+		const usefulData = JSON.parse(result.stdout);
+		transpile(usefulData);
+		//console.log(phaserModuleDOM.members);
+		console.log(dom.emit(phaserModuleDOM));
+	})
+
+	/*
 	console.log(dom.emit(phaserPkgModuleDOM));
 	console.log(dom.emit(phaserClassDOM));
-	console.log(dom.emit(phaserModuleDOM));
+	console.log(dom.emit(phaserModuleDOM));)
+	*/
 })();

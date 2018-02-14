@@ -391,3 +391,109 @@
        filename: 'Tileset.js',
        path: 'C:\\Users\\Rou\\Desktop\\Dev2018\\Tests\\tsd-test' },
     order: 1 } 
+
+
+
+
+
+
+
+
+ { filename: 'Angle.js',
+     lineno: 7,
+     columnno: 0,
+     path: 'C:\\Users\\Rou\\Desktop\\Dev2018\\Tests\\tsd-test\\phaser-src\\actions',
+     code: {} },
+  description: '[description]',
+  kind: 'function',
+  name: 'Angle',
+  since: '3.0.0',
+  params:
+   [ { type: [Object],
+       description: 'An array of Game Objects. The contents of this array are updated
+by this Action.',
+       name: 'items' },
+     { type: [Object], description: '[description]', name: 'value' } ],
+  returns:
+   [ { type: [Object],
+       description: 'The array of Game Objects that was passed to this Action.' } ],
+  memberof: 'Phaser.Actions',
+  longname: 'Phaser.Actions.Angle',
+  scope: 'static' }
+{ comment: '',
+  meta:
+   { range: [ 516, 658 ],
+     filename: 'Angle.js',
+     lineno: 18,
+     columnno: 4,
+     path: 'C:\\Users\\Rou\\Desktop\\Dev2018\\Tests\\tsd-test\\phaser-src\\actions',
+     code:
+      { id: 'astnode100000003',
+        name: 'Angle',
+        type: 'FunctionExpression' },
+     vars:
+      { i: 'Angle~i',
+        'items[undefined].angle': 'items[undefined].angle' } },
+  undocumented: true,
+  name: 'Angle',
+  longname: 'Angle',
+  kind: 'function',
+  scope: 'global',
+  params: [] }
+{ comment: '',
+  meta:
+   { range: [ 563, 568 ],
+     filename: 'Angle.js',
+     lineno: 20,
+     columnno: 13,
+     path: 'C:\\Users\\Rou\\Desktop\\Dev2018\\Tests\\tsd-test\\phaser-src\\actions',
+     code: { id: 'astnode100000011', name:
+'i', type: 'Literal', value: 0 } },
+  undocumented: true,
+  name: 'i',
+  longname: 'Angle~i',
+  kind: 'member',
+  memberof: 'Angle',
+  scope: 'inner',
+  params: [] }
+{ comment: '',
+  meta:
+   { range: [ 607, 630 ],
+     filename: 'Angle.js',
+     lineno: 22,
+     columnno: 8,
+     path: 'C:\\Users\\Rou\\Desktop\\Dev2018\\Tests\\tsd-test\\phaser-src\\actions',
+     code:
+      { id: 'astnode100000023',
+        name: 'items[undefined].angle',
+        type: 'Identifier',
+        value: 'value',
+        paramnames: [] } },
+  undocumented: true,
+  name: 'angle',
+  longname: 'items[undefined].angle',
+  kind: 'member',
+  memberof: 'items[undefined]',
+  scope: 'static' }
+{ comment: '',
+  meta:
+   { range: [ 661, 683 ],
+     filename: 'Angle.js',
+     lineno: 28,
+     columnno: 0,
+     path: 'C:\\Users\\Rou\\Desktop\\Dev2018\\Tests\\tsd-test\\phaser-src\\actions',
+     code:
+      { id: 'astnode100000033',
+        name: 'module.exports',
+        type: 'Identifier',
+        value: 'Angle',
+        paramnames: [] } },
+  undocumented: true,
+  name: 'exports',
+  longname: 'module.exports',
+  kind: 'member',
+  memberof: 'module',
+  scope: 'static' }
+{ kind: 'package',
+  longname: 'package:undefined',
+  files: [ 'C:\\Users\\Rou\\Desktop\\Dev2018\\Tests\\tsd-test\\phaser-src\\actions\\Angle.js' ] }
