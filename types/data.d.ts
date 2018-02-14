@@ -21,13 +21,13 @@ declare function get(key: string): any;
 /**
  * [description]
  */
-declare function getAll(): object;
+declare function getAll(): any;
 
 /**
  * [description]
  * @param search - [description]
  */
-declare function query(search: string): object;
+declare function query(search: string): any;
 
 /**
  * [description]
@@ -40,16 +40,16 @@ declare function set(key: string, data: any): Phaser.Data.DataManager;
  * Passes all data entries to the given callback. Stores the result of the callback.
  * @param callback - The function to call.
  * @param [scope] - Value to use as `this` when executing callback.
- * @param [arguments] - Additional arguments that will be passed to the callback, after the game object, key, and data.
+ * @param [arguments] - Additional arguments that will be passed to the callback, after the game any, key, and data.
  */
-declare function each(callback: Function, scope?: object, ...arguments?: any): Phaser.Data.DataManager;
+declare function each(callback: Function, scope?: any, ...arguments?: any): Phaser.Data.DataManager;
 
 /**
  * [description]
  * @param data - [description]
  * @param overwrite - [description]
  */
-declare function merge(data: object, overwrite: boolean): Phaser.Data.DataManager;
+declare function merge(data: any, overwrite: boolean): Phaser.Data.DataManager;
 
 /**
  * [description]
@@ -125,13 +125,13 @@ declare function get(key: string): any;
 /**
  * [description]
  */
-declare function getAll(): object;
+declare function getAll(): any;
 
 /**
  * [description]
  * @param search - [description]
  */
-declare function query(search: string): object;
+declare function query(search: string): any;
 
 /**
  * [description]
@@ -144,16 +144,16 @@ declare function set(key: string, data: any): Phaser.Data.DataManager;
  * Passes all data entries to the given callback. Stores the result of the callback.
  * @param callback - The function to call.
  * @param [scope] - Value to use as `this` when executing callback.
- * @param [arguments] - Additional arguments that will be passed to the callback, after the game object, key, and data.
+ * @param [arguments] - Additional arguments that will be passed to the callback, after the game any, key, and data.
  */
-declare function each(callback: Function, scope?: object, ...arguments?: any): Phaser.Data.DataManager;
+declare function each(callback: Function, scope?: any, ...arguments?: any): Phaser.Data.DataManager;
 
 /**
  * [description]
  * @param data - [description]
  * @param overwrite - [description]
  */
-declare function merge(data: object, overwrite: boolean): Phaser.Data.DataManager;
+declare function merge(data: any, overwrite: boolean): Phaser.Data.DataManager;
 
 /**
  * [description]

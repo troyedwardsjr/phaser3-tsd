@@ -37,7 +37,7 @@ declare function CalculateFacesWithin(tileX?: number, tileY?: number, width?: nu
 declare function Copy(srcTileX: number, srcTileY: number, width: number, height: number, destTileX: number, destTileY: number, destTileY: number, recalculateFaces?: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
 /**
- * Creates a Sprite for every object matching the given tile indexes in the layer. You can
+ * Creates a Sprite for every any matching the given tile indexes in the layer. You can
  * optionally specify if each tile will be replaced with a new tile after the Sprite has been
  * created. This is useful if you want to lay down special tiles in a level that are converted to
  * Sprites, but want to replace the tile itself with a floor tile or similar once converted.
@@ -45,13 +45,13 @@ declare function Copy(srcTileX: number, srcTileY: number, width: number, height:
  * @param replacements - The tile index, or array of indexes, to change a converted
  * tile to. Set to `null` to leave the tiles unchanged. If an array is given, it is assumed to be a
  * one-to-one mapping with the indexes array.
- * @param spriteConfig - The config object to pass into the Sprite creator (i.e.
+ * @param spriteConfig - The config any to pass into the Sprite creator (i.e.
  * scene.make.sprite).
  * @param [scene=scene the map is within] - The Scene to create the Sprites within.
  * @param [camera=main camera] - The Camera to use when determining the world XY
  * @param layer - The Tilemap Layer to act upon.
  */
-declare function CreateFromTiles(indexes: number | any, replacements: number | any, spriteConfig: object, scene?: Phaser.Scene, camera?: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.GameObjects.Sprite[];
+declare function CreateFromTiles(indexes: number | any, replacements: number | any, spriteConfig: any, scene?: Phaser.Scene, camera?: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.GameObjects.Sprite[];
 
 /**
  * Returns the tiles in the given layer that are within the camera's viewport. This is used
@@ -97,7 +97,7 @@ declare function Fill(index: number, tileX?: number, tileY?: number, width?: num
  * have at least one interesting face.
  * @param layer - The Tilemap Layer to act upon.
  */
-declare function FilterTiles(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: FilterTiles_filteringOptions, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile[];
+declare function FilterTiles(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: FilterTiles_filteringOptions, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile[];
 
 declare interface FilterTiles_filteringOptions {
     /**
@@ -119,7 +119,7 @@ declare interface FilterTiles_filteringOptions {
 
 /**
  * Searches the entire map layer for the first tile matching the given index, then returns that Tile
- * object. If no match is found, it returns null. The search starts from the top-left tile and
+ * any. If no match is found, it returns null. The search starts from the top-left tile and
  * continues horizontally until it hits the end of the row, then it drops down to the next column.
  * If the reverse boolean is true, it scans starting from the bottom-right corner traveling up to
  * the top-left.
@@ -151,7 +151,7 @@ declare function FindByIndex(index: number, skip?: number, reverse?: boolean, la
  * have at least one interesting face.
  * @param layer - The Tilemap Layer to act upon.
  */
-declare function FindTile(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: FindTile_filteringOptions, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile | null;
+declare function FindTile(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: FindTile_filteringOptions, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile | null;
 
 declare interface FindTile_filteringOptions {
     /**
@@ -190,7 +190,7 @@ declare interface FindTile_filteringOptions {
  * have at least one interesting face.
  * @param layer - The Tilemap Layer to act upon.
  */
-declare function ForEachTile(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: ForEachTile_filteringOptions, layer: Phaser.Tilemaps.LayerData): void;
+declare function ForEachTile(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: ForEachTile_filteringOptions, layer: Phaser.Tilemaps.LayerData): void;
 
 declare interface ForEachTile_filteringOptions {
     /**
@@ -215,7 +215,7 @@ declare interface ForEachTile_filteringOptions {
  * @param tileX - X position to get the tile from (given in tile units, not pixels).
  * @param tileY - Y position to get the tile from (given in tile units, not pixels).
  * @param [nonNull=false] - If true getTile won't return null for empty tiles, but a Tile
- * object with an index of -1.
+ * any with an index of -1.
  * @param layer - The Tilemap Layer to act upon.
  * were invalid.
  */
@@ -226,7 +226,7 @@ declare function GetTileAt(tileX: number, tileY: number, nonNull?: boolean, laye
  * @param worldX - X position to get the tile from (given in pixels)
  * @param worldY - Y position to get the tile from (given in pixels)
  * @param [nonNull=false] - If true, function won't return null for empty tiles, but a Tile
- * object with an index of -1.
+ * any with an index of -1.
  * @param [camera=main camera] - [description]
  * @param layer - The Tilemap Layer to act upon.
  * were invalid.
@@ -370,10 +370,10 @@ declare function IsInLayerBounds(tileX: number, tileY: number, layer: Phaser.Til
 
 /**
  * Puts a tile at the given tile coordinates in the specified layer. You can pass in either an index
- * or a Tile object. If you pass in a Tile, all attributes will be copied over to the specified
+ * or a Tile any. If you pass in a Tile, all attributes will be copied over to the specified
  * location. If you pass in an index, only the index at the specified location will be changed.
  * Collision information will be recalculated at the specified location.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [recalculateFaces=true] - [description]
@@ -383,10 +383,10 @@ declare function PutTileAt(tile: number | Phaser.Tilemaps.Tile, tileX: number, t
 
 /**
  * Puts a tile at the given world coordinates (pixels) in the specified layer. You can pass in either
- * an index or a Tile object. If you pass in a Tile, all attributes will be copied over to the
+ * an index or a Tile any. If you pass in a Tile, all attributes will be copied over to the
  * specified location. If you pass in an index, only the index at the specified location will be
  * changed. Collision information will be recalculated at the specified location.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param worldX - [description]
  * @param worldY - [description]
  * @param [recalculateFaces=true] - [description]
@@ -397,7 +397,7 @@ declare function PutTileAtWorldXY(tile: number | Phaser.Tilemaps.Tile, worldX: n
 
 /**
  * Puts an array of tiles or a 2D array of tiles at the given tile coordinates in the specified
- * layer. The array can be composed of either tile indexes or Tile objects. If you pass in a Tile,
+ * layer. The array can be composed of either tile indexes or Tile anys. If you pass in a Tile,
  * all attributes will be copied over to the specified location. If you pass in an index, only the
  * index at the specified location will be changed. Collision information will be recalculated
  * within the region tiles were changed.
@@ -428,7 +428,7 @@ declare function Randomize(tileX?: number, tileY?: number, width?: number, heigh
 /**
  * Removes the tile at the given tile coordinates in the specified layer and updates the layer's
  * collision information.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [replaceWithNull=true] - If true, this will replace the tile at the specified
@@ -441,7 +441,7 @@ declare function RemoveTileAt(tile: number | Phaser.Tilemaps.Tile, tileX: number
 /**
  * Removes the tile at the given world coordinates in the specified layer and updates the layer's
  * collision information.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param worldX - [description]
  * @param worldY - [description]
  * @param [replaceWithNull=true] - If true, this will replace the tile at the specified
@@ -457,8 +457,8 @@ declare function RemoveTileAtWorldXY(tile: number | Phaser.Tilemaps.Tile, worldX
  * get a quick idea of which of your tiles are colliding and which have interesting faces. The tiles
  * are drawn starting at (0, 0) in the Graphics, allowing you to place the debug representation
  * wherever you want on the screen.
- * @param graphics - The target Graphics object to draw upon.
- * @param styleConfig - An object specifying the colors to use for the debug drawing.
+ * @param graphics - The target Graphics any to draw upon.
+ * @param styleConfig - An any specifying the colors to use for the debug drawing.
  * @param [styleConfig.tileColor=blue] - Color to use for drawing a filled rectangle at
  * non-colliding tile locations. If set to null, non-colliding tiles will not be drawn.
  * @param [styleConfig.collidingTileColor=orange] - Color to use for drawing a filled
@@ -544,13 +544,13 @@ declare function SetCollisionByExclusion(indexes: number[], collides?: boolean, 
 
 /**
  * Sets collision on the tiles within a layer by checking tile properties. If a tile has a property
- * that matches the given properties object, its collision flag will be set. The `collides`
+ * that matches the given properties any, its collision flag will be set. The `collides`
  * parameter controls if collision will be enabled (true) or disabled (false). Passing in
  * `{ collides: true }` would update the collision flag on any tiles with a "collides" property that
  * has a value of true. Any tile that doesn't have "collides" set to true will be ignored. You can
  * also use an array of values, e.g. `{ types: ["stone", "lava", "sand" ] }`. If a tile has a
  * "types" property that matches any of those values, its collision flag will be updated.
- * @param properties - An object with tile properties and corresponding values that should
+ * @param properties - An any with tile properties and corresponding values that should
  * be checked.
  * @param [collides=true] - If true it will enable collision. If false it will clear
  * collision.
@@ -558,11 +558,11 @@ declare function SetCollisionByExclusion(indexes: number[], collides?: boolean, 
  * update.
  * @param layer - The Tilemap Layer to act upon.
  */
-declare function SetCollisionByProperty(properties: object, collides?: boolean, recalculateFaces?: boolean, layer: Phaser.Tilemaps.LayerData): void;
+declare function SetCollisionByProperty(properties: any, collides?: boolean, recalculateFaces?: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
 /**
  * Sets collision on the tiles within a layer by checking each tile's collision group data
- * (typically defined in Tiled within the tileset collision editor). If any objects are found within
+ * (typically defined in Tiled within the tileset collision editor). If any anys are found within
  * a tile's collision group, the tile's colliding information will be set. The `collides` parameter
  * controls if collision will be enabled (true) or disabled (false).
  * @param [collides=true] - If true it will enable collision. If false it will clear
@@ -601,7 +601,7 @@ declare function SetTileCollision(tile: Phaser.Tilemaps.Tile, collides?: boolean
  * @param callbackContext - The context under which the callback is called.
  * @param layer - The Tilemap Layer to act upon.
  */
-declare function SetTileIndexCallback(indexes: number | any, callback: Function, callbackContext: object, layer: Phaser.Tilemaps.LayerData): void;
+declare function SetTileIndexCallback(indexes: number | any, callback: Function, callbackContext: any, layer: Phaser.Tilemaps.LayerData): void;
 
 /**
  * Sets a collision callback for the given rectangular area (in tile coordinates) within the layer.
@@ -615,7 +615,7 @@ declare function SetTileIndexCallback(indexes: number | any, callback: Function,
  * @param callbackContext - The context under which the callback is called.
  * @param layer - The Tilemap Layer to act upon.
  */
-declare function SetTileLocationCallback(tileX?: number, tileY?: number, width?: number, height?: number, callback: Function, callbackContext: object, layer: Phaser.Tilemaps.LayerData): void;
+declare function SetTileLocationCallback(tileX?: number, tileY?: number, width?: number, height?: number, callback: Function, callbackContext: any, layer: Phaser.Tilemaps.LayerData): void;
 
 /**
  * Shuffles the tiles in a rectangular region (specified in tile coordinates) within the given
@@ -655,8 +655,8 @@ declare function TileToWorldX(tileX: number, camera?: Phaser.Cameras.Scene2D.Cam
 
 /**
  * Converts from tile XY coordinates (tile units) to world XY coordinates (pixels), factoring in the
- * layer's position, scale and scroll. This will return a new Vector2 object or update the given
- * `point` object.
+ * layer's position, scale and scroll. This will return a new Vector2 any or update the given
+ * `point` any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [point] - [description]
@@ -690,12 +690,12 @@ declare function TileToWorldY(tileY: number, camera?: Phaser.Cameras.Scene2D.Cam
  * @param [tileY=0] - [description]
  * @param [width=max width based on tileX] - [description]
  * @param [height=max height based on tileY] - [description]
- * @param [weightedIndexes] - An array of objects to randomly draw from during
+ * @param [weightedIndexes] - An array of anys to randomly draw from during
  * randomization. They should be in the form: { index: 0, weight: 4 } or
  * { index: [0, 1], weight: 4 } if you wish to draw from multiple tile indexes.
  * @param layer - The Tilemap Layer to act upon.
  */
-declare function WeightedRandomize(tileX?: number, tileY?: number, width?: number, height?: number, weightedIndexes?: object[], layer: Phaser.Tilemaps.LayerData): void;
+declare function WeightedRandomize(tileX?: number, tileY?: number, width?: number, height?: number, weightedIndexes?: any[], layer: Phaser.Tilemaps.LayerData): void;
 
 /**
  * Converts from world X coordinates (pixels) to tile X coordinates (tile units), factoring in the
@@ -710,8 +710,8 @@ declare function WorldToTileX(worldX: number, snapToFloor?: boolean, camera?: Ph
 
 /**
  * Converts from world XY coordinates (pixels) to tile XY coordinates (tile units), factoring in the
- * layer's position, scale and scroll. This will return a new Vector2 object or update the given
- * `point` object.
+ * layer's position, scale and scroll. This will return a new Vector2 any or update the given
+ * `point` any.
  * @param worldX - [description]
  * @param worldY - [description]
  * @param [snapToFloor=true] - Whether or not to round the tile coordinate down to the
@@ -734,7 +734,7 @@ declare function WorldToTileXY(worldX: number, worldY: number, snapToFloor?: boo
 declare function WorldToTileY(worldY: number, snapToFloor?: boolean, camera?: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
 /**
- * A DynamicTilemapLayer is a game object that renders LayerData from a Tilemap. A
+ * A DynamicTilemapLayer is a game any that renders LayerData from a Tilemap. A
  * DynamicTilemapLayer can only render tiles from a single tileset.
  * 
  * A DynamicTilemapLayer trades some speed for being able to apply powerful effects. Unlike a
@@ -776,7 +776,7 @@ declare function calculateFacesAt(tileX: number, tileY: number): Phaser.Tilemaps
 declare function calculateFacesWithin(tileX?: number, tileY?: number, width?: number, height?: number): Phaser.Tilemaps.DynamicTilemapLayer;
 
 /**
- * Creates a Sprite for every object matching the given tile indexes in the layer. You can
+ * Creates a Sprite for every any matching the given tile indexes in the layer. You can
  * optionally specify if each tile will be replaced with a new tile after the Sprite has been
  * created. This is useful if you want to lay down special tiles in a level that are converted to
  * Sprites, but want to replace the tile itself with a floor tile or similar once converted.
@@ -784,12 +784,12 @@ declare function calculateFacesWithin(tileX?: number, tileY?: number, width?: nu
  * @param replacements - The tile index, or array of indexes, to change a converted
  * tile to. Set to `null` to leave the tiles unchanged. If an array is given, it is assumed to be a
  * one-to-one mapping with the indexes array.
- * @param spriteConfig - The config object to pass into the Sprite creator (i.e.
+ * @param spriteConfig - The config any to pass into the Sprite creator (i.e.
  * scene.make.sprite).
  * @param [scene=scene the map is within] - The Scene to create the Sprites within.
  * @param [camera=main camera] - The Camera to use when determining the world XY
  */
-declare function createFromTiles(indexes: number | any, replacements: number | any, spriteConfig: object, scene?: Phaser.Scene, camera?: Phaser.Cameras.Scene2D.Camera): Phaser.GameObjects.Sprite[];
+declare function createFromTiles(indexes: number | any, replacements: number | any, spriteConfig: any, scene?: Phaser.Scene, camera?: Phaser.Cameras.Scene2D.Camera): Phaser.GameObjects.Sprite[];
 
 /**
  * Returns the tiles in the given layer that are within the cameras viewport.
@@ -851,7 +851,7 @@ declare function fill(index: number, tileX?: number, tileY?: number, width?: num
  * @param [filteringOptions.hasInterestingFace=false] - If true, only return tiles that
  * have at least one interesting face.
  */
-declare function filterTiles(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: filterTiles_filteringOptions): Phaser.Tilemaps.Tile[];
+declare function filterTiles(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: filterTiles_filteringOptions): Phaser.Tilemaps.Tile[];
 
 declare interface filterTiles_filteringOptions {
     /**
@@ -873,7 +873,7 @@ declare interface filterTiles_filteringOptions {
 
 /**
  * Searches the entire map layer for the first tile matching the given index, then returns that Tile
- * object. If no match is found, it returns null. The search starts from the top-left tile and
+ * any. If no match is found, it returns null. The search starts from the top-left tile and
  * continues horizontally until it hits the end of the row, then it drops down to the next column.
  * If the reverse boolean is true, it scans starting from the bottom-right corner traveling up to
  * the top-left.
@@ -903,7 +903,7 @@ declare function findByIndex(index: number, skip?: number, reverse?: boolean): P
  * @param [filteringOptions.hasInterestingFace=false] - If true, only return tiles that
  * have at least one interesting face.
  */
-declare function findTile(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: findTile_filteringOptions): Phaser.Tilemaps.Tile | null;
+declare function findTile(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: findTile_filteringOptions): Phaser.Tilemaps.Tile | null;
 
 declare interface findTile_filteringOptions {
     /**
@@ -941,7 +941,7 @@ declare interface findTile_filteringOptions {
  * @param [filteringOptions.hasInterestingFace=false] - If true, only return tiles that
  * have at least one interesting face.
  */
-declare function forEachTile(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: forEachTile_filteringOptions): Phaser.Tilemaps.DynamicTilemapLayer;
+declare function forEachTile(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: forEachTile_filteringOptions): Phaser.Tilemaps.DynamicTilemapLayer;
 
 declare interface forEachTile_filteringOptions {
     /**
@@ -966,7 +966,7 @@ declare interface forEachTile_filteringOptions {
  * @param tileX - X position to get the tile from (given in tile units, not pixels).
  * @param tileY - Y position to get the tile from (given in tile units, not pixels).
  * @param [nonNull=false] - If true getTile won't return null for empty tiles, but a Tile
- * object with an index of -1.
+ * any with an index of -1.
  */
 declare function getTileAt(tileX: number, tileY: number, nonNull?: boolean): Phaser.Tilemaps.Tile;
 
@@ -975,7 +975,7 @@ declare function getTileAt(tileX: number, tileY: number, nonNull?: boolean): Pha
  * @param worldX - X position to get the tile from (given in pixels)
  * @param worldY - Y position to get the tile from (given in pixels)
  * @param [nonNull=false] - If true, function won't return null for empty tiles, but a Tile
- * object with an index of -1.
+ * any with an index of -1.
  * @param [camera=main camera] - [description]
  * were invalid.
  */
@@ -1102,10 +1102,10 @@ declare function hasTileAtWorldXY(worldX: number, worldY: number, camera?: Phase
 
 /**
  * Puts a tile at the given tile coordinates in the specified layer. You can pass in either an index
- * or a Tile object. If you pass in a Tile, all attributes will be copied over to the specified
+ * or a Tile any. If you pass in a Tile, all attributes will be copied over to the specified
  * location. If you pass in an index, only the index at the specified location will be changed.
  * Collision information will be recalculated at the specified location.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [recalculateFaces=true] - [description]
@@ -1114,10 +1114,10 @@ declare function putTileAt(tile: number | Phaser.Tilemaps.Tile, tileX: number, t
 
 /**
  * Puts a tile at the given world coordinates (pixels) in the specified layer. You can pass in either
- * an index or a Tile object. If you pass in a Tile, all attributes will be copied over to the
+ * an index or a Tile any. If you pass in a Tile, all attributes will be copied over to the
  * specified location. If you pass in an index, only the index at the specified location will be
  * changed. Collision information will be recalculated at the specified location.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param worldX - [description]
  * @param worldY - [description]
  * @param [recalculateFaces=true] - [description]
@@ -1127,7 +1127,7 @@ declare function putTileAtWorldXY(tile: number | Phaser.Tilemaps.Tile, worldX: n
 
 /**
  * Puts an array of tiles or a 2D array of tiles at the given tile coordinates in the specified
- * layer. The array can be composed of either tile indexes or Tile objects. If you pass in a Tile,
+ * layer. The array can be composed of either tile indexes or Tile anys. If you pass in a Tile,
  * all attributes will be copied over to the specified location. If you pass in an index, only the
  * index at the specified location will be changed. Collision information will be recalculated
  * within the region tiles were changed.
@@ -1156,7 +1156,7 @@ declare function randomize(tileX?: number, tileY?: number, width?: number, heigh
 /**
  * Removes the tile at the given tile coordinates in the specified layer and updates the layer's
  * collision information.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [replaceWithNull=true] - If true, this will replace the tile at the specified
@@ -1168,7 +1168,7 @@ declare function removeTileAt(tile: number | Phaser.Tilemaps.Tile, tileX: number
 /**
  * Removes the tile at the given world coordinates in the specified layer and updates the layer's
  * collision information.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param worldX - [description]
  * @param worldY - [description]
  * @param [replaceWithNull=true] - If true, this will replace the tile at the specified
@@ -1183,8 +1183,8 @@ declare function removeTileAtWorldXY(tile: number | Phaser.Tilemaps.Tile, worldX
  * get a quick idea of which of your tiles are colliding and which have interesting faces. The tiles
  * are drawn starting at (0, 0) in the Graphics, allowing you to place the debug representation
  * wherever you want on the screen.
- * @param graphics - The target Graphics object to draw upon.
- * @param styleConfig - An object specifying the colors to use for the debug drawing.
+ * @param graphics - The target Graphics any to draw upon.
+ * @param styleConfig - An any specifying the colors to use for the debug drawing.
  * @param [styleConfig.tileColor=blue] - Color to use for drawing a filled rectangle at
  * non-colliding tile locations. If set to null, non-colliding tiles will not be drawn.
  * @param [styleConfig.collidingTileColor=orange] - Color to use for drawing a filled
@@ -1253,20 +1253,20 @@ declare function setCollisionBetween(start: number, stop: number, collides?: boo
 
 /**
  * Sets collision on the tiles within a layer by checking tile properties. If a tile has a property
- * that matches the given properties object, its collision flag will be set. The `collides`
+ * that matches the given properties any, its collision flag will be set. The `collides`
  * parameter controls if collision will be enabled (true) or disabled (false). Passing in
  * `{ collides: true }` would update the collision flag on any tiles with a "collides" property that
  * has a value of true. Any tile that doesn't have "collides" set to true will be ignored. You can
  * also use an array of values, e.g. `{ types: ["stone", "lava", "sand" ] }`. If a tile has a
  * "types" property that matches any of those values, its collision flag will be updated.
- * @param properties - An object with tile properties and corresponding values that should
+ * @param properties - An any with tile properties and corresponding values that should
  * be checked.
  * @param [collides=true] - If true it will enable collision. If false it will clear
  * collision.
  * @param [recalculateFaces=true] - Whether or not to recalculate the tile faces after the
  * update.
  */
-declare function setCollisionByProperty(properties: object, collides?: boolean, recalculateFaces?: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
+declare function setCollisionByProperty(properties: any, collides?: boolean, recalculateFaces?: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
 /**
  * Sets collision on all tiles in the given layer, except for tiles that have an index specified in
@@ -1282,7 +1282,7 @@ declare function setCollisionByExclusion(indexes: number[], collides?: boolean, 
 
 /**
  * Sets collision on the tiles within a layer by checking each tiles collision group data
- * (typically defined in Tiled within the tileset collision editor). If any objects are found within
+ * (typically defined in Tiled within the tileset collision editor). If any anys are found within
  * a tiles collision group, the tile's colliding information will be set. The `collides` parameter
  * controls if collision will be enabled (true) or disabled (false).
  * @param [collides=true] - If true it will enable collision. If false it will clear
@@ -1302,7 +1302,7 @@ declare function setCollisionFromCollisionGroup(collides?: boolean, recalculateF
  * @param callback - The callback that will be invoked when the tile is collided with.
  * @param callbackContext - The context under which the callback is called.
  */
-declare function setTileIndexCallback(indexes: number | any, callback: Function, callbackContext: object): Phaser.Tilemaps.DynamicTilemapLayer;
+declare function setTileIndexCallback(indexes: number | any, callback: Function, callbackContext: any): Phaser.Tilemaps.DynamicTilemapLayer;
 
 /**
  * Sets a collision callback for the given rectangular area (in tile coordinates) within the layer.
@@ -1315,7 +1315,7 @@ declare function setTileIndexCallback(indexes: number | any, callback: Function,
  * @param callback - The callback that will be invoked when the tile is collided with.
  * @param callbackContext - The context under which the callback is called.
  */
-declare function setTileLocationCallback(tileX?: number, tileY?: number, width?: number, height?: number, callback: Function, callbackContext: object): Phaser.Tilemaps.DynamicTilemapLayer;
+declare function setTileLocationCallback(tileX?: number, tileY?: number, width?: number, height?: number, callback: Function, callbackContext: any): Phaser.Tilemaps.DynamicTilemapLayer;
 
 /**
  * Shuffles the tiles in a rectangular region (specified in tile coordinates) within the given
@@ -1360,8 +1360,8 @@ declare function tileToWorldY(tileY: number, camera?: Phaser.Cameras.Scene2D.Cam
 
 /**
  * Converts from tile XY coordinates (tile units) to world XY coordinates (pixels), factoring in the
- * layers position, scale and scroll. This will return a new Vector2 object or update the given
- * `point` object.
+ * layers position, scale and scroll. This will return a new Vector2 any or update the given
+ * `point` any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [point] - [description]
@@ -1385,11 +1385,11 @@ declare function tileToWorldXY(tileX: number, tileY: number, point?: Phaser.Math
  * @param [tileY=0] - [description]
  * @param [width=max width based on tileX] - [description]
  * @param [height=max height based on tileY] - [description]
- * @param [weightedIndexes] - An array of objects to randomly draw from during
+ * @param [weightedIndexes] - An array of anys to randomly draw from during
  * randomization. They should be in the form: { index: 0, weight: 4 } or
  * { index: [0, 1], weight: 4 } if you wish to draw from multiple tile indexes.
  */
-declare function weightedRandomize(tileX?: number, tileY?: number, width?: number, height?: number, weightedIndexes?: object[]): Phaser.Tilemaps.DynamicTilemapLayer;
+declare function weightedRandomize(tileX?: number, tileY?: number, width?: number, height?: number, weightedIndexes?: any[]): Phaser.Tilemaps.DynamicTilemapLayer;
 
 /**
  * Converts from world X coordinates (pixels) to tile X coordinates (tile units), factoring in the
@@ -1413,7 +1413,7 @@ declare function worldToTileXY(worldY: number, snapToFloor?: boolean, camera?: P
 
 /**
  * Renders this Game Object with the Canvas Renderer to the given Camera.
- * The object will not render if any of its renderFlags are set or it is being actively filtered out by the Camera.
+ * The any will not render if any of its renderFlags are set or it is being actively filtered out by the Camera.
  * This method should not be called directly. It is a utility function of the Render module.
  * @param renderer - A reference to the current active Canvas renderer.
  * @param src - The Game Object being rendered in this call.
@@ -1424,7 +1424,7 @@ declare function renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Pha
 
 /**
  * Renders this Game Object with the WebGL Renderer to the given Camera.
- * The object will not render if any of its renderFlags are set or it is being actively filtered out by the Camera.
+ * The any will not render if any of its renderFlags are set or it is being actively filtered out by the Camera.
  * This method should not be called directly. It is a utility function of the Render module.
  * @param renderer - A reference to the current active WebGL renderer.
  * @param src - The Game Object being rendered in this call.
@@ -1451,7 +1451,7 @@ declare class ImageCollection {
      * @param [spacing=0] - The spacing between each image in the collection (in pixels).
      * @param [properties={}] - Custom Image Collection properties.
      */
-    constructor(name: string, firstgid: number, width?: number, height?: number, margin?: number, spacing?: number, properties?: object);
+    constructor(name: string, firstgid: number, width?: number, height?: number, margin?: number, spacing?: number, properties?: any);
 
 }
 
@@ -1480,28 +1480,28 @@ declare class LayerData {
     /**
      * @param [config] - [description]
      */
-    constructor(config?: object);
+    constructor(config?: any);
 
 }
 
 /**
  * A class for representing data about a map. Maps are parsed from CSV, Tiled, etc. into this
- * format. A Tilemap object get a copy of this data and then unpacks the needed properties into
+ * format. A Tilemap any get a copy of this data and then unpacks the needed properties into
  * itself.
  */
 declare class MapData {
     /**
      * @param [config] - [description]
      */
-    constructor(config?: object);
+    constructor(config?: any);
 
 }
 
 /**
- * A class for representing a Tiled object layer in a map. This mirrors the structure of a Tiled
- * object layer, except:
+ * A class for representing a Tiled any layer in a map. This mirrors the structure of a Tiled
+ * any layer, except:
  *  - "x" & "y" properties are ignored since these cannot be changed in Tiled.
- *  - "offsetx" & "offsety" are applied to the individual object coordinates directly, so they
+ *  - "offsetx" & "offsety" are applied to the individual any coordinates directly, so they
  *    are ignored as well.
  *  - "draworder" is ignored.
  */
@@ -1509,7 +1509,7 @@ declare class ObjectLayer {
     /**
      * @param [config] - [description]
      */
-    constructor(config?: object);
+    constructor(config?: any);
 
 }
 
@@ -1518,60 +1518,60 @@ declare class ObjectLayer {
  * @param json - [description]
  * @param insertNull - [description]
  */
-declare function ParseTileLayers(json: object, insertNull: boolean): any;
+declare function ParseTileLayers(json: any, insertNull: boolean): any;
 
 /**
  * [description]
  * @param json - [description]
  */
-declare function ParseTilesets(json: object): any;
+declare function ParseTilesets(json: any): any;
 
 /**
- * Parses a Weltmeister JSON object into a new MapData object.
+ * Parses a Weltmeister JSON any into a new MapData any.
  * @param name - The name of the tilemap, used to set the name on the MapData.
- * @param json - The Weltmeister JSON object.
+ * @param json - The Weltmeister JSON any.
  * @param insertNull - Controls how empty tiles, tiles with an index of -1, in the map
  * data are handled. If `true`, empty locations will get a value of `null`. If `false`, empty
- * location will get a Tile object with an index of -1. If you've a large sparsely populated map and
+ * location will get a Tile any with an index of -1. If you've a large sparsely populated map and
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
  */
-declare function ParseWeltmeister(name: string, json: object, insertNull: boolean): object | null;
+declare function ParseWeltmeister(name: string, json: any, insertNull: boolean): any | null;
 
 declare namespace Parsers {
 }
 
 /**
- * Parses raw data of a given Tilemap format into a new MapData object. If no recognized data format
+ * Parses raw data of a given Tilemap format into a new MapData any. If no recognized data format
  * is found, returns `null`. When loading from CSV or a 2D array, you should specify the tileWidth &
  * tileHeight. When parsing from a map from Tiled, the tileWidth & tileHeight will be pulled from
  * the map data.
  * @param name - The name of the tilemap, used to set the name on the MapData.
  * @param mapFormat - See ../Formats.js.
- * @param data - 2D array, CSV string or Tiled JSON object.
+ * @param data - 2D array, CSV string or Tiled JSON any.
  * @param tileWidth - The width of a tile in pixels. Required for 2D array and CSV, but
  * ignored for Tiled JSON.
  * @param tileHeight - The height of a tile in pixels. Required for 2D array and CSV, but
  * ignored for Tiled JSON.
  * @param insertNull - Controls how empty tiles, tiles with an index of -1, in the map
  * data are handled. If `true`, empty locations will get a value of `null`. If `false`, empty
- * location will get a Tile object with an index of -1. If you've a large sparsely populated map and
+ * location will get a Tile any with an index of -1. If you've a large sparsely populated map and
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
  */
-declare function Parse(name: string, mapFormat: number, data: Array.<number[] | string | object, tileWidth: number, tileHeight: number, insertNull: boolean): any;
+declare function Parse(name: string, mapFormat: number, data: Array.<number[] | string | any, tileWidth: number, tileHeight: number, insertNull: boolean): any;
 
 /**
- * Parses a 2D array of tile indexes into a new MapData object with a single layer.
+ * Parses a 2D array of tile indexes into a new MapData any with a single layer.
  * @param name - The name of the tilemap, used to set the name on the MapData.
- * @param data - 2D array, CSV string or Tiled JSON object.
+ * @param data - 2D array, CSV string or Tiled JSON any.
  * @param tileWidth - The width of a tile in pixels.
  * @param tileHeight - The height of a tile in pixels.
  * @param insertNull - Controls how empty tiles, tiles with an index of -1, in the map
  * data are handled. If `true`, empty locations will get a value of `null`. If `false`, empty
- * location will get a Tile object with an index of -1. If you've a large sparsely populated map and
+ * location will get a Tile any with an index of -1. If you've a large sparsely populated map and
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
@@ -1579,14 +1579,14 @@ declare function Parse(name: string, mapFormat: number, data: Array.<number[] | 
 declare function Parse2DArray(name: string, data: Array.<number[], tileWidth: number, tileHeight: number, insertNull: boolean): any;
 
 /**
- * Parses a CSV string of tile indexes into a new MapData object with a single layer.
+ * Parses a CSV string of tile indexes into a new MapData any with a single layer.
  * @param name - The name of the tilemap, used to set the name on the MapData.
  * @param data - CSV string of tile indexes.
  * @param tileWidth - The width of a tile in pixels.
  * @param tileHeight - The height of a tile in pixels.
  * @param insertNull - Controls how empty tiles, tiles with an index of -1, in the map
  * data are handled. If `true`, empty locations will get a value of `null`. If `false`, empty
- * location will get a Tile object with an index of -1. If you've a large sparsely populated map and
+ * location will get a Tile any with an index of -1. If you've a large sparsely populated map and
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
@@ -1603,7 +1603,7 @@ declare function AssignTileProperties(mapData: Phaser.Tilemaps.MapData): void;
  * [description]
  * @param data - [description]
  */
-declare function Base64Decode(data: object): any;
+declare function Base64Decode(data: any): any;
 
 /**
  * Master list of tiles -> x, y, index in tileset.
@@ -1616,26 +1616,26 @@ declare function BuildTilesetIndex(mapData: Phaser.Tilemaps.MapData): any;
  * http://docs.mapeditor.org/en/latest/reference/tmx-map-format/
  * @param gid - [description]
  */
-declare function ParseGID(gid: number): object;
+declare function ParseGID(gid: number): any;
 
 /**
  * [description]
  * @param json - [description]
  */
-declare function ParseImageLayers(json: object): any;
+declare function ParseImageLayers(json: any): any;
 
 /**
- * Parses a Tiled JSON object into a new MapData object.
+ * Parses a Tiled JSON any into a new MapData any.
  * @param name - The name of the tilemap, used to set the name on the MapData.
- * @param json - The Tiled JSON object.
+ * @param json - The Tiled JSON any.
  * @param insertNull - Controls how empty tiles, tiles with an index of -1, in the map
  * data are handled. If `true`, empty locations will get a value of `null`. If `false`, empty
- * location will get a Tile object with an index of -1. If you've a large sparsely populated map and
+ * location will get a Tile any with an index of -1. If you've a large sparsely populated map and
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
  */
-declare function ParseJSONTiled(name: string, json: object, insertNull: boolean): Phaser.Tilemaps.MapData | null;
+declare function ParseJSONTiled(name: string, json: any, insertNull: boolean): Phaser.Tilemaps.MapData | null;
 
 /**
  * [description]
@@ -1643,33 +1643,33 @@ declare function ParseJSONTiled(name: string, json: object, insertNull: boolean)
  * @param [offsetX=0] - [description]
  * @param [offsetY=0] - [description]
  */
-declare function ParseObject(tiledObject: object, offsetX?: number, offsetY?: number): object;
+declare function ParseObject(tiledObject: any, offsetX?: number, offsetY?: number): any;
 
 /**
  * [description]
  * @param json - [description]
  */
-declare function ParseObjectLayers(json: object): any;
+declare function ParseObjectLayers(json: any): any;
 
 /**
  * [description]
  * @param json - [description]
  * @param insertNull - [description]
  */
-declare function ParseTileLayers(json: object, insertNull: boolean): any;
+declare function ParseTileLayers(json: any, insertNull: boolean): any;
 
 /**
  * Tilesets & Image Collections
  * @param json - [description]
  */
-declare function ParseTilesets(json: object): object;
+declare function ParseTilesets(json: any): any;
 
 /**
  * [description]
- * @param object - [description]
+ * @param any - [description]
  * @param keys - [description]
  */
-declare function Pick(object: object, keys: any): object;
+declare function Pick(any: any, keys: any): any;
 
 /**
  * Create a Tilemap from the given key or data. If neither is given, make a blank Tilemap. When
@@ -1686,7 +1686,7 @@ declare function Pick(object: object, keys: any): object;
  * a 2D array of tile indexes.
  * @param [insertNull=false] - Controls how empty tiles, tiles with an index of -1, in the
  * map data are handled. If `true`, empty locations will get a value of `null`. If `false`, empty
- * location will get a Tile object with an index of -1. If you've a large sparsely populated map and
+ * location will get a Tile any with an index of -1. If you've a large sparsely populated map and
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
@@ -1694,7 +1694,7 @@ declare function Pick(object: object, keys: any): object;
 declare function ParseToTilemap(scene: Phaser.Scene, key?: string, tileWidth?: number, tileHeight?: number, width?: number, height?: number, data?: Array.<number[], insertNull?: boolean): Phaser.Tilemaps.Tilemap;
 
 /**
- * A StaticTilemapLayer is a game object that renders LayerData from a Tilemap. A
+ * A StaticTilemapLayer is a game any that renders LayerData from a Tilemap. A
  * StaticTilemapLayer can only render tiles from a single tileset.
  * 
  * A StaticTilemapLayer is optimized for speed over flexibility. You cannot apply per-tile
@@ -1746,7 +1746,7 @@ declare function calculateFacesAt(tileX: number, tileY: number): Phaser.Tilemaps
 declare function calculateFacesWithin(tileX?: number, tileY?: number, width?: number, height?: number): Phaser.Tilemaps.StaticTilemapLayer;
 
 /**
- * Creates a Sprite for every object matching the given tile indexes in the layer. You can
+ * Creates a Sprite for every any matching the given tile indexes in the layer. You can
  * optionally specify if each tile will be replaced with a new tile after the Sprite has been
  * created. This is useful if you want to lay down special tiles in a level that are converted to
  * Sprites, but want to replace the tile itself with a floor tile or similar once converted.
@@ -1754,12 +1754,12 @@ declare function calculateFacesWithin(tileX?: number, tileY?: number, width?: nu
  * @param replacements - The tile index, or array of indexes, to change a converted
  * tile to. Set to `null` to leave the tiles unchanged. If an array is given, it is assumed to be a
  * one-to-one mapping with the indexes array.
- * @param spriteConfig - The config object to pass into the Sprite creator (i.e.
+ * @param spriteConfig - The config any to pass into the Sprite creator (i.e.
  * scene.make.sprite).
  * @param [scene=scene the map is within] - The Scene to create the Sprites within.
  * @param [camera=main camera] - The Camera to use when determining the world XY
  */
-declare function createFromTiles(indexes: number | any, replacements: number | any, spriteConfig: object, scene?: Phaser.Scene, camera?: Phaser.Cameras.Scene2D.Camera): Phaser.GameObjects.Sprite[];
+declare function createFromTiles(indexes: number | any, replacements: number | any, spriteConfig: any, scene?: Phaser.Scene, camera?: Phaser.Cameras.Scene2D.Camera): Phaser.GameObjects.Sprite[];
 
 /**
  * Returns the tiles in the given layer that are within the cameras viewport.
@@ -1775,7 +1775,7 @@ declare function destroy(): void;
 
 /**
  * Searches the entire map layer for the first tile matching the given index, then returns that Tile
- * object. If no match is found, it returns null. The search starts from the top-left tile and
+ * any. If no match is found, it returns null. The search starts from the top-left tile and
  * continues horizontally until it hits the end of the row, then it drops down to the next column.
  * If the reverse boolean is true, it scans starting from the bottom-right corner traveling up to
  * the top-left.
@@ -1805,7 +1805,7 @@ declare function findByIndex(index: number, skip?: number, reverse?: boolean): P
  * @param [filteringOptions.hasInterestingFace=false] - If true, only return tiles that
  * have at least one interesting face.
  */
-declare function findTile(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: findTile_filteringOptions): Phaser.Tilemaps.Tile | null;
+declare function findTile(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: findTile_filteringOptions): Phaser.Tilemaps.Tile | null;
 
 /**
  * For each tile in the given rectangular area (in tile coordinates) of the layer, run the given
@@ -1827,7 +1827,7 @@ declare function findTile(callback: Function, context?: object, tileX?: number, 
  * @param [filteringOptions.hasInterestingFace=false] - If true, only return tiles that
  * have at least one interesting face.
  */
-declare function filterTiles(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: filterTiles_filteringOptions): Phaser.Tilemaps.Tile[];
+declare function filterTiles(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: filterTiles_filteringOptions): Phaser.Tilemaps.Tile[];
 
 /**
  * For each tile in the given rectangular area (in tile coordinates) of the layer, run the given
@@ -1847,14 +1847,14 @@ declare function filterTiles(callback: Function, context?: object, tileX?: numbe
  * @param [filteringOptions.hasInterestingFace=false] - If true, only return tiles that
  * have at least one interesting face.
  */
-declare function forEachTile(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: forEachTile_filteringOptions): Phaser.Tilemaps.StaticTilemapLayer;
+declare function forEachTile(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: forEachTile_filteringOptions): Phaser.Tilemaps.StaticTilemapLayer;
 
 /**
  * Gets a tile at the given tile coordinates from the given layer.
  * @param tileX - X position to get the tile from (given in tile units, not pixels).
  * @param tileY - Y position to get the tile from (given in tile units, not pixels).
  * @param [nonNull=false] - If true getTile won't return null for empty tiles, but a Tile
- * object with an index of -1.
+ * any with an index of -1.
  */
 declare function getTileAt(tileX: number, tileY: number, nonNull?: boolean): Phaser.Tilemaps.Tile;
 
@@ -1863,7 +1863,7 @@ declare function getTileAt(tileX: number, tileY: number, nonNull?: boolean): Pha
  * @param worldX - X position to get the tile from (given in pixels)
  * @param worldY - Y position to get the tile from (given in pixels)
  * @param [nonNull=false] - If true, function won't return null for empty tiles, but a Tile
- * object with an index of -1.
+ * any with an index of -1.
  * @param [camera=main camera] - [description]
  * were invalid.
  */
@@ -1939,8 +1939,8 @@ declare function hasTileAtWorldXY(worldX: number, worldY: number, camera?: Phase
  * get a quick idea of which of your tiles are colliding and which have interesting faces. The tiles
  * are drawn starting at (0, 0) in the Graphics, allowing you to place the debug representation
  * wherever you want on the screen.
- * @param graphics - The target Graphics object to draw upon.
- * @param styleConfig - An object specifying the colors to use for the debug drawing.
+ * @param graphics - The target Graphics any to draw upon.
+ * @param styleConfig - An any specifying the colors to use for the debug drawing.
  * @param [styleConfig.tileColor=blue] - Color to use for drawing a filled rectangle at
  * non-colliding tile locations. If set to null, non-colliding tiles will not be drawn.
  * @param [styleConfig.collidingTileColor=orange] - Color to use for drawing a filled
@@ -1978,20 +1978,20 @@ declare function setCollisionBetween(start: number, stop: number, collides?: boo
 
 /**
  * Sets collision on the tiles within a layer by checking tile properties. If a tile has a property
- * that matches the given properties object, its collision flag will be set. The `collides`
+ * that matches the given properties any, its collision flag will be set. The `collides`
  * parameter controls if collision will be enabled (true) or disabled (false). Passing in
  * `{ collides: true }` would update the collision flag on any tiles with a "collides" property that
  * has a value of true. Any tile that doesn't have "collides" set to true will be ignored. You can
  * also use an array of values, e.g. `{ types: ["stone", "lava", "sand" ] }`. If a tile has a
  * "types" property that matches any of those values, its collision flag will be updated.
- * @param properties - An object with tile properties and corresponding values that should
+ * @param properties - An any with tile properties and corresponding values that should
  * be checked.
  * @param [collides=true] - If true it will enable collision. If false it will clear
  * collision.
  * @param [recalculateFaces=true] - Whether or not to recalculate the tile faces after the
  * update.
  */
-declare function setCollisionByProperty(properties: object, collides?: boolean, recalculateFaces?: boolean): Phaser.Tilemaps.StaticTilemapLayer;
+declare function setCollisionByProperty(properties: any, collides?: boolean, recalculateFaces?: boolean): Phaser.Tilemaps.StaticTilemapLayer;
 
 /**
  * Sets collision on all tiles in the given layer, except for tiles that have an index specified in
@@ -2015,11 +2015,11 @@ declare function setCollisionByExclusion(indexes: number[], collides?: boolean, 
  * @param callback - The callback that will be invoked when the tile is collided with.
  * @param callbackContext - The context under which the callback is called.
  */
-declare function setTileIndexCallback(indexes: number | any, callback: Function, callbackContext: object): Phaser.Tilemaps.StaticTilemapLayer;
+declare function setTileIndexCallback(indexes: number | any, callback: Function, callbackContext: any): Phaser.Tilemaps.StaticTilemapLayer;
 
 /**
  * Sets collision on the tiles within a layer by checking each tiles collision group data
- * (typically defined in Tiled within the tileset collision editor). If any objects are found within
+ * (typically defined in Tiled within the tileset collision editor). If any anys are found within
  * a tiles collision group, the tile's colliding information will be set. The `collides` parameter
  * controls if collision will be enabled (true) or disabled (false).
  * @param [collides=true] - If true it will enable collision. If false it will clear
@@ -2040,7 +2040,7 @@ declare function setCollisionFromCollisionGroup(collides?: boolean, recalculateF
  * @param callback - The callback that will be invoked when the tile is collided with.
  * @param callbackContext - The context under which the callback is called.
  */
-declare function setTileLocationCallback(tileX?: number, tileY?: number, width?: number, height?: number, callback: Function, callbackContext: object): Phaser.Tilemaps.StaticTilemapLayer;
+declare function setTileLocationCallback(tileX?: number, tileY?: number, width?: number, height?: number, callback: Function, callbackContext: any): Phaser.Tilemaps.StaticTilemapLayer;
 
 /**
  * Converts from tile X coordinates (tile units) to world X coordinates (pixels), factoring in the
@@ -2060,8 +2060,8 @@ declare function tileToWorldY(tileY: number, camera?: Phaser.Cameras.Scene2D.Cam
 
 /**
  * Converts from tile XY coordinates (tile units) to world XY coordinates (pixels), factoring in the
- * layers position, scale and scroll. This will return a new Vector2 object or update the given
- * `point` object.
+ * layers position, scale and scroll. This will return a new Vector2 any or update the given
+ * `point` any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [point] - [description]
@@ -2091,7 +2091,7 @@ declare function worldToTileXY(worldY: number, snapToFloor?: boolean, camera?: P
 
 /**
  * Renders this Game Object with the Canvas Renderer to the given Camera.
- * The object will not render if any of its renderFlags are set or it is being actively filtered out by the Camera.
+ * The any will not render if any of its renderFlags are set or it is being actively filtered out by the Camera.
  * This method should not be called directly. It is a utility function of the Render module.
  * @param renderer - A reference to the current active Canvas renderer.
  * @param src - The Game Object being rendered in this call.
@@ -2102,7 +2102,7 @@ declare function renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Pha
 
 /**
  * Renders this Game Object with the WebGL Renderer to the given Camera.
- * The object will not render if any of its renderFlags are set or it is being actively filtered out by the Camera.
+ * The any will not render if any of its renderFlags are set or it is being actively filtered out by the Camera.
  * This method should not be called directly. It is a utility function of the Render module.
  * @param renderer - A reference to the current active WebGL renderer.
  * @param src - The Game Object being rendered in this call.
@@ -2118,7 +2118,7 @@ declare function renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phase
  */
 declare class Tile {
     /**
-     * @param layer - The LayerData object in the Tilemap that this tile belongs to.
+     * @param layer - The LayerData any in the Tilemap that this tile belongs to.
      * @param index - The unique index of this tile within the map.
      * @param x - The x coordinate of this tile in tile coordinates.
      * @param y - The y coordinate of this tile in tile coordinates.
@@ -2145,18 +2145,18 @@ declare function containsPoint(x: number, y: number): boolean;
 
 /**
  * The collision group for this Tile, defined within the Tileset. This returns a reference to
- * the collision group stored within the Tileset, so any modification of the returned object
+ * the collision group stored within the Tileset, so any modification of the returned any
  * will impact all tiles that have the same index as this tile.
  */
-declare function getCollisionGroup(): object | null;
+declare function getCollisionGroup(): any | null;
 
 /**
  * The tile data for this Tile, defined within the Tileset. This typically contains Tiled
  * collision data, tile animations and terrain information. This returns a reference to the tile
- * data stored within the Tileset, so any modification of the returned object will impact all
+ * data stored within the Tileset, so any modification of the returned any will impact all
  * tiles that have the same index as this tile.
  */
-declare function getTileData(): object | null;
+declare function getTileData(): any | null;
 
 /**
  * Gets the world X position of the left side of the tile, factoring in the layers position,
@@ -2192,7 +2192,7 @@ declare function getBottom(camera?: Phaser.Cameras.Scene2D.Camera): number;
  * @param [camera] - The Camera to use to perform the check.
  * @param [output] - [description]
  */
-declare function getBounds(camera?: Phaser.Cameras.Scene2D.Camera, output?: object): Phaser.Geom.Rectangle | object;
+declare function getBounds(camera?: Phaser.Cameras.Scene2D.Camera, output?: any): Phaser.Geom.Rectangle | any;
 
 /**
  * Gets the world X position of the center of the tile, factoring in the layer's position,
@@ -2243,22 +2243,22 @@ declare function resetFaces(): Phaser.Tilemaps.Tile;
 
 /**
  * Sets the collision flags for each side of this tile and updates the interesting faces list.
- * @param left - Indicating collide with any object on the left.
- * @param [right] - Indicating collide with any object on the right.
- * @param [up] - Indicating collide with any object on the top.
- * @param [down] - Indicating collide with any object on the bottom.
+ * @param left - Indicating collide with any any on the left.
+ * @param [right] - Indicating collide with any any on the right.
+ * @param [up] - Indicating collide with any any on the top.
+ * @param [down] - Indicating collide with any any on the bottom.
  * @param [recalculateFaces=true] - Whether or not to recalculate interesting faces
  * for this tile and its neighbors.
  */
 declare function setCollision(left: boolean, right?: boolean, up?: boolean, down?: boolean, recalculateFaces?: boolean): Phaser.Tilemaps.Tile;
 
 /**
- * Set a callback to be called when this tile is hit by an object. The callback must true for
+ * Set a callback to be called when this tile is hit by an any. The callback must true for
  * collision processing to take place.
  * @param callback - Callback function.
  * @param context - Callback will be called within this context.
  */
-declare function setCollisionCallback(callback: Function, context: object): Phaser.Tilemaps.Tile;
+declare function setCollisionCallback(callback: Function, context: any): Phaser.Tilemaps.Tile;
 
 /**
  * Sets the size of the tile and updates its pixelX and pixelY.
@@ -2275,10 +2275,10 @@ declare function setSize(tileWidth: number, tileHeight: number, baseWidth: numbe
 declare function updatePixelXY(): Phaser.Tilemaps.Tile;
 
 /**
- * A Tilemap is a container for Tilemap data. This isn't a display object, rather, it holds data
+ * A Tilemap is a container for Tilemap data. This isn't a display any, rather, it holds data
  * about the map and allows you to add tilesets and tilemap layers to it. A map can have one or
  * more tilemap layers (StaticTilemapLayer or DynamicTilemapLayer), which are the display
- * objects that actually render tiles.
+ * anys that actually render tiles.
  * 
  * The Tilemap data be parsed from a Tiled JSON file, a CSV file or a 2D array. Tiled is a free
  * software package specifically for creating tile maps, and is available from:
@@ -2376,22 +2376,22 @@ declare function createBlankDynamicLayer(name: string, tileset: Phaser.Tilemaps.
 declare function createDynamicLayer(layerID: number | string, tileset: Phaser.Tilemaps.Tileset, x: number, y: number): Phaser.Tilemaps.DynamicTilemapLayer | null;
 
 /**
- * Creates a Sprite for every object matching the given gid in the map data. All properties from
- * the map data objectgroup are copied into the `spriteConfig`, so you can use this as an easy
- * way to configure Sprite properties from within the map editor. For example giving an object a
+ * Creates a Sprite for every any matching the given gid in the map data. All properties from
+ * the map data anygroup are copied into the `spriteConfig`, so you can use this as an easy
+ * way to configure Sprite properties from within the map editor. For example giving an any a
  * property of alpha: 0.5 in the map editor will duplicate that when the Sprite is created.
- * @param name - The name of the object layer (from Tiled) to create Sprites from.
- * @param id - Either the id (object), gid (tile object) or name (object or
- * tile object) from Tiled. Ids are unique in Tiled, but a gid is shared by all tile objects
- * with the same graphic. The same name can be used on multiple objects.
- * @param spriteConfig - The config object to pass into the Sprite creator (i.e.
+ * @param name - The name of the any layer (from Tiled) to create Sprites from.
+ * @param id - Either the id (any), gid (tile any) or name (any or
+ * tile any) from Tiled. Ids are unique in Tiled, but a gid is shared by all tile anys
+ * with the same graphic. The same name can be used on multiple anys.
+ * @param spriteConfig - The config any to pass into the Sprite creator (i.e.
  * scene.make.sprite).
  * @param [scene=the scene the map is within] - The Scene to create the Sprites within.
  */
-declare function createFromObjects(name: string, id: number | string, spriteConfig: object, scene?: Phaser.Scene): Phaser.GameObjects.Sprite[];
+declare function createFromObjects(name: string, id: number | string, spriteConfig: any, scene?: Phaser.Scene): Phaser.GameObjects.Sprite[];
 
 /**
- * Creates a Sprite for every object matching the given tile indexes in the layer. You can
+ * Creates a Sprite for every any matching the given tile indexes in the layer. You can
  * optionally specify if each tile will be replaced with a new tile after the Sprite has been
  * created. This is useful if you want to lay down special tiles in a level that are converted to
  * Sprites, but want to replace the tile itself with a floor tile or similar once converted.
@@ -2399,13 +2399,13 @@ declare function createFromObjects(name: string, id: number | string, spriteConf
  * @param replacements - The tile index, or array of indexes, to change a converted
  * tile to. Set to `null` to leave the tiles unchanged. If an array is given, it is assumed to be a
  * one-to-one mapping with the indexes array.
- * @param spriteConfig - The config object to pass into the Sprite creator (i.e.
+ * @param spriteConfig - The config any to pass into the Sprite creator (i.e.
  * scene.make.sprite).
  * @param [scene=scene the map is within] - The Scene to create the Sprites within.
  * @param [camera=main camera] - The Camera to use when determining the world XY
  * @param layer - [description]
  */
-declare function createFromTiles(indexes: number | any, replacements: number | any, spriteConfig: object, scene?: Phaser.Scene, camera?: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.GameObjects.Sprite[] | null;
+declare function createFromTiles(indexes: number | any, replacements: number | any, spriteConfig: any, scene?: Phaser.Scene, camera?: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.GameObjects.Sprite[] | null;
 
 /**
  * Creates a new StaticTilemapLayer that renders the LayerData associated with the given
@@ -2448,17 +2448,17 @@ declare function destroy(): void;
 declare function fill(index: number, tileX?: number, tileY?: number, width?: number, height?: number, recalculateFaces?: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
 
 /**
- * For each object in the given object layer, run the given filter callback function. Any
- * objects that pass the filter test (i.e. where the callback returns true) will returned as a
+ * For each any in the given any layer, run the given filter callback function. Any
+ * anys that pass the filter test (i.e. where the callback returns true) will returned as a
  * new array. Similar to Array.prototype.Filter in vanilla JS.
- * @param [objectLayer] - The name of an object layer (from Tiled) or an
+ * @param [anyLayer] - The name of an any layer (from Tiled) or an
  * ObjectLayer instance.
- * @param callback - The callback. Each object in the given area will be passed to
+ * @param callback - The callback. Each any in the given area will be passed to
  * this callback as the first and only parameter.
  * @param [context] - The context under which the callback should be run.
  * given was invalid.
  */
-declare function filterObjects(objectLayer?: Phaser.Tilemaps.ObjectLayer | string, callback: Function, context?: object): object[] | null;
+declare function filterObjects(anyLayer?: Phaser.Tilemaps.ObjectLayer | string, callback: Function, context?: any): any[] | null;
 
 /**
  * For each tile in the given rectangular area (in tile coordinates) of the layer, run the given
@@ -2482,11 +2482,11 @@ declare function filterObjects(objectLayer?: Phaser.Tilemaps.ObjectLayer | strin
  * have at least one interesting face.
  * @param layer - [description]
  */
-declare function filterTiles(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: filterTiles_filteringOptions, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile[] | null;
+declare function filterTiles(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: filterTiles_filteringOptions, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile[] | null;
 
 /**
  * Searches the entire map layer for the first tile matching the given index, then returns that Tile
- * object. If no match is found, it returns null. The search starts from the top-left tile and
+ * any. If no match is found, it returns null. The search starts from the top-left tile and
  * continues horizontally until it hits the end of the row, then it drops down to the next column.
  * If the reverse boolean is true, it scans starting from the bottom-right corner traveling up to
  * the top-left.
@@ -2500,16 +2500,16 @@ declare function filterTiles(callback: Function, context?: object, tileX?: numbe
 declare function findByIndex(index: number, skip?: number, reverse?: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile | null;
 
 /**
- * Find the first object in the given object layer that satisfies the provided testing function.
- * I.e. finds the first object for which `callback` returns true. Similar to
+ * Find the first any in the given any layer that satisfies the provided testing function.
+ * I.e. finds the first any for which `callback` returns true. Similar to
  * Array.prototype.find in vanilla JS.
- * @param [objectLayer] - The name of an object layer (from Tiled) or an
+ * @param [anyLayer] - The name of an any layer (from Tiled) or an
  * ObjectLayer instance.
- * @param callback - The callback. Each object in the given area will be passed to
+ * @param callback - The callback. Each any in the given area will be passed to
  * this callback as the first and only parameter.
  * @param [context] - The context under which the callback should be run.
  */
-declare function findObject(objectLayer?: Phaser.Tilemaps.ObjectLayer | string, callback: Function, context?: object): object | null;
+declare function findObject(anyLayer?: Phaser.Tilemaps.ObjectLayer | string, callback: Function, context?: any): any | null;
 
 /**
  * Find the first tile in the given rectangular area (in tile coordinates) of the layer that
@@ -2532,7 +2532,7 @@ declare function findObject(objectLayer?: Phaser.Tilemaps.ObjectLayer | string, 
  * have at least one interesting face.
  * @param layer - [description]
  */
-declare function findTile(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: findTile_filteringOptions, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile | null;
+declare function findTile(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: findTile_filteringOptions, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile | null;
 
 /**
  * For each tile in the given rectangular area (in tile coordinates) of the layer, run the given
@@ -2554,7 +2554,7 @@ declare function findTile(callback: Function, context?: object, tileX?: number, 
  * have at least one interesting face.
  * @param layer - [description]
  */
-declare function forEachTile(callback: Function, context?: object, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: forEachTile_filteringOptions, layer: LayerData): Phaser.Tilemaps.Tilemap | null;
+declare function forEachTile(callback: Function, context?: any, tileX?: number, tileY?: number, width?: number, height?: number, filteringOptions?: forEachTile_filteringOptions, layer: LayerData): Phaser.Tilemaps.Tilemap | null;
 
 /**
  * Gets the image layer index based on its name.
@@ -2563,7 +2563,7 @@ declare function forEachTile(callback: Function, context?: object, tileX?: numbe
 declare function getImageIndex(name: string): number;
 
 /**
- * Internally used. Returns the index of the object in one of the Tilemaps arrays whose name
+ * Internally used. Returns the index of the any in one of the Tilemaps arrays whose name
  * property matches the given `name`.
  * @param location - The Tilemap array to search.
  * @param name - The name of the array element to get.
@@ -2580,9 +2580,9 @@ declare function getIndex(location: any, name: string): number;
 declare function getLayer(layer?: string | number | Phaser.Tilemaps.DynamicTilemapLayer | Phaser.Tilemaps.StaticTilemapLayer): Phaser.Tilemaps.LayerData;
 
 /**
- * Gets the ObjectLayer from this.objects that has the given `name`, or null if no ObjectLayer
+ * Gets the ObjectLayer from this.anys that has the given `name`, or null if no ObjectLayer
  * is found with that name.
- * @param [name] - The name of the object layer from Tiled.
+ * @param [name] - The name of the any layer from Tiled.
  */
 declare function getObjectLayer(name?: string): Phaser.Tilemaps.ObjectLayer | null;
 
@@ -2608,7 +2608,7 @@ declare function getLayerIndexByName(name: string): number;
  * @param tileX - X position to get the tile from (given in tile units, not pixels).
  * @param tileY - Y position to get the tile from (given in tile units, not pixels).
  * @param [nonNull=false] - If true getTile won't return null for empty tiles, but a Tile
- * object with an index of -1.
+ * any with an index of -1.
  * @param layer - [description]
  */
 declare function getTileAt(tileX: number, tileY: number, nonNull?: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile | null;
@@ -2619,7 +2619,7 @@ declare function getTileAt(tileX: number, tileY: number, nonNull?: boolean, laye
  * @param worldX - X position to get the tile from (given in pixels)
  * @param worldY - Y position to get the tile from (given in pixels)
  * @param [nonNull=false] - If true, function won't return null for empty tiles, but a Tile
- * object with an index of -1.
+ * any with an index of -1.
  * @param [camera=main camera] - [description]
  * @param layer - [description]
  */
@@ -2709,12 +2709,12 @@ declare function hasTileAtWorldXY(worldX: number, worldY: number, camera?: Phase
 
 /**
  * Puts a tile at the given tile coordinates in the specified layer. You can pass in either an index
- * or a Tile object. If you pass in a Tile, all attributes will be copied over to the specified
+ * or a Tile any. If you pass in a Tile, all attributes will be copied over to the specified
  * location. If you pass in an index, only the index at the specified location will be changed.
  * Collision information will be recalculated at the specified location.
  * If no layer specified, the maps current layer is used.
  * This cannot be applied to StaticTilemapLayers.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [recalculateFaces=true] - [description]
@@ -2724,12 +2724,12 @@ declare function putTileAt(tile: number | Phaser.Tilemaps.Tile, tileX: number, t
 
 /**
  * Puts a tile at the given world coordinates (pixels) in the specified layer. You can pass in either
- * an index or a Tile object. If you pass in a Tile, all attributes will be copied over to the
+ * an index or a Tile any. If you pass in a Tile, all attributes will be copied over to the
  * specified location. If you pass in an index, only the index at the specified location will be
  * changed. Collision information will be recalculated at the specified location.
  * If no layer specified, the maps current layer is used. This
  * cannot be applied to StaticTilemapLayers.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param worldX - [description]
  * @param worldY - [description]
  * @param [recalculateFaces=true] - [description]
@@ -2740,7 +2740,7 @@ declare function putTileAtWorldXY(tile: number | Phaser.Tilemaps.Tile, worldX: n
 
 /**
  * Puts an array of tiles or a 2D array of tiles at the given tile coordinates in the specified
- * layer. The array can be composed of either tile indexes or Tile objects. If you pass in a Tile,
+ * layer. The array can be composed of either tile indexes or Tile anys. If you pass in a Tile,
  * all attributes will be copied over to the specified location. If you pass in an index, only the
  * index at the specified location will be changed. Collision information will be recalculated
  * within the region tiles were changed.
@@ -2807,7 +2807,7 @@ declare function removeAllLayers(): Phaser.Tilemaps.Tilemap;
  * collision information.
  * If no layer specified, the maps current layer is used.
  * This cannot be applied to StaticTilemapLayers.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param tileX - [description]
  * @param tileY - [description]
  * @param [replaceWithNull=true] - If true, this will replace the tile at the specified
@@ -2822,7 +2822,7 @@ declare function removeTileAt(tile: number | Phaser.Tilemaps.Tile, tileX: number
  * collision information.
  * If no layer specified, the maps current layer is used.
  * This cannot be applied to StaticTilemapLayers.
- * @param tile - The index of this tile to set or a Tile object.
+ * @param tile - The index of this tile to set or a Tile any.
  * @param worldX - [description]
  * @param worldY - [description]
  * @param [replaceWithNull=true] - If true, this will replace the tile at the specified
@@ -2839,8 +2839,8 @@ declare function removeTileAtWorldXY(tile: number | Phaser.Tilemaps.Tile, worldX
  * are drawn starting at (0, 0) in the Graphics, allowing you to place the debug representation
  * wherever you want on the screen.
  * If no layer specified, the maps current layer is used.
- * @param graphics - The target Graphics object to draw upon.
- * @param styleConfig - An object specifying the colors to use for the debug drawing.
+ * @param graphics - The target Graphics any to draw upon.
+ * @param styleConfig - An any specifying the colors to use for the debug drawing.
  * @param [styleConfig.tileColor=blue] - Color to use for drawing a filled rectangle at
  * non-colliding tile locations. If set to null, non-colliding tiles will not be drawn.
  * @param [styleConfig.collidingTileColor=orange] - Color to use for drawing a filled
@@ -2899,14 +2899,14 @@ declare function setCollisionBetween(start: number, stop: number, collides?: boo
 
 /**
  * Sets collision on the tiles within a layer by checking tile properties. If a tile has a property
- * that matches the given properties object, its collision flag will be set. The `collides`
+ * that matches the given properties any, its collision flag will be set. The `collides`
  * parameter controls if collision will be enabled (true) or disabled (false). Passing in
  * `{ collides: true }` would update the collision flag on any tiles with a "collides" property that
  * has a value of true. Any tile that doesn't have "collides" set to true will be ignored. You can
  * also use an array of values, e.g. `{ types: ["stone", "lava", "sand" ] }`. If a tile has a
  * "types" property that matches any of those values, its collision flag will be updated.
  * If no layer specified, the map's current layer is used.
- * @param properties - An object with tile properties and corresponding values that should
+ * @param properties - An any with tile properties and corresponding values that should
  * be checked.
  * @param [collides=true] - If true it will enable collision. If false it will clear
  * collision.
@@ -2914,7 +2914,7 @@ declare function setCollisionBetween(start: number, stop: number, collides?: boo
  * update.
  * @param layer - [description]
  */
-declare function setCollisionByProperty(properties: object, collides?: boolean, recalculateFaces?: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
+declare function setCollisionByProperty(properties: any, collides?: boolean, recalculateFaces?: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
 
 /**
  * Sets collision on all tiles in the given layer, except for tiles that have an index specified in
@@ -2932,7 +2932,7 @@ declare function setCollisionByExclusion(indexes: number[], collides?: boolean, 
 
 /**
  * Sets collision on the tiles within a layer by checking each tile's collision group data
- * (typically defined in Tiled within the tileset collision editor). If any objects are found within
+ * (typically defined in Tiled within the tileset collision editor). If any anys are found within
  * a tile's collision group, the tile's colliding information will be set. The `collides` parameter
  * controls if collision will be enabled (true) or disabled (false).
  * If no layer specified, the map's current layer is used.
@@ -2956,7 +2956,7 @@ declare function setCollisionFromCollisionGroup(collides?: boolean, recalculateF
  * @param callbackContext - The context under which the callback is called.
  * @param layer - [description]
  */
-declare function setTileIndexCallback(indexes: number | any, callback: Function, callbackContext: object, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
+declare function setTileIndexCallback(indexes: number | any, callback: Function, callbackContext: any, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
 
 /**
  * Sets a collision callback for the given rectangular area (in tile coordindates) within the layer.
@@ -2971,7 +2971,7 @@ declare function setTileIndexCallback(indexes: number | any, callback: Function,
  * @param callbackContext - The context under which the callback is called.
  * @param layer - [description]
  */
-declare function setTileLocationCallback(tileX?: number, tileY?: number, width?: number, height?: number, callback: Function, callbackContext: object, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
+declare function setTileLocationCallback(tileX?: number, tileY?: number, width?: number, height?: number, callback: Function, callbackContext: any, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
 
 /**
  * Sets the current layer to the LayerData associated with `layer`.
@@ -3054,8 +3054,8 @@ declare function tileToWorldY(tileY: number, camera?: Phaser.Cameras.Scene2D.Cam
 
 /**
  * Converts from tile XY coordinates (tile units) to world XY coordinates (pixels), factoring in the
- * layers position, scale and scroll. This will return a new Vector2 object or update the given
- * `point` object.
+ * layers position, scale and scroll. This will return a new Vector2 any or update the given
+ * `point` any.
  * If no layer specified, the maps current layer is used.
  * @param tileX - [description]
  * @param tileY - [description]
@@ -3083,12 +3083,12 @@ declare function tileToWorldXY(tileX: number, tileY: number, point?: Phaser.Math
  * @param [tileY=0] - [description]
  * @param [width=max width based on tileX] - [description]
  * @param [height=max height based on tileY] - [description]
- * @param [weightedIndexes] - An array of objects to randomly draw from during
+ * @param [weightedIndexes] - An array of anys to randomly draw from during
  * randomization. They should be in the form: { index: 0, weight: 4 } or
  * { index: [0, 1], weight: 4 } if you wish to draw from multiple tile indexes.
  * @param layer - [description]
  */
-declare function weightedRandomize(tileX?: number, tileY?: number, width?: number, height?: number, weightedIndexes?: object[], layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
+declare function weightedRandomize(tileX?: number, tileY?: number, width?: number, height?: number, weightedIndexes?: any[], layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap | null;
 
 /**
  * Converts from world X coordinates (pixels) to tile X coordinates (tile units), factoring in the
@@ -3116,8 +3116,8 @@ declare function worldToTileY(worldY: number, snapToFloor?: boolean, camera?: Ph
 
 /**
  * Converts from world XY coordinates (pixels) to tile XY coordinates (tile units), factoring in the
- * layers position, scale and scroll. This will return a new Vector2 object or update the given
- * `point` object.
+ * layers position, scale and scroll. This will return a new Vector2 any or update the given
+ * `point` any.
  * If no layer specified, the maps current layer is used.
  * @param worldX - [description]
  * @param worldY - [description]
@@ -3150,7 +3150,7 @@ declare function _isStaticCall(): boolean;
  * @param [config.height=10] - The height of the map in tiles.
  * @param [config.insertNull=false] - Controls how empty tiles, tiles with an index of -1,
  * in the map data are handled. If `true`, empty locations will get a value of `null`. If `false`,
- * empty location will get a Tile object with an index of -1. If you've a large sparsely populated
+ * empty location will get a Tile any with an index of -1. If you've a large sparsely populated
  * map and the tile data doesn't need to change then setting this value to `true` will help with
  * memory consumption. However if your map is small or you need to update the tiles dynamically,
  * then leave the default value set.
@@ -3187,7 +3187,7 @@ declare interface tilemap_config {
     /**
      * Controls how empty tiles, tiles with an index of -1,
      * in the map data are handled. If `true`, empty locations will get a value of `null`. If `false`,
-     * empty location will get a Tile object with an index of -1. If you've a large sparsely populated
+     * empty location will get a Tile any with an index of -1. If you've a large sparsely populated
      * map and the tile data doesn't need to change then setting this value to `true` will help with
      * memory consumption. However if your map is small or you need to update the tiles dynamically,
      * then leave the default value set.
@@ -3213,7 +3213,7 @@ declare interface tilemap_config {
  * a 2D array of tile indexes. Pass in `null` for no data.
  * @param [insertNull=false] - Controls how empty tiles, tiles with an index of -1, in the
  * map data are handled. If `true`, empty locations will get a value of `null`. If `false`, empty
- * location will get a Tile object with an index of -1. If you've a large sparsely populated map and
+ * location will get a Tile any with an index of -1. If you've a large sparsely populated map and
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
@@ -3237,7 +3237,7 @@ declare class Tileset {
      * @param [tileData={}] - Data stored per tile. These typically are created in Tiled
      * when editing a tileset, e.g. from Tiled's tile collision editor or terrain editor.
      */
-    constructor(name: string, firstgid: number, tileWidth?: number, tileHeight?: number, tileMargin?: number, tileSpacing?: number, tileProperties?: object, tileData?: object);
+    constructor(name: string, firstgid: number, tileWidth?: number, tileHeight?: number, tileMargin?: number, tileSpacing?: number, tileProperties?: any, tileData?: any);
 
 }
 
@@ -3246,7 +3246,7 @@ declare class Tileset {
  * contained in this Tileset. This is typically defined in Tiled under the Tileset editor.
  * @param tileIndex - The unique id of the tile across all tilesets in the map.
  */
-declare function getTileProperties(tileIndex: number): object | undefined | null;
+declare function getTileProperties(tileIndex: number): any | undefined | null;
 
 /**
  * Get a tile's data that is stored in the Tileset. Returns null if tile index is not contained
@@ -3254,14 +3254,14 @@ declare function getTileProperties(tileIndex: number): object | undefined | null
  * info and terrain mapping.
  * @param tileIndex - The unique id of the tile across all tilesets in the map.
  */
-declare function getTileData(tileIndex: number): object | undefined | null;
+declare function getTileData(tileIndex: number): any | undefined | null;
 
 /**
  * Get a tile's collision group that is stored in the Tileset. Returns null if tile index is not
  * contained in this Tileset. This is typically defined within Tiled's tileset collision editor.
  * @param tileIndex - The unique id of the tile across all tilesets in the map.
  */
-declare function getTileCollisionGroup(tileIndex: number): object | null;
+declare function getTileCollisionGroup(tileIndex: number): any | null;
 
 /**
  * Returns true if and only if this Tileset contains the given tile index.
@@ -3275,7 +3275,7 @@ declare function containsTileIndex(tileIndex: number): boolean;
  * @param tileIndex - The unique id of the tile across all tilesets in the map.
  * within the Tileset image.
  */
-declare function getTileTextureCoordinates(tileIndex: number): object | null;
+declare function getTileTextureCoordinates(tileIndex: number): any | null;
 
 /**
  * Sets the image associated with this Tileset and updates the tile data (rows, columns, etc.).

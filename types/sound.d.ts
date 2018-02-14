@@ -5,22 +5,22 @@ declare class BaseSound {
     /**
      * @param manager - Reference to the current sound manager instance.
      * @param key - Asset key for the sound.
-     * @param config - An optional config object containing default sound settings.
+     * @param config - An optional config any containing default sound settings.
      */
-    constructor(manager: Phaser.Sound.BaseSoundManager, key: string, config: object);
+    constructor(manager: Phaser.Sound.BaseSoundManager, key: string, config: any);
 
 }
 
 /**
- * Adds a marker into the current sound. A marker is represented by name, start time, duration, and optionally config object.
+ * Adds a marker into the current sound. A marker is represented by name, start time, duration, and optionally config any.
  * This allows you to bundle multiple sounds together into a single audio file and use markers to jump between them for playback.
- * @param marker - Marker object
+ * @param marker - Marker any
  */
 declare function addMarker(marker: ISoundMarker): boolean;
 
 /**
  * Updates previously added marker.
- * @param marker - Marker object with updated values.
+ * @param marker - Marker any with updated values.
  */
 declare function updateMarker(marker: ISoundMarker): boolean;
 
@@ -33,9 +33,9 @@ declare function removeMarker(markerName: string): ISoundMarker | null;
 /**
  * Play this sound, or a marked section of it.
  * It always plays the sound from the start. If you want to start playback from a specific time
- * you can set 'seek' setting of the config object, provided to this call, to that value.
+ * you can set 'seek' setting of the config any, provided to this call, to that value.
  * @param [markerName=''] - If you want to play a marker then provide the marker name here, otherwise omit it to play the full sound.
- * @param [config] - Optional sound config object to be applied to this marker or entire sound if no marker name is provided. It gets memorized for future plays of current section of the sound.
+ * @param [config] - Optional sound config any to be applied to this marker or entire sound if no marker name is provided. It gets memorized for future plays of current section of the sound.
  */
 declare function play(markerName?: string, config?: ISoundConfig): boolean;
 
@@ -98,14 +98,14 @@ declare class BaseSoundManager {
 /**
  * Adds a new sound into the sound manager.
  * @param key - Asset key for the sound.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function add(key: string, config?: ISoundConfig): ISound;
 
 /**
  * Adds a new audio sprite sound into the sound manager.
  * @param key - Asset key for the sound.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function addAudioSprite(key: string, config?: ISoundConfig): IAudioSpriteSound;
 
@@ -113,7 +113,7 @@ declare function addAudioSprite(key: string, config?: ISoundConfig): IAudioSprit
  * Enables playing sound on the fly without the need to keep a reference to it.
  * Sound will auto destroy once its playback ends.
  * @param key - Asset key for the sound.
- * @param [extra] - An optional additional object containing settings to be applied to the sound. It could be either config or marker object.
+ * @param [extra] - An optional additional any containing settings to be applied to the sound. It could be either config or marker any.
  */
 declare function play(key: string, extra?: ISoundConfig | ISoundMarker): boolean;
 
@@ -122,21 +122,21 @@ declare function play(key: string, extra?: ISoundConfig | ISoundMarker): boolean
  * Sound will auto destroy once its playback ends.
  * @param key - Asset key for the sound.
  * @param spriteName - The name of the sound sprite to play.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function playAudioSprite(key: string, spriteName: string, config?: ISoundConfig): boolean;
 
 /**
  * Removes a sound from the sound manager.
  * The removed sound is destroyed before removal.
- * @param sound - The sound object to remove.
+ * @param sound - The sound any to remove.
  */
 declare function remove(sound: ISound): boolean;
 
 /**
  * Removes all sounds from the sound manager that have an asset key matching the given value.
  * The removed sounds are destroyed before removal.
- * @param key - The key to match when removing sound objects.
+ * @param key - The key to match when removing sound anys.
  */
 declare function removeByKey(key: string): number;
 
@@ -201,7 +201,7 @@ declare class HTML5AudioSound {
     /**
      * @param manager - Reference to the current sound manager instance.
      * @param key - Asset key for the sound.
-     * @param [config={}] - An optional config object containing default sound settings.
+     * @param [config={}] - An optional config any containing default sound settings.
      */
     constructor(manager: Phaser.Sound.HTML5AudioSoundManager, key: string, config?: ISoundConfig);
 
@@ -210,9 +210,9 @@ declare class HTML5AudioSound {
 /**
  * Play this sound, or a marked section of it.
  * It always plays the sound from the start. If you want to start playback from a specific time
- * you can set 'seek' setting of the config object, provided to this call, to that value.
+ * you can set 'seek' setting of the config any, provided to this call, to that value.
  * @param [markerName=''] - If you want to play a marker then provide the marker name here, otherwise omit it to play the full sound.
- * @param [config] - Optional sound config object to be applied to this marker or entire sound if no marker name is provided. It gets memorized for future plays of current section of the sound.
+ * @param [config] - Optional sound config any to be applied to this marker or entire sound if no marker name is provided. It gets memorized for future plays of current section of the sound.
  */
 declare function play(markerName?: string, config?: ISoundConfig): boolean;
 
@@ -238,7 +238,7 @@ declare function pickAndPlayAudioTag(): boolean;
 
 /**
  * This method performs the audio tag pooling logic. It first looks for
- * unused audio tag to assign to this sound object. If there are no unused
+ * unused audio tag to assign to this sound any. If there are no unused
  * audio tags, based on HTML5AudioSoundManager#override property value, it
  * looks for sound with most advanced playback and hijacks its audio tag or
  * does nothing.
@@ -317,7 +317,7 @@ declare class HTML5AudioSoundManager {
 /**
  * Adds a new sound into the sound manager.
  * @param key - Asset key for the sound.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function add(key: string, config?: ISoundConfig): Phaser.Sound.HTML5AudioSound;
 
@@ -343,7 +343,7 @@ declare function destroy(): void;
  * Method used internally by Phaser.Sound.HTML5AudioSound class methods and property setters
  * to check if sound manager is locked and then either perform action immediately or queue it
  * to be performed once the sound manager gets unlocked.
- * @param sound - Sound object on which to perform queued action.
+ * @param sound - Sound any on which to perform queued action.
  * @param prop - Name of the method to be called or property to be assigned a value to.
  * @param [value] - An optional parameter that either holds an array of arguments to be passed to the method call or value to be set to the property.
  */
@@ -364,7 +364,7 @@ declare class NoAudioSound {
     /**
      * @param manager - Reference to the current sound manager instance.
      * @param key - Asset key for the sound.
-     * @param [config={}] - An optional config object containing default sound settings.
+     * @param [config={}] - An optional config any containing default sound settings.
      */
     constructor(manager: Phaser.Sound.NoAudioSoundManager, key: string, config?: ISoundConfig);
 
@@ -429,14 +429,14 @@ declare class NoAudioSoundManager {
 /**
  * [description]
  * @param key - Asset key for the sound.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function add(key: string, config?: ISoundConfig): ISound;
 
 /**
  * [description]
  * @param key - Asset key for the sound.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function addAudioSprite(key: string, config?: ISoundConfig): IAudioSpriteSound;
 
@@ -452,13 +452,13 @@ declare function playAudioSprite(): boolean;
 
 /**
  * [description]
- * @param sound - The sound object to remove.
+ * @param sound - The sound any to remove.
  */
 declare function remove(sound: ISound): boolean;
 
 /**
  * [description]
- * @param key - The key to match when removing sound objects.
+ * @param key - The key to match when removing sound anys.
  */
 declare function removeByKey(key: string): number;
 
@@ -487,7 +487,7 @@ declare class WebAudioSound {
     /**
      * @param manager - Reference to the current sound manager instance.
      * @param key - Asset key for the sound.
-     * @param [config={}] - An optional config object containing default sound settings.
+     * @param [config={}] - An optional config any containing default sound settings.
      */
     constructor(manager: Phaser.Sound.WebAudioSoundManager, key: string, config?: ISoundConfig);
 
@@ -496,9 +496,9 @@ declare class WebAudioSound {
 /**
  * Play this sound, or a marked section of it.
  * It always plays the sound from the start. If you want to start playback from a specific time
- * you can set 'seek' setting of the config object, provided to this call, to that value.
+ * you can set 'seek' setting of the config any, provided to this call, to that value.
  * @param [markerName=''] - If you want to play a marker then provide the marker name here, otherwise omit it to play the full sound.
- * @param [config] - Optional sound config object to be applied to this marker or entire sound if no marker name is provided. It gets memorized for future plays of current section of the sound.
+ * @param [config] - Optional sound config any to be applied to this marker or entire sound if no marker name is provided. It gets memorized for future plays of current section of the sound.
  */
 declare function play(markerName?: string, config?: ISoundConfig): boolean;
 
@@ -600,7 +600,7 @@ declare function createAudioContext(game: Phaser.Game): AudioContext;
 /**
  * Adds a new sound into the sound manager.
  * @param key - Asset key for the sound.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function add(key: string, config?: ISoundConfig): Phaser.Sound.WebAudioSound;
 
@@ -629,15 +629,15 @@ declare function onFocus(): void;
 declare function destroy(): void;
 
 /**
- * Adds a marker into the current sound. A marker is represented by name, start time, duration, and optionally config object.
+ * Adds a marker into the current sound. A marker is represented by name, start time, duration, and optionally config any.
  * This allows you to bundle multiple sounds together into a single audio file and use markers to jump between them for playback.
- * @param marker - Marker object
+ * @param marker - Marker any
  */
 declare function addMarker(marker: ISoundMarker): boolean;
 
 /**
  * Updates previously added marker.
- * @param marker - Marker object with updated values.
+ * @param marker - Marker any with updated values.
  */
 declare function updateMarker(marker: ISoundMarker): boolean;
 
@@ -660,7 +660,7 @@ declare function resetConfig(): void;
 /**
  * Adds a new audio sprite sound into the sound manager.
  * @param key - Asset key for the sound.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function addAudioSprite(key: string, config?: ISoundConfig): IAudioSpriteSound;
 
@@ -668,7 +668,7 @@ declare function addAudioSprite(key: string, config?: ISoundConfig): IAudioSprit
  * Enables playing sound on the fly without the need to keep a reference to it.
  * Sound will auto destroy once its playback ends.
  * @param key - Asset key for the sound.
- * @param [extra] - An optional additional object containing settings to be applied to the sound. It could be either config or marker object.
+ * @param [extra] - An optional additional any containing settings to be applied to the sound. It could be either config or marker any.
  */
 declare function play(key: string, extra?: ISoundConfig | ISoundMarker): boolean;
 
@@ -677,21 +677,21 @@ declare function play(key: string, extra?: ISoundConfig | ISoundMarker): boolean
  * Sound will auto destroy once its playback ends.
  * @param key - Asset key for the sound.
  * @param spriteName - The name of the sound sprite to play.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function playAudioSprite(key: string, spriteName: string, config?: ISoundConfig): boolean;
 
 /**
  * Removes a sound from the sound manager.
  * The removed sound is destroyed before removal.
- * @param sound - The sound object to remove.
+ * @param sound - The sound any to remove.
  */
 declare function remove(sound: ISound): boolean;
 
 /**
  * Removes all sounds from the sound manager that have an asset key matching the given value.
  * The removed sounds are destroyed before removal.
- * @param key - The key to match when removing sound objects.
+ * @param key - The key to match when removing sound anys.
  */
 declare function removeByKey(key: string): number;
 
@@ -726,15 +726,15 @@ declare function update(time: number, delta: number): void;
 declare function forEachActiveSound(callbackfn: Function, scope?: any): void;
 
 /**
- * Adds a marker into the current sound. A marker is represented by name, start time, duration, and optionally config object.
+ * Adds a marker into the current sound. A marker is represented by name, start time, duration, and optionally config any.
  * This allows you to bundle multiple sounds together into a single audio file and use markers to jump between them for playback.
- * @param marker - Marker object
+ * @param marker - Marker any
  */
 declare function addMarker(marker: ISoundMarker): boolean;
 
 /**
  * Updates previously added marker.
- * @param marker - Marker object with updated values.
+ * @param marker - Marker any with updated values.
  */
 declare function updateMarker(marker: ISoundMarker): boolean;
 
@@ -752,7 +752,7 @@ declare function resetConfig(): void;
 /**
  * Adds a new audio sprite sound into the sound manager.
  * @param key - Asset key for the sound.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function addAudioSprite(key: string, config?: ISoundConfig): IAudioSpriteSound;
 
@@ -760,7 +760,7 @@ declare function addAudioSprite(key: string, config?: ISoundConfig): IAudioSprit
  * Enables playing sound on the fly without the need to keep a reference to it.
  * Sound will auto destroy once its playback ends.
  * @param key - Asset key for the sound.
- * @param [extra] - An optional additional object containing settings to be applied to the sound. It could be either config or marker object.
+ * @param [extra] - An optional additional any containing settings to be applied to the sound. It could be either config or marker any.
  */
 declare function play(key: string, extra?: ISoundConfig | ISoundMarker): boolean;
 
@@ -769,21 +769,21 @@ declare function play(key: string, extra?: ISoundConfig | ISoundMarker): boolean
  * Sound will auto destroy once its playback ends.
  * @param key - Asset key for the sound.
  * @param spriteName - The name of the sound sprite to play.
- * @param [config] - An optional config object containing default sound settings.
+ * @param [config] - An optional config any containing default sound settings.
  */
 declare function playAudioSprite(key: string, spriteName: string, config?: ISoundConfig): boolean;
 
 /**
  * Removes a sound from the sound manager.
  * The removed sound is destroyed before removal.
- * @param sound - The sound object to remove.
+ * @param sound - The sound any to remove.
  */
 declare function remove(sound: ISound): boolean;
 
 /**
  * Removes all sounds from the sound manager that have an asset key matching the given value.
  * The removed sounds are destroyed before removal.
- * @param key - The key to match when removing sound objects.
+ * @param key - The key to match when removing sound anys.
  */
 declare function removeByKey(key: string): number;
 

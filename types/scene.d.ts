@@ -20,7 +20,7 @@ declare class Scene {
     /**
      * @param config - [description]
      */
-    constructor(config: object);
+    constructor(config: any);
 
 }
 
@@ -40,7 +40,7 @@ declare class SceneManager {
      * @param game - The Phaser.Game instance this Scene Manager belongs to.
      * @param sceneConfig - Scene specific configuration settings.
      */
-    constructor(game: Phaser.Game, sceneConfig: object);
+    constructor(game: Phaser.Game, sceneConfig: any);
 
 }
 
@@ -53,8 +53,8 @@ declare function processQueue(): void;
  * Adds a new Scene into the SceneManager.
  * You must give each Scene a unique key by which you'll identify it.
  * The `sceneConfig` can be:
- * * A `Phaser.Scene` object, or an object that extends it.
- * * A plain JavaScript object
+ * * A `Phaser.Scene` any, or an any that extends it.
+ * * A plain JavaScript any
  * * A JavaScript ES6 Class that extends `Phaser.Scene`
  * * A JavaScript ES5 prototype based Class
  * * A JavaScript function
@@ -63,7 +63,7 @@ declare function processQueue(): void;
  * @param sceneConfig - [description]
  * @param [autoStart=false] - If `true` the Scene will be started immediately after being added.
  */
-declare function add(key: string, sceneConfig: Phaser.Scene | object | Function, autoStart?: boolean): Phaser.Scene | null;
+declare function add(key: string, sceneConfig: Phaser.Scene | any | Function, autoStart?: boolean): Phaser.Scene | null;
 
 /**
  * [description]
@@ -75,13 +75,13 @@ declare function bootScene(scene: Phaser.Scene): void;
  * [description]
  * @param loader - [description]
  */
-declare function loadComplete(loader: object): void;
+declare function loadComplete(loader: any): void;
 
 /**
  * [description]
  * @param loader - [description]
  */
-declare function payloadComplete(loader: object): void;
+declare function payloadComplete(loader: any): void;
 
 /**
  * [description]
@@ -121,14 +121,14 @@ declare function createSceneFromInstance(key: string, newScene: Phaser.Scene): P
  * @param key - [description]
  * @param sceneConfig - [description]
  */
-declare function createSceneFromObject(key: string, sceneConfig: object): Phaser.Scene;
+declare function createSceneFromObject(key: string, sceneConfig: any): Phaser.Scene;
 
 /**
  * [description]
  * @param key - [description]
  * @param sceneConfig - [description]
  */
-declare function getKey(key: string, sceneConfig: Phaser.Scene | object | Function): string;
+declare function getKey(key: string, sceneConfig: Phaser.Scene | any | Function): string;
 
 /**
  * [description]
@@ -183,7 +183,7 @@ declare function wake(key: string): Phaser.Scenes.SceneManager;
  * @param key - [description]
  * @param [data] - [description]
  */
-declare function start(key: string, data?: object): Phaser.Scenes.SceneManager;
+declare function start(key: string, data?: any): Phaser.Scenes.SceneManager;
 
 /**
  * [description]
@@ -269,7 +269,7 @@ declare function boot(): void;
  * @param key - [description]
  * @param [data] - [description]
  */
-declare function start(key: string, data?: object): Phaser.Scenes.ScenePlugin;
+declare function start(key: string, data?: any): Phaser.Scenes.ScenePlugin;
 
 /**
  * Add the Scene into the Scene Manager and start it if 'autoStart' is true or the Scene config 'active' property is set.
@@ -277,14 +277,14 @@ declare function start(key: string, data?: object): Phaser.Scenes.ScenePlugin;
  * @param sceneConfig - [description]
  * @param autoStart - [description]
  */
-declare function add(key: string, sceneConfig: object, autoStart: boolean): Phaser.Scenes.ScenePlugin;
+declare function add(key: string, sceneConfig: any, autoStart: boolean): Phaser.Scenes.ScenePlugin;
 
 /**
  * Launch the given Scene and run it in parallel with this one.
  * @param key - [description]
  * @param [data] - [description]
  */
-declare function launch(key: string, data?: object): Phaser.Scenes.ScenePlugin;
+declare function launch(key: string, data?: any): Phaser.Scenes.ScenePlugin;
 
 /**
  * Pause the Scene - this stops the update step from happening but it still renders.
@@ -401,10 +401,10 @@ declare function shutdown(): void;
 declare function destroy(): void;
 
 /**
- * Takes a Scene configuration object and returns a fully formed Systems object.
+ * Takes a Scene configuration any and returns a fully formed Systems any.
  * @param config - [description]
  */
-declare function create(config: object): object;
+declare function create(config: any): any;
 
 /**
  * The Scene Systems class.
@@ -418,7 +418,7 @@ declare class Systems {
      * @param scene - The Scene that owns this Systems instance.
      * @param config - Scene specific configuration settings.
      */
-    constructor(scene: Phaser.Scene, config: object);
+    constructor(scene: Phaser.Scene, config: any);
 
 }
 
@@ -511,7 +511,7 @@ declare function setActive(value: boolean): Phaser.Scenes.Systems;
  * Start this Scene running and rendering.
  * @param data - [description]
  */
-declare function start(data: object): void;
+declare function start(data: any): void;
 
 /**
  * Shutdown this Scene and send a shutdown event to all of its systems.

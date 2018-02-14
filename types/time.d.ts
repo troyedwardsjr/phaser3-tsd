@@ -18,7 +18,7 @@ declare function boot(): void;
  * [description]
  * @param config - [description]
  */
-declare function addEvent(config: object): Phaser.Time.TimerEvent;
+declare function addEvent(config: any): Phaser.Time.TimerEvent;
 
 /**
  * [description]
@@ -27,7 +27,7 @@ declare function addEvent(config: object): Phaser.Time.TimerEvent;
  * @param args - [description]
  * @param callbackScope - [description]
  */
-declare function delayedCall(delay: number, callback: Function, args: any, callbackScope: object): any;
+declare function delayedCall(delay: number, callback: Function, args: any, callbackScope: any): any;
 
 /**
  * [description]
@@ -73,7 +73,7 @@ declare class TimerEvent {
     /**
      * @param config - [description]
      */
-    constructor(config: object);
+    constructor(config: any);
 
 }
 
@@ -81,7 +81,7 @@ declare class TimerEvent {
  * [description]
  * @param config - [description]
  */
-declare function reset(config: object): Phaser.Time.TimerEvent;
+declare function reset(config: any): Phaser.Time.TimerEvent;
 
 /**
  * Gets the progress of the current iteration, not factoring in repeats.

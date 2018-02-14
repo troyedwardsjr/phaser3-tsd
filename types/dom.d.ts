@@ -1,11 +1,11 @@
 /**
  * Adds the given element to the DOM. If a parent is provided the element is added as a child of the parent, providing it was able to access it.
  * If no parent was given or falls back to using `document.body`.
- * @param element - The element to be added to the DOM. Usually a Canvas object.
- * @param [parent] - The parent in which to add the element. Can be a string which is passed to `getElementById` or an actual DOM object.
+ * @param element - The element to be added to the DOM. Usually a Canvas any.
+ * @param [parent] - The parent in which to add the element. Can be a string which is passed to `getElementById` or an actual DOM any.
  * @param [overflowHidden=true] - [description]
  */
-declare function AddToDOM(element: object, parent?: string | object, overflowHidden?: boolean): object;
+declare function AddToDOM(element: any, parent?: string | any, overflowHidden?: boolean): any;
 
 /**
  * Inspects the readyState of the document. If the document is already complete then it invokes the given callback.
@@ -21,7 +21,7 @@ declare namespace DOM {
 /**
  * Takes the given data string and parses it as XML.
  * First tries to use the window.DOMParser and reverts to the Microsoft.XMLDOM if that fails.
- * The parsed XML object is returned, or `null` if there was an error while parsing the data.
+ * The parsed XML any is returned, or `null` if there was an error while parsing the data.
  * @param data - The XML source stored in a string.
  */
 declare function ParseXML(data: string): any;

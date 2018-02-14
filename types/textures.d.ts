@@ -40,7 +40,7 @@ declare function updateUVs(): Phaser.Textures.Frame;
 declare function updateUVsInverted(): Phaser.Textures.Frame;
 
 /**
- * Clones this Frame into a new Frame object.
+ * Clones this Frame into a new Frame any.
  */
 declare function clone(): Phaser.Textures.Frame;
 
@@ -76,23 +76,23 @@ declare namespace Parsers {
  * @param sourceIndex - The index of the TextureSource.
  * @param json - The JSON data.
  */
-declare function JSONArray(texture: Phaser.Textures.Texture, sourceIndex: number, json: object): Phaser.Textures.Texture;
+declare function JSONArray(texture: Phaser.Textures.Texture, sourceIndex: number, json: any): Phaser.Textures.Texture;
 
 /**
  * Parses a Texture Atlas JSON Hash and adds the Frames to the Texture.
- * JSON format expected to match that defined by Texture Packer, with the frames property containing an object of Frames.
+ * JSON format expected to match that defined by Texture Packer, with the frames property containing an any of Frames.
  * @param texture - The Texture to add the Frames to.
  * @param sourceIndex - The index of the TextureSource.
  * @param json - The JSON data.
  */
-declare function JSONHash(texture: Phaser.Textures.Texture, sourceIndex: number, json: object): Phaser.Textures.Texture;
+declare function JSONHash(texture: Phaser.Textures.Texture, sourceIndex: number, json: any): Phaser.Textures.Texture;
 
 /**
- * Parses a Pyxel JSON object and adds the Frames to a Texture.
+ * Parses a Pyxel JSON any and adds the Frames to a Texture.
  * @param texture - The Texture to add the Frames to.
  * @param json - The JSON data.
  */
-declare function Pyxel(texture: Phaser.Textures.Texture, json: object): Phaser.Textures.Texture;
+declare function Pyxel(texture: Phaser.Textures.Texture, json: any): Phaser.Textures.Texture;
 
 /**
  * Parses a Sprite Sheet and adds the Frames to the Texture.
@@ -106,7 +106,7 @@ declare function Pyxel(texture: Phaser.Textures.Texture, json: object): Phaser.T
  * @param height - [description]
  * @param config - [description]
  */
-declare function SpriteSheet(texture: Phaser.Textures.Texture, sourceIndex: number, x: number, y: number, width: number, height: number, config: object): Phaser.Textures.Texture;
+declare function SpriteSheet(texture: Phaser.Textures.Texture, sourceIndex: number, x: number, y: number, width: number, height: number, config: any): Phaser.Textures.Texture;
 
 /**
  * Parses a Sprite Sheet and adds the Frames to the Texture, where the Sprite Sheet is stored as a frame within an Atlas.
@@ -116,10 +116,10 @@ declare function SpriteSheet(texture: Phaser.Textures.Texture, sourceIndex: numb
  * @param frame - The Frame that contains the Sprite Sheet.
  * @param config - [description]
  */
-declare function SpriteSheetFromAtlas(texture: Phaser.Textures.Texture, frame: Phaser.Textures.Frame, config: object): Phaser.Textures.Texture;
+declare function SpriteSheetFromAtlas(texture: Phaser.Textures.Texture, frame: Phaser.Textures.Frame, config: any): Phaser.Textures.Texture;
 
 /**
- * Parses a Starling XML object and adds all the Frames into a Texture.
+ * Parses a Starling XML any and adds all the Frames into a Texture.
  * @param texture - The Texture to add the Frames to.
  * @param xml - The XML data.
  */
@@ -132,7 +132,7 @@ declare function StarlingXML(texture: Phaser.Textures.Texture, xml: any): Phaser
  * @param sourceIndex - The index of the TextureSource.
  * @param yaml - The YAML data.
  */
-declare function UnityYAML(texture: Phaser.Textures.Texture, sourceIndex: number, yaml: object): Phaser.Textures.Texture;
+declare function UnityYAML(texture: Phaser.Textures.Texture, sourceIndex: number, yaml: any): Phaser.Textures.Texture;
 
 /**
  * A Texture consists of a source, usually an Image from the Cache, or a Canvas, and a collection
@@ -284,7 +284,7 @@ declare function addImage(key: string, source: Image, dataSource?: Image): Phase
  * @param key - The unique string-based key of the Texture.
  * @param config - [description]
  */
-declare function generate(key: string, config: object): Phaser.Textures.Texture;
+declare function generate(key: string, config: any): Phaser.Textures.Texture;
 
 /**
  * Creates a new Texture using a blank Canvas element of the size given.
@@ -297,7 +297,7 @@ declare function generate(key: string, config: object): Phaser.Textures.Texture;
 declare function createCanvas(key: string, width: number, height: number): Phaser.Textures.Texture;
 
 /**
- * Creates a new Texture object from an existing Canvas element and adds
+ * Creates a new Texture any from an existing Canvas element and adds
  * it to this Texture Manager.
  * @param key - The unique string-based key of the Texture.
  * @param source - The Canvas element to form the base of the new Texture.
@@ -311,7 +311,7 @@ declare function addCanvas(key: string, source: HTMLCanvasElement): Phaser.Textu
  * @param source - The source Image element.
  * @param data - The Texture Atlas data.
  */
-declare function addAtlas(key: string, source: Image, data: object): Phaser.Textures.Texture;
+declare function addAtlas(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
 /**
  * Adds a Texture Atlas to this Texture Manager.
@@ -321,7 +321,7 @@ declare function addAtlas(key: string, source: Image, data: object): Phaser.Text
  * @param source - The source Image element.
  * @param data - The Texture Atlas data.
  */
-declare function addAtlasJSONArray(key: string, source: Image, data: object): Phaser.Textures.Texture;
+declare function addAtlasJSONArray(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
 /**
  * Adds a Texture Atlas to this Texture Manager.
@@ -331,7 +331,7 @@ declare function addAtlasJSONArray(key: string, source: Image, data: object): Ph
  * @param source - The source Image element.
  * @param data - The Texture Atlas data.
  */
-declare function addAtlasJSONHash(key: string, source: Image, data: object): Phaser.Textures.Texture;
+declare function addAtlasJSONHash(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
 /**
  * Adds a Unity Texture Atlas to this Texture Manager.
@@ -340,7 +340,7 @@ declare function addAtlasJSONHash(key: string, source: Image, data: object): Pha
  * @param source - The source Image element.
  * @param data - The Texture Atlas data.
  */
-declare function addUnityAtlas(key: string, source: Image, data: object): Phaser.Textures.Texture;
+declare function addUnityAtlas(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
 /**
  * Adds a Sprite Sheet to this Texture Manager.
@@ -348,7 +348,7 @@ declare function addUnityAtlas(key: string, source: Image, data: object): Phaser
  * same size and cannot be trimmed or rotated.
  * @param key - The unique string-based key of the Texture.
  * @param source - The source Image element.
- * @param config - The configuration object for this Sprite Sheet.
+ * @param config - The configuration any for this Sprite Sheet.
  * @param config.frameWidth - The fixed width of each frame.
  * @param [config.frameHeight] - The fixed height of each frame. If not set it will use the frameWidth as the height.
  * @param [config.startFrame=0] - Skip a number of frames. Useful when there are multiple sprite sheets in one Texture.
@@ -390,7 +390,7 @@ declare interface addSpriteSheet_config {
  * In Phaser terminology a Sprite Sheet is a texture containing different frames, but each frame is the exact
  * same size and cannot be trimmed or rotated.
  * @param key - The unique string-based key of the Texture.
- * @param config - The configuration object for this Sprite Sheet.
+ * @param config - The configuration any for this Sprite Sheet.
  * @param config.atlas - The key of the Texture Atlas in which this Sprite Sheet can be found.
  * @param config.frame - The key of the Texture Atlas Frame in which this Sprite Sheet can be found.
  * @param config.frameWidth - The fixed width of each frame.
@@ -444,7 +444,7 @@ declare interface addSpriteSheetFromAtlas_config {
  * @param source - The source Image element.
  * @param data - The Texture Atlas XML data.
  */
-declare function addAtlasStarlingXML(key: string, source: Image, data: object): Phaser.Textures.Texture;
+declare function addAtlasStarlingXML(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
 /**
  * Adds a Texture Atlas to this Texture Manager, where the atlas data is given
@@ -453,7 +453,7 @@ declare function addAtlasStarlingXML(key: string, source: Image, data: object): 
  * @param source - The source Image element.
  * @param data - The Texture Atlas XML data.
  */
-declare function addAtlasPyxel(key: string, source: Image, data: object): Phaser.Textures.Texture;
+declare function addAtlasPyxel(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
 /**
  * Creates a new Texture using the given source and dimensions.
@@ -500,7 +500,7 @@ declare function getTextureKeys(): string[];
 
 /**
  * Given a Texture and an `x` and `y` coordinate this method will return a new
- * Color object that has been populated with the color and alpha values of the pixel
+ * Color any that has been populated with the color and alpha values of the pixel
  * at that location in the Texture.
  * @param x - The x coordinate of the pixel within the Texture.
  * @param y - The y coordinate of the pixel within the Texture.
@@ -525,7 +525,7 @@ declare function setTexture(gameObject: Phaser.GameObjects.GameObject, key: stri
  * @param scope - The value to use as `this` when executing the callback.
  * @param [arguments] - Additional arguments that will be passed to the callback, after the child.
  */
-declare function each(callback: Function, scope: object, ...arguments?: any): void;
+declare function each(callback: Function, scope: any, ...arguments?: any): void;
 
 /**
  * Destroys the Texture Manager and all Textures stored within it.

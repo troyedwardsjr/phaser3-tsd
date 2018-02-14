@@ -11,7 +11,7 @@ declare function Angle(items: any, value: number): any;
  * @param callback - [description]
  * @param thisArg - [description]
  */
-declare function Call(items: any, callback: Function, thisArg: object): any;
+declare function Call(items: any, callback: Function, thisArg: any): any;
 
 /**
  * [description]
@@ -19,14 +19,14 @@ declare function Call(items: any, callback: Function, thisArg: object): any;
  * @param compare - [description]
  * @param index - [description]
  */
-declare function GetFirst(items: any, compare: object, index: number): any;
+declare function GetFirst(items: any, compare: any, index: number): any;
 
 /**
  * [description]
  * @param items - An array of Game Objects. The contents of this array are updated by this Action.
  * @param options - [description]
  */
-declare function GridAlign(items: any, options: object): any;
+declare function GridAlign(items: any, options: any): any;
 
 /**
  * [description]
@@ -155,19 +155,19 @@ declare function Rotate(items: any, value: number, step?: number): any;
 /**
  * [description]
  * @param items - An array of Game Objects. The contents of this array are updated by this Action.
- * @param point - Any object with public `x` and `y` properties.
+ * @param point - Any any with public `x` and `y` properties.
  * @param angle - The angle to rotate by, in radians.
  */
-declare function RotateAround(items: any, point: object, angle: number): any;
+declare function RotateAround(items: any, point: any, angle: number): any;
 
 /**
  * [description]
  * @param items - An array of Game Objects. The contents of this array are updated by this Action.
- * @param point - Any object with public `x` and `y` properties.
+ * @param point - Any any with public `x` and `y` properties.
  * @param angle - The angle to rotate by, in radians.
  * @param distance - The distance from the point of rotation in pixels.
  */
-declare function RotateAroundDistance(items: any, point: object, angle: number, distance: number): any;
+declare function RotateAroundDistance(items: any, point: any, angle: number, distance: number): any;
 
 /**
  * [description]
@@ -315,7 +315,7 @@ declare function SetY(items: any, value: number, step?: number): any;
  * @param [direction=0] - [description]
  * @param [output] - [description]
  */
-declare function ShiftPosition(items: any, x: number, y: number, direction?: number, output?: Phaser.Math.Vector2 | object): any;
+declare function ShiftPosition(items: any, x: number, y: number, direction?: number, output?: Phaser.Math.Vector2 | any): any;
 
 /**
  * [description]

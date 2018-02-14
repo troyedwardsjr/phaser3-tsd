@@ -94,7 +94,7 @@ declare interface GameConfig {
     /**
      * [description]
      */
-    "?parent"?: object;
+    "?parent"?: any;
     /**
      * [description]
      */
@@ -106,7 +106,7 @@ declare interface GameConfig {
     /**
      * [description]
      */
-    "?scene"?: object;
+    "?scene"?: any;
     /**
      * [description]
      */
@@ -126,7 +126,7 @@ declare interface GameConfig {
     /**
      * [description]
      */
-    input?: object;
+    input?: any;
     /**
      * [description]
      */
@@ -134,7 +134,7 @@ declare interface GameConfig {
     /**
      * [description]
      */
-    "input.keyboard.target"?: object;
+    "input.keyboard.target"?: any;
     /**
      * [description]
      */
@@ -142,7 +142,7 @@ declare interface GameConfig {
     /**
      * [description]
      */
-    "?input.mouse.target"?: object;
+    "?input.mouse.target"?: any;
     /**
      * [description]
      */
@@ -150,11 +150,11 @@ declare interface GameConfig {
     /**
      * [description]
      */
-    "?input.touch.target"?: object;
+    "?input.touch.target"?: any;
     /**
      * [description]
      */
-    "?input.touch.capture"?: object;
+    "?input.touch.capture"?: any;
     /**
      * [description]
      */
@@ -202,7 +202,7 @@ declare interface GameConfig {
     /**
      * [description]
      */
-    "?callbacks"?: object;
+    "?callbacks"?: any;
     /**
      * [description]
      */
@@ -218,7 +218,7 @@ declare interface GameConfig {
     /**
      * [description]
      */
-    "?images"?: object;
+    "?images"?: any;
     /**
      * [description]
      */
@@ -234,9 +234,9 @@ declare interface GameConfig {
  */
 declare class Config {
     /**
-     * @param [GameConfig] - The configuration object for your Phaser Game instance.
+     * @param [GameConfig] - The configuration any for your Phaser Game instance.
      */
-    constructor(GameConfig?: object);
+    constructor(GameConfig?: any);
 
 }
 
@@ -249,7 +249,7 @@ declare function CreateRenderer(game: Phaser.Game): void;
 
 /**
  * Called automatically by Phaser.Game and responsible for creating the console.log debug header.
- * You can customize or disable the header via the Game Config object.
+ * You can customize or disable the header via the Game Config any.
  * @param game - The Phaser.Game instance which will output this debug header.
  */
 declare function DebugHeader(game: Phaser.Game): void;
@@ -265,9 +265,9 @@ declare function DebugHeader(game: Phaser.Game): void;
  */
 declare class Game {
     /**
-     * @param [GameConfig] - The configuration object for your Phaser Game instance.
+     * @param [GameConfig] - The configuration any for your Phaser Game instance.
      */
-    constructor(GameConfig?: object);
+    constructor(GameConfig?: any);
 
 }
 
@@ -446,7 +446,7 @@ declare function stop(): Phaser.Boot.TimeStep;
 
 /**
  * Destroys the TimeStep. This will stop Request Animation Frame, stop the step, clear the callbacks and null
- * any objects.
+ * any anys.
  */
 declare function destroy(): void;
 

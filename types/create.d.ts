@@ -2,7 +2,7 @@
  * [description]
  * @param config - [description]
  */
-declare function GenerateTexture(config: object): HTMLCanvasElement;
+declare function GenerateTexture(config: any): HTMLCanvasElement;
 
 declare namespace Create {
 }
