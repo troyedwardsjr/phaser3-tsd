@@ -40,6 +40,7 @@ function jsdocParser(filename) {
 		cb(new Error('Could not find jsdoc command.'), null);
 		return;
 	}
+	
 	/*
 	return new Promise((resolve, reject) => {
     execFile(cmd, ['-X', filename], (error, stdout, stderr) => {

@@ -1,9 +1,11 @@
-const parser = require('jsdoc3-parser');
+const path = require('path');
+const fs = require('fs');
+
 const jsdocParse = require('jsdoc-parse');
 const dom = require('dts-dom');
-const fs = require('fs');
-const path = require('path');
-const testParser = require('./src/parser');
+
+const parser = require('./src/parser');
+const convert = require('./src/convert')
 
 // Create standard wrapper declarations.
 const phaserPkgModuleDOM = dom.create.module('phaser');
@@ -48,49 +50,8 @@ const readPhaserSrc = (dir) =>
         files.concat(readPhaserSrc(path.join(dir, file))) :
         files.concat(path.join(dir, file)),
 			[]);
-			
-const convertJS = (jsFile) => {
-	console.log(`Converting ${jsFile}`);
-
-	parser(jsFile, function(error, jsdocOutput) {
-		const usefulData = jsdocParse(jsdocOutput);
-		console.log(usefulData);
-	});
-}
-
-const transpile = (usefulData) => {
-	
-	usefulData.forEach((docObj) => {
-		//console.log(docObj.params[0])
-		switch (docObj.kind) {
-			case 'function':
-				phaserModuleDOM.members.find((elm) => {
-					return elm.name == 'Actions';
-				})
-				.members.push(dom.create.method(
-					docObj.name,
-					[dom.create.parameter('x', dom.type.number)],
-					dom.type.void,
-					dom.DeclarationFlags.Optional));
-				//.members.push(dom.create.const(docObj.name, 'any'));
-				break;
-		}
-	});
-}
-
-const promiseTest = () => {
-	return new Promise((resolve, reject) => {
-		resolve(dom.emit(phaserModuleDOM));
-	});
-}
-
 
 const transpiler = (() => {
-
-	//readPhaserSrc("./phaser-src/").forEach((jsFile) => {
-	//	convertJS(jsFile);
-	//});
-
 	// Create namespace for each src namespace.
 	phaserSrcNs.forEach((cls) => {
 		phaserModuleDOM.members.push(dom.create.class(cls, 0));
@@ -98,16 +59,28 @@ const transpiler = (() => {
 	
 	var srcFileName = readPhaserSrc("./phaser-src/")[0];
 
-	testParser(srcFileName).then(result => {
+	parser(srcFileName).then(result => {
 		const usefulData = JSON.parse(result.stdout);
-		transpile(usefulData);
+		convert(phaserModuleDOM, usefulData);
 		//console.log(phaserModuleDOM.members);
-		console.log(dom.emit(phaserModuleDOM));
+		//console.log(dom.emit(phaserModuleDOM));
 	})
-
-	/*
-	console.log(dom.emit(phaserPkgModuleDOM));
-	console.log(dom.emit(phaserClassDOM));
-	console.log(dom.emit(phaserModuleDOM));)
-	*/
 })();
+
+/*
+console.log(dom.emit(phaserPkgModuleDOM));
+console.log(dom.emit(phaserClassDOM));
+console.log(dom.emit(phaserModuleDOM));)
+*/
+
+//readPhaserSrc("./phaser-src/").forEach((jsFile) => {
+//	convertJS(jsFile);
+//});
+
+/*
+const promiseTest = () => {
+	return new Promise((resolve, reject) => {
+		resolve(dom.emit(phaserModuleDOM));
+	});
+}
+*/
