@@ -1,262 +1,340 @@
 declare module 'phaser' {
+    export { Phaser };
+
 }
 
 declare class Phaser {
 }
 
-declare module 'Phaser' {
-    declare class Actions {
+declare namespace Phaser {
+    class Actions {
     }
 
-    declare namespace Actions {
+    namespace Actions {
     }
 
-    declare class Animations {
+    class Animations {
     }
 
-    declare namespace Animations {
-        class Animation {
-            static addFrame(config: any): Phaser.Animations.Animation;
+    namespace Animations {
+    }
 
-            static addFrameAt(index: number, config: any): Phaser.Animations.Animation;
+    class Cache {
+    }
 
-            static checkFrame(index: number): boolean;
+    namespace Cache {
+    }
 
-            static completeAnimation(component: Phaser.GameObjects.Components.Animation): void;
+    class Cameras {
+    }
 
-            static getFirstTick(component: Phaser.GameObjects.Components.Animation, includeDelay: boolean): void;
+    namespace Cameras {
+    }
 
-            static getFrameAt(index: number): Phaser.Animations.AnimationFrame;
+    class Class {
+    }
 
-            static getFrames(textureManager: any, frames: any): Array.<Phaser.Animations.AnimationFrame>;
+    namespace Class {
+    }
 
-            static getNextTick(component: Phaser.GameObjects.Components.Animation): void;
+    class Create {
+    }
 
-            static load(component: Phaser.GameObjects.Components.Animation, startFrame: number): void;
+    namespace Create {
+    }
 
-            static nextFrame(component: Phaser.GameObjects.Components.Animation): void;
+    class Curves {
+    }
 
-            static previousFrame(component: Phaser.GameObjects.Components.Animation): void;
+    namespace Curves {
+    }
 
-            static removeFrame(frame: Phaser.Animations.AnimationFrame): Phaser.Animations.Animation;
+    class Data {
+    }
 
-            static removeFrameAt(index: number): Phaser.Animations.Animation;
+    namespace Data {
+    }
 
-            static repeatAnimation(component: Phaser.GameObjects.Components.Animation): void;
+    class Display {
+    }
 
-            static setFrame(component: Phaser.GameObjects.Components.Animation): void;
+    namespace Display {
+    }
 
-            static toJSON(): any;
+    class DOM {
+    }
 
-            static updateFrameSequence(): Phaser.Animations.Animation;
+    namespace DOM {
+    }
 
-            static pause(): Phaser.Animations.Animation;
+    class EventEmitter {
+    }
 
-            static resume(): Phaser.Animations.Animation;
+    namespace EventEmitter {
+    }
+
+    class Game {
+    }
+
+    namespace Game {
+    }
+
+    class GameObjects {
+    }
+
+    namespace GameObjects {
+    }
+
+    class Geom {
+    }
+
+    namespace Geom {
+    }
+
+    class Input {
+    }
+
+    namespace Input {
+    }
+
+    class Loader {
+    }
+
+    namespace Loader {
+    }
+
+    class Math {
+    }
+
+    namespace Math {
+    }
+
+    class Physics {
+    }
+
+    namespace Physics {
+    }
+
+    class Scene {
+        static update(): void;
+
+    }
+
+    namespace Scene {
+    }
+
+    class Scenes {
+        static GetPhysicsPlugins(sys: Phaser.Scenes.Systems): any[];
+
+        static GetScenePlugins(sys: Phaser.Scenes.Systems): any[];
+
+    }
+
+    namespace Scenes {
+        class SceneManager {
+            static processQueue(): void;
+
+            static add(key: string, sceneConfig: Phaser.Scene, autoStart: boolean): Phaser.Scene;
+
+            static bootScene(scene: Phaser.Scene): void;
+
+            static loadComplete(loader: any): void;
+
+            static payloadComplete(loader: any): void;
+
+            static update(time: number, delta: number): void;
+
+            static render(renderer: any): void;
+
+            static create(scene: Phaser.Scene): void;
+
+            static createSceneFromFunction(key: string, scene: any): Phaser.Scene;
+
+            static createSceneFromInstance(key: string, newScene: Phaser.Scene): Phaser.Scene;
+
+            static createSceneFromObject(key: string, sceneConfig: any): Phaser.Scene;
+
+            static getKey(key: string, sceneConfig: Phaser.Scene): string;
+
+            static getScene(key: string): Phaser.Scene;
+
+            static isActive(key: string): boolean;
+
+            static isVisible(key: string): boolean;
+
+            static isSleeping(key: string): boolean;
+
+            static pause(key: string): Phaser.Scenes.SceneManager;
+
+            static resume(key: string): Phaser.Scenes.SceneManager;
+
+            static sleep(key: string): Phaser.Scenes.SceneManager;
+
+            static wake(key: string): Phaser.Scenes.SceneManager;
+
+            static start(key: string, data: any): Phaser.Scenes.SceneManager;
+
+            static stop(key: string): Phaser.Scenes.SceneManager;
+
+            static switch(from: string, to: string): Phaser.Scenes.SceneManager;
+
+            static getAt(index: number): Phaser.Scene;
+
+            static getIndex(key: string): number;
+
+            static bringToTop(scene: string): Phaser.Scenes.SceneManager;
+
+            static sendToBack(scene: string): Phaser.Scenes.SceneManager;
+
+            static moveDown(scene: string): Phaser.Scenes.SceneManager;
+
+            static moveUp(scene: string): Phaser.Scenes.SceneManager;
+
+            static swapPosition(keyA: string, keyB: string): Phaser.Scenes.SceneManager;
 
             static destroy(): void;
 
         }
 
-        class AnimationFrame {
-            static toJSON(): any;
-
-            static destroy(): void;
-
+        namespace SceneManager {
         }
 
-        class AnimationManager {
+        class ScenePlugin {
             static boot(): void;
 
-            static add(key: string, animation: Phaser.Animations.Animation): Phaser.Animations.AnimationManager;
+            static start(key: string, data: any): Phaser.Scenes.ScenePlugin;
 
-            static create(config: any): Phaser.Animations.Animation;
+            static add(key: string, sceneConfig: any, autoStart: boolean): Phaser.Scenes.ScenePlugin;
 
-            static fromJSON(data: string, clearCurrentAnimations: boolean): Array.<Phaser.Animations.Animation>;
+            static launch(key: string, data: any): Phaser.Scenes.ScenePlugin;
 
-            static generateFrameNames(key: string, config: any, config.prefix: string, config.start: number, config.end: number, config.suffix: string, config.zeroPad: number, config.outputArray: any[], config.frames: boolean): Array.<object>;
+            static pause(key: string): Phaser.Scenes.ScenePlugin;
 
-            static generateFrameNumbers(key: string, config: any, config.start: number, config.end: number, config.first: boolean, config.outputArray: any[], config.frames: boolean): Array.<object>;
+            static resume(key: string): Phaser.Scenes.ScenePlugin;
 
-            static get(key: string): Phaser.Animations.Animation;
+            static sleep(key: string): Phaser.Scenes.ScenePlugin;
 
-            static load(child: Phaser.GameObjects.GameObject, key: string, startFrame: string): Phaser.GameObjects.GameObject;
+            static wake(key: string): Phaser.Scenes.ScenePlugin;
 
-            static pauseAll(): Phaser.Animations.AnimationManager;
+            static switch(key: string): Phaser.Scenes.ScenePlugin;
 
-            static play(key: string, child: Phaser.GameObjects.GameObject): Phaser.Animations.AnimationManager;
+            static stop(key: string): Phaser.Scenes.ScenePlugin;
 
-            static remove(key: string): Phaser.Animations.Animation;
+            static setActive(value: boolean): Phaser.Scenes.ScenePlugin;
 
-            static resumeAll(): Phaser.Animations.AnimationManager;
+            static setVisible(value: boolean): Phaser.Scenes.ScenePlugin;
 
-            static staggerPlay(key: string, child: Phaser.GameObjects.GameObject, stagger: number): Phaser.Animations.AnimationManager;
+            static isSleeping(key: string): boolean;
 
-            static toJSON(key: string): any;
+            static isActive(key: string): boolean;
+
+            static isVisible(key: string): boolean;
+
+            static swapPosition(key: string): Phaser.Scenes.ScenePlugin;
+
+            static moveUp(key: string): Phaser.Scenes.ScenePlugin;
+
+            static moveDown(key: string): Phaser.Scenes.ScenePlugin;
+
+            static bringToTop(key: string): Phaser.Scenes.ScenePlugin;
+
+            static sendToBack(key: string): Phaser.Scenes.ScenePlugin;
+
+            static get(key: string): Phaser.Scene;
+
+            static shutdown(): void;
 
             static destroy(): void;
 
         }
 
+        namespace ScenePlugin {
+        }
+
+        class Systems {
+            static init(game: Phaser.Game): void;
+
+            static install(plugin: any[]): void;
+
+            static step(time: number, delta: number): void;
+
+            static render(renderer: Phaser.Renderer.Canvas.CanvasRenderer): void;
+
+            static queueDepthSort(): void;
+
+            static depthSort(): void;
+
+            static pause(): Phaser.Scenes.Systems;
+
+            static resume(): Phaser.Scenes.Systems;
+
+            static sleep(): Phaser.Scenes.Systems;
+
+            static wake(): Phaser.Scenes.Systems;
+
+            static isSleeping(): boolean;
+
+            static isActive(): boolean;
+
+            static isVisible(): boolean;
+
+            static setVisible(value: boolean): Phaser.Scenes.Systems;
+
+            static setActive(value: boolean): Phaser.Scenes.Systems;
+
+            static start(data: any): void;
+
+            static shutdown(): void;
+
+            static destroy(): void;
+
+        }
+
+        namespace Systems {
+        }
+
     }
 
-    declare class Cache {
+    class Sound {
     }
 
-    declare namespace Cache {
+    namespace Sound {
     }
 
-    declare class Cameras {
+    class Structs {
     }
 
-    declare namespace Cameras {
+    namespace Structs {
     }
 
-    declare class Class {
+    class Textures {
     }
 
-    declare namespace Class {
+    namespace Textures {
     }
 
-    declare class Create {
+    class Tilemaps {
     }
 
-    declare namespace Create {
+    namespace Tilemaps {
     }
 
-    declare class Curves {
+    class Time {
     }
 
-    declare namespace Curves {
+    namespace Time {
     }
 
-    declare class Data {
+    class Tweens {
     }
 
-    declare namespace Data {
+    namespace Tweens {
     }
 
-    declare class Display {
+    class Utils {
     }
 
-    declare namespace Display {
-    }
-
-    declare class DOM {
-    }
-
-    declare namespace DOM {
-    }
-
-    declare class EventEmitter {
-    }
-
-    declare namespace EventEmitter {
-    }
-
-    declare class Game {
-    }
-
-    declare namespace Game {
-    }
-
-    declare class GameObjects {
-    }
-
-    declare namespace GameObjects {
-    }
-
-    declare class Geom {
-    }
-
-    declare namespace Geom {
-    }
-
-    declare class Input {
-    }
-
-    declare namespace Input {
-    }
-
-    declare class Loader {
-    }
-
-    declare namespace Loader {
-    }
-
-    declare class Math {
-    }
-
-    declare namespace Math {
-    }
-
-    declare class Physics {
-    }
-
-    declare namespace Physics {
-    }
-
-    declare class Scene {
-    }
-
-    declare namespace Scene {
-    }
-
-    declare class Scenes {
-    }
-
-    declare namespace Scenes {
-    }
-
-    declare class Sound {
-    }
-
-    declare namespace Sound {
-    }
-
-    declare class Structs {
-    }
-
-    declare namespace Structs {
-    }
-
-    declare class Textures {
-    }
-
-    declare namespace Textures {
-    }
-
-    declare class Tilemaps {
-    }
-
-    declare namespace Tilemaps {
-    }
-
-    declare class Time {
-    }
-
-    declare namespace Time {
-    }
-
-    declare class Tweens {
-    }
-
-    declare namespace Tweens {
-    }
-
-    declare class Utils {
-    }
-
-    declare namespace Utils {
-    }
-
-    declare namespace Animation {
-    }
-
-    declare namespace AnimationFrame {
-    }
-
-    declare namespace AnimationManager {
+    namespace Utils {
     }
 
 }

@@ -61,14 +61,15 @@ const convertScope = (scope) => {
 const convertClass = (phaserModuleDOM, docObj, memberList) => {
 	//console.log(/([^.]*)$/.exec(docObj.memberof)[0]);
 	const parentName = /([^.]*)$/.exec(docObj.memberof)[0];
-	const parentMember = memberList.get(parentName).namespace;
+	const parentMember = memberList.get(parentName);
 
 	if(parentMember) {
+		const parentNs = parentMember.namespace;
 		const domClass = dom.create.class(docObj.name, convertScope(docObj.scope));
 		const domNs = dom.create.namespace(docObj.name);
 
-		parentMember.members.push(domClass);
-		phaserModuleDOM.members.push(domNs);
+		parentNs.members.push(domClass);
+		parentNs.members.push(domNs);
 
 		memberList.set(docObj.name, {namespace: domNs, class: domClass});
 	}
@@ -100,10 +101,11 @@ const convertFunction = (phaserModuleDOM, docObj, memberList) => {
 	}
 
 	const parentName = /([^.]*)$/.exec(docObj.memberof)[0];
-	const parentMember = memberList.get(parentName).class;
+	const parentMember = memberList.get(parentName);
 
 	if(parentMember) {
-		parentMember.members.push(dom.create.method(
+		const parentClass = parentMember.class;
+		parentClass.members.push(dom.create.method(
 			docObj.name,
 			convertParams(docObj.params),
 			convertReturns(docObj.returns),

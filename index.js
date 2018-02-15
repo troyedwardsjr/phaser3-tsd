@@ -10,7 +10,7 @@ const convert = require('./src/convert')
 // Create standard wrapper declarations.
 const phaserPkgModuleDOM = dom.create.module('phaser');
 const phaserClassDOM = dom.create.class('Phaser');
-const phaserModuleDOM = dom.create.module('Phaser');
+const phaserModuleDOM = dom.create.namespace('Phaser');
 
 // Phaser source namespaces.
 const phaserSrcNs = [
@@ -52,7 +52,7 @@ const readPhaserSrc = (dir) =>
 			[]);
 
 const transpile = (memberList) => {
-	var srcFiles = readPhaserSrc("phaser-src/animations/");
+	var srcFiles = readPhaserSrc("phaser-src/scene/");
 	let promiseBuf = [];
 	let promiseIndex = 0;
 
@@ -89,6 +89,7 @@ const transpile = (memberList) => {
 
 const transpiler = (() => {
 	const memberList = new Map();
+	phaserPkgModuleDOM.members.push(dom.create.exportName('Phaser'));
 	// Create namespace for each src namespace.
 	phaserSrcNs.forEach((cls) => {
 		const domClass = dom.create.class(cls, 0);
