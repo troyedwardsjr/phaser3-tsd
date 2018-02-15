@@ -62,7 +62,7 @@ const convertScope = (scope) => {
 
 const convertParams = (params) => {
 	let paramsDOM = [];
-	if (params && params.length > 0) {
+	if (params && params.length > 0 && params.type) {
 		paramsDOM = params.map((param) => {
 			return dom.create.parameter(param.name, convertType(param.type.names[0]));
 		})
@@ -73,8 +73,9 @@ const convertParams = (params) => {
 
 const convertReturns = (returns) => {
 	let returnsDOM = dom.type.void;
-	if (returns && returns.length > 0) {
-		returnsDOM = convertType(returns[0].type.names[0]);
+
+	if (returns && returns.length > 0 && returns[0].type) {
+		returnsDOM = convertType(returns[0].type.names[0]);;
 	}
 	// Returns a single return type.
 	return returnsDOM;
@@ -100,12 +101,17 @@ const convertClass = (phaserModuleDOM, docObj, memberList) => {
 const convertMember = (phaserModuleDOM, docObj, memberList) => {
 	const parentName = /([^.]*)$/.exec(docObj.memberof)[0];
 	const parentMember = memberList.get(parentName);
+	let memberType = dom.type.any;
+
+	if(docObj.type) {
+		memberType = convertType(docObj.type.names[0]);
+	} 
 
 	if(parentMember) {
 		const parentClass = parentMember.class;
 		parentClass.members.push(dom.create.property(
 			docObj.name, 
-			convertType(docObj.type.names[0])
+			memberType
 		));
 	}
 	

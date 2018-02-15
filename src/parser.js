@@ -1,7 +1,8 @@
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const execFilePromise = require('process-promises').execFile;
+//const execFilePromise = require('process-promises').execFile;
+const child = require('child_process');
 
 function locateJSDocCommand(dir) {
 	var executable = os.platform() === 'win32' ? 'jsdoc.cmd' : 'jsdoc',
@@ -32,7 +33,7 @@ function locateJSDocCommand(dir) {
 	return cmd;
 }
 
-function jsdocParser(filename) {
+function jsdocParser(filename, cb) {
 	var cmd = locateJSDocCommand(__dirname);
 	
 	if (!cmd) {
@@ -40,7 +41,28 @@ function jsdocParser(filename) {
 		return;
 	}
 	
-	return execFilePromise(cmd, ['-X', filename]);
+	//return execFilePromise(cmd, ['-X', '-r', filename]);
+	//return execFile(cmd, ['-X', '-r', filename], {maxBuffer: 5120 * 1024}, jsdocParser._onComplete.bind(null, cb);
+
+	fs.writeFile('jsdoc-out/jsdoc.json', "");
+
+	const proc = child.spawn(cmd, ['-X', '-r', filename]);
+
+	proc.stdout.on('data', function (data) {
+		console.log("YEAH BUDDY");
+		fs.appendFileSync('jsdoc-out/jsdoc.json', data);
+	});
+
+	proc.stderr.on('data', function (data) {
+		//console.log('stderr: ' + data);
+	});
+
+	proc.on('close', function (code) {
+			console.log('child process exited with code ' + code);
+			cb();
+	});
+
+	console.log("Processing JSDocs...");
 }
 
 jsdocParser._onComplete = function(cb, error, stdout) {

@@ -52,7 +52,50 @@ const readPhaserSrc = (dir) =>
 			[]);
 
 const transpile = (memberList) => {
-	var srcFiles = readPhaserSrc("phaser-src/scene/");
+	let srcFilePath = "phaser-src/";
+
+	parser(srcFilePath, () => {
+		fs.readFile('jsdoc-out/jsdoc.json', 'utf8', function(err, contents) {
+			if(err) {
+				return console.log(err);
+			}
+			const usefulDocData = JSON.parse(contents);
+			convert(phaserModuleDOM, usefulDocData, memberList);
+			const domOutput = dom.emit(phaserPkgModuleDOM) + dom.emit(phaserClassDOM) + dom.emit(phaserModuleDOM);
+			const outPath = 'out/phaser.d.ts';
+
+			console.log(domOutput);
+
+			fs.writeFile(outPath, domOutput, (err) => {
+					if(err) {
+							return console.log(err);
+					}
+					console.log(`File was written to ${outPath}`);
+			});
+		});
+	});
+}
+
+const transpiler = (() => {
+	const memberList = new Map();
+	phaserPkgModuleDOM.members.push(dom.create.exportName('Phaser'));
+	// Create namespace for each src namespace.
+	phaserSrcNs.forEach((cls) => {
+		const domClass = dom.create.class(cls, 0);
+		const domNs = dom.create.namespace(cls);
+
+		phaserModuleDOM.members.push(domClass);
+		phaserModuleDOM.members.push(domNs);
+		
+		memberList.set(cls, {namespace: domNs, class: domClass});
+	});
+	transpile(memberList);
+})();
+
+
+/*
+const transpile = (memberList) => {
+	let srcFiles = readPhaserSrc("phaser-src/");
 	let promiseBuf = [];
 	let promiseIndex = 0;
 
@@ -86,21 +129,4 @@ const transpile = (memberList) => {
 		
 	});
 }
-
-const transpiler = (() => {
-	const memberList = new Map();
-	phaserPkgModuleDOM.members.push(dom.create.exportName('Phaser'));
-	// Create namespace for each src namespace.
-	phaserSrcNs.forEach((cls) => {
-		const domClass = dom.create.class(cls, 0);
-		const domNs = dom.create.namespace(cls);
-
-		phaserModuleDOM.members.push(domClass);
-		phaserModuleDOM.members.push(domNs);
-		
-		memberList.set(cls, {namespace: domNs, class: domClass});
-	});
-	transpile(memberList);
-})();
-
-// Change map to pass both namespace and class.
+*/
