@@ -49,7 +49,6 @@ function jsdocParser(filename, cb) {
 	const proc = child.spawn(cmd, ['-X', '-r', filename]);
 
 	proc.stdout.on('data', function (data) {
-		console.log("YEAH BUDDY");
 		fs.appendFileSync('jsdoc-out/jsdoc.json', data);
 	});
 

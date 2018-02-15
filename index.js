@@ -59,12 +59,13 @@ const transpile = (memberList) => {
 			if(err) {
 				return console.log(err);
 			}
+
+			console.log("Converting to Typescript Definitions...");
+
 			const usefulDocData = JSON.parse(contents);
 			convert(phaserModuleDOM, usefulDocData, memberList);
 			const domOutput = dom.emit(phaserPkgModuleDOM) + dom.emit(phaserClassDOM) + dom.emit(phaserModuleDOM);
 			const outPath = 'out/phaser.d.ts';
-
-			console.log(domOutput);
 
 			fs.writeFile(outPath, domOutput, (err) => {
 					if(err) {
