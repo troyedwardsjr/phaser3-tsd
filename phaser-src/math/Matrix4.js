@@ -55,7 +55,7 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#clone
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     clone: function ()
     {
@@ -68,9 +68,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#set
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     set: function (src)
     {
@@ -83,9 +83,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#copy
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     copy: function (src)
     {
@@ -118,9 +118,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#fromArray
      * @since 3.0.0
      *
-     * @param {[type]} a - [description]
+     * @param {any} a - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     fromArray: function (a)
     {
@@ -152,7 +152,7 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#zero
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     zero: function ()
     {
@@ -184,11 +184,11 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#xyz
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} z - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} z - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     xyz: function (x, y, z)
     {
@@ -209,11 +209,11 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#scaling
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} z - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} z - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     scaling: function (x, y, z)
     {
@@ -235,7 +235,7 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#identity
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     identity: function ()
     {
@@ -267,7 +267,7 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#transpose
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     transpose: function ()
     {
@@ -302,7 +302,7 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#invert
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     invert: function ()
     {
@@ -380,7 +380,7 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#adjoint
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     adjoint: function ()
     {
@@ -432,7 +432,7 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#determinant
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     determinant: function ()
     {
@@ -481,9 +481,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#multiply
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     multiply: function (src)
     {
@@ -561,9 +561,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#multiplyLocal
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     multiplyLocal: function (src)
     {
@@ -600,9 +600,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#translate
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     translate: function (v)
     {
@@ -625,9 +625,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#scale
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     scale: function (v)
     {
@@ -661,10 +661,10 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#makeRotationAxis
      * @since 3.0.0
      *
-     * @param {[type]} axis - [description]
-     * @param {[type]} angle - [description]
+     * @param {any} axis - [description]
+     * @param {any} angle - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     makeRotationAxis: function (axis, angle)
     {
@@ -696,10 +696,10 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#rotate
      * @since 3.0.0
      *
-     * @param {[type]} rad - [description]
-     * @param {[type]} axis - [description]
+     * @param {any} rad - [description]
+     * @param {any} axis - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     rotate: function (rad, axis)
     {
@@ -774,9 +774,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#rotateX
      * @since 3.0.0
      *
-     * @param {[type]} rad - [description]
+     * @param {any} rad - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     rotateX: function (rad)
     {
@@ -813,9 +813,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#rotateY
      * @since 3.0.0
      *
-     * @param {[type]} rad - [description]
+     * @param {any} rad - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     rotateY: function (rad)
     {
@@ -852,9 +852,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#rotateZ
      * @since 3.0.0
      *
-     * @param {[type]} rad - [description]
+     * @param {any} rad - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     rotateZ: function (rad)
     {
@@ -891,10 +891,10 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#fromRotationTranslation
      * @since 3.0.0
      *
-     * @param {[type]} q - [description]
-     * @param {[type]} v - [description]
+     * @param {any} q - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     fromRotationTranslation: function (q, v)
     {
@@ -951,9 +951,9 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#fromQuat
      * @since 3.0.0
      *
-     * @param {[type]} q - [description]
+     * @param {any} q - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     fromQuat: function (q)
     {
@@ -1020,14 +1020,14 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#frustum
      * @since 3.0.0
      *
-     * @param {[type]} left - [description]
-     * @param {[type]} right - [description]
-     * @param {[type]} bottom - [description]
-     * @param {[type]} top - [description]
-     * @param {[type]} near - [description]
-     * @param {[type]} far - [description]
+     * @param {any} left - [description]
+     * @param {any} right - [description]
+     * @param {any} bottom - [description]
+     * @param {any} top - [description]
+     * @param {any} near - [description]
+     * @param {any} far - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     frustum: function (left, right, bottom, top, near, far)
     {
@@ -1076,12 +1076,12 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#perspective
      * @since 3.0.0
      *
-     * @param {[type]} fovy - [description]
-     * @param {[type]} aspect - [description]
-     * @param {[type]} near - [description]
-     * @param {[type]} far - [description]
+     * @param {any} fovy - [description]
+     * @param {any} aspect - [description]
+     * @param {any} near - [description]
+     * @param {any} far - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     perspective: function (fovy, aspect, near, far)
     {
@@ -1118,12 +1118,12 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#perspectiveLH
      * @since 3.0.0
      *
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
-     * @param {[type]} near - [description]
-     * @param {[type]} far - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
+     * @param {any} near - [description]
+     * @param {any} far - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     perspectiveLH: function (width, height, near, far)
     {
@@ -1169,14 +1169,14 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#ortho
      * @since 3.0.0
      *
-     * @param {[type]} left - [description]
-     * @param {[type]} right - [description]
-     * @param {[type]} bottom - [description]
-     * @param {[type]} top - [description]
-     * @param {[type]} near - [description]
-     * @param {[type]} far - [description]
+     * @param {any} left - [description]
+     * @param {any} right - [description]
+     * @param {any} bottom - [description]
+     * @param {any} top - [description]
+     * @param {any} near - [description]
+     * @param {any} far - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     ortho: function (left, right, bottom, top, near, far)
     {
@@ -1227,11 +1227,11 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#lookAt
      * @since 3.0.0
      *
-     * @param {[type]} eye - [description]
-     * @param {[type]} center - [description]
-     * @param {[type]} up - [description]
+     * @param {any} eye - [description]
+     * @param {any} center - [description]
+     * @param {any} up - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     lookAt: function (eye, center, up)
     {
@@ -1335,11 +1335,11 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#yawPitchRoll
      * @since 3.0.0
      *
-     * @param {[type]} yaw - [description]
-     * @param {[type]} pitch - [description]
-     * @param {[type]} roll - [description]
+     * @param {any} yaw - [description]
+     * @param {any} pitch - [description]
+     * @param {any} roll - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     yawPitchRoll: function (yaw, pitch, roll)
     {
@@ -1396,13 +1396,13 @@ var Matrix4 = new Class({
      * @method Phaser.Math.Matrix4#setWorldMatrix
      * @since 3.0.0
      *
-     * @param {[type]} rotation - [description]
-     * @param {[type]} position - [description]
-     * @param {[type]} scale - [description]
-     * @param {[type]} viewMatrix - [description]
-     * @param {[type]} projectionMatrix - [description]
+     * @param {any} rotation - [description]
+     * @param {any} position - [description]
+     * @param {any} scale - [description]
+     * @param {any} viewMatrix - [description]
+     * @param {any} projectionMatrix - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setWorldMatrix: function (rotation, position, scale, viewMatrix, projectionMatrix)
     {

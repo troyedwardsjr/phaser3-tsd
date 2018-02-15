@@ -108,10 +108,10 @@ var Triangle = new Class({
      * @method Phaser.Geom.Triangle#contains
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     contains: function (x, y)
     {
@@ -124,10 +124,10 @@ var Triangle = new Class({
      * @method Phaser.Geom.Triangle#getPoint
      * @since 3.0.0
      *
-     * @param {[type]} position - [description]
-     * @param {[type]} output - [description]
+     * @param {any} position - [description]
+     * @param {any} output - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoint: function (position, output)
     {
@@ -140,11 +140,11 @@ var Triangle = new Class({
      * @method Phaser.Geom.Triangle#getPoints
      * @since 3.0.0
      *
-     * @param {[type]} quantity - [description]
-     * @param {[type]} stepRate - [description]
-     * @param {[type]} output - [description]
+     * @param {any} quantity - [description]
+     * @param {any} stepRate - [description]
+     * @param {any} output - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoints: function (quantity, stepRate, output)
     {
@@ -157,9 +157,9 @@ var Triangle = new Class({
      * @method Phaser.Geom.Triangle#getRandomPoint
      * @since 3.0.0
      *
-     * @param {[type]} point - [description]
+     * @param {any} point - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getRandomPoint: function (point)
     {
@@ -172,12 +172,12 @@ var Triangle = new Class({
      * @method Phaser.Geom.Triangle#setTo
      * @since 3.0.0
      *
-     * @param {[type]} x1 - [description]
-     * @param {[type]} y1 - [description]
-     * @param {[type]} x2 - [description]
-     * @param {[type]} y2 - [description]
-     * @param {[type]} x3 - [description]
-     * @param {[type]} y3 - [description]
+     * @param {any} x1 - [description]
+     * @param {any} y1 - [description]
+     * @param {any} x2 - [description]
+     * @param {any} y2 - [description]
+     * @param {any} x3 - [description]
+     * @param {any} y3 - [description]
      *
      * @return {Phaser.Geom.Triangle} This Triangle object.
      */
@@ -208,7 +208,7 @@ var Triangle = new Class({
      * @method Phaser.Geom.Triangle#getLineA
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getLineA: function ()
     {
@@ -221,7 +221,7 @@ var Triangle = new Class({
      * @method Phaser.Geom.Triangle#getLineB
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getLineB: function ()
     {
@@ -234,7 +234,7 @@ var Triangle = new Class({
      * @method Phaser.Geom.Triangle#getLineC
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getLineC: function ()
     {

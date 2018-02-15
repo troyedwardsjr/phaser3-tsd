@@ -20,7 +20,7 @@ var BodyType = {
      * @method Phaser.Physics.Impact.Components.BodyType#getBodyType
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getBodyType: function ()
     {
@@ -33,7 +33,7 @@ var BodyType = {
      * @method Phaser.Physics.Impact.Components.BodyType#setTypeNone
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setTypeNone: function ()
     {
@@ -48,7 +48,7 @@ var BodyType = {
      * @method Phaser.Physics.Impact.Components.BodyType#setTypeA
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setTypeA: function ()
     {
@@ -63,7 +63,7 @@ var BodyType = {
      * @method Phaser.Physics.Impact.Components.BodyType#setTypeB
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setTypeB: function ()
     {

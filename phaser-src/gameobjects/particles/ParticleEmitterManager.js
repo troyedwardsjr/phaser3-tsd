@@ -29,7 +29,7 @@ var Render = require('./ParticleManagerRender');
  * @param {Phaser.Scene} scene - [description]
  * @param {string} texture - [description]
  * @param {string|integer} frame - [description]
- * @param {[type]} emitters - [description]
+ * @param {any} emitters - [description]
  */
 var ParticleEmitterManager = new Class({
 
@@ -194,8 +194,8 @@ var ParticleEmitterManager = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitterManager#setEmitterFrames
      * @since 3.0.0
      *
-     * @param {[type]} frames - [description]
-     * @param {[type]} emitter - [description]
+     * @param {any} frames - [description]
+     * @param {any} emitter - [description]
      *
      * @return {Phaser.GameObjects.Particles.ParticleEmitterManager} This Game Object.
      */
@@ -378,7 +378,7 @@ var ParticleEmitterManager = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitterManager#getProcessors
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getProcessors: function ()
     {
@@ -391,8 +391,8 @@ var ParticleEmitterManager = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitterManager#preUpdate
      * @since 3.0.0
      *
-     * @param {[type]} time - [description]
-     * @param {[type]} delta - [description]
+     * @param {any} time - [description]
+     * @param {any} delta - [description]
      */
     preUpdate: function (time, delta)
     {

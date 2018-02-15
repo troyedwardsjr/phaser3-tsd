@@ -97,7 +97,7 @@ var TextureSource = new Class({
          * Either Linear or Nearest.
          *
          * @name Phaser.Textures.TextureSource#scaleMode
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.scaleMode = ScaleModes.DEFAULT;

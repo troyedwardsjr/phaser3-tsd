@@ -12,10 +12,10 @@ var AdvanceKeyCombo = require('./AdvanceKeyCombo');
  * @function Phaser.Input.Keyboard.KeyCombo.ProcessKeyCombo
  * @since 3.0.0
  *
- * @param {[type]} event - [description]
- * @param {[type]} combo - [description]
+ * @param {any} event - [description]
+ * @param {any} combo - [description]
  *
- * @return {[type]} [description]
+ * @return {any} [description]
  */
 var ProcessKeyCombo = function (event, combo)
 {

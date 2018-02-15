@@ -82,10 +82,10 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#contains
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     contains: function (x, y)
     {
@@ -98,10 +98,10 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#getPoint
      * @since 3.0.0
      *
-     * @param {[type]} position - [description]
-     * @param {[type]} output - [description]
+     * @param {any} position - [description]
+     * @param {any} output - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoint: function (position, output)
     {
@@ -114,11 +114,11 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#getPoints
      * @since 3.0.0
      *
-     * @param {[type]} quantity - [description]
-     * @param {[type]} stepRate - [description]
-     * @param {[type]} output - [description]
+     * @param {any} quantity - [description]
+     * @param {any} stepRate - [description]
+     * @param {any} output - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoints: function (quantity, stepRate, output)
     {
@@ -131,9 +131,9 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#getRandomPoint
      * @since 3.0.0
      *
-     * @param {[type]} point - [description]
+     * @param {any} point - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getRandomPoint: function (point)
     {
@@ -146,10 +146,10 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#setTo
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
      *
      * @return {Phaser.Geom.Rectangle} This Rectangle object.
      */
@@ -182,8 +182,8 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#setPosition
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
      * @return {Phaser.Geom.Rectangle} This Rectangle object.
      */
@@ -203,8 +203,8 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#setSize
      * @since 3.0.0
      *
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
      *
      * @return {Phaser.Geom.Rectangle} This Rectangle object.
      */
@@ -238,7 +238,7 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#getLineA
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getLineA: function ()
     {
@@ -252,7 +252,7 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#getLineB
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getLineB: function ()
     {
@@ -266,7 +266,7 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#getLineC
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getLineC: function ()
     {
@@ -280,7 +280,7 @@ var Rectangle = new Class({
      * @method Phaser.Geom.Rectangle#getLineD
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getLineD: function ()
     {

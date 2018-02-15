@@ -144,9 +144,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#getStartPoint
      * @since 3.0.0
      *
-     * @param {[type]} out - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getStartPoint: function (out)
     {
@@ -161,9 +161,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#getResolution
      * @since 3.0.0
      *
-     * @param {[type]} divisions - [description]
+     * @param {any} divisions - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getResolution: function (divisions)
     {
@@ -176,10 +176,10 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#getPoint
      * @since 3.0.0
      *
-     * @param {[type]} t - [description]
-     * @param {[type]} out - [description]
+     * @param {any} t - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoint: function (t, out)
     {
@@ -250,9 +250,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#setXRadius
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setXRadius: function (value)
     {
@@ -267,9 +267,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#setYRadius
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setYRadius: function (value)
     {
@@ -284,9 +284,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#setWidth
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setWidth: function (value)
     {
@@ -301,9 +301,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#setHeight
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setHeight: function (value)
     {
@@ -318,9 +318,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#setStartAngle
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setStartAngle: function (value)
     {
@@ -335,9 +335,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#setEndAngle
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setEndAngle: function (value)
     {
@@ -352,9 +352,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#setClockwise
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setClockwise: function (value)
     {
@@ -369,9 +369,9 @@ var EllipseCurve = new Class({
      * @method Phaser.Curves.EllipseCurve#setRotation
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setRotation: function (value)
     {

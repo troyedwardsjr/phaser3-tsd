@@ -16,9 +16,9 @@ var Point = require('../point/Point');
  * @param {Phaser.Geom.Triangle} triangle - [description]
  * @param {integer} quantity - [description]
  * @param {number} stepRate - [description]
- * @param {[type]} out - [description]
+ * @param {any} out - [description]
  *
- * @return {[type]} [description]
+ * @return {any} [description]
  */
 var GetPoints = function (triangle, quantity, stepRate, out)
 {

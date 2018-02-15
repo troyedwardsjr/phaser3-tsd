@@ -18,11 +18,11 @@ var Debug = {
      * @method Phaser.Physics.Arcade.Components.Debug#setDebug
      * @since 3.0.0
      *
-     * @param {[type]} showBody - [description]
-     * @param {[type]} showVelocity - [description]
-     * @param {[type]} bodyColor - [description]
+     * @param {any} showBody - [description]
+     * @param {any} showVelocity - [description]
+     * @param {any} bodyColor - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setDebug: function (showBody, showVelocity, bodyColor)
     {
@@ -39,9 +39,9 @@ var Debug = {
      * @method Phaser.Physics.Arcade.Components.Debug#setDebugBodyColor
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setDebugBodyColor: function (value)
     {
@@ -54,7 +54,7 @@ var Debug = {
      * [description]
      *
      * @name Phaser.Physics.Arcade.Components.Debug#debugShowBody
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     debugShowBody: {
@@ -75,7 +75,7 @@ var Debug = {
      * [description]
      *
      * @name Phaser.Physics.Arcade.Components.Debug#debugShowVelocity
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     debugShowVelocity: {
@@ -96,7 +96,7 @@ var Debug = {
      * [description]
      *
      * @name Phaser.Physics.Arcade.Components.Debug#debugBodyColor
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     debugBodyColor: {

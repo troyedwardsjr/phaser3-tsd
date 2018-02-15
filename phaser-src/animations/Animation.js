@@ -303,7 +303,7 @@ var Animation = new Class({
      * @method Phaser.Animations.Animation#addFrame
      * @since 3.0.0
      *
-     * @param {[type]} config - [description]
+     * @param {any} config - [description]
      *
      * @return {Phaser.Animations.Animation} This Animation object.
      */
@@ -326,7 +326,7 @@ var Animation = new Class({
      * @since 3.0.0
      *
      * @param {integer} index - [description]
-     * @param {[type]} config - [description]
+     * @param {any} config - [description]
      *
      * @return {Phaser.Animations.Animation} This Animation object.
      */
@@ -435,8 +435,8 @@ var Animation = new Class({
      * @method Phaser.Animations.Animation#getFrames
      * @since 3.0.0
      *
-     * @param {[type]} textureManager - [description]
-     * @param {[type]} frames - [description]
+     * @param {any} textureManager - [description]
+     * @param {any} frames - [description]
      *
      * @return {Phaser.Animations.AnimationFrame[]} [description]
      */

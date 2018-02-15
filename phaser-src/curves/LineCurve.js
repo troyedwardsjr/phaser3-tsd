@@ -69,9 +69,9 @@ var LineCurve = new Class({
      * @method Phaser.Curves.LineCurve#getBounds
      * @since 3.0.0
      *
-     * @param {[type]} out - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getBounds: function (out)
     {
@@ -86,9 +86,9 @@ var LineCurve = new Class({
      * @method Phaser.Curves.LineCurve#getStartPoint
      * @since 3.0.0
      *
-     * @param {[type]} out - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getStartPoint: function (out)
     {
@@ -116,10 +116,10 @@ var LineCurve = new Class({
      * @method Phaser.Curves.LineCurve#getPoint
      * @since 3.0.0
      *
-     * @param {[type]} t - [description]
-     * @param {[type]} out - [description]
+     * @param {any} t - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoint: function (t, out)
     {
@@ -142,10 +142,10 @@ var LineCurve = new Class({
      * @method Phaser.Curves.LineCurve#getPointAt
      * @since 3.0.0
      *
-     * @param {[type]} u - [description]
-     * @param {[type]} out - [description]
+     * @param {any} u - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPointAt: function (u, out)
     {
@@ -158,7 +158,7 @@ var LineCurve = new Class({
      * @method Phaser.Curves.LineCurve#getTangent
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getTangent: function ()
     {
@@ -174,9 +174,9 @@ var LineCurve = new Class({
      * @method Phaser.Curves.LineCurve#draw
      * @since 3.0.0
      *
-     * @param {[type]} graphics - [description]
+     * @param {any} graphics - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     draw: function (graphics)
     {
@@ -192,7 +192,7 @@ var LineCurve = new Class({
      * @method Phaser.Curves.LineCurve#toJSON
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     toJSON: function ()
     {

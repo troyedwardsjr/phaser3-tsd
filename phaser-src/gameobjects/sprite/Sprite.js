@@ -81,7 +81,7 @@ var Sprite = new Class({
          * [description]
          *
          * @name Phaser.GameObjects.Sprite#anims
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.anims = new Components.Animation(this);
@@ -117,7 +117,7 @@ var Sprite = new Class({
      * @param {boolean} ignoreIfPlaying - [description]
      * @param {integer|string} startFrame - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     play: function (key, ignoreIfPlaying, startFrame)
     {

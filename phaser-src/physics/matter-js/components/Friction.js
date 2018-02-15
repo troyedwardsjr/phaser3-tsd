@@ -18,11 +18,11 @@ var Friction = {
      * @method Phaser.Physics.Matter.Components.Friction#setFriction
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
-     * @param {[type]} air - [description]
-     * @param {[type]} fstatic - [description]
+     * @param {any} value - [description]
+     * @param {any} air - [description]
+     * @param {any} fstatic - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setFriction: function (value, air, fstatic)
     {
@@ -47,9 +47,9 @@ var Friction = {
      * @method Phaser.Physics.Matter.Components.Friction#setFrictionAir
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setFrictionAir: function (value)
     {
@@ -64,9 +64,9 @@ var Friction = {
      * @method Phaser.Physics.Matter.Components.Friction#setFrictionStatic
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setFrictionStatic: function (value)
     {

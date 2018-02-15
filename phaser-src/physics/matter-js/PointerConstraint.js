@@ -165,8 +165,8 @@ var PointerConstraint = new Class({
      * @method Phaser.Physics.Matter.PointerConstraint#getBodyPart
      * @since 3.0.0
      *
-     * @param {[type]} body - [description]
-     * @param {[type]} position - [description]
+     * @param {any} body - [description]
+     * @param {any} position - [description]
      *
      * @return {boolean} [description]
      */

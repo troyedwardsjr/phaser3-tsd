@@ -269,10 +269,10 @@ var Pointer = new Class({
      * @method Phaser.Input.Pointer#positionToCamera
      * @since 3.0.0
      *
-     * @param {[type]} camera - [description]
-     * @param {[type]} output - [description]
+     * @param {any} camera - [description]
+     * @param {any} output - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     positionToCamera: function (camera, output)
     {
@@ -347,8 +347,8 @@ var Pointer = new Class({
      * @method Phaser.Input.Pointer#touchmove
      * @since 3.0.0
      *
-     * @param {[type]} event - [description]
-     * @param {[type]} time - [description]
+     * @param {any} event - [description]
+     * @param {any} time - [description]
      */
     touchmove: function (event, time)
     {
@@ -370,8 +370,8 @@ var Pointer = new Class({
      * @method Phaser.Input.Pointer#move
      * @since 3.0.0
      *
-     * @param {[type]} event - [description]
-     * @param {[type]} time - [description]
+     * @param {any} event - [description]
+     * @param {any} time - [description]
      */
     move: function (event, time)
     {
@@ -405,8 +405,8 @@ var Pointer = new Class({
      * @method Phaser.Input.Pointer#down
      * @since 3.0.0
      *
-     * @param {[type]} event - [description]
-     * @param {[type]} time - [description]
+     * @param {any} event - [description]
+     * @param {any} time - [description]
      */
     down: function (event, time)
     {
@@ -443,8 +443,8 @@ var Pointer = new Class({
      * @method Phaser.Input.Pointer#touchstart
      * @since 3.0.0
      *
-     * @param {[type]} event - [description]
-     * @param {[type]} time - [description]
+     * @param {any} event - [description]
+     * @param {any} time - [description]
      */
     touchstart: function (event, time)
     {
@@ -474,8 +474,8 @@ var Pointer = new Class({
      * @method Phaser.Input.Pointer#up
      * @since 3.0.0
      *
-     * @param {[type]} event - [description]
-     * @param {[type]} time - [description]
+     * @param {any} event - [description]
+     * @param {any} time - [description]
      */
     up: function (event, time)
     {
@@ -512,8 +512,8 @@ var Pointer = new Class({
      * @method Phaser.Input.Pointer#touchend
      * @since 3.0.0
      *
-     * @param {[type]} event - [description]
-     * @param {[type]} time - [description]
+     * @param {any} event - [description]
+     * @param {any} time - [description]
      */
     touchend: function (event, time)
     {

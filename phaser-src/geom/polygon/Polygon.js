@@ -55,10 +55,10 @@ var Polygon = new Class({
      * @method Phaser.Geom.Polygon#contains
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     contains: function (x, y)
     {
@@ -80,7 +80,7 @@ var Polygon = new Class({
      * @method Phaser.Geom.Polygon#setTo
      * @since 3.0.0
      *
-     * @param {[type]} points - [description]
+     * @param {any} points - [description]
      *
      * @return {Phaser.Geom.Polygon} This Polygon object.
      */

@@ -20,9 +20,9 @@ var Sleep = {
      * @method Phaser.Physics.Matter.Components.Sleep#setSleepThreshold
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setSleepThreshold: function (value)
     {
@@ -39,10 +39,10 @@ var Sleep = {
      * @method Phaser.Physics.Matter.Components.Sleep#setSleepEvents
      * @since 3.0.0
      *
-     * @param {[type]} start - [description]
-     * @param {[type]} end - [description]
+     * @param {any} start - [description]
+     * @param {any} end - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setSleepEvents: function (start, end)
     {
@@ -58,9 +58,9 @@ var Sleep = {
      * @method Phaser.Physics.Matter.Components.Sleep#setSleepStartEvent
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setSleepStartEvent: function (value)
     {
@@ -86,9 +86,9 @@ var Sleep = {
      * @method Phaser.Physics.Matter.Components.Sleep#setSleepEndEvent
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setSleepEndEvent: function (value)
     {

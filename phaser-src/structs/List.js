@@ -283,12 +283,12 @@ var List = new Class({
      * @method Phaser.Structs.List#getFirst
      * @since 3.0.0
      *
-     * @param {[type]} property - [description]
-     * @param {[type]} value - [description]
-     * @param {[type]} startIndex - [description]
-     * @param {[type]} endIndex - [description]
+     * @param {any} property - [description]
+     * @param {any} value - [description]
+     * @param {any} startIndex - [description]
+     * @param {any} endIndex - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getFirst: function (property, value, startIndex, endIndex)
     {

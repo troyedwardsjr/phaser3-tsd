@@ -16,7 +16,7 @@ var Class = require('../../utils/Class');
  * @since 3.0.0
  *
  * @param {Phaser.Scene} scene - [description]
- * @param {[type]} graphicsGeometry - [description]
+ * @param {any} graphicsGeometry - [description]
  */
 var GeometryMask = new Class({
 
@@ -53,8 +53,8 @@ var GeometryMask = new Class({
      * @method Phaser.Display.Masks.GeometryMask#preRenderWebGL
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
-     * @param {[type]} mask - [description]
+     * @param {any} renderer - [description]
+     * @param {any} mask - [description]
      * @param {Phaser.Cameras.Scene2D.Camera} camera - [description]
      */
     preRenderWebGL: function (renderer, mask, camera)
@@ -88,7 +88,7 @@ var GeometryMask = new Class({
      * @method Phaser.Display.Masks.GeometryMask#postRenderWebGL
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
+     * @param {any} renderer - [description]
      */
     postRenderWebGL: function (renderer)
     {
@@ -105,8 +105,8 @@ var GeometryMask = new Class({
      * @method Phaser.Display.Masks.GeometryMask#preRenderCanvas
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
-     * @param {[type]} mask - [description]
+     * @param {any} renderer - [description]
+     * @param {any} mask - [description]
      * @param {Phaser.Cameras.Scene2D.Camera} camera - [description]
      */
     preRenderCanvas: function (renderer, mask, camera)
@@ -126,7 +126,7 @@ var GeometryMask = new Class({
      * @method Phaser.Display.Masks.GeometryMask#postRenderCanvas
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
+     * @param {any} renderer - [description]
      */
     postRenderCanvas: function (renderer)
     {

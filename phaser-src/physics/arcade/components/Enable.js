@@ -18,13 +18,13 @@ var Enable = {
      * @method Phaser.Physics.Arcade.Components.Enable#enableBody
      * @since 3.0.0
      *
-     * @param {[type]} reset - [description]
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} enableGameObject - [description]
-     * @param {[type]} showGameObject - [description]
+     * @param {any} reset - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} enableGameObject - [description]
+     * @param {any} showGameObject - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     enableBody: function (reset, x, y, enableGameObject, showGameObject)
     {
@@ -54,10 +54,10 @@ var Enable = {
      * @method Phaser.Physics.Arcade.Components.Enable#disableBody
      * @since 3.0.0
      *
-     * @param {[type]} disableGameObject - [description]
-     * @param {[type]} hideGameObject - [description]
+     * @param {any} disableGameObject - [description]
+     * @param {any} hideGameObject - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     disableBody: function (disableGameObject, hideGameObject)
     {

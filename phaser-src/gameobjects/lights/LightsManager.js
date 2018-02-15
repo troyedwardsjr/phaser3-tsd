@@ -183,7 +183,7 @@ var LightsManager = new Class({
      * @method Phaser.GameObjects.LightsManager#setAmbientColor
      * @since 3.0.0
      *
-     * @param {[type]} rgb - [description]
+     * @param {any} rgb - [description]
      *
      * @return {Phaser.GameObjects.LightsManager} This Lights Manager object.
      */

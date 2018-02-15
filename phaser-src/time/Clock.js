@@ -160,7 +160,7 @@ var Clock = new Class({
      * @param {array} args - [description]
      * @param {object} callbackScope - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     delayedCall: function (delay, callback, args, callbackScope)
     {

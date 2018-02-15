@@ -25,7 +25,7 @@ var HTML5AudioFile = require('./HTML5AudioFile');
  * @param {string} url - [description]
  * @param {string} path - [description]
  * @param {object} xhrSettings - [description]
- * @param {[type]} audioContext - [description]
+ * @param {any} audioContext - [description]
  */
 var AudioFile = new Class({
 
@@ -38,7 +38,7 @@ var AudioFile = new Class({
         /**
          * [description]
          *
-         * @property {[type]} context
+         * @property {any} context
          * @since 3.0.0
          */
         this.context = audioContext;
@@ -62,7 +62,7 @@ var AudioFile = new Class({
      * @method Phaser.Loader.FileTypes.AudioFile#onProcess
      * @since 3.0.0
      *
-     * @param {[type]} callback - [description]
+     * @param {any} callback - [description]
      */
     onProcess: function (callback)
     {

@@ -42,7 +42,7 @@ var GamepadManager = new Class({
          * [description]
          *
          * @name Phaser.Input.Gamepad.GamepadManager#events
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.events = inputManager.events;
@@ -122,7 +122,7 @@ var GamepadManager = new Class({
      * @method Phaser.Input.Gamepad.GamepadManager#startListeners
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     startListeners: function ()
     {
@@ -191,9 +191,9 @@ var GamepadManager = new Class({
      * @method Phaser.Input.Gamepad.GamepadManager#addPad
      * @since 3.0.0
      *
-     * @param {[type]} pad - [description]
+     * @param {any} pad - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     addPad: function (pad)
     {
@@ -210,8 +210,8 @@ var GamepadManager = new Class({
      * @method Phaser.Input.Gamepad.GamepadManager#removePad
      * @since 3.0.0
      *
-     * @param {[type]} index - [description]
-     * @param {[type]} pad - [description]
+     * @param {any} index - [description]
+     * @param {any} pad - [description]
      */
     removePad: function (index, pad)
     {
@@ -224,7 +224,7 @@ var GamepadManager = new Class({
      * @method Phaser.Input.Gamepad.GamepadManager#refreshPads
      * @since 3.0.0
      *
-     * @param {[type]} pads - [description]
+     * @param {any} pads - [description]
      */
     refreshPads: function (pads)
     {
@@ -260,7 +260,7 @@ var GamepadManager = new Class({
      * @method Phaser.Input.Gamepad.GamepadManager#getAll
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getAll: function ()
     {
@@ -283,9 +283,9 @@ var GamepadManager = new Class({
      * @method Phaser.Input.Gamepad.GamepadManager#getPad
      * @since 3.0.0
      *
-     * @param {[type]} index - [description]
+     * @param {any} index - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPad: function (index)
     {
@@ -304,7 +304,7 @@ var GamepadManager = new Class({
      * @method Phaser.Input.Gamepad.GamepadManager#update
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     update: function ()
     {

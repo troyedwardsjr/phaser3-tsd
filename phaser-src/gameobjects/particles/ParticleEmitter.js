@@ -878,7 +878,7 @@ var ParticleEmitter = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitter#startFollow
      * @since 3.0.0
      *
-     * @param {[type]} target - [description]
+     * @param {any} target - [description]
      * @param {number} offsetX - [description]
      * @param {number} offsetY - [description]
      * @param {boolean} trackVisible - [description]
@@ -1372,7 +1372,7 @@ var ParticleEmitter = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitter#setEmitZone
      * @since 3.0.0
      *
-     * @param {[type]} zoneConfig - [description]
+     * @param {any} zoneConfig - [description]
      *
      * @return {Phaser.GameObjects.Particles.ParticleEmitter} This Particle Emitter.
      */
@@ -1424,7 +1424,7 @@ var ParticleEmitter = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitter#setDeathZone
      * @since 3.0.0
      *
-     * @param {[type]} zoneConfig - [description]
+     * @param {any} zoneConfig - [description]
      *
      * @return {Phaser.GameObjects.Particles.ParticleEmitter} This Particle Emitter.
      */
@@ -1534,8 +1534,8 @@ var ParticleEmitter = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitter#onParticleEmit
      * @since 3.0.0
      *
-     * @param {[type]} callback - [description]
-     * @param {[type]} context - [description]
+     * @param {any} callback - [description]
+     * @param {any} context - [description]
      *
      * @return {Phaser.GameObjects.Particles.ParticleEmitter} This Particle Emitter.
      */
@@ -1566,8 +1566,8 @@ var ParticleEmitter = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitter#onParticleDeath
      * @since 3.0.0
      *
-     * @param {[type]} callback - [description]
-     * @param {[type]} context - [description]
+     * @param {any} callback - [description]
+     * @param {any} context - [description]
      *
      * @return {Phaser.GameObjects.Particles.ParticleEmitter} This Particle Emitter.
      */
@@ -1619,8 +1619,8 @@ var ParticleEmitter = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitter#forEachAlive
      * @since 3.0.0
      *
-     * @param {[type]} callback - [description]
-     * @param {[type]} thisArg - [description]
+     * @param {any} callback - [description]
+     * @param {any} thisArg - [description]
      *
      * @return {Phaser.GameObjects.Particles.ParticleEmitter} This Particle Emitter.
      */
@@ -1644,8 +1644,8 @@ var ParticleEmitter = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitter#forEachDead
      * @since 3.0.0
      *
-     * @param {[type]} callback - [description]
-     * @param {[type]} thisArg - [description]
+     * @param {any} callback - [description]
+     * @param {any} thisArg - [description]
      *
      * @return {Phaser.GameObjects.Particles.ParticleEmitter} This Particle Emitter.
      */
@@ -1853,8 +1853,8 @@ var ParticleEmitter = new Class({
      * @method Phaser.GameObjects.Particles.ParticleEmitter#preUpdate
      * @since 3.0.0
      *
-     * @param {[type]} time - [description]
-     * @param {[type]} delta - [description]
+     * @param {any} time - [description]
+     * @param {any} delta - [description]
      */
     preUpdate: function (time, delta)
     {

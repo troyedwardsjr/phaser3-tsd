@@ -145,7 +145,7 @@ var PathFollower = new Class({
      * @since 3.0.0
      *
      * @param {Phaser.Curves.Path} path - The Path this PathFollower is following. It can only follow one Path at a time.
-     * @param {[type]} config - [description]
+     * @param {any} config - [description]
      *
      * @return {Phaser.GameObjects.PathFollower} This Game Object.
      */
@@ -177,9 +177,9 @@ var PathFollower = new Class({
      * @method Phaser.GameObjects.PathFollower#setRotateToPath
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
-     * @param {[type]} offset - [description]
-     * @param {[type]} verticalAdjust - [description]
+     * @param {any} value - [description]
+     * @param {any} offset - [description]
+     * @param {any} verticalAdjust - [description]
      *
      * @return {Phaser.GameObjects.PathFollower} This Game Object.
      */
@@ -352,8 +352,8 @@ var PathFollower = new Class({
      * @protected
      * @since 3.0.0
      *
-     * @param {[type]} time - [description]
-     * @param {[type]} delta - [description]
+     * @param {any} time - [description]
+     * @param {any} delta - [description]
      */
     preUpdate: function (time, delta)
     {

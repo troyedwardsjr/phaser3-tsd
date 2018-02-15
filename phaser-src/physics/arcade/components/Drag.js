@@ -18,10 +18,10 @@ var Drag = {
      * @method Phaser.Physics.Arcade.Components.Drag#setDrag
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setDrag: function (x, y)
     {
@@ -36,9 +36,9 @@ var Drag = {
      * @method Phaser.Physics.Arcade.Components.Drag#setDragX
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setDragX: function (value)
     {
@@ -53,9 +53,9 @@ var Drag = {
      * @method Phaser.Physics.Arcade.Components.Drag#setDragY
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setDragY: function (value)
     {

@@ -78,7 +78,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#copy
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -96,7 +96,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#setFromObject
      * @since 3.0.0
      *
-     * @param {[type]} obj - [description]
+     * @param {any} obj - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -114,8 +114,8 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#set
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -138,8 +138,8 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#setToPolar
      * @since 3.0.0
      *
-     * @param {[type]} azimuth - [description]
-     * @param {[type]} radius - [description]
+     * @param {any} azimuth - [description]
+     * @param {any} radius - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -159,7 +159,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#equals
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
      * @return {boolean} [description]
      */
@@ -196,7 +196,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#add
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -214,7 +214,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#subtract
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -232,7 +232,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#multiply
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -250,7 +250,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#scale
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -276,7 +276,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#divide
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -310,7 +310,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#distance
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {number} [description]
      */
@@ -328,7 +328,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#distanceSq
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {number} [description]
      */
@@ -423,7 +423,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#dot
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {number} [description]
      */
@@ -438,7 +438,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#cross
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
      * @return {number} [description]
      */
@@ -453,8 +453,8 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#lerp
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
-     * @param {[type]} t - [description]
+     * @param {any} src - [description]
+     * @param {any} t - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -477,7 +477,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#transformMat3
      * @since 3.0.0
      *
-     * @param {[type]} mat - [description]
+     * @param {any} mat - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */
@@ -499,7 +499,7 @@ var Vector2 = new Class({
      * @method Phaser.Math.Vector2#transformMat4
      * @since 3.0.0
      *
-     * @param {[type]} mat - [description]
+     * @param {any} mat - [description]
      *
      * @return {Phaser.Math.Vector2} This Vector2.
      */

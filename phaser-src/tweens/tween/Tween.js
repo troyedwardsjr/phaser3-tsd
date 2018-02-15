@@ -289,7 +289,7 @@ var Tween = new Class({
      * @method Phaser.Tweens.Tween#getValue
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getValue: function ()
     {

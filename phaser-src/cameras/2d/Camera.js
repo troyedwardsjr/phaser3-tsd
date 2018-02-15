@@ -1283,8 +1283,8 @@ var Camera = new Class({
      * @method Phaser.Cameras.Scene2D.Camera#update
      * @since 3.0.0
      *
-     * @param {[type]} timestep - [description]
-     * @param {[type]} delta - [description]
+     * @param {any} timestep - [description]
+     * @param {any} delta - [description]
      */
     update: function (timestep, delta)
     {

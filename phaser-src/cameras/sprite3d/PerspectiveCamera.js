@@ -80,9 +80,9 @@ var PerspectiveCamera = new Class({
      * @method Phaser.Cameras.Sprite3D.PerspectiveCamera#setFOV
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setFOV: function (value)
     {
@@ -97,7 +97,7 @@ var PerspectiveCamera = new Class({
      * @method Phaser.Cameras.Sprite3D.PerspectiveCamera#update
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     update: function ()
     {

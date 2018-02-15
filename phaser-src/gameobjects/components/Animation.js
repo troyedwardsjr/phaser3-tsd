@@ -298,9 +298,9 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#delayedPlay
      * @since 3.0.0
      *
-     * @param {[type]} delay - [description]
-     * @param {[type]} key - [description]
-     * @param {[type]} startFrame - [description]
+     * @param {any} delay - [description]
+     * @param {any} key - [description]
+     * @param {any} startFrame - [description]
      *
      * @return {Phaser.GameObjects.GameObject} This Game Object.
      */
@@ -319,7 +319,7 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#getCurrentKey
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getCurrentKey: function ()
     {
@@ -335,8 +335,8 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#load
      * @since 3.0.0
      *
-     * @param {[type]} key - [description]
-     * @param {[type]} startFrame - [description]
+     * @param {any} key - [description]
+     * @param {any} startFrame - [description]
      *
      * @return {Phaser.GameObjects.GameObject} This Game Object.
      */
@@ -361,7 +361,7 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#pause
      * @since 3.0.0
      *
-     * @param {[type]} atFrame - [description]
+     * @param {any} atFrame - [description]
      *
      * @return {Phaser.GameObjects.GameObject} This Game Object.
      */
@@ -388,9 +388,9 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#paused
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     paused: function (value)
     {
@@ -418,9 +418,9 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#play
      * @since 3.0.0
      *
-     * @param {[type]} key - [description]
-     * @param {[type]} ignoreIfPlaying - [description]
-     * @param {[type]} startFrame - [description]
+     * @param {any} key - [description]
+     * @param {any} ignoreIfPlaying - [description]
+     * @param {any} startFrame - [description]
      *
      * @return {Phaser.GameObjects.GameObject} This Game Object.
      */
@@ -469,9 +469,9 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#progress
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     progress: function (value)
     {
@@ -500,7 +500,7 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#remove
      * @since 3.0.0
      *
-     * @param {[type]} event - [description]
+     * @param {any} event - [description]
      */
     remove: function (event)
     {
@@ -531,9 +531,9 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#repeat
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     repeat: function (value)
     {
@@ -561,9 +561,9 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#repeatDelay
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     repeatDelay: function (value)
     {
@@ -585,7 +585,7 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#restart
      * @since 3.0.0
      *
-     * @param {[type]} includeDelay - [description]
+     * @param {any} includeDelay - [description]
      *
      * @return {Phaser.GameObjects.GameObject} This Game Object.
      */
@@ -612,7 +612,7 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#resume
      * @since 3.0.0
      *
-     * @param {[type]} fromFrame - [description]
+     * @param {any} fromFrame - [description]
      *
      * @return {Phaser.GameObjects.GameObject} This Game Object.
      */
@@ -638,7 +638,7 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#stop
      * @since 3.0.0
      *
-     * @param {[type]} dispatchCallbacks - [description]
+     * @param {any} dispatchCallbacks - [description]
      *
      * @return {Phaser.GameObjects.GameObject} This Game Object.
      */
@@ -667,9 +667,9 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#timeScale
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     timeScale: function (value)
     {
@@ -691,7 +691,7 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#totalFrames
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     totalFrames: function ()
     {
@@ -718,8 +718,8 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#update
      * @since 3.0.0
      *
-     * @param {[type]} timestamp - [description]
-     * @param {[type]} delta - [description]
+     * @param {any} timestamp - [description]
+     * @param {any} delta - [description]
      */
     update: function (timestamp, delta)
     {
@@ -742,7 +742,7 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#updateFrame
      * @since 3.0.0
      *
-     * @param {[type]} animationFrame - [description]
+     * @param {any} animationFrame - [description]
      */
     updateFrame: function (animationFrame)
     {
@@ -780,9 +780,9 @@ var Animation = new Class({
      * @method Phaser.GameObjects.Components.Animation#yoyo
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     yoyo: function (value)
     {

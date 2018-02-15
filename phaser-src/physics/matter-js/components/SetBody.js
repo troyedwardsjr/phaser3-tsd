@@ -24,11 +24,11 @@ var SetBody = {
      * @method Phaser.Physics.Matter.Components.SetBody#setRectangle
      * @since 3.0.0
      *
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
-     * @param {[type]} options - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
+     * @param {any} options - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setRectangle: function (width, height, options)
     {
@@ -41,10 +41,10 @@ var SetBody = {
      * @method Phaser.Physics.Matter.Components.SetBody#setCircle
      * @since 3.0.0
      *
-     * @param {[type]} radius - [description]
-     * @param {[type]} options - [description]
+     * @param {any} radius - [description]
+     * @param {any} options - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setCircle: function (radius, options)
     {
@@ -57,11 +57,11 @@ var SetBody = {
      * @method Phaser.Physics.Matter.Components.SetBody#setPolygon
      * @since 3.0.0
      *
-     * @param {[type]} radius - [description]
-     * @param {[type]} sides - [description]
-     * @param {[type]} options - [description]
+     * @param {any} radius - [description]
+     * @param {any} sides - [description]
+     * @param {any} options - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setPolygon: function (radius, sides, options)
     {
@@ -74,12 +74,12 @@ var SetBody = {
      * @method Phaser.Physics.Matter.Components.SetBody#setTrapezoid
      * @since 3.0.0
      *
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
-     * @param {[type]} slope - [description]
-     * @param {[type]} options - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
+     * @param {any} slope - [description]
+     * @param {any} options - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setTrapezoid: function (width, height, slope, options)
     {
@@ -92,10 +92,10 @@ var SetBody = {
      * @method Phaser.Physics.Matter.Components.SetBody#setExistingBody
      * @since 3.0.0
      *
-     * @param {[type]} body - [description]
-     * @param {[type]} addToWorld - [description]
+     * @param {any} body - [description]
+     * @param {any} addToWorld - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setExistingBody: function (body, addToWorld)
     {
@@ -126,10 +126,10 @@ var SetBody = {
      * @method Phaser.Physics.Matter.Components.SetBody#setBody
      * @since 3.0.0
      *
-     * @param {[type]} config - [description]
-     * @param {[type]} options - [description]
+     * @param {any} config - [description]
+     * @param {any} options - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setBody: function (config, options)
     {

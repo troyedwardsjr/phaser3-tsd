@@ -20,9 +20,9 @@ var Static = {
      * @method Phaser.Physics.Matter.Components.Static#setStatic
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setStatic: function (value)
     {
@@ -37,7 +37,7 @@ var Static = {
      * @method Phaser.Physics.Matter.Components.Static#isStatic
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     isStatic: function ()
     {

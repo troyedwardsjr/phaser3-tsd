@@ -10,8 +10,8 @@
  * @function Phaser.Physics.Arcade.Tilemap.TileIntersectsBody
  * @since 3.0.0
  *
- * @param {[type]} tileWorldRect - [description]
- * @param {[type]} body - [description]
+ * @param {any} tileWorldRect - [description]
+ * @param {any} body - [description]
  *
  * @return {boolean} [description]
  */

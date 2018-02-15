@@ -1,4 +1,3 @@
-const execFile = require('child_process').execFile;
 const fs = require('fs');
 const os = require('os');
 const path = require('path');

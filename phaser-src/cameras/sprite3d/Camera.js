@@ -54,7 +54,7 @@ var Camera = new Class({
          * [description]
          *
          * @name Phaser.Cameras.Sprite3D#displayList
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.displayList = scene.sys.displayList;
@@ -63,7 +63,7 @@ var Camera = new Class({
          * [description]
          *
          * @name Phaser.Cameras.Sprite3D#updateList
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.updateList = scene.sys.updateList;
@@ -178,7 +178,7 @@ var Camera = new Class({
          * [description]
          *
          * @name Phaser.Cameras.Sprite3D#ray
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.ray = {
@@ -268,7 +268,7 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#setPixelScale
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -285,9 +285,9 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#add
      * @since 3.0.0
      *
-     * @param {[type]} sprite3D - [description]
+     * @param {any} sprite3D - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     add: function (sprite3D)
     {
@@ -304,7 +304,7 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#remove
      * @since 3.0.0
      *
-     * @param {[type]} child - [description]
+     * @param {any} child - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -357,14 +357,14 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#create
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} z - [description]
-     * @param {[type]} key - [description]
-     * @param {[type]} frame - [description]
-     * @param {[type]} visible - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} z - [description]
+     * @param {any} key - [description]
+     * @param {any} frame - [description]
+     * @param {any} visible - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     create: function (x, y, z, key, frame, visible)
     {
@@ -390,12 +390,12 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#createMultiple
      * @since 3.0.0
      *
-     * @param {[type]} quantity - [description]
-     * @param {[type]} key - [description]
-     * @param {[type]} frame - [description]
-     * @param {[type]} visible - [description]
+     * @param {any} quantity - [description]
+     * @param {any} key - [description]
+     * @param {any} frame - [description]
+     * @param {any} visible - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     createMultiple: function (quantity, key, frame, visible)
     {
@@ -428,12 +428,12 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#createRect
      * @since 3.0.0
      *
-     * @param {[type]} size - [description]
-     * @param {[type]} spacing - [description]
-     * @param {[type]} key - [description]
-     * @param {[type]} frame - [description]
+     * @param {any} size - [description]
+     * @param {any} spacing - [description]
+     * @param {any} key - [description]
+     * @param {any} frame - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     createRect: function (size, spacing, key, frame)
     {
@@ -474,8 +474,8 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#randomSphere
      * @since 3.0.0
      *
-     * @param {[type]} radius - [description]
-     * @param {[type]} sprites - [description]
+     * @param {any} radius - [description]
+     * @param {any} sprites - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -497,8 +497,8 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#randomCube
      * @since 3.0.0
      *
-     * @param {[type]} scale - [description]
-     * @param {[type]} sprites - [description]
+     * @param {any} scale - [description]
+     * @param {any} sprites - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -520,8 +520,8 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#translateChildren
      * @since 3.0.0
      *
-     * @param {[type]} vec3 - [description]
-     * @param {[type]} sprites - [description]
+     * @param {any} vec3 - [description]
+     * @param {any} sprites - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -543,8 +543,8 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#transformChildren
      * @since 3.0.0
      *
-     * @param {[type]} mat4 - [description]
-     * @param {[type]} sprites - [description]
+     * @param {any} mat4 - [description]
+     * @param {any} sprites - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -588,9 +588,9 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#translate
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} z - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} z - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -618,9 +618,9 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#lookAt
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} z - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} z - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -655,8 +655,8 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#rotate
      * @since 3.0.0
      *
-     * @param {[type]} radians - [description]
-     * @param {[type]} axis - [description]
+     * @param {any} radians - [description]
+     * @param {any} axis - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -674,9 +674,9 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#rotateAround
      * @since 3.0.0
      *
-     * @param {[type]} point - [description]
-     * @param {[type]} radians - [description]
-     * @param {[type]} axis - [description]
+     * @param {any} point - [description]
+     * @param {any} radians - [description]
+     * @param {any} axis - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -697,10 +697,10 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#project
      * @since 3.0.0
      *
-     * @param {[type]} vec - [description]
-     * @param {[type]} out - [description]
+     * @param {any} vec - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     project: function (vec, out)
     {
@@ -751,10 +751,10 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#unproject
      * @since 3.0.0
      *
-     * @param {[type]} vec - [description]
-     * @param {[type]} out - [description]
+     * @param {any} vec - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     unproject: function (vec, out)
     {
@@ -771,10 +771,10 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#getPickRay
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPickRay: function (x, y)
     {
@@ -882,11 +882,11 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#getPointSize
      * @since 3.0.0
      *
-     * @param {[type]} vec - The position of the 3D Sprite.
-     * @param {[type]} size - The x and y dimensions.
-     * @param {[type]} out - The result, scaled x and y dimensions.
+     * @param {any} vec - The position of the 3D Sprite.
+     * @param {any} size - The x and y dimensions.
+     * @param {any} out - The result, scaled x and y dimensions.
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPointSize: function (vec, size, out)
     {
@@ -949,7 +949,7 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#setX
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -966,7 +966,7 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#setY
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */
@@ -983,7 +983,7 @@ var Camera = new Class({
      * @method Phaser.Cameras.Sprite3D.Camera#setZ
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.Cameras.Sprite3D.Camera} This Camera object.
      */

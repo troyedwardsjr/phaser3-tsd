@@ -24,7 +24,7 @@ var Parse2DArray = require('./Parse2DArray');
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
  * 
- * @return {[type]} [description]
+ * @return {any} [description]
  */
 var ParseCSV = function (name, data, tileWidth, tileHeight, insertNull)
 {

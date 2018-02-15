@@ -54,7 +54,7 @@ var World = new Class({
          * [description]
          *
          * @name Phaser.Physics.Matter.World#engine
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.engine = Engine.create(config);
@@ -63,7 +63,7 @@ var World = new Class({
          * [description]
          *
          * @name Phaser.Physics.Matter.World#localWorld
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.localWorld = this.engine.world;
@@ -79,7 +79,7 @@ var World = new Class({
          * An object containing the 4 wall bodies that bound the physics world.
          *
          * @name Phaser.Physics.Matter.World#walls
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.walls = { left: null, right: null, top: null, bottom: null };
@@ -283,12 +283,12 @@ var World = new Class({
      * @method Phaser.Physics.Matter.World#updateWall
      * @since 3.0.0
      *
-     * @param {[type]} add - [description]
-     * @param {[type]} position - [description]
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
+     * @param {any} add - [description]
+     * @param {any} position - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
      */
     updateWall: function (add, position, x, y, width, height)
     {
@@ -390,13 +390,13 @@ var World = new Class({
      * @method Phaser.Physics.Matter.World#create
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
-     * @param {[type]} options - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
+     * @param {any} options - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     create: function (x, y, width, height, options)
     {
@@ -414,7 +414,7 @@ var World = new Class({
      * @method Phaser.Physics.Matter.World#add
      * @since 3.0.0
      *
-     * @param {[type]} object - [description]
+     * @param {any} object - [description]
      *
      * @return {Phaser.Physics.Matter.World} This Matter World object.
      */
@@ -431,7 +431,7 @@ var World = new Class({
      * @method Phaser.Physics.Matter.World#remove
      * @since 3.0.0
      *
-     * @param {[type]} object - [description]
+     * @param {any} object - [description]
      * @param {boolean} deep - [description]
      *
      * @return {Phaser.Physics.Matter.World} This Matter World object.
@@ -451,7 +451,7 @@ var World = new Class({
      * @method Phaser.Physics.Matter.World#removeConstraint
      * @since 3.0.0
      *
-     * @param {[type]} constraint - [description]
+     * @param {any} constraint - [description]
      * @param {boolean} deep - [description]
      *
      * @return {Phaser.Physics.Matter.World} This Matter World object.
@@ -523,9 +523,9 @@ var World = new Class({
      * @method Phaser.Physics.Matter.World#nextGroup
      * @since 3.0.0
      *
-     * @param {[type]} isNonColliding - [description]
+     * @param {any} isNonColliding - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     nextGroup: function (isNonColliding)
     {
@@ -538,7 +538,7 @@ var World = new Class({
      * @method Phaser.Physics.Matter.World#nextCategory
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     nextCategory: function ()
     {
@@ -652,10 +652,10 @@ var World = new Class({
      * @method Phaser.Physics.Matter.World#fromPath
      * @since 3.0.0
      *
-     * @param {[type]} path - [description]
-     * @param {[type]} points - [description]
+     * @param {any} path - [description]
+     * @param {any} points - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     fromPath: function (path, points)
     {

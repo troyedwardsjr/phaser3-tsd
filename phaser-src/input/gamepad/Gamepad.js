@@ -18,8 +18,8 @@ var Class = require('../../utils/Class');
  * @since 3.0.0
  *
  * @param {Phaser.Input.Gamepad.GamepadManager} manager - [description]
- * @param {[type]} id - [description]
- * @param {[type]} index - [description]
+ * @param {any} id - [description]
+ * @param {any} index - [description]
  */
 var Gamepad = new Class({
 
@@ -40,7 +40,7 @@ var Gamepad = new Class({
          * [description]
          *
          * @name Phaser.Input.Gamepad.Gamepad#events
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.events = manager.events;
@@ -49,7 +49,7 @@ var Gamepad = new Class({
          * [description]
          *
          * @name Phaser.Input.Gamepad.Gamepad#id
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.id = id;
@@ -58,7 +58,7 @@ var Gamepad = new Class({
          * [description]
          *
          * @name Phaser.Input.Gamepad.Gamepad#index
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.index = index;
@@ -110,7 +110,7 @@ var Gamepad = new Class({
      * @method Phaser.Input.Gamepad.Gamepad#update
      * @since 3.0.0
      *
-     * @param {[type]} data - [description]
+     * @param {any} data - [description]
      */
     update: function (data)
     {

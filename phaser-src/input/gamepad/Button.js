@@ -15,7 +15,7 @@ var Class = require('../../utils/Class');
  * @constructor
  * @since 3.0.0
  *
- * @param {[type]} pad - [description]
+ * @param {any} pad - [description]
  * @param {integer} index - [description]
  */
 var Button = new Class({
@@ -28,7 +28,7 @@ var Button = new Class({
          * [description]
          *
          * @name Phaser.Input.Gamepad.Button#pad
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.pad = pad;
@@ -37,7 +37,7 @@ var Button = new Class({
          * [description]
          *
          * @name Phaser.Input.Gamepad.Button#events
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.events = pad.events;
@@ -88,7 +88,7 @@ var Button = new Class({
      * @method Phaser.Input.Gamepad.Button#update
      * @since 3.0.0
      *
-     * @param {[type]} data - [description]
+     * @param {any} data - [description]
      */
     update: function (data)
     {

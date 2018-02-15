@@ -128,7 +128,7 @@ var InputManager = new Class({
          * [description]
          *
          * @name Phaser.Input.InputManager#activePointer
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.activePointer = new Pointer(this, 0);

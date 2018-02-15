@@ -301,9 +301,9 @@ var CanvasRenderer = new Class({
      * @method Phaser.Renderer.Canvas.CanvasRenderer#setBlendMode
      * @since 3.0.0
      *
-     * @param {[type]} blendMode - [description]
+     * @param {any} blendMode - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setBlendMode: function (blendMode)
     {
@@ -493,9 +493,9 @@ var CanvasRenderer = new Class({
      * @method Phaser.Renderer.Canvas.CanvasRenderer#snapshot
      * @since 3.0.0
      *
-     * @param {[type]} callback - [description]
-     * @param {[type]} type - [description]
-     * @param {[type]} encoderOptions - [description]
+     * @param {any} callback - [description]
+     * @param {any} type - [description]
+     * @param {any} encoderOptions - [description]
      */
     snapshot: function (callback, type, encoderOptions)
     {

@@ -104,9 +104,9 @@ var CubicBezierCurve = new Class({
      * @method Phaser.Curves.CubicBezierCurve#getResolution
      * @since 3.0.0
      *
-     * @param {[type]} divisions - [description]
+     * @param {any} divisions - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getResolution: function (divisions)
     {
@@ -119,10 +119,10 @@ var CubicBezierCurve = new Class({
      * @method Phaser.Curves.CubicBezierCurve#getPoint
      * @since 3.0.0
      *
-     * @param {[type]} t - [description]
-     * @param {[type]} out - [description]
+     * @param {any} t - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoint: function (t, out)
     {

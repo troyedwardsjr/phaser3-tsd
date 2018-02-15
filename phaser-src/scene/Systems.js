@@ -64,7 +64,7 @@ var Systems = new Class({
          * [description]
          *
          * @name Phaser.Scenes.Systems#settings
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.settings = Settings.create(config);
@@ -120,7 +120,7 @@ var Systems = new Class({
          * [description]
          *
          * @name Phaser.Scenes.Systems#registry
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.registry;
@@ -203,7 +203,7 @@ var Systems = new Class({
          * [description]
          *
          * @name Phaser.Scenes.Systems#updateList
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.updateList;

@@ -18,9 +18,9 @@ var Velocity = {
      * @method Phaser.Physics.Impact.Components.Velocity#setVelocityX
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
+     * @param {any} x - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setVelocityX: function (x)
     {
@@ -35,9 +35,9 @@ var Velocity = {
      * @method Phaser.Physics.Impact.Components.Velocity#setVelocityY
      * @since 3.0.0
      *
-     * @param {[type]} y - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setVelocityY: function (y)
     {
@@ -52,10 +52,10 @@ var Velocity = {
      * @method Phaser.Physics.Impact.Components.Velocity#setVelocity
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setVelocity: function (x, y)
     {
@@ -73,10 +73,10 @@ var Velocity = {
      * @method Phaser.Physics.Impact.Components.Velocity#setMaxVelocity
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setMaxVelocity: function (x, y)
     {

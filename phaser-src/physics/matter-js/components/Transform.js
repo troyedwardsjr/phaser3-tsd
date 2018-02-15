@@ -26,7 +26,7 @@ var Transform = {
      * [description]
      *
      * @name Phaser.Physics.Matter.Components.Transform#x
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     x: {
@@ -49,7 +49,7 @@ var Transform = {
      * [description]
      *
      * @name Phaser.Physics.Matter.Components.Transform#y
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     y: {
@@ -72,7 +72,7 @@ var Transform = {
      * [description]
      *
      * @name Phaser.Physics.Matter.Components.Transform#scaleX
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     scaleX: {
@@ -104,7 +104,7 @@ var Transform = {
      * [description]
      *
      * @name Phaser.Physics.Matter.Components.Transform#scaleY
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     scaleY: {
@@ -136,7 +136,7 @@ var Transform = {
      * [description]
      *
      * @name Phaser.Physics.Matter.Components.Transform#angle
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     angle: {
@@ -157,7 +157,7 @@ var Transform = {
      * [description]
      *
      * @name Phaser.Physics.Matter.Components.Transform#rotation
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     rotation: {
@@ -182,10 +182,10 @@ var Transform = {
      * @method Phaser.Physics.Matter.Components.Transform#setPosition
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setPosition: function (x, y)
     {
@@ -205,9 +205,9 @@ var Transform = {
      * @method Phaser.Physics.Matter.Components.Transform#setRotation
      * @since 3.0.0
      *
-     * @param {[type]} radians - [description]
+     * @param {any} radians - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setRotation: function (radians)
     {
@@ -226,7 +226,7 @@ var Transform = {
      * @method Phaser.Physics.Matter.Components.Transform#setFixedRotation
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setFixedRotation: function ()
     {
@@ -241,9 +241,9 @@ var Transform = {
      * @method Phaser.Physics.Matter.Components.Transform#setAngle
      * @since 3.0.0
      *
-     * @param {[type]} degrees - [description]
+     * @param {any} degrees - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setAngle: function (degrees)
     {
@@ -262,11 +262,11 @@ var Transform = {
      * @method Phaser.Physics.Matter.Components.Transform#setScale
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} point - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} point - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setScale: function (x, y, point)
     {

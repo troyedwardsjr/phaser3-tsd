@@ -18,10 +18,10 @@ var Gravity = {
      * @method Phaser.Physics.Arcade.Components.Gravity#setGravity
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setGravity: function (x, y)
     {
@@ -36,9 +36,9 @@ var Gravity = {
      * @method Phaser.Physics.Arcade.Components.Gravity#setGravityX
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
+     * @param {any} x - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setGravityX: function (x)
     {
@@ -53,9 +53,9 @@ var Gravity = {
      * @method Phaser.Physics.Arcade.Components.Gravity#setGravityY
      * @since 3.0.0
      *
-     * @param {[type]} y - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setGravityY: function (y)
     {

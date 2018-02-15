@@ -118,7 +118,7 @@ var TileSprite = new Class({
          * [description]
          *
          * @name Phaser.GameObjects.TileSprite#renderer
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.renderer = renderer;

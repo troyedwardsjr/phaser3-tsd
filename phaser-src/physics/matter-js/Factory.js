@@ -276,11 +276,11 @@ var Factory = new Class({
      * @method Phaser.Physics.Matter.Factory#chain
      * @since 3.0.0
      *
-     * @param {[type]} composite - [description]
-     * @param {[type]} xOffsetA - [description]
-     * @param {[type]} yOffsetA - [description]
-     * @param {[type]} xOffsetB - [description]
-     * @param {[type]} yOffsetB - [description]
+     * @param {any} composite - [description]
+     * @param {any} xOffsetA - [description]
+     * @param {any} yOffsetA - [description]
+     * @param {any} xOffsetB - [description]
+     * @param {any} yOffsetB - [description]
      * @param {object} options - [description]
      *
      * @return {object} A Matter JS Composite.
@@ -296,10 +296,10 @@ var Factory = new Class({
      * @method Phaser.Physics.Matter.Factory#mesh
      * @since 3.0.0
      *
-     * @param {[type]} composite - [description]
-     * @param {[type]} columns - [description]
-     * @param {[type]} rows - [description]
-     * @param {[type]} crossBrace - [description]
+     * @param {any} composite - [description]
+     * @param {any} columns - [description]
+     * @param {any} rows - [description]
+     * @param {any} crossBrace - [description]
      * @param {object} options - [description]
      *
      * @return {object} A Matter JS Composite.
@@ -367,7 +367,7 @@ var Factory = new Class({
      * @param {number} rows - The number of rows in the Composite.
      * @param {number} columnGap - The distance between each column.
      * @param {number} rowGap - The distance between each row.
-     * @param {[type]} crossBrace - [description]
+     * @param {any} crossBrace - [description]
      * @param {number} particleRadius - [description]
      * @param {object} particleOptions - [description]
      * @param {object} constraintOptions - [description]
@@ -391,10 +391,10 @@ var Factory = new Class({
      * @method Phaser.Physics.Matter.Factory#joint
      * @since 3.0.0
      *
-     * @param {[type]} bodyA - [description]
-     * @param {[type]} bodyB - [description]
-     * @param {[type]} length - [description]
-     * @param {[type]} stiffness - [description]
+     * @param {any} bodyA - [description]
+     * @param {any} bodyB - [description]
+     * @param {any} length - [description]
+     * @param {any} stiffness - [description]
      * @param {object} options - [description]
      *
      * @return {object} A Matter JS Constraint.
@@ -410,10 +410,10 @@ var Factory = new Class({
      * @method Phaser.Physics.Matter.Factory#spring
      * @since 3.0.0
      *
-     * @param {[type]} bodyA - [description]
-     * @param {[type]} bodyB - [description]
-     * @param {[type]} length - [description]
-     * @param {[type]} stiffness - [description]
+     * @param {any} bodyA - [description]
+     * @param {any} bodyB - [description]
+     * @param {any} length - [description]
+     * @param {any} stiffness - [description]
      * @param {object} options - [description]
      *
      * @return {object} A Matter JS Constraint.
@@ -429,10 +429,10 @@ var Factory = new Class({
      * @method Phaser.Physics.Matter.Factory#constraint
      * @since 3.0.0
      *
-     * @param {[type]} bodyA - [description]
-     * @param {[type]} bodyB - [description]
-     * @param {[type]} length - [description]
-     * @param {[type]} stiffness - [description]
+     * @param {any} bodyA - [description]
+     * @param {any} bodyB - [description]
+     * @param {any} length - [description]
+     * @param {any} stiffness - [description]
      * @param {object} options - [description]
      *
      * @return {object} A Matter JS Constraint.
@@ -460,9 +460,9 @@ var Factory = new Class({
      * @method Phaser.Physics.Matter.Factory#worldConstraint
      * @since 3.0.0
      *
-     * @param {[type]} bodyB - [description]
-     * @param {[type]} length - [description]
-     * @param {[type]} stiffness - [description]
+     * @param {any} bodyB - [description]
+     * @param {any} length - [description]
+     * @param {any} stiffness - [description]
      * @param {object} options - [description]
      *
      * @return {object} A Matter JS Constraint.
@@ -546,7 +546,7 @@ var Factory = new Class({
      * @method Phaser.Physics.Matter.Factory#tileBody
      * @since 3.0.0
      *
-     * @param {[type]} tile - [description]
+     * @param {any} tile - [description]
      * @param {object} options - [description]
      *
      * @return {Phaser.Physics.Matter.MatterTileBody} [description]

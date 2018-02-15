@@ -19,7 +19,7 @@ var Smoothing = function ()
      * @function Phaser.Display.Canvas.Smoothing.getPrefix
      * @since 3.0.0
      * 
-     * @param {[type]} context - [description]
+     * @param {any} context - [description]
      * 
      * @return {string} [description]
      */
@@ -50,9 +50,9 @@ var Smoothing = function ()
      * @function Phaser.Display.Canvas.Smoothing.enable
      * @since 3.0.0
      * 
-     * @param {[type]} context - [description]
+     * @param {any} context - [description]
      * 
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     var enable = function (context)
     {
@@ -79,9 +79,9 @@ var Smoothing = function ()
      * @function Phaser.Display.Canvas.Smoothing.disable
      * @since 3.0.0
      * 
-     * @param {[type]} context - [description]
+     * @param {any} context - [description]
      * 
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     var disable = function (context)
     {
@@ -105,7 +105,7 @@ var Smoothing = function ()
      * @function Phaser.Display.Canvas.Smoothing.isEnabled
      * @since 3.0.0
      * 
-     * @param {[type]} context - [description]
+     * @param {any} context - [description]
      * 
      * @return {boolean} [description]
      */

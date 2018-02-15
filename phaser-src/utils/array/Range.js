@@ -61,11 +61,11 @@ var BuildChunk = function (a, b, qty)
  * @function Phaser.Utils.Array.Range
  * @since 3.0.0
  *
- * @param {[type]} a - [description]
- * @param {[type]} b - [description]
- * @param {[type]} options - [description]
+ * @param {any} a - [description]
+ * @param {any} b - [description]
+ * @param {any} options - [description]
  *
- * @return {[type]} [description]
+ * @return {any} [description]
  */
 var Range = function (a, b, options)
 {

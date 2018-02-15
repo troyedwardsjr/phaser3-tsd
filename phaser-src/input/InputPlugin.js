@@ -232,7 +232,7 @@ var InputPlugin = new Class({
          * A list of all Interactive Objects currently considered as being 'draggable' by any pointer, indexed by pointer ID.
          *
          * @name Phaser.Input.InputPlugin#_drag
-         * @type {[type]}
+         * @type {any}
          * @private
          * @since 3.0.0
          */
@@ -242,7 +242,7 @@ var InputPlugin = new Class({
          * A list of all Interactive Objects currently considered as being 'over' by any pointer, indexed by pointer ID.
          *
          * @name Phaser.Input.InputPlugin#_over
-         * @type {[type]}
+         * @type {any}
          * @private
          * @since 3.0.0
          */
@@ -252,7 +252,7 @@ var InputPlugin = new Class({
          * [description]
          *
          * @name Phaser.Input.InputPlugin#_validTypes
-         * @type {[type]}
+         * @type {any}
          * @private
          * @since 3.0.0
          */
@@ -285,7 +285,7 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#preUpdate
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     preUpdate: function ()
     {
@@ -333,9 +333,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#clear
      * @since 3.0.0
      *
-     * @param {[type]} gameObject - [description]
+     * @param {any} gameObject - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     clear: function (gameObject)
     {
@@ -358,7 +358,7 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#disable
      * @since 3.0.0
      *
-     * @param {[type]} gameObject - [description]
+     * @param {any} gameObject - [description]
      */
     disable: function (gameObject)
     {
@@ -371,11 +371,11 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#enable
      * @since 3.0.0
      *
-     * @param {[type]} gameObject - [description]
-     * @param {[type]} shape - [description]
-     * @param {[type]} callback - [description]
+     * @param {any} gameObject - [description]
+     * @param {any} shape - [description]
+     * @param {any} callback - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     enable: function (gameObject, shape, callback)
     {
@@ -399,9 +399,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#hitTestPointer
      * @since 3.0.0
      *
-     * @param {[type]} pointer - [description]
+     * @param {any} pointer - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     hitTestPointer: function (pointer)
     {
@@ -427,9 +427,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#processDownEvents
      * @since 3.0.0
      *
-     * @param {[type]} pointer - [description]
+     * @param {any} pointer - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     processDownEvents: function (pointer)
     {
@@ -466,10 +466,10 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#processDragEvents
      * @since 3.0.0
      *
-     * @param {[type]} pointer - [description]
-     * @param {[type]} time - [description]
+     * @param {any} pointer - [description]
+     * @param {any} time - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     processDragEvents: function (pointer, time)
     {
@@ -736,9 +736,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#processMoveEvents
      * @since 3.0.0
      *
-     * @param {[type]} pointer - [description]
+     * @param {any} pointer - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     processMoveEvents: function (pointer)
     {
@@ -779,9 +779,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#processOverOutEvents
      * @since 3.0.0
      *
-     * @param {[type]} pointer - [description]
+     * @param {any} pointer - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     processOverOutEvents: function (pointer)
     {
@@ -894,7 +894,7 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#processUpEvents
      * @since 3.0.0
      *
-     * @param {[type]} pointer - [description]
+     * @param {any} pointer - [description]
      */
     processUpEvents: function (pointer)
     {
@@ -925,9 +925,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#queueForInsertion
      * @since 3.0.0
      *
-     * @param {[type]} child - [description]
+     * @param {any} child - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     queueForInsertion: function (child)
     {
@@ -945,9 +945,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#queueForRemoval
      * @since 3.0.0
      *
-     * @param {[type]} child - [description]
+     * @param {any} child - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     queueForRemoval: function (child)
     {
@@ -962,10 +962,10 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setDraggable
      * @since 3.0.0
      *
-     * @param {[type]} gameObjects - [description]
-     * @param {[type]} value - [description]
+     * @param {any} gameObjects - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setDraggable: function (gameObjects, value)
     {
@@ -1003,11 +1003,11 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setHitArea
      * @since 3.0.0
      *
-     * @param {[type]} gameObjects - [description]
-     * @param {[type]} shape - [description]
-     * @param {[type]} callback - [description]
+     * @param {any} gameObjects - [description]
+     * @param {any} shape - [description]
+     * @param {any} callback - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setHitArea: function (gameObjects, shape, callback)
     {
@@ -1039,13 +1039,13 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setHitAreaCircle
      * @since 3.0.0
      *
-     * @param {[type]} gameObjects - [description]
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} radius - [description]
-     * @param {[type]} callback - [description]
+     * @param {any} gameObjects - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} radius - [description]
+     * @param {any} callback - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setHitAreaCircle: function (gameObjects, x, y, radius, callback)
     {
@@ -1062,14 +1062,14 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setHitAreaEllipse
      * @since 3.0.0
      *
-     * @param {[type]} gameObjects - [description]
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
-     * @param {[type]} callback - [description]
+     * @param {any} gameObjects - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
+     * @param {any} callback - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setHitAreaEllipse: function (gameObjects, x, y, width, height, callback)
     {
@@ -1086,10 +1086,10 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setHitAreaFromTexture
      * @since 3.0.0
      *
-     * @param {[type]} gameObjects - [description]
-     * @param {[type]} callback - [description]
+     * @param {any} gameObjects - [description]
+     * @param {any} callback - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setHitAreaFromTexture: function (gameObjects, callback)
     {
@@ -1136,14 +1136,14 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setHitAreaRectangle
      * @since 3.0.0
      *
-     * @param {[type]} gameObjects - [description]
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
-     * @param {[type]} callback - [description]
+     * @param {any} gameObjects - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
+     * @param {any} callback - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setHitAreaRectangle: function (gameObjects, x, y, width, height, callback)
     {
@@ -1160,16 +1160,16 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setHitAreaTriangle
      * @since 3.0.0
      *
-     * @param {[type]} gameObjects - [description]
-     * @param {[type]} x1 - [description]
-     * @param {[type]} y1 - [description]
-     * @param {[type]} x2 - [description]
-     * @param {[type]} y2 - [description]
-     * @param {[type]} x3 - [description]
-     * @param {[type]} y3 - [description]
-     * @param {[type]} callback - [description]
+     * @param {any} gameObjects - [description]
+     * @param {any} x1 - [description]
+     * @param {any} y1 - [description]
+     * @param {any} x2 - [description]
+     * @param {any} y2 - [description]
+     * @param {any} x3 - [description]
+     * @param {any} y3 - [description]
+     * @param {any} callback - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setHitAreaTriangle: function (gameObjects, x1, y1, x2, y2, x3, y3, callback)
     {
@@ -1186,7 +1186,7 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setPollAlways
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setPollAlways: function ()
     {
@@ -1202,7 +1202,7 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setPollOnMove
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setPollOnMove: function ()
     {
@@ -1218,9 +1218,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setPollRate
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setPollRate: function (value)
     {
@@ -1236,9 +1236,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setGlobalTopOnly
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setGlobalTopOnly: function (value)
     {
@@ -1253,9 +1253,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#setTopOnly
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setTopOnly: function (value)
     {
@@ -1271,9 +1271,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#sortGameObjects
      * @since 3.0.0
      *
-     * @param {[type]} gameObjects - [description]
+     * @param {any} gameObjects - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     sortGameObjects: function (gameObjects)
     {
@@ -1293,10 +1293,10 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#sortHandlerGO
      * @since 3.0.0
      *
-     * @param {[type]} childA - [description]
-     * @param {[type]} childB - [description]
+     * @param {any} childA - [description]
+     * @param {any} childB - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     sortHandlerGO: function (childA, childB)
     {
@@ -1325,10 +1325,10 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#sortHandlerIO
      * @since 3.0.0
      *
-     * @param {[type]} childA - [description]
-     * @param {[type]} childB - [description]
+     * @param {any} childA - [description]
+     * @param {any} childB - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     sortHandlerIO: function (childA, childB)
     {
@@ -1358,9 +1358,9 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#sortInteractiveObjects
      * @since 3.0.0
      *
-     * @param {[type]} interactiveObjects - [description]
+     * @param {any} interactiveObjects - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     sortInteractiveObjects: function (interactiveObjects)
     {
@@ -1380,7 +1380,7 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#stopPropagation
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     stopPropagation: function ()
     {
@@ -1398,10 +1398,10 @@ var InputPlugin = new Class({
      * @method Phaser.Input.InputPlugin#update
      * @since 3.0.0
      *
-     * @param {[type]} time - [description]
-     * @param {[type]} delta - [description]
+     * @param {any} time - [description]
+     * @param {any} delta - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     update: function (time, delta)
     {

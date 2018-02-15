@@ -75,7 +75,7 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#up
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     up: function ()
     {
@@ -92,7 +92,7 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#clone
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     clone: function ()
     {
@@ -105,10 +105,10 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#crossVectors
      * @since 3.0.0
      *
-     * @param {[type]} a - [description]
-     * @param {[type]} b - [description]
+     * @param {any} a - [description]
+     * @param {any} b - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     crossVectors: function (a, b)
     {
@@ -132,9 +132,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#equals
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     equals: function (v)
     {
@@ -147,9 +147,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#copy
      * @since 3.0.0
      *
-     * @param {[type]} src - [description]
+     * @param {any} src - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     copy: function (src)
     {
@@ -166,11 +166,11 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#set
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} z - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} z - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     set: function (x, y, z)
     {
@@ -196,9 +196,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#add
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     add: function (v)
     {
@@ -215,9 +215,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#subtract
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     subtract: function (v)
     {
@@ -234,9 +234,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#multiply
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     multiply: function (v)
     {
@@ -253,9 +253,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#scale
      * @since 3.0.0
      *
-     * @param {[type]} scale - [description]
+     * @param {any} scale - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     scale: function (scale)
     {
@@ -281,9 +281,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#divide
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     divide: function (v)
     {
@@ -300,7 +300,7 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#negate
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     negate: function ()
     {
@@ -317,9 +317,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#distance
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     distance: function (v)
     {
@@ -336,9 +336,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#distanceSq
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     distanceSq: function (v)
     {
@@ -355,7 +355,7 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#length
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     length: function ()
     {
@@ -372,7 +372,7 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#lengthSq
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     lengthSq: function ()
     {
@@ -389,7 +389,7 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#normalize
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     normalize: function ()
     {
@@ -416,9 +416,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#dot
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     dot: function (v)
     {
@@ -431,9 +431,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#cross
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
+     * @param {any} v - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     cross: function (v)
     {
@@ -457,10 +457,10 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#lerp
      * @since 3.0.0
      *
-     * @param {[type]} v - [description]
-     * @param {[type]} t - [description]
+     * @param {any} v - [description]
+     * @param {any} t - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     lerp: function (v, t)
     {
@@ -483,9 +483,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#transformMat3
      * @since 3.0.0
      *
-     * @param {[type]} mat - [description]
+     * @param {any} mat - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     transformMat3: function (mat)
     {
@@ -507,9 +507,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#transformMat4
      * @since 3.0.0
      *
-     * @param {[type]} mat - [description]
+     * @param {any} mat - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     transformMat4: function (mat)
     {
@@ -531,9 +531,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#transformCoordinates
      * @since 3.0.0
      *
-     * @param {[type]} mat - [description]
+     * @param {any} mat - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     transformCoordinates: function (mat)
     {
@@ -560,9 +560,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#transformQuat
      * @since 3.0.0
      *
-     * @param {[type]} q - [description]
+     * @param {any} q - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     transformQuat: function (q)
     {
@@ -604,9 +604,9 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#project
      * @since 3.0.0
      *
-     * @param {[type]} mat - [description]
+     * @param {any} mat - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     project: function (mat)
     {
@@ -661,10 +661,10 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#unproject
      * @since 3.0.0
      *
-     * @param {[type]} viewport - [description]
-     * @param {[type]} invProjectionView - [description]
+     * @param {any} viewport - [description]
+     * @param {any} invProjectionView - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     unproject: function (viewport, invProjectionView)
     {
@@ -690,7 +690,7 @@ var Vector3 = new Class({
      * @method Phaser.Math.Vector3#reset
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     reset: function ()
     {

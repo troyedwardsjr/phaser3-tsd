@@ -16,7 +16,7 @@ var Class = require('../../utils/Class');
  * @since 3.0.0
  *
  * @param {Phaser.Scene} scene - [description]
- * @param {[type]} renderable - [description]
+ * @param {any} renderable - [description]
  */
 var BitmapMask = new Class({
     
@@ -30,7 +30,7 @@ var BitmapMask = new Class({
          * [description]
          *
          * @name Phaser.Display.Masks.BitmapMask#bitmapMask
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.bitmapMask = renderable;
@@ -39,7 +39,7 @@ var BitmapMask = new Class({
          * [description]
          *
          * @name Phaser.Display.Masks.BitmapMask#maskRenderTarget
-         * @type {[type]}
+         * @type {any}
          * @default null
          * @since 3.0.0
          */
@@ -49,7 +49,7 @@ var BitmapMask = new Class({
          * [description]
          *
          * @name Phaser.Display.Masks.BitmapMask#mainRenderTarget
-         * @type {[type]}
+         * @type {any}
          * @default null
          * @since 3.0.0
          */
@@ -59,7 +59,7 @@ var BitmapMask = new Class({
          * [description]
          *
          * @name Phaser.Display.Masks.BitmapMask#maskTexture
-         * @type {[type]}
+         * @type {any}
          * @default null
          * @since 3.0.0
          */
@@ -69,7 +69,7 @@ var BitmapMask = new Class({
          * [description]
          *
          * @name Phaser.Display.Masks.BitmapMask#mainTexture
-         * @type {[type]}
+         * @type {any}
          * @default null
          * @since 3.0.0
          */
@@ -89,7 +89,7 @@ var BitmapMask = new Class({
          * [description]
          *
          * @name Phaser.Display.Masks.BitmapMask#mainFramebuffer
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.mainFramebuffer = null;
@@ -98,7 +98,7 @@ var BitmapMask = new Class({
          * [description]
          *
          * @name Phaser.Display.Masks.BitmapMask#maskFramebuffer
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.maskFramebuffer = null;
@@ -141,7 +141,7 @@ var BitmapMask = new Class({
      * @method Phaser.Display.Masks.BitmapMask#setBitmap
      * @since 3.0.0
      *
-     * @param {[type]} renderable - [description]
+     * @param {any} renderable - [description]
      */
     setBitmap: function (renderable)
     {
@@ -154,8 +154,8 @@ var BitmapMask = new Class({
      * @method Phaser.Display.Masks.BitmapMask#preRenderWebGL
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
-     * @param {[type]} maskedObject - [description]
+     * @param {any} renderer - [description]
+     * @param {any} maskedObject - [description]
      * @param {Phaser.Cameras.Scene2D.Camera} camera - The Camera to render to.
      */
     preRenderWebGL: function (renderer, maskedObject, camera)
@@ -169,7 +169,7 @@ var BitmapMask = new Class({
      * @method Phaser.Display.Masks.BitmapMask#postRenderWebGL
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
+     * @param {any} renderer - [description]
      */
     postRenderWebGL: function (renderer)
     {
@@ -182,8 +182,8 @@ var BitmapMask = new Class({
      * @method Phaser.Display.Masks.BitmapMask#preRenderCanvas
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
-     * @param {[type]} mask - [description]
+     * @param {any} renderer - [description]
+     * @param {any} mask - [description]
      * @param {Phaser.Cameras.Scene2D.Camera} camera - The Camera to render to.
      */
     preRenderCanvas: function (renderer, mask, camera)
@@ -197,7 +197,7 @@ var BitmapMask = new Class({
      * @method Phaser.Display.Masks.BitmapMask#postRenderCanvas
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
+     * @param {any} renderer - [description]
      */
     postRenderCanvas: function (renderer)
     {

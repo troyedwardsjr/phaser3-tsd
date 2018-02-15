@@ -20,7 +20,7 @@ var CheckAgainst = {
      * @method Phaser.Physics.Impact.Components.CheckAgainst#setAvsB
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setAvsB: function ()
     {
@@ -35,7 +35,7 @@ var CheckAgainst = {
      * @method Phaser.Physics.Impact.Components.CheckAgainst#setBvsA
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setBvsA: function ()
     {
@@ -50,7 +50,7 @@ var CheckAgainst = {
      * @method Phaser.Physics.Impact.Components.CheckAgainst#setCheckAgainstNone
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setCheckAgainstNone: function ()
     {
@@ -65,7 +65,7 @@ var CheckAgainst = {
      * @method Phaser.Physics.Impact.Components.CheckAgainst#setCheckAgainstA
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setCheckAgainstA: function ()
     {
@@ -80,7 +80,7 @@ var CheckAgainst = {
      * @method Phaser.Physics.Impact.Components.CheckAgainst#setCheckAgainstB
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setCheckAgainstB: function ()
     {
@@ -93,7 +93,7 @@ var CheckAgainst = {
      * [description]
      *
      * @name Phaser.Physics.Impact.Components.CheckAgainst#checkAgainst
-     * @type {[type]}
+     * @type {any}
      * @since 3.0.0
      */
     checkAgainst: {

@@ -18,12 +18,12 @@ var Offset = {
      * @method Phaser.Physics.Impact.Components.Offset#setOffset
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setOffset: function (x, y, width, height)
     {

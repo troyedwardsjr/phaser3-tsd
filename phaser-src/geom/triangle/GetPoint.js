@@ -16,9 +16,9 @@ var Length = require('../line/Length');
  *
  * @param {Phaser.Geom.Triangle} triangle - [description]
  * @param {float} position - [description]
- * @param {[type]} out - [description]
+ * @param {any} out - [description]
  *
- * @return {[type]} [description]
+ * @return {any} [description]
  */
 var GetPoint = function (triangle, position, out)
 {

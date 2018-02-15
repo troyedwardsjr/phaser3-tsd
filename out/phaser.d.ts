@@ -4,176 +4,169 @@ declare module 'phaser' {
 declare class Phaser {
 }
 
-declare module Phaser {
-    declare class Actions {
-        static Angle(items: any[], value: number): any[];
+declare module 'Phaser' {
+    declare module 'Actions' {
+    }
 
-        static Call(items: any[], callback: any, thisArg: any): any[];
+    declare module 'Animations' {
+        declare class Animation {
+            static addFrame(config: any): Phaser.Animations.Animation;
 
-        static GetFirst(items: any[], compare: any, index: number): any[];
+            static addFrameAt(index: number, config: any): Phaser.Animations.Animation;
 
-        static GridAlign(items: any[], options: any): any[];
+            static checkFrame(index: number): boolean;
 
-        static IncAlpha(items: any[], value: number): any[];
+            static completeAnimation(component: Phaser.GameObjects.Components.Animation): void;
 
-        static IncX(items: any[], value: number): any[];
+            static getFirstTick(component: Phaser.GameObjects.Components.Animation, includeDelay: boolean): void;
 
-        static IncXY(items: any[], x: number, y: number): any[];
+            static getFrameAt(index: number): Phaser.Animations.AnimationFrame;
 
-        static IncY(items: any[], value: number): any[];
+            static getFrames(textureManager: any, frames: any): Array.<Phaser.Animations.AnimationFrame>;
 
-        static PlaceOnCircle(items: any[], circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
+            static getNextTick(component: Phaser.GameObjects.Components.Animation): void;
 
-        static PlaceOnEllipse(items: any[], ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
+            static load(component: Phaser.GameObjects.Components.Animation, startFrame: number): void;
 
-        static PlaceOnLine(items: any[], line: Phaser.Geom.Line): any[];
+            static nextFrame(component: Phaser.GameObjects.Components.Animation): void;
 
-        static PlaceOnRectangle(items: any[], rect: Phaser.Geom.Rectangle, shift: number): any[];
+            static previousFrame(component: Phaser.GameObjects.Components.Animation): void;
 
-        static PlaceOnTriangle(items: any[], triangle: Phaser.Geom.Triangle, stepRate: number): any[];
+            static removeFrame(frame: Phaser.Animations.AnimationFrame): Phaser.Animations.Animation;
 
-        static PlayAnimation(items: any[], key: string, startFrame: string): any[];
+            static removeFrameAt(index: number): Phaser.Animations.Animation;
 
-        static RandomCircle(items: any[], circle: Phaser.Geom.Circle): any[];
+            static repeatAnimation(component: Phaser.GameObjects.Components.Animation): void;
 
-        static RandomEllipse(items: any[], ellipse: Phaser.Geom.Ellipse): any[];
+            static setFrame(component: Phaser.GameObjects.Components.Animation): void;
 
-        static RandomLine(items: any[], line: Phaser.Geom.Line): any[];
+            static toJSON(): any;
 
-        static RandomRectangle(items: any[], rect: Phaser.Geom.Rectangle): any[];
+            static updateFrameSequence(): Phaser.Animations.Animation;
 
-        static RandomTriangle(items: any[], triangle: Phaser.Geom.Triangle): any[];
+            static pause(): Phaser.Animations.Animation;
 
-        static Rotate(items: any[], value: number, step: number): any[];
+            static resume(): Phaser.Animations.Animation;
 
-        static RotateAround(items: any[], point: any, angle: number): any[];
+            static destroy(): void;
 
-        static RotateAroundDistance(items: any[], point: any, angle: number, distance: number): any[];
+        }
 
-        static ScaleX(items: any[], value: number): any[];
+        declare class AnimationFrame {
+            static toJSON(): any;
 
-        static ScaleXY(items: any[], x: number, y: number): any[];
+            static destroy(): void;
 
-        static ScaleY(items: any[], value: number): any[];
+        }
 
-        static SetAlpha(items: any[], value: number, step: number): any[];
+        declare class AnimationManager {
+            static boot(): void;
 
-        static SetBlendMode(items: any[], value: number): any[];
+            static add(key: string, animation: Phaser.Animations.Animation): Phaser.Animations.AnimationManager;
 
-        static SetDepth(items: any[], value: number, step: number): any[];
+            static create(config: any): Phaser.Animations.Animation;
 
-        static SetHitArea(items: any[], hitArea: any, hitAreaCallback: any): any[];
+            static fromJSON(data: string, clearCurrentAnimations: boolean): Array.<Phaser.Animations.Animation>;
 
-        static SetOrigin(items: any[], x: number, y: number): any[];
+            static generateFrameNames(key: string, config: any, config.prefix: string, config.start: number, config.end: number, config.suffix: string, config.zeroPad: number, config.outputArray: any[], config.frames: boolean): Array.<object>;
 
-        static SetRotation(items: any[], value: number, step: number): any[];
+            static generateFrameNumbers(key: string, config: any, config.start: number, config.end: number, config.first: boolean, config.outputArray: any[], config.frames: boolean): Array.<object>;
 
-        static SetScale(items: any[], x: number, y: number, stepX: number, stepY: number): any[];
+            static get(key: string): Phaser.Animations.Animation;
 
-        static SetScaleX(items: any[], value: number, step: number): any[];
+            static load(child: Phaser.GameObjects.GameObject, key: string, startFrame: string): Phaser.GameObjects.GameObject;
 
-        static SetScaleY(items: any[], value: number, step: number): any[];
+            static pauseAll(): Phaser.Animations.AnimationManager;
 
-        static SetTint(items: any[], topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): any[];
+            static play(key: string, child: Phaser.GameObjects.GameObject): Phaser.Animations.AnimationManager;
 
-        static SetVisible(items: any[], value: boolean): any[];
+            static remove(key: string): Phaser.Animations.Animation;
 
-        static SetX(items: any[], value: number, step: number): any[];
+            static resumeAll(): Phaser.Animations.AnimationManager;
 
-        static SetXY(items: any[], x: number, y: number, stepX: number, stepY: number): any[];
+            static staggerPlay(key: string, child: Phaser.GameObjects.GameObject, stagger: number): Phaser.Animations.AnimationManager;
 
-        static SetY(items: any[], value: number, step: number): any[];
+            static toJSON(key: string): any;
 
-        static ShiftPosition(items: any[], x: number, y: number, direction: number, output: Phaser.Math.Vector2): any[];
+            static destroy(): void;
 
-        static Shuffle(items: any[]): any[];
-
-        static SmootherStep(items: any[], property: string, min: number, max: number, inc: number): any[];
-
-        static SmoothStep(items: any[], property: string, min: number, max: number, inc: number): any[];
-
-        static Spread(items: any[], property: string, min: number, max: number, inc: number): any[];
-
-        static ToggleVisible(items: any[]): any[];
+        }
 
     }
 
-    declare class Animation {
+    declare module 'Cache' {
     }
 
-    declare class Cache {
+    declare module 'Cameras' {
     }
 
-    declare class Cameras {
+    declare module 'Class' {
     }
 
-    declare class Class {
+    declare module 'Create' {
     }
 
-    declare class Create {
+    declare module 'Curves' {
     }
 
-    declare class Curves {
+    declare module 'Data' {
     }
 
-    declare class Data {
+    declare module 'Display' {
     }
 
-    declare class Display {
+    declare module 'DOM' {
     }
 
-    declare class DOM {
+    declare module 'EventEmitter' {
     }
 
-    declare class EventEmitter {
+    declare module 'Game' {
     }
 
-    declare class Game {
+    declare module 'GameObjects' {
     }
 
-    declare class GameObjects {
+    declare module 'Geom' {
     }
 
-    declare class Geom {
+    declare module 'Input' {
     }
 
-    declare class Input {
+    declare module 'Loader' {
     }
 
-    declare class Loader {
+    declare module 'Math' {
     }
 
-    declare class Math {
+    declare module 'Physics' {
     }
 
-    declare class Physics {
+    declare module 'Scene' {
     }
 
-    declare class Scene {
+    declare module 'Scenes' {
     }
 
-    declare class Scenes {
+    declare module 'Sound' {
     }
 
-    declare class Sound {
+    declare module 'Structs' {
     }
 
-    declare class Structs {
+    declare module 'Textures' {
     }
 
-    declare class Textures {
+    declare module 'Tilemaps' {
     }
 
-    declare class Tilemaps {
+    declare module 'Time' {
     }
 
-    declare class Time {
+    declare module 'Tweens' {
     }
 
-    declare class Tweens {
-    }
-
-    declare class Utils {
+    declare module 'Utils' {
     }
 
 }

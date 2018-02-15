@@ -526,7 +526,7 @@ var Body = new Class({
      * @method Phaser.Physics.Impact.Body#check
      * @since 3.0.0
      *
-     * @param {[type]} other - [description]
+     * @param {any} other - [description]
      */
     check: function (other)
     {
@@ -539,7 +539,7 @@ var Body = new Class({
      * @since 3.0.0
      *
      * @param {Phaser.Physics.Impact.Body} other - [description]
-     * @param {[type]} axis - [description]
+     * @param {any} axis - [description]
      */
     collideWith: function (other, axis)
     {
@@ -555,7 +555,7 @@ var Body = new Class({
      * @method Phaser.Physics.Impact.Body#handleMovementTrace
      * @since 3.0.0
      *
-     * @param {[type]} res - [description]
+     * @param {any} res - [description]
      *
      * @return {boolean} [description]
      */

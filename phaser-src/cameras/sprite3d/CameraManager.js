@@ -80,11 +80,11 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Sprite3D.CameraManager#add
      * @since 3.0.0
      *
-     * @param {[type]} fieldOfView - [description]
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
+     * @param {any} fieldOfView - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     add: function (fieldOfView, width, height)
     {
@@ -97,10 +97,10 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Sprite3D.CameraManager#addOrthographicCamera
      * @since 3.0.0
      *
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     addOrthographicCamera: function (width, height)
     {
@@ -122,11 +122,11 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Sprite3D.CameraManager#addPerspectiveCamera
      * @since 3.0.0
      *
-     * @param {[type]} fieldOfView - [description]
-     * @param {[type]} width - [description]
-     * @param {[type]} height - [description]
+     * @param {any} fieldOfView - [description]
+     * @param {any} width - [description]
+     * @param {any} height - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     addPerspectiveCamera: function (fieldOfView, width, height)
     {
@@ -149,9 +149,9 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Sprite3D.CameraManager#getCamera
      * @since 3.0.0
      *
-     * @param {[type]} name - [description]
+     * @param {any} name - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getCamera: function (name)
     {
@@ -172,7 +172,7 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Sprite3D.CameraManager#removeCamera
      * @since 3.0.0
      *
-     * @param {[type]} camera - [description]
+     * @param {any} camera - [description]
      */
     removeCamera: function (camera)
     {
@@ -190,7 +190,7 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Sprite3D.CameraManager#removeAll
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     removeAll: function ()
     {
@@ -210,8 +210,8 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Sprite3D.CameraManager#update
      * @since 3.0.0
      *
-     * @param {[type]} timestep - [description]
-     * @param {[type]} delta - [description]
+     * @param {any} timestep - [description]
+     * @param {any} delta - [description]
      */
     update: function (timestep, delta)
     {

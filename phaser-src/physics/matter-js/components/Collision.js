@@ -18,9 +18,9 @@ var Collision = {
      * @method Phaser.Physics.Matter.Components.Collision#setCollisionCategory
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setCollisionCategory: function (value)
     {
@@ -35,9 +35,9 @@ var Collision = {
      * @method Phaser.Physics.Matter.Components.Collision#setCollisionGroup
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setCollisionGroup: function (value)
     {
@@ -52,9 +52,9 @@ var Collision = {
      * @method Phaser.Physics.Matter.Components.Collision#setCollidesWith
      * @since 3.0.0
      *
-     * @param {[type]} categories - [description]
+     * @param {any} categories - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setCollidesWith: function (categories)
     {

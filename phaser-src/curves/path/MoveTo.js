@@ -53,10 +53,10 @@ var MoveTo = new Class({
      * @method Phaser.Curves.MoveTo#getPoint
      * @since 3.0.0
      *
-     * @param {[type]} t - [description]
-     * @param {[type]} out - [description]
+     * @param {any} t - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoint: function (t, out)
     {
@@ -71,10 +71,10 @@ var MoveTo = new Class({
      * @method Phaser.Curves.MoveTo#getPointAt
      * @since 3.0.0
      *
-     * @param {[type]} u - [description]
-     * @param {[type]} out - [description]
+     * @param {any} u - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPointAt: function (u, out)
     {
@@ -87,7 +87,7 @@ var MoveTo = new Class({
      * @method Phaser.Curves.MoveTo#getResolution
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getResolution: function ()
     {
@@ -100,7 +100,7 @@ var MoveTo = new Class({
      * @method Phaser.Curves.MoveTo#getLength
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getLength: function ()
     {
@@ -113,7 +113,7 @@ var MoveTo = new Class({
      * @method Phaser.Curves.MoveTo#toJSON
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     toJSON: function ()
     {

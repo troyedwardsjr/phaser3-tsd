@@ -85,11 +85,11 @@ var OrthographicCamera = new Class({
      * @method Phaser.Cameras.Sprite3D.OrthographicCamera#setToOrtho
      * @since 3.0.0
      *
-     * @param {[type]} yDown - [description]
-     * @param {[type]} viewportWidth - [description]
-     * @param {[type]} viewportHeight - [description]
+     * @param {any} yDown - [description]
+     * @param {any} viewportWidth - [description]
+     * @param {any} viewportHeight - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setToOrtho: function (yDown, viewportWidth, viewportHeight)
     {
@@ -114,7 +114,7 @@ var OrthographicCamera = new Class({
      * @method Phaser.Cameras.Sprite3D.OrthographicCamera#update
      * @since 3.0.0
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     update: function ()
     {

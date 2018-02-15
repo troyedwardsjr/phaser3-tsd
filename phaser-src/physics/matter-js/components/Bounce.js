@@ -18,9 +18,9 @@ var Bounce = {
      * @method Phaser.Physics.Matter.Components.Bounce#setBounce
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     setBounce: function (value)
     {

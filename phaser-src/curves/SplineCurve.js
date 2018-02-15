@@ -54,9 +54,9 @@ var SplineCurve = new Class({
      * @method Phaser.Curves.SplineCurve#addPoints
      * @since 3.0.0
      *
-     * @param {[type]} points - [description]
+     * @param {any} points - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     addPoints: function (points)
     {
@@ -94,10 +94,10 @@ var SplineCurve = new Class({
      * @method Phaser.Curves.SplineCurve#addPoint
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     addPoint: function (x, y)
     {
@@ -114,9 +114,9 @@ var SplineCurve = new Class({
      * @method Phaser.Curves.SplineCurve#getStartPoint
      * @since 3.0.0
      *
-     * @param {[type]} out - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getStartPoint: function (out)
     {
@@ -131,9 +131,9 @@ var SplineCurve = new Class({
      * @method Phaser.Curves.SplineCurve#getResolution
      * @since 3.0.0
      *
-     * @param {[type]} divisions - [description]
+     * @param {any} divisions - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getResolution: function (divisions)
     {
@@ -146,10 +146,10 @@ var SplineCurve = new Class({
      * @method Phaser.Curves.SplineCurve#getPoint
      * @since 3.0.0
      *
-     * @param {[type]} t - [description]
-     * @param {[type]} out - [description]
+     * @param {any} t - [description]
+     * @param {any} out - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     getPoint: function (t, out)
     {

@@ -131,7 +131,7 @@ var Bob = new Class({
      * @method Phaser.GameObjects.Blitter.Bob#setFrame
      * @since 3.0.0
      *
-     * @param {[type]} frame - [description]
+     * @param {any} frame - [description]
      *
      * @return {Phaser.GameObjects.Blitter.Bob} This Bob Game Object.
      */
@@ -171,9 +171,9 @@ var Bob = new Class({
      * @method Phaser.GameObjects.Blitter.Bob#reset
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
-     * @param {[type]} frame - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
+     * @param {any} frame - [description]
      * 
      * @return {Phaser.GameObjects.Blitter.Bob} This Bob Game Object.
      */
@@ -192,7 +192,7 @@ var Bob = new Class({
      * @method Phaser.GameObjects.Blitter.Bob#setFlipX
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.GameObjects.Blitter.Bob} This Bob Game Object.
      */
@@ -209,7 +209,7 @@ var Bob = new Class({
      * @method Phaser.GameObjects.Blitter.Bob#setFlipY
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.GameObjects.Blitter.Bob} This Bob Game Object.
      */
@@ -226,8 +226,8 @@ var Bob = new Class({
      * @method Phaser.GameObjects.Blitter.Bob#setFlip
      * @since 3.0.0
      *
-     * @param {[type]} x - [description]
-     * @param {[type]} y - [description]
+     * @param {any} x - [description]
+     * @param {any} y - [description]
      *
      * @return {Phaser.GameObjects.Blitter.Bob} This Bob Game Object.
      */
@@ -245,7 +245,7 @@ var Bob = new Class({
      * @method Phaser.GameObjects.Blitter.Bob#setVisible
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.GameObjects.Blitter.Bob} This Bob Game Object.
      */
@@ -262,7 +262,7 @@ var Bob = new Class({
      * @method Phaser.GameObjects.Blitter.Bob#setAlpha
      * @since 3.0.0
      *
-     * @param {[type]} value - [description]
+     * @param {any} value - [description]
      *
      * @return {Phaser.GameObjects.Blitter.Bob} This Bob Game Object.
      */

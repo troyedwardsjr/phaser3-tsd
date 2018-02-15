@@ -110,7 +110,7 @@ var RandomDataGenerator = new Class({
      * @since 3.0.0
      * @private
      *
-     * @param {[type]} data - [description]
+     * @param {any} data - [description]
      *
      * @return {number} The hashed value.
      */

@@ -114,7 +114,7 @@ var KeyCombo = new Class({
          * The length of this combo (in keycodes)
          *
          * @name Phaser.Input.Keyboard.KeyCombo#size
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.size = this.keyCodes.length;

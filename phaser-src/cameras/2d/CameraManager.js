@@ -236,9 +236,9 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Scene2D.CameraManager#fromJSON
      * @since 3.0.0
      *
-     * @param {[type]} config - [description]
+     * @param {any} config - [description]
      *
-     * @return {[type]} [description]
+     * @return {any} [description]
      */
     fromJSON: function (config)
     {
@@ -325,7 +325,7 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Scene2D.CameraManager#getCameraBelowPointer
      * @since 3.0.0
      *
-     * @param {[type]} pointer - [description]
+     * @param {any} pointer - [description]
      *
      * @return {Phaser.Cameras.Scene2D.Camera} [description]
      */
@@ -375,9 +375,9 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Scene2D.CameraManager#render
      * @since 3.0.0
      *
-     * @param {[type]} renderer - [description]
-     * @param {[type]} children - [description]
-     * @param {[type]} interpolation - [description]
+     * @param {any} renderer - [description]
+     * @param {any} children - [description]
+     * @param {any} interpolation - [description]
      */
     render: function (renderer, children, interpolation)
     {

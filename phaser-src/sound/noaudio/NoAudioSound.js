@@ -130,7 +130,7 @@ var NoAudioSound = new Class({
          * [description]
          *
          * @name Phaser.Sound.NoAudioSound#currentConfig
-         * @type {[type]}
+         * @type {any}
          * @since 3.0.0
          */
         this.currentConfig = this.config;
