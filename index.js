@@ -54,6 +54,50 @@ const readPhaserSrc = (dir) =>
 const transpileLoop = (srcFiles) => {
 	let promiseBuf = [];
 	let fileIndex = 0;
+	const filesLength = srcFiles.length - 1;
+
+	const processFiles = () => {
+		if (fileIndex >= filesLength) {return;};
+		fileIndex += 1;
+
+		parser(srcFiles[fileIndex]).then((result) => {
+			const usefulDocData = JSON.parse(result.stdout);
+			convert(phaserModuleDOM, usefulDocData);
+			
+			//console.log(dom.emit(phaserModuleDOM));
+			console.log(`Files processed: ${fileIndex}`);
+			console.log(`Files name: ${srcFiles[fileIndex]}`);
+
+			// Clear promise buffer and start process again.
+			promiseBuf = [];
+			processFiles();
+		})
+
+	};
+
+	processFiles();
+}
+
+const transpile = () => {
+	//var srcFileName = readPhaserSrc("./phaser-src/")[0];
+	var srcFiles = readPhaserSrc("./phaser-src/actions/");
+	transpileLoop(srcFiles);
+}
+
+const transpiler = (() => {
+	// Create namespace for each src namespace.
+	phaserSrcNs.forEach((cls) => {
+		phaserModuleDOM.members.push(dom.create.class(cls, 0));
+	});
+
+	transpile();
+})();
+
+
+/*
+const transpileLoop = (srcFiles) => {
+	let promiseBuf = [];
+	let fileIndex = 0;
 
 	const processFiles = () => {
 		// Create only 5 processes before converting in order not to flood.
@@ -83,19 +127,4 @@ const transpileLoop = (srcFiles) => {
 
 	processFiles();
 }
-
-const transpile = () => {
-	//var srcFileName = readPhaserSrc("./phaser-src/")[0];
-	var srcFiles = readPhaserSrc("./phaser-src/actions/");
-	transpileLoop(srcFiles);
-}
-
-const transpiler = (() => {
-	// Create namespace for each src namespace.
-	phaserSrcNs.forEach((cls) => {
-		phaserModuleDOM.members.push(dom.create.class(cls, 0));
-	});
-
-	transpile();
-})();
-
+*/
