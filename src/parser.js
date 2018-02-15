@@ -41,16 +41,6 @@ function jsdocParser(filename) {
 		return;
 	}
 	
-	/*
-	return new Promise((resolve, reject) => {
-    execFile(cmd, ['-X', filename], (error, stdout, stderr) => {
-      if (error) return resolve(JSON.parse(stderr));
-      if (stderr) return resolve(JSON.parse(stderr));
-      resolve(JSON.parse(stdout));
-    });
-	});
-	*/
-
 	return execFilePromise(cmd, ['-X', filename]);
 }
 

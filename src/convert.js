@@ -2,10 +2,12 @@ const dom = require('dts-dom');
 
 const convert = (phaserModuleDOM, userfulDocData) => {
 	userfulDocData.forEach((docObj) => {
-		switch (docObj.kind) {
-			case 'function':
-				convertFunction(phaserModuleDOM, docObj);
-				break;
+		if(docObj.memberof) {
+			switch (docObj.kind) {
+				case 'function':
+					convertFunction(phaserModuleDOM, docObj);
+					break;
+			}
 		}
 	});
 }
@@ -26,30 +28,37 @@ const convertType = (docType) => {
 			return dom.type.any;
 		case "array":
 			return dom.type.array(dom.type.any);
+		default:
+			return dom.type.stringLiteral(docType);
 	}
 }
 
-const convertMember = () => {
+const convertDecFlag = () => {
 
+}
+
+const convertMember = () => {
 }
 
 const convertFunction = (phaserModuleDOM, docObj) => {
 
-	const params = (params) => {
+	const convertParams = (params) => {
 		let paramsDOM = [];
 		if (params && params.length > 0) {
 			paramsDOM = params.map((param) => {
 				return dom.create.parameter(param.name, param.type.names[0]);
 			})
 		}
+		// Returns an array of parameters.
 		return paramsDOM;
 	}
 
-	const returns = (returns) => {
+	const convertReturns = (returns) => {
 		let returnsDOM = dom.type.void;
 		if (returns && returns.length > 0) {
 			returnsDOM = convertType(returns[0].type.names[0]);
 		}
+		// Returns a single return type.
 		return returnsDOM;
 	}
 
@@ -58,8 +67,8 @@ const convertFunction = (phaserModuleDOM, docObj) => {
 	})
 	.members.push(dom.create.method(
 		docObj.name,
-		params(docObj.params),
-		returns(docObj.returns),
+		convertParams(docObj.params),
+		convertReturns(docObj.returns),
 		dom.DeclarationFlags.Static // scope:
 	));
 
