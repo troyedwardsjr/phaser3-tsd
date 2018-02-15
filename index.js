@@ -10,7 +10,7 @@ const convert = require('./src/convert')
 // Create standard wrapper declarations.
 const phaserPkgModuleDOM = dom.create.module('phaser');
 const phaserClassDOM = dom.create.class('Phaser');
-const phaserModuleDOM = dom.create.namespace('Phaser');
+const phaserModuleDOM = dom.create.module('Phaser');
 
 // Phaser source namespaces.
 const phaserSrcNs = [
@@ -65,19 +65,24 @@ const transpileLoop = (srcFiles) => {
 	});
 
 	Promise.all(promiseBuf).then((procOutArray) => {
+
 		procOutArray.forEach((result) => {
 			const usefulDocData = JSON.parse(result.stdout);
 			convert(phaserModuleDOM, usefulDocData);
 		})
-		const domOutput = dom.emit(phaserModuleDOM);
+
+		const domOutput = dom.emit(phaserPkgModuleDOM) + dom.emit(phaserClassDOM) + dom.emit(phaserModuleDOM);
 		const outPath = 'out/phaser.d.ts';
+
 		console.log(domOutput);
+
 		fs.writeFile(outPath, domOutput, (err) => {
 				if(err) {
 						return console.log(err);
 				}
 				console.log(`File was written to ${outPath}`);
 		});
+
 	});
 }
 

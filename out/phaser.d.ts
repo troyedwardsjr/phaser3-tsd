@@ -1,5 +1,11 @@
-declare namespace Phaser {
-    class Actions {
+declare module 'phaser' {
+}
+
+declare class Phaser {
+}
+
+declare module Phaser {
+    declare class Actions {
         static Angle(items: any[], value: number): any[];
 
         static Call(items: any[], callback: any, thisArg: any): any[];
@@ -92,82 +98,82 @@ declare namespace Phaser {
 
     }
 
-    class Animation {
+    declare class Animation {
     }
 
-    class Cache {
+    declare class Cache {
     }
 
-    class Cameras {
+    declare class Cameras {
     }
 
-    class Class {
+    declare class Class {
     }
 
-    class Create {
+    declare class Create {
     }
 
-    class Curves {
+    declare class Curves {
     }
 
-    class Data {
+    declare class Data {
     }
 
-    class Display {
+    declare class Display {
     }
 
-    class DOM {
+    declare class DOM {
     }
 
-    class EventEmitter {
+    declare class EventEmitter {
     }
 
-    class Game {
+    declare class Game {
     }
 
-    class GameObjects {
+    declare class GameObjects {
     }
 
-    class Geom {
+    declare class Geom {
     }
 
-    class Input {
+    declare class Input {
     }
 
-    class Loader {
+    declare class Loader {
     }
 
-    class Math {
+    declare class Math {
     }
 
-    class Physics {
+    declare class Physics {
     }
 
-    class Scene {
+    declare class Scene {
     }
 
-    class Scenes {
+    declare class Scenes {
     }
 
-    class Sound {
+    declare class Sound {
     }
 
-    class Structs {
+    declare class Structs {
     }
 
-    class Textures {
+    declare class Textures {
     }
 
-    class Tilemaps {
+    declare class Tilemaps {
     }
 
-    class Time {
+    declare class Time {
     }
 
-    class Tweens {
+    declare class Tweens {
     }
 
-    class Utils {
+    declare class Utils {
     }
 
 }
