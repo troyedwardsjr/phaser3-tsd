@@ -116,7 +116,8 @@ declare namespace Phaser {
     }
 
     class Scene {
-        static update(): void;
+
+        update(): void;
 
     }
 
@@ -124,6 +125,16 @@ declare namespace Phaser {
     }
 
     class Scenes {
+
+
+
+
+
+
+
+
+
+
         static GetPhysicsPlugins(sys: Phaser.Scenes.Systems): any[];
 
         static GetScenePlugins(sys: Phaser.Scenes.Systems): any[];
@@ -132,67 +143,74 @@ declare namespace Phaser {
 
     namespace Scenes {
         class SceneManager {
-            static processQueue(): void;
 
-            static add(key: string, sceneConfig: Phaser.Scene, autoStart: boolean): Phaser.Scene;
 
-            static bootScene(scene: Phaser.Scene): void;
 
-            static loadComplete(loader: any): void;
 
-            static payloadComplete(loader: any): void;
 
-            static update(time: number, delta: number): void;
 
-            static render(renderer: any): void;
 
-            static create(scene: Phaser.Scene): void;
+            processQueue(): void;
 
-            static createSceneFromFunction(key: string, scene: any): Phaser.Scene;
+            add(key: string, sceneConfig: Phaser.Scene, autoStart: boolean): Phaser.Scene;
 
-            static createSceneFromInstance(key: string, newScene: Phaser.Scene): Phaser.Scene;
+            bootScene(scene: Phaser.Scene): void;
 
-            static createSceneFromObject(key: string, sceneConfig: any): Phaser.Scene;
+            loadComplete(loader: any): void;
 
-            static getKey(key: string, sceneConfig: Phaser.Scene): string;
+            payloadComplete(loader: any): void;
 
-            static getScene(key: string): Phaser.Scene;
+            update(time: number, delta: number): void;
 
-            static isActive(key: string): boolean;
+            render(renderer: any): void;
 
-            static isVisible(key: string): boolean;
+            create(scene: Phaser.Scene): void;
 
-            static isSleeping(key: string): boolean;
+            createSceneFromFunction(key: string, scene: any): Phaser.Scene;
 
-            static pause(key: string): Phaser.Scenes.SceneManager;
+            createSceneFromInstance(key: string, newScene: Phaser.Scene): Phaser.Scene;
 
-            static resume(key: string): Phaser.Scenes.SceneManager;
+            createSceneFromObject(key: string, sceneConfig: any): Phaser.Scene;
 
-            static sleep(key: string): Phaser.Scenes.SceneManager;
+            getKey(key: string, sceneConfig: Phaser.Scene): string;
 
-            static wake(key: string): Phaser.Scenes.SceneManager;
+            getScene(key: string): Phaser.Scene;
 
-            static start(key: string, data: any): Phaser.Scenes.SceneManager;
+            isActive(key: string): boolean;
 
-            static stop(key: string): Phaser.Scenes.SceneManager;
+            isVisible(key: string): boolean;
 
-            static switch(from: string, to: string): Phaser.Scenes.SceneManager;
+            isSleeping(key: string): boolean;
 
-            static getAt(index: number): Phaser.Scene;
+            pause(key: string): Phaser.Scenes.SceneManager;
 
-            static getIndex(key: string): number;
+            resume(key: string): Phaser.Scenes.SceneManager;
 
-            static bringToTop(scene: string): Phaser.Scenes.SceneManager;
+            sleep(key: string): Phaser.Scenes.SceneManager;
 
-            static sendToBack(scene: string): Phaser.Scenes.SceneManager;
+            wake(key: string): Phaser.Scenes.SceneManager;
 
-            static moveDown(scene: string): Phaser.Scenes.SceneManager;
+            start(key: string, data: any): Phaser.Scenes.SceneManager;
 
-            static moveUp(scene: string): Phaser.Scenes.SceneManager;
+            stop(key: string): Phaser.Scenes.SceneManager;
 
-            static swapPosition(keyA: string, keyB: string): Phaser.Scenes.SceneManager;
+            switch(from: string, to: string): Phaser.Scenes.SceneManager;
 
-            static destroy(): void;
+            getAt(index: number): Phaser.Scene;
+
+            getIndex(key: string): number;
+
+            bringToTop(scene: string): Phaser.Scenes.SceneManager;
+
+            sendToBack(scene: string): Phaser.Scenes.SceneManager;
+
+            moveDown(scene: string): Phaser.Scenes.SceneManager;
+
+            moveUp(scene: string): Phaser.Scenes.SceneManager;
+
+            swapPosition(keyA: string, keyB: string): Phaser.Scenes.SceneManager;
+
+            destroy(): void;
 
         }
 
@@ -200,51 +218,57 @@ declare namespace Phaser {
         }
 
         class ScenePlugin {
-            static boot(): void;
 
-            static start(key: string, data: any): Phaser.Scenes.ScenePlugin;
 
-            static add(key: string, sceneConfig: any, autoStart: boolean): Phaser.Scenes.ScenePlugin;
 
-            static launch(key: string, data: any): Phaser.Scenes.ScenePlugin;
 
-            static pause(key: string): Phaser.Scenes.ScenePlugin;
 
-            static resume(key: string): Phaser.Scenes.ScenePlugin;
 
-            static sleep(key: string): Phaser.Scenes.ScenePlugin;
+            boot(): void;
 
-            static wake(key: string): Phaser.Scenes.ScenePlugin;
+            start(key: string, data: any): Phaser.Scenes.ScenePlugin;
 
-            static switch(key: string): Phaser.Scenes.ScenePlugin;
+            add(key: string, sceneConfig: any, autoStart: boolean): Phaser.Scenes.ScenePlugin;
 
-            static stop(key: string): Phaser.Scenes.ScenePlugin;
+            launch(key: string, data: any): Phaser.Scenes.ScenePlugin;
 
-            static setActive(value: boolean): Phaser.Scenes.ScenePlugin;
+            pause(key: string): Phaser.Scenes.ScenePlugin;
 
-            static setVisible(value: boolean): Phaser.Scenes.ScenePlugin;
+            resume(key: string): Phaser.Scenes.ScenePlugin;
 
-            static isSleeping(key: string): boolean;
+            sleep(key: string): Phaser.Scenes.ScenePlugin;
 
-            static isActive(key: string): boolean;
+            wake(key: string): Phaser.Scenes.ScenePlugin;
 
-            static isVisible(key: string): boolean;
+            switch(key: string): Phaser.Scenes.ScenePlugin;
 
-            static swapPosition(key: string): Phaser.Scenes.ScenePlugin;
+            stop(key: string): Phaser.Scenes.ScenePlugin;
 
-            static moveUp(key: string): Phaser.Scenes.ScenePlugin;
+            setActive(value: boolean): Phaser.Scenes.ScenePlugin;
 
-            static moveDown(key: string): Phaser.Scenes.ScenePlugin;
+            setVisible(value: boolean): Phaser.Scenes.ScenePlugin;
 
-            static bringToTop(key: string): Phaser.Scenes.ScenePlugin;
+            isSleeping(key: string): boolean;
 
-            static sendToBack(key: string): Phaser.Scenes.ScenePlugin;
+            isActive(key: string): boolean;
 
-            static get(key: string): Phaser.Scene;
+            isVisible(key: string): boolean;
 
-            static shutdown(): void;
+            swapPosition(key: string): Phaser.Scenes.ScenePlugin;
 
-            static destroy(): void;
+            moveUp(key: string): Phaser.Scenes.ScenePlugin;
+
+            moveDown(key: string): Phaser.Scenes.ScenePlugin;
+
+            bringToTop(key: string): Phaser.Scenes.ScenePlugin;
+
+            sendToBack(key: string): Phaser.Scenes.ScenePlugin;
+
+            get(key: string): Phaser.Scene;
+
+            shutdown(): void;
+
+            destroy(): void;
 
         }
 
@@ -252,41 +276,60 @@ declare namespace Phaser {
         }
 
         class Systems {
-            static init(game: Phaser.Game): void;
 
-            static install(plugin: any[]): void;
 
-            static step(time: number, delta: number): void;
 
-            static render(renderer: Phaser.Renderer.Canvas.CanvasRenderer): void;
 
-            static queueDepthSort(): void;
 
-            static depthSort(): void;
 
-            static pause(): Phaser.Scenes.Systems;
 
-            static resume(): Phaser.Scenes.Systems;
 
-            static sleep(): Phaser.Scenes.Systems;
 
-            static wake(): Phaser.Scenes.Systems;
 
-            static isSleeping(): boolean;
 
-            static isActive(): boolean;
 
-            static isVisible(): boolean;
 
-            static setVisible(value: boolean): Phaser.Scenes.Systems;
 
-            static setActive(value: boolean): Phaser.Scenes.Systems;
 
-            static start(data: any): void;
 
-            static shutdown(): void;
 
-            static destroy(): void;
+
+
+            init(game: Phaser.Game): void;
+
+            install(plugin: any[]): void;
+
+            step(time: number, delta: number): void;
+
+            render(renderer: Phaser.Renderer.Canvas.CanvasRenderer): void;
+
+            queueDepthSort(): void;
+
+            depthSort(): void;
+
+            pause(): Phaser.Scenes.Systems;
+
+            resume(): Phaser.Scenes.Systems;
+
+            sleep(): Phaser.Scenes.Systems;
+
+            wake(): Phaser.Scenes.Systems;
+
+            isSleeping(): boolean;
+
+            isActive(): boolean;
+
+            isVisible(): boolean;
+
+            setVisible(value: boolean): Phaser.Scenes.Systems;
+
+            setActive(value: boolean): Phaser.Scenes.Systems;
+
+            start(data: any): void;
+
+            shutdown(): void;
+
+            destroy(): void;
 
         }
 
