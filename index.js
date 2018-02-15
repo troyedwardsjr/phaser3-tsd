@@ -91,9 +91,15 @@ const transpiler = (() => {
 	const memberList = new Map();
 	// Create namespace for each src namespace.
 	phaserSrcNs.forEach((cls) => {
-		const domClass = dom.create.module(cls, 0);
+		const domClass = dom.create.class(cls, 0);
+		const domNs = dom.create.namespace(cls);
+
 		phaserModuleDOM.members.push(domClass);
-		memberList.set(cls, domClass);
+		phaserModuleDOM.members.push(domNs);
+		
+		memberList.set(cls, {namespace: domNs, class: domClass});
 	});
 	transpile(memberList);
 })();
+
+// Change map to pass both namespace and class.

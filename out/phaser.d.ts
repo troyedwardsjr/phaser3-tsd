@@ -5,11 +5,17 @@ declare class Phaser {
 }
 
 declare module 'Phaser' {
-    declare module 'Actions' {
+    declare class Actions {
     }
 
-    declare module 'Animations' {
-        declare class Animation {
+    declare namespace Actions {
+    }
+
+    declare class Animations {
+    }
+
+    declare namespace Animations {
+        class Animation {
             static addFrame(config: any): Phaser.Animations.Animation;
 
             static addFrameAt(index: number, config: any): Phaser.Animations.Animation;
@@ -52,14 +58,14 @@ declare module 'Phaser' {
 
         }
 
-        declare class AnimationFrame {
+        class AnimationFrame {
             static toJSON(): any;
 
             static destroy(): void;
 
         }
 
-        declare class AnimationManager {
+        class AnimationManager {
             static boot(): void;
 
             static add(key: string, animation: Phaser.Animations.Animation): Phaser.Animations.AnimationManager;
@@ -94,79 +100,163 @@ declare module 'Phaser' {
 
     }
 
-    declare module 'Cache' {
+    declare class Cache {
     }
 
-    declare module 'Cameras' {
+    declare namespace Cache {
     }
 
-    declare module 'Class' {
+    declare class Cameras {
     }
 
-    declare module 'Create' {
+    declare namespace Cameras {
     }
 
-    declare module 'Curves' {
+    declare class Class {
     }
 
-    declare module 'Data' {
+    declare namespace Class {
     }
 
-    declare module 'Display' {
+    declare class Create {
     }
 
-    declare module 'DOM' {
+    declare namespace Create {
     }
 
-    declare module 'EventEmitter' {
+    declare class Curves {
     }
 
-    declare module 'Game' {
+    declare namespace Curves {
     }
 
-    declare module 'GameObjects' {
+    declare class Data {
     }
 
-    declare module 'Geom' {
+    declare namespace Data {
     }
 
-    declare module 'Input' {
+    declare class Display {
     }
 
-    declare module 'Loader' {
+    declare namespace Display {
     }
 
-    declare module 'Math' {
+    declare class DOM {
     }
 
-    declare module 'Physics' {
+    declare namespace DOM {
     }
 
-    declare module 'Scene' {
+    declare class EventEmitter {
     }
 
-    declare module 'Scenes' {
+    declare namespace EventEmitter {
     }
 
-    declare module 'Sound' {
+    declare class Game {
     }
 
-    declare module 'Structs' {
+    declare namespace Game {
     }
 
-    declare module 'Textures' {
+    declare class GameObjects {
     }
 
-    declare module 'Tilemaps' {
+    declare namespace GameObjects {
     }
 
-    declare module 'Time' {
+    declare class Geom {
     }
 
-    declare module 'Tweens' {
+    declare namespace Geom {
     }
 
-    declare module 'Utils' {
+    declare class Input {
+    }
+
+    declare namespace Input {
+    }
+
+    declare class Loader {
+    }
+
+    declare namespace Loader {
+    }
+
+    declare class Math {
+    }
+
+    declare namespace Math {
+    }
+
+    declare class Physics {
+    }
+
+    declare namespace Physics {
+    }
+
+    declare class Scene {
+    }
+
+    declare namespace Scene {
+    }
+
+    declare class Scenes {
+    }
+
+    declare namespace Scenes {
+    }
+
+    declare class Sound {
+    }
+
+    declare namespace Sound {
+    }
+
+    declare class Structs {
+    }
+
+    declare namespace Structs {
+    }
+
+    declare class Textures {
+    }
+
+    declare namespace Textures {
+    }
+
+    declare class Tilemaps {
+    }
+
+    declare namespace Tilemaps {
+    }
+
+    declare class Time {
+    }
+
+    declare namespace Time {
+    }
+
+    declare class Tweens {
+    }
+
+    declare namespace Tweens {
+    }
+
+    declare class Utils {
+    }
+
+    declare namespace Utils {
+    }
+
+    declare namespace Animation {
+    }
+
+    declare namespace AnimationFrame {
+    }
+
+    declare namespace AnimationManager {
     }
 
 }
