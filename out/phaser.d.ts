@@ -1,525 +1,174 @@
-declare module Phaser {
-	class Actions {
-			static Angle(items: array, value: number): any[];
+declare namespace Phaser {
+    class Actions {
+        static Angle(items: any[], value: number): any[];
 
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
+        static Call(items: any[], callback: any, thisArg: any): any[];
 
-			static IncAlpha(items: array, value: number): any[];
+        static GetFirst(items: any[], compare: any, index: number): any[];
 
-			static Angle(items: array, value: number): any[];
+        static GridAlign(items: any[], options: any): any[];
 
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
+        static IncAlpha(items: any[], value: number): any[];
 
-			static IncAlpha(items: array, value: number): any[];
+        static IncX(items: any[], value: number): any[];
 
-			static IncX(items: array, value: number): any[];
+        static IncXY(items: any[], x: number, y: number): any[];
 
-			static IncXY(items: array, x: number, y: number): any[];
+        static IncY(items: any[], value: number): any[];
 
-			static IncY(items: array, value: number): any[];
+        static PlaceOnCircle(items: any[], circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
 
-			static PlaceOnCircle(items: array, circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
+        static PlaceOnEllipse(items: any[], ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
 
-			static Angle(items: array, value: number): any[];
+        static PlaceOnLine(items: any[], line: Phaser.Geom.Line): any[];
 
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
+        static PlaceOnRectangle(items: any[], rect: Phaser.Geom.Rectangle, shift: number): any[];
 
-			static IncAlpha(items: array, value: number): any[];
+        static PlaceOnTriangle(items: any[], triangle: Phaser.Geom.Triangle, stepRate: number): any[];
 
-			static IncX(items: array, value: number): any[];
+        static PlayAnimation(items: any[], key: string, startFrame: string): any[];
 
-			static IncXY(items: array, x: number, y: number): any[];
+        static RandomCircle(items: any[], circle: Phaser.Geom.Circle): any[];
 
-			static IncY(items: array, value: number): any[];
+        static RandomEllipse(items: any[], ellipse: Phaser.Geom.Ellipse): any[];
 
-			static PlaceOnCircle(items: array, circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
+        static RandomLine(items: any[], line: Phaser.Geom.Line): any[];
 
-			static PlaceOnEllipse(items: array, ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
+        static RandomRectangle(items: any[], rect: Phaser.Geom.Rectangle): any[];
 
-			static PlaceOnLine(items: array, line: Phaser.Geom.Line): any[];
+        static RandomTriangle(items: any[], triangle: Phaser.Geom.Triangle): any[];
 
-			static PlaceOnRectangle(items:
-array, rect: Phaser.Geom.Rectangle, shift: integer): any[];
+        static Rotate(items: any[], value: number, step: number): any[];
 
-			static PlaceOnTriangle(items: array, triangle: Phaser.Geom.Triangle, stepRate: number): any[];
+        static RotateAround(items: any[], point: any, angle: number): any[];
 
-			static PlayAnimation(items: array, key: string, startFrame: string): any[];
+        static RotateAroundDistance(items: any[], point: any, angle: number, distance: number): any[];
 
-			static Angle(items: array, value: number): any[];
+        static ScaleX(items: any[], value: number): any[];
 
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
+        static ScaleXY(items: any[], x: number, y: number): any[];
 
-			static IncAlpha(items: array, value: number): any[];
+        static ScaleY(items: any[], value: number): any[];
 
-			static IncX(items: array, value: number): any[];
+        static SetAlpha(items: any[], value: number, step: number): any[];
 
-			static IncXY(items: array, x: number, y: number): any[];
+        static SetBlendMode(items: any[], value: number): any[];
 
-			static IncY(items: array, value: number): any[];
+        static SetDepth(items: any[], value: number, step: number): any[];
 
-			static PlaceOnCircle(items: array, circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
+        static SetHitArea(items: any[], hitArea: any, hitAreaCallback: any): any[];
 
-			static PlaceOnEllipse(items: array, ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
+        static SetOrigin(items: any[], x: number, y: number): any[];
 
-			static PlaceOnLine(items: array, line: Phaser.Geom.Line): any[];
+        static SetRotation(items: any[], value: number, step: number): any[];
 
-			static PlaceOnRectangle(items:
-array, rect: Phaser.Geom.Rectangle, shift: integer): any[];
+        static SetScale(items: any[], x: number, y: number, stepX: number, stepY: number): any[];
 
-			static PlaceOnTriangle(items: array, triangle: Phaser.Geom.Triangle, stepRate: number): any[];
+        static SetScaleX(items: any[], value: number, step: number): any[];
 
-			static PlayAnimation(items: array, key: string, startFrame: string): any[];
+        static SetScaleY(items: any[], value: number, step: number): any[];
 
-			static RandomCircle(items: array, circle: Phaser.Geom.Circle): any[];
+        static SetTint(items: any[], topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): any[];
 
-			static RandomEllipse(items: array, ellipse: Phaser.Geom.Ellipse): any[];
+        static SetVisible(items: any[], value: boolean): any[];
 
-			static RandomLine(items: array, line: Phaser.Geom.Line): any[];
+        static SetX(items: any[], value: number, step: number): any[];
 
-			static RandomRectangle(items: array, rect: Phaser.Geom.Rectangle): any[];
+        static SetXY(items: any[], x: number, y: number, stepX: number, stepY: number): any[];
 
-			static RandomTriangle(items: array, triangle: Phaser.Geom.Triangle): any[];
+        static SetY(items: any[], value: number, step: number): any[];
 
-			static Angle(items: array, value: number): any[];
+        static ShiftPosition(items: any[], x: number, y: number, direction: number, output: Phaser.Math.Vector2): any[];
 
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
+        static Shuffle(items: any[]): any[];
 
-			static IncAlpha(items: array, value: number): any[];
+        static SmootherStep(items: any[], property: string, min: number, max: number, inc: number): any[];
 
-			static IncX(items: array, value: number): any[];
+        static SmoothStep(items: any[], property: string, min: number, max: number, inc: number): any[];
 
-			static IncXY(items: array, x: number, y: number): any[];
+        static Spread(items: any[], property: string, min: number, max: number, inc: number): any[];
 
-			static IncY(items: array, value: number): any[];
+        static ToggleVisible(items: any[]): any[];
 
-			static PlaceOnCircle(items: array, circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
+    }
 
-			static PlaceOnEllipse(items: array, ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
+    class Animation {
+    }
 
-			static PlaceOnLine(items: array, line: Phaser.Geom.Line): any[];
+    class Cache {
+    }
 
-			static PlaceOnRectangle(items:
-array, rect: Phaser.Geom.Rectangle, shift: integer): any[];
+    class Cameras {
+    }
 
-			static PlaceOnTriangle(items: array, triangle: Phaser.Geom.Triangle, stepRate: number): any[];
+    class Class {
+    }
 
-			static PlayAnimation(items: array, key: string, startFrame: string): any[];
+    class Create {
+    }
 
-			static RandomCircle(items: array, circle: Phaser.Geom.Circle): any[];
+    class Curves {
+    }
 
-			static RandomEllipse(items: array, ellipse: Phaser.Geom.Ellipse): any[];
+    class Data {
+    }
 
-			static RandomLine(items: array, line: Phaser.Geom.Line): any[];
+    class Display {
+    }
 
-			static RandomRectangle(items: array, rect: Phaser.Geom.Rectangle): any[];
+    class DOM {
+    }
 
-			static RandomTriangle(items: array, triangle: Phaser.Geom.Triangle): any[];
+    class EventEmitter {
+    }
 
-			static Rotate(items: array, value: number, step: number): any[];
+    class Game {
+    }
 
-			static RotateAround(items: array, point: object, angle: number): any[];
+    class GameObjects {
+    }
 
-			static RotateAroundDistance(items: array, point: object, angle: number, distance: number): any[];
+    class Geom {
+    }
 
-			static ScaleX(items: array, value: number): any[];
+    class Input {
+    }
 
-			static ScaleXY(items: array, x: number, y: number): any[];
+    class Loader {
+    }
 
-			static Angle(items: array, value: number): any[];
+    class Math {
+    }
 
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
+    class Physics {
+    }
 
-			static IncAlpha(items: array, value: number): any[];
+    class Scene {
+    }
 
-			static IncX(items: array, value: number): any[];
+    class Scenes {
+    }
 
-			static IncXY(items: array, x: number, y: number): any[];
+    class Sound {
+    }
 
-			static IncY(items: array, value: number): any[];
+    class Structs {
+    }
 
-			static PlaceOnCircle(items: array, circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
+    class Textures {
+    }
 
-			static PlaceOnEllipse(items: array, ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
+    class Tilemaps {
+    }
 
-			static PlaceOnLine(items: array, line: Phaser.Geom.Line): any[];
+    class Time {
+    }
 
-			static PlaceOnRectangle(items:
-array, rect: Phaser.Geom.Rectangle, shift: integer): any[];
+    class Tweens {
+    }
 
-			static PlaceOnTriangle(items: array, triangle: Phaser.Geom.Triangle, stepRate: number): any[];
-
-			static PlayAnimation(items: array, key: string, startFrame: string): any[];
-
-			static RandomCircle(items: array, circle: Phaser.Geom.Circle): any[];
-
-			static RandomEllipse(items: array, ellipse: Phaser.Geom.Ellipse): any[];
-
-			static RandomLine(items: array, line: Phaser.Geom.Line): any[];
-
-			static RandomRectangle(items: array, rect: Phaser.Geom.Rectangle): any[];
-
-			static RandomTriangle(items: array, triangle: Phaser.Geom.Triangle): any[];
-
-			static Rotate(items: array, value: number, step: number): any[];
-
-			static RotateAround(items: array, point: object, angle: number): any[];
-
-			static RotateAroundDistance(items: array, point: object, angle: number, distance: number): any[];
-
-			static ScaleX(items: array, value: number): any[];
-
-			static ScaleXY(items: array, x: number, y: number): any[];
-
-			static ScaleY(items: array, value: number): any[];
-
-			static SetAlpha(items: array, value: number, step: number): any[];
-
-			static SetBlendMode(items: array, value: number): any[];
-
-			static SetDepth(items: array, value: number, step: number): any[];
-
-			static SetHitArea(items: array, hitArea: any, hitAreaCallback: function): any[];
-
-			static Angle(items: array, value: number): any[];
-
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
-
-			static IncAlpha(items: array, value: number): any[];
-
-			static IncX(items: array, value: number): any[];
-
-			static IncXY(items: array, x: number, y: number): any[];
-
-			static IncY(items: array, value: number): any[];
-
-			static PlaceOnCircle(items: array, circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
-
-			static PlaceOnEllipse(items: array, ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
-
-			static PlaceOnLine(items: array, line: Phaser.Geom.Line): any[];
-
-			static PlaceOnRectangle(items:
-array, rect: Phaser.Geom.Rectangle, shift: integer): any[];
-
-			static PlaceOnTriangle(items: array, triangle: Phaser.Geom.Triangle, stepRate: number): any[];
-
-			static PlayAnimation(items: array, key: string, startFrame: string): any[];
-
-			static RandomCircle(items: array, circle: Phaser.Geom.Circle): any[];
-
-			static RandomEllipse(items: array, ellipse: Phaser.Geom.Ellipse): any[];
-
-			static RandomLine(items: array, line: Phaser.Geom.Line): any[];
-
-			static RandomRectangle(items: array, rect: Phaser.Geom.Rectangle): any[];
-
-			static RandomTriangle(items: array, triangle: Phaser.Geom.Triangle): any[];
-
-			static Rotate(items: array, value: number, step: number): any[];
-
-			static RotateAround(items: array, point: object, angle: number): any[];
-
-			static RotateAroundDistance(items: array, point: object, angle: number, distance: number): any[];
-
-			static ScaleX(items: array, value: number): any[];
-
-			static ScaleXY(items: array, x: number, y: number): any[];
-
-			static ScaleY(items: array, value: number): any[];
-
-			static SetAlpha(items: array, value: number, step: number): any[];
-
-			static SetBlendMode(items: array, value: number): any[];
-
-			static SetDepth(items: array, value: number, step: number): any[];
-
-			static SetHitArea(items: array, hitArea: any, hitAreaCallback: function): any[];
-
-			static SetOrigin(items: array,
-x: number, y: number): any[];
-
-			static SetRotation(items: array, value: number, step: number): any[];
-
-			static SetScale(items: array, x: number, y: number, stepX: number, stepY: number): any[];
-
-			static SetScaleX(items: array,
-value: number, step: number): any[];
-
-			static SetScaleY(items: array,
-value: number, step: number): any[];
-
-			static Angle(items: array, value: number): any[];
-
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
-
-			static IncAlpha(items: array, value: number): any[];
-
-			static IncX(items: array, value: number): any[];
-
-			static IncXY(items: array, x: number, y: number): any[];
-
-			static IncY(items: array, value: number): any[];
-
-			static PlaceOnCircle(items: array, circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
-
-			static PlaceOnEllipse(items: array, ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
-
-			static PlaceOnLine(items: array, line: Phaser.Geom.Line): any[];
-
-			static PlaceOnRectangle(items:
-array, rect: Phaser.Geom.Rectangle, shift: integer): any[];
-
-			static PlaceOnTriangle(items: array, triangle: Phaser.Geom.Triangle, stepRate: number): any[];
-
-			static PlayAnimation(items: array, key: string, startFrame: string): any[];
-
-			static RandomCircle(items: array, circle: Phaser.Geom.Circle): any[];
-
-			static RandomEllipse(items: array, ellipse: Phaser.Geom.Ellipse): any[];
-
-			static RandomLine(items: array, line: Phaser.Geom.Line): any[];
-
-			static RandomRectangle(items: array, rect: Phaser.Geom.Rectangle): any[];
-
-			static RandomTriangle(items: array, triangle: Phaser.Geom.Triangle): any[];
-
-			static Rotate(items: array, value: number, step: number): any[];
-
-			static RotateAround(items: array, point: object, angle: number): any[];
-
-			static RotateAroundDistance(items: array, point: object, angle: number, distance: number): any[];
-
-			static ScaleX(items: array, value: number): any[];
-
-			static ScaleXY(items: array, x: number, y: number): any[];
-
-			static ScaleY(items: array, value: number): any[];
-
-			static SetAlpha(items: array, value: number, step: number): any[];
-
-			static SetBlendMode(items: array, value: number): any[];
-
-			static SetDepth(items: array, value: number, step: number): any[];
-
-			static SetHitArea(items: array, hitArea: any, hitAreaCallback: function): any[];
-
-			static SetOrigin(items: array,
-x: number, y: number): any[];
-
-			static SetRotation(items: array, value: number, step: number): any[];
-
-			static SetScale(items: array, x: number, y: number, stepX: number, stepY: number): any[];
-
-			static SetScaleX(items: array,
-value: number, step: number): any[];
-
-			static SetScaleY(items: array,
-value: number, step: number): any[];
-
-			static SetTint(items: array, topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): any[];
-
-			static SetVisible(items: array, value: boolean): any[];
-
-			static SetX(items: array, value: number, step: number): any[];
-
-			static SetXY(items: array, x: number, y: number, stepX: number, stepY: number): any[];
-
-			static SetY(items: array, value: number, step: number): any[];
-
-			static Angle(items: array, value: number): any[];
-
-			static Call(items: array, callback: function, thisArg: object): any[];
-			static GetFirst(items: array, compare: object, index: integer): any[];
-			static GridAlign(items: array,
-options: object): any[];
-
-			static IncAlpha(items: array, value: number): any[];
-
-			static IncX(items: array, value: number): any[];
-
-			static IncXY(items: array, x: number, y: number): any[];
-
-			static IncY(items: array, value: number): any[];
-
-			static PlaceOnCircle(items: array, circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
-
-			static PlaceOnEllipse(items: array, ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
-
-			static PlaceOnLine(items: array, line: Phaser.Geom.Line): any[];
-
-			static PlaceOnRectangle(items:
-array, rect: Phaser.Geom.Rectangle, shift: integer): any[];
-
-			static PlaceOnTriangle(items: array, triangle: Phaser.Geom.Triangle, stepRate: number): any[];
-
-			static PlayAnimation(items: array, key: string, startFrame: string): any[];
-
-			static RandomCircle(items: array, circle: Phaser.Geom.Circle): any[];
-
-			static RandomEllipse(items: array, ellipse: Phaser.Geom.Ellipse): any[];
-
-			static RandomLine(items: array, line: Phaser.Geom.Line): any[];
-
-			static RandomRectangle(items: array, rect: Phaser.Geom.Rectangle): any[];
-
-			static RandomTriangle(items: array, triangle: Phaser.Geom.Triangle): any[];
-
-			static Rotate(items: array, value: number, step: number): any[];
-
-			static RotateAround(items: array, point: object, angle: number): any[];
-
-			static RotateAroundDistance(items: array, point: object, angle: number, distance: number): any[];
-
-			static ScaleX(items: array, value: number): any[];
-
-			static ScaleXY(items: array, x: number, y: number): any[];
-
-			static ScaleY(items: array, value: number): any[];
-
-			static SetAlpha(items: array, value: number, step: number): any[];
-
-			static SetBlendMode(items: array, value: number): any[];
-
-			static SetDepth(items: array, value: number, step: number): any[];
-
-			static SetHitArea(items: array, hitArea: any, hitAreaCallback: function): any[];
-
-			static SetOrigin(items: array,
-x: number, y: number): any[];
-
-			static SetRotation(items: array, value: number, step: number): any[];
-
-			static SetScale(items: array, x: number, y: number, stepX: number, stepY: number): any[];
-
-			static SetScaleX(items: array,
-value: number, step: number): any[];
-
-			static SetScaleY(items: array,
-value: number, step: number): any[];
-
-			static SetTint(items: array, topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): any[];
-
-			static SetVisible(items: array, value: boolean): any[];
-
-			static SetX(items: array, value: number, step: number): any[];
-
-			static SetXY(items: array, x: number, y: number, stepX: number, stepY: number): any[];
-
-			static SetY(items: array, value: number, step: number): any[];
-
-			static ShiftPosition(items: array, x: number, y: number, direction: integer, output: Phaser.Math.Vector2): any[];
-
-			static Shuffle(items: array): any[];
-
-			static SmootherStep(items: array, property: string, min: number, max:
-number, inc: number): any[];
-
-			static SmoothStep(items: array, property: string, min: number, max: number, inc: number): any[];
-
-			static Spread(items: array, property: string, min: number, max: number, inc: number): any[];
-
-	}
-
-	class Animation {
-	}
-
-	class Cache {
-	}
-
-	class Cameras {
-	}
-
-	class Class {
-	}
-
-	class Create {
-	}
-
-	class Curves {
-	}
-
-	class Data {
-	}
-
-	class Display {
-	}
-
-	class DOM {
-	}
-
-	class EventEmitter {
-	}
-
-	class Game {
-	}
-
-	class GameObjects {
-	}
-
-	class Geom {
-	}
-
-	class Input {
-	}
-
-	class Loader {
-	}
-
-	class Math {
-	}
-
-	class Physics {
-	}
-
-	class Scene {
-	}
-
-	class Scenes {
-	}
-
-	class Sound {
-	}
-
-	class Structs {
-	}
-
-	class Textures {
-	}
-
-	class Tilemaps {
-	}
-
-	class Time {
-	}
-
-	class Tweens {
-	}
-
-	class Utils {
-	}
+    class Utils {
+    }
 
 }
+

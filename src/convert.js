@@ -1,8 +1,8 @@
 const dom = require('dts-dom');
 
-const convert = (phaserModuleDOM, userfulDocData) => {
-	userfulDocData.forEach((docObj) => {
-		if(docObj.memberof) {
+const convert = (phaserModuleDOM, usefulDocData) => {
+	usefulDocData.forEach((docObj) => {
+		if(!docObj.undocumented && docObj.memberof) {
 			switch (docObj.kind) {
 				case 'function':
 					convertFunction(phaserModuleDOM, docObj);
@@ -26,15 +26,16 @@ const convertType = (docType) => {
 			return dom.type.void;
 		case "object":
 			return dom.type.any;
+		case "function":
+			return dom.type.any;
 		case "array":
 			return dom.type.array(dom.type.any);
 		default:
-			return dom.type.stringLiteral(docType);
+			return docType;
 	}
 }
 
 const convertDecFlag = () => {
-
 }
 
 const convertMember = () => {
@@ -46,7 +47,7 @@ const convertFunction = (phaserModuleDOM, docObj) => {
 		let paramsDOM = [];
 		if (params && params.length > 0) {
 			paramsDOM = params.map((param) => {
-				return dom.create.parameter(param.name, param.type.names[0]);
+				return dom.create.parameter(param.name, convertType(param.type.names[0]));
 			})
 		}
 		// Returns an array of parameters.

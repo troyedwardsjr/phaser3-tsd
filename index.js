@@ -53,7 +53,56 @@ const readPhaserSrc = (dir) =>
 
 const transpileLoop = (srcFiles) => {
 	let promiseBuf = [];
+	let promiseIndex = 0;
+
+	srcFiles.forEach((filePath) => {
+		promiseBuf.push(parser(filePath));
+
+		console.log(`Promises created: ${promiseIndex}`);
+		console.log(`File name: ${srcFiles[promiseIndex - 1]}`);
+
+		promiseIndex += 1;
+	});
+
+	Promise.all(promiseBuf).then((procOutArray) => {
+		procOutArray.forEach((result) => {
+			const usefulDocData = JSON.parse(result.stdout);
+			convert(phaserModuleDOM, usefulDocData);
+		})
+		const domOutput = dom.emit(phaserModuleDOM);
+		const outPath = 'out/phaser.d.ts';
+		console.log(domOutput);
+		fs.writeFile(outPath, domOutput, (err) => {
+				if(err) {
+						return console.log(err);
+				}
+				console.log(`File was written to ${outPath}`);
+		});
+	});
+}
+
+const transpile = () => {
+	var srcFiles = readPhaserSrc("./phaser-src/actions/");
+	transpileLoop(srcFiles);
+}
+
+const transpiler = (() => {
+	// Create namespace for each src namespace.
+	phaserSrcNs.forEach((cls) => {
+		phaserModuleDOM.members.push(dom.create.class(cls, 0));
+	});
+
+	transpile();
+})();
+
+
+/*
+
+// One by one.
+const transpileLoop = (srcFiles) => {
+	let promiseBuf = [];
 	let fileIndex = 0;
+	
 	const filesLength = srcFiles.length - 1;
 
 	const processFiles = () => {
@@ -78,23 +127,7 @@ const transpileLoop = (srcFiles) => {
 	processFiles();
 }
 
-const transpile = () => {
-	//var srcFileName = readPhaserSrc("./phaser-src/")[0];
-	var srcFiles = readPhaserSrc("./phaser-src/actions/");
-	transpileLoop(srcFiles);
-}
-
-const transpiler = (() => {
-	// Create namespace for each src namespace.
-	phaserSrcNs.forEach((cls) => {
-		phaserModuleDOM.members.push(dom.create.class(cls, 0));
-	});
-
-	transpile();
-})();
-
-
-/*
+// Every 5.
 const transpileLoop = (srcFiles) => {
 	let promiseBuf = [];
 	let fileIndex = 0;
