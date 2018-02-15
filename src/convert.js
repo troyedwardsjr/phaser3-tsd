@@ -1,61 +1,68 @@
 const dom = require('dts-dom');
 
-const convertMethods = () => ({
+const convert = (phaserModuleDOM, userfulDocData) => {
+	userfulDocData.forEach((docObj) => {
+		switch (docObj.kind) {
+			case 'function':
+				convertFunction(phaserModuleDOM, docObj);
+				break;
+		}
+	});
+}
 
-	params: (params) => {
+const convertType = (docType) => {
+	switch (docType) {
+		case "number":
+			return dom.type.number;
+		case "integer":
+			return dom.type.number;
+		case "string":
+			return dom.type.string;
+		case "boolean":
+			return dom.type.boolean;
+		case "void":
+			return dom.type.void;
+		case "object":
+			return dom.type.any;
+		case "array":
+			return dom.type.array(dom.type.any);
+	}
+}
+
+const convertMember = () => {
+
+}
+
+const convertFunction = (phaserModuleDOM, docObj) => {
+
+	const params = (params) => {
 		let paramsDOM = [];
-		if (params) {
+		if (params && params.length > 0) {
 			paramsDOM = params.map((param) => {
 				return dom.create.parameter(param.name, param.type.names[0]);
 			})
 		}
 		return paramsDOM;
-	},
+	}
 
-	returns: (returns) => {
+	const returns = (returns) => {
 		let returnsDOM = dom.type.void;
-		if (returns) {
-			returnsDOM = rtn.type.names[0];//rtn.type.names[0]
+		if (returns && returns.length > 0) {
+			returnsDOM = convertType(returns[0].type.names[0]);
 		}
 		return returnsDOM;
 	}
 
-});
+	phaserModuleDOM.members.find((elm) => {
+		return elm.name == 'Actions';
+	})
+	.members.push(dom.create.method(
+		docObj.name,
+		params(docObj.params),
+		returns(docObj.returns),
+		dom.DeclarationFlags.Static // scope:
+	));
 
-const convert = (phaserModuleDOM, usefulData) => {
-	usefulData.forEach((docObj) => {
-		switch (docObj.kind) {
-			case 'function':
-				phaserModuleDOM.members.find((elm) => {
-					return elm.name == 'Actions';
-				})
-				.members.push(dom.create.method(
-					docObj.name,
-					convertMethods().params(docObj.params),
-					convertMethods().returns(docObj.returns),
-					dom.DeclarationFlags.Static // scope:
-				));
-				//.members.push(dom.create.const(docObj.name, 'any'));
-				break;
-		}
-	});
-}
-/*
-[dom.create.parameter('x', dom.type.number)],
-					dom.type.void,
-					dom.DeclarationFlags.Optional));
-					*/
+};
 
 module.exports = convert;
-
-
-/*
-const convertJS = (jsFile) => {
-	console.log(`Converting ${jsFile}`);
-
-	parser(jsFile, function(error, jsdocOutput) {
-		const usefulData = jsdocParse(jsdocOutput);
-		console.log(usefulData);
-	});
-}
-*/

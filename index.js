@@ -60,27 +60,9 @@ const transpiler = (() => {
 	var srcFileName = readPhaserSrc("./phaser-src/")[0];
 
 	parser(srcFileName).then(result => {
-		const usefulData = JSON.parse(result.stdout);
-		convert(phaserModuleDOM, usefulData);
-		//console.log(phaserModuleDOM.members);
+		const userfulDocData = JSON.parse(result.stdout);
+		convert(phaserModuleDOM, userfulDocData);
 		console.log(dom.emit(phaserModuleDOM));
 	})
 })();
 
-/*
-console.log(dom.emit(phaserPkgModuleDOM));
-console.log(dom.emit(phaserClassDOM));
-console.log(dom.emit(phaserModuleDOM));)
-*/
-
-//readPhaserSrc("./phaser-src/").forEach((jsFile) => {
-//	convertJS(jsFile);
-//});
-
-/*
-const promiseTest = () => {
-	return new Promise((resolve, reject) => {
-		resolve(dom.emit(phaserModuleDOM));
-	});
-}
-*/
