@@ -30,6 +30,8 @@ const convertType = (docType) => {
 			return dom.type.number;
 		case "integer":
 			return dom.type.number;
+		case "float":
+			return dom.type.number;
 		case "string":
 			return dom.type.string;
 		case "boolean":
