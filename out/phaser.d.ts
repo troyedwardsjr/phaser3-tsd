@@ -116,6 +116,7 @@ declare namespace Phaser {
     }
 
     class Scene {
+        sys: Phaser.Scenes.Systems;
 
         update(): void;
 
@@ -125,15 +126,25 @@ declare namespace Phaser {
     }
 
     class Scenes {
+        PENDING: number;
 
+        INIT: number;
 
+        START: number;
 
+        LOADING: number;
 
+        CREATING: number;
 
+        RUNNING: number;
 
+        PAUSED: number;
 
+        SLEEPING: number;
 
+        SHUTDOWN: number;
 
+        DESTROYED: number;
 
         static GetPhysicsPlugins(sys: Phaser.Scenes.Systems): any[];
 
@@ -143,12 +154,19 @@ declare namespace Phaser {
 
     namespace Scenes {
         class SceneManager {
+            game: Phaser.Game;
 
+            keys: any;
 
+            scenes: any[];
 
+            _pending: any[];
 
+            _start: any[];
 
+            _queue: any[];
 
+            _processing: number;
 
             processQueue(): void;
 
@@ -218,11 +236,17 @@ declare namespace Phaser {
         }
 
         class ScenePlugin {
+            scene: Phaser.Scene;
 
+            systems: Phaser.Scenes.Systems;
 
+            settings: any;
 
+            key: string;
 
+            manager: Phaser.Scenes.SceneManager;
 
+            _queue: any[];
 
             boot(): void;
 
@@ -276,24 +300,43 @@ declare namespace Phaser {
         }
 
         class Systems {
+            scene: Phaser.Scene;
 
+            game: Phaser.Game;
 
+            config: any;
 
+            settings: any;
 
+            canvas: HTMLCanvasElement;
 
+            context: CanvasRenderingContext2D;
 
+            anims: Phaser.Animations.AnimationManager;
 
+            cache: Phaser.Cache.CacheManager;
 
+            plugins: Phaser.Plugins.PluginManager;
 
+            registry: any;
 
+            sound: Phaser.Sound.BaseSoundManager;
 
+            textures: Phaser.Textures.TextureManager;
 
+            add: Phaser.GameObjects.GameObjectFactory;
 
+            cameras: Phaser.Cameras.Scene2D.CameraManager;
 
+            displayList: null;
 
+            events: EventEmitter;
 
+            make: Phaser.GameObjects.GameObjectCreator;
 
+            scenePlugin: Phaser.Scenes.ScenePlugin;
 
+            updateList: any;
 
             init(game: Phaser.Game): void;
 

@@ -103,7 +103,7 @@ const convertMember = (phaserModuleDOM, docObj, memberList) => {
 
 	if(parentMember) {
 		const parentClass = parentMember.class;
-		parentClass.members.push(dom.create.variable(
+		parentClass.members.push(dom.create.property(
 			docObj.name, 
 			convertType(docObj.type.names[0])
 		));
