@@ -43,11 +43,21 @@ const convertType = (docType) => {
 		case "function":
 			return dom.type.any;
 		case "array":
-			return dom.type.array(dom.type.any);
+			//TODO: fast fix -> Problem regarding dom.type.array(dom.type.any) -> 'argument type' returns [object Object] invalid typescript
+			return dom.type.any + "[]";
 		case undefined:
 			return dom.type.any;
 		default:
-			return docType;
+		{
+			//Cannot handle tilde in namespace
+			if(docType.indexOf('~') === -1) {
+				return docType;
+			}
+			else {
+				return dom.type.any;
+			}
+			break;
+		}
 	}
 }
 
@@ -64,12 +74,19 @@ const convertScope = (scope) => {
 
 const convertParams = (params) => {
 	let paramsDOM = [];
-	if (params && params.length > 0 && params.type) {
-		paramsDOM = params.map((param) => {
-			return dom.create.parameter(param.name, convertType(param.type.names[0]));
-		})
+	if (params && params.length > 0) {
+		paramsDOM = params
+		.filter((param) => param && param.name && param.type && param.type.names && param.type.names.length > 0
+		&& param.name.indexOf('.') === -1) //Removes all object attributes & keeps inital object as any. Could be handled later to insert typed object
+		.map((param) => {
+			//Handle optional types e.g (string|number)
+			return dom.create.parameter(param.name, param.type.names.map((paramName) => {
+				return convertType(paramName)
+			})
+			.join('|'), dom.ParameterFlags.None); //No parameter flag as default
+		});
 	}
-	// Returns an array of parameters.
+
 	return paramsDOM;
 }
 
@@ -77,7 +94,7 @@ const convertReturns = (returns) => {
 	let returnsDOM = dom.type.void;
 
 	if (returns && returns.length > 0 && returns[0].type) {
-		returnsDOM = convertType(returns[0].type.names[0]);;
+		returnsDOM = convertType(returns[0].type.names[0]);
 	}
 	// Returns a single return type.
 	return returnsDOM;
@@ -116,11 +133,9 @@ const convertMember = (phaserModuleDOM, docObj, memberList) => {
 			memberType
 		));
 	}
-	
 }
 
 const convertFunction = (phaserModuleDOM, docObj, memberList) => {
-
 	const parentName = /([^.]*)$/.exec(docObj.memberof)[0];
 	const parentMember = memberList.get(parentName);
 
@@ -133,8 +148,6 @@ const convertFunction = (phaserModuleDOM, docObj, memberList) => {
 			convertScope(docObj.scope)
 		));
 	}
-	
 };
-
 
 module.exports = convert;
