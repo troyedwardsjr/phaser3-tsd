@@ -1,7 +1,6 @@
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-//const execFilePromise = require('process-promises').execFile;
 const child = require('child_process');
 
 function locateJSDocCommand(dir) {
@@ -40,9 +39,6 @@ function jsdocParser(filename, cb) {
 		cb(new Error('Could not find jsdoc command.'), null);
 		return;
 	}
-	
-	//return execFilePromise(cmd, ['-X', '-r', filename]);
-	//return execFile(cmd, ['-X', '-r', filename], {maxBuffer: 5120 * 1024}, jsdocParser._onComplete.bind(null, cb);
 
 	fs.writeFile('jsdoc-out/jsdoc.json', "");
 

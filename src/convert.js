@@ -1,8 +1,6 @@
 const dom = require('dts-dom');
 const traverse = require('traverse');
 
-//let currentClass;
-
 const convert = (phaserModuleDOM, usefulDocData, memberList) => {
 	usefulDocData.forEach((docObj) => {
 		if(!docObj.undocumented && docObj.memberof) {
@@ -77,14 +75,13 @@ const convertReturns = (returns) => {
 	let returnsDOM = dom.type.void;
 
 	if (returns && returns.length > 0 && returns[0].type) {
-		returnsDOM = convertType(returns[0].type.names[0]);;
+		returnsDOM = convertType(returns[0].type.names[0]);
 	}
 	// Returns a single return type.
 	return returnsDOM;
 }
 
 const convertClass = (phaserModuleDOM, docObj, memberList) => {
-	//console.log(/([^.]*)$/.exec(docObj.memberof)[0]);
 	const parentName = /([^.]*)$/.exec(docObj.memberof)[0];
 	const parentMember = memberList.get(parentName);
 
