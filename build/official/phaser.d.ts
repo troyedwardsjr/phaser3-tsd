@@ -425,7 +425,7 @@ declare type FileTypeConfig = {
 declare function P0(): void;
 
 declare module 'phaser' {
-	export default Phaser ;
+	export default Phaser;
 }
 
 declare namespace Phaser {
@@ -23238,7 +23238,7 @@ declare namespace Phaser {
                  * @param xhrSettings [description]
                  * @param audioContext [description]
                  */
-                constructor(key: string, url: string, path: string, xhrSettings?: Phaser.Loader.XHRSettings, audioContext: any);
+                constructor(key: string, url: string, path: string, xhrSettings?: Phaser.Loader.XHRSettings, audioContext?: any);
 
                 /**
                  * [description]
@@ -23323,7 +23323,7 @@ declare namespace Phaser {
                  * @param xhrSettings [description]
                  * @param config [description]
                  */
-                constructor(key: string, url: string, path: string, xhrSettings?: Phaser.Loader.XHRSettings, config: object);
+                constructor(key: string, url: string, path: string, xhrSettings?: Phaser.Loader.XHRSettings, config?: object);
 
             }
 
