@@ -1,6 +1,5 @@
 declare module 'phaser' {
 	export default Phaser ;
-
 }
 
 declare class Phaser {

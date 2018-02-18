@@ -1,0 +1,22 @@
+{
+   "sys":"Systems",
+   "anims":"AnimationManager",
+   "cache":"CacheManager",
+   "registry":"DataManager",
+   "sound":"WebAudioSoundManager",
+   "textures":"TextureManager",
+   "events":"EventEmitter",
+   "cameras":"CameraManager",
+   "make":"GameObjectCreator",
+   "add":"GameObjectFactory",
+   "scene":"ScenePlugin",
+   "children":"DisplayList",
+   "cameras3d":"CameraManager",
+   "time":"Clock",
+   "data":"DataManagerPlugin",
+   "input":"InputPlugin",
+   "load":"LoaderPlugin",
+   "tweens":"TweenManager",
+   "lights":"LightsPlugin",
+   "physics":"ArcadePhysics"
+}

@@ -55,7 +55,7 @@ const transpile = (memberList) => {
 	let srcFilePath = "phaser-src/";
 
 	parser(srcFilePath, () => {
-		fs.readFile('jsdoc-out/jsdoc.json', 'utf8', function(err, contents) {
+		fs.readFileSync('jsdoc-out/jsdoc.json', 'utf8', function(err, contents) {
 			if(err) {
 				return console.log(err);
 			}
@@ -92,42 +92,3 @@ const transpiler = (() => {
 	});
 	transpile(memberList);
 })();
-
-
-/*
-const transpile = (memberList) => {
-	let srcFiles = readPhaserSrc("phaser-src/");
-	let promiseBuf = [];
-	let promiseIndex = 0;
-
-	srcFiles.forEach((filePath) => {
-		promiseBuf.push(parser(filePath));
-
-		console.log(`Promises created: ${promiseIndex}`);
-		console.log(`File name: ${srcFiles[promiseIndex - 1]}`);
-
-		promiseIndex += 1;
-	});
-
-	Promise.all(promiseBuf).then((procOutArray) => {
-
-		procOutArray.forEach((result) => {
-			const usefulDocData = JSON.parse(result.stdout);
-			convert(phaserModuleDOM, usefulDocData, memberList);
-		})
-
-		const domOutput = dom.emit(phaserPkgModuleDOM) + dom.emit(phaserClassDOM) + dom.emit(phaserModuleDOM);
-		const outPath = 'out/phaser.d.ts';
-
-		console.log(domOutput);
-
-		fs.writeFile(outPath, domOutput, (err) => {
-				if(err) {
-						return console.log(err);
-				}
-				console.log(`File was written to ${outPath}`);
-		});
-		
-	});
-}
-*/
