@@ -8,95 +8,95 @@ declare class Phaser {
 
 declare namespace Phaser {
     class Actions {
-        static Angle(): any[];
+        static Angle(items: any[], value: number): any[];
 
-        static Call(): any[];
+        static Call(items: any[], callback: any, thisArg: any): any[];
 
-        static GetFirst(): any[];
+        static GetFirst(items: any[], compare: any, index: number): any[];
 
-        static GridAlign(): any[];
+        static GridAlign(items: any[], options: any): any[];
 
-        static IncAlpha(): any[];
+        static IncAlpha(items: any[], value: number): any[];
 
-        static IncX(): any[];
+        static IncX(items: any[], value: number): any[];
 
-        static IncXY(): any[];
+        static IncXY(items: any[], x: number, y: number): any[];
 
-        static IncY(): any[];
+        static IncY(items: any[], value: number): any[];
 
-        static PlaceOnCircle(): any[];
+        static PlaceOnCircle(items: any[], circle: Phaser.Geom.Circle, startAngle: number, endAngle: number): any[];
 
-        static PlaceOnEllipse(): any[];
+        static PlaceOnEllipse(items: any[], ellipse: Phaser.Geom.Ellipse, startAngle: number, endAngle: number): any[];
 
-        static PlaceOnLine(): any[];
+        static PlaceOnLine(items: any[], line: Phaser.Geom.Line): any[];
 
-        static PlaceOnRectangle(): any[];
+        static PlaceOnRectangle(items: any[], rect: Phaser.Geom.Rectangle, shift: number): any[];
 
-        static PlaceOnTriangle(): any[];
+        static PlaceOnTriangle(items: any[], triangle: Phaser.Geom.Triangle, stepRate: number): any[];
 
-        static PlayAnimation(): any[];
+        static PlayAnimation(items: any[], key: string, startFrame: string|number): any[];
 
-        static RandomCircle(): any[];
+        static RandomCircle(items: any[], circle: Phaser.Geom.Circle): any[];
 
-        static RandomEllipse(): any[];
+        static RandomEllipse(items: any[], ellipse: Phaser.Geom.Ellipse): any[];
 
-        static RandomLine(): any[];
+        static RandomLine(items: any[], line: Phaser.Geom.Line): any[];
 
-        static RandomRectangle(): any[];
+        static RandomRectangle(items: any[], rect: Phaser.Geom.Rectangle): any[];
 
-        static RandomTriangle(): any[];
+        static RandomTriangle(items: any[], triangle: Phaser.Geom.Triangle): any[];
 
-        static Rotate(): any[];
+        static Rotate(items: any[], value: number, step: number): any[];
 
-        static RotateAround(): any[];
+        static RotateAround(items: any[], point: any, angle: number): any[];
 
-        static RotateAroundDistance(): any[];
+        static RotateAroundDistance(items: any[], point: any, angle: number, distance: number): any[];
 
-        static ScaleX(): any[];
+        static ScaleX(items: any[], value: number): any[];
 
-        static ScaleXY(): any[];
+        static ScaleXY(items: any[], x: number, y: number): any[];
 
-        static ScaleY(): any[];
+        static ScaleY(items: any[], value: number): any[];
 
-        static SetAlpha(): any[];
+        static SetAlpha(items: any[], value: number, step: number): any[];
 
-        static SetBlendMode(): any[];
+        static SetBlendMode(items: any[], value: number): any[];
 
-        static SetDepth(): any[];
+        static SetDepth(items: any[], value: number, step: number): any[];
 
-        static SetHitArea(): any[];
+        static SetHitArea(items: any[], hitArea: any, hitAreaCallback: any): any[];
 
-        static SetOrigin(): any[];
+        static SetOrigin(items: any[], x: number, y: number): any[];
 
-        static SetRotation(): any[];
+        static SetRotation(items: any[], value: number, step: number): any[];
 
-        static SetScale(): any[];
+        static SetScale(items: any[], x: number, y: number, stepX: number, stepY: number): any[];
 
-        static SetScaleX(): any[];
+        static SetScaleX(items: any[], value: number, step: number): any[];
 
-        static SetScaleY(): any[];
+        static SetScaleY(items: any[], value: number, step: number): any[];
 
-        static SetTint(): any[];
+        static SetTint(items: any[], topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): any[];
 
-        static SetVisible(): any[];
+        static SetVisible(items: any[], value: boolean): any[];
 
-        static SetX(): any[];
+        static SetX(items: any[], value: number, step: number): any[];
 
-        static SetXY(): any[];
+        static SetXY(items: any[], x: number, y: number, stepX: number, stepY: number): any[];
 
-        static SetY(): any[];
+        static SetY(items: any[], value: number, step: number): any[];
 
-        static ShiftPosition(): any[];
+        static ShiftPosition(items: any[], x: number, y: number, direction: number, output: Phaser.Math.Vector2|any): any[];
 
-        static Shuffle(): any[];
+        static Shuffle(items: any[]): any[];
 
-        static SmootherStep(): any[];
+        static SmootherStep(items: any[], property: string, min: number, max: number, inc: number): any[];
 
-        static SmoothStep(): any[];
+        static SmoothStep(items: any[], property: string, min: number, max: number, inc: number): any[];
 
-        static Spread(): any[];
+        static Spread(items: any[], property: string, min: number, max: number, inc: number): any[];
 
-        static ToggleVisible(): any[];
+        static ToggleVisible(items: any[]): any[];
 
     }
 
@@ -156,35 +156,35 @@ declare namespace Phaser {
 
             paused: boolean;
 
-            addFrame(): Phaser.Animations.Animation;
+            addFrame(config: any): Phaser.Animations.Animation;
 
-            addFrameAt(): Phaser.Animations.Animation;
+            addFrameAt(index: number, config: any): Phaser.Animations.Animation;
 
-            checkFrame(): boolean;
+            checkFrame(index: number): boolean;
 
-            completeAnimation(): void;
+            completeAnimation(component: Phaser.GameObjects.Components.Animation): void;
 
-            getFirstTick(): void;
+            getFirstTick(component: Phaser.GameObjects.Components.Animation, includeDelay: boolean): void;
 
-            getFrameAt(): Phaser.Animations.AnimationFrame;
+            getFrameAt(index: number): Phaser.Animations.AnimationFrame;
 
-            getFrames(): Array.<Phaser.Animations.AnimationFrame>;
+            getFrames(textureManager: any, frames: any): Array.<Phaser.Animations.AnimationFrame>;
 
-            getNextTick(): void;
+            getNextTick(component: Phaser.GameObjects.Components.Animation): void;
 
-            load(): void;
+            load(component: Phaser.GameObjects.Components.Animation, startFrame: number): void;
 
-            nextFrame(): void;
+            nextFrame(component: Phaser.GameObjects.Components.Animation): void;
 
-            previousFrame(): void;
+            previousFrame(component: Phaser.GameObjects.Components.Animation): void;
 
-            removeFrame(): Phaser.Animations.Animation;
+            removeFrame(frame: Phaser.Animations.AnimationFrame): Phaser.Animations.Animation;
 
-            removeFrameAt(): Phaser.Animations.Animation;
+            removeFrameAt(index: number): Phaser.Animations.Animation;
 
-            repeatAnimation(): void;
+            repeatAnimation(component: Phaser.GameObjects.Components.Animation): void;
 
-            setFrame(): void;
+            setFrame(component: Phaser.GameObjects.Components.Animation): void;
 
             toJSON(): any;
 
@@ -242,45 +242,45 @@ declare namespace Phaser {
 
             _updateParams: any[];
 
-            delay(): Phaser.GameObjects.GameObject;
+            delay(value: number): Phaser.GameObjects.GameObject;
 
-            delayedPlay(): Phaser.GameObjects.GameObject;
+            delayedPlay(delay: any, key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
             getCurrentKey(): any;
 
-            load(): Phaser.GameObjects.GameObject;
+            load(key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
-            pause(): Phaser.GameObjects.GameObject;
+            pause(atFrame: any): Phaser.GameObjects.GameObject;
 
-            paused(): any;
+            paused(value: any): any;
 
-            play(): Phaser.GameObjects.GameObject;
+            play(key: any, ignoreIfPlaying: any, startFrame: any): Phaser.GameObjects.GameObject;
 
-            progress(): any;
+            progress(value: any): any;
 
-            remove(): void;
+            remove(event: any): void;
 
-            repeat(): any;
+            repeat(value: any): any;
 
-            repeatDelay(): any;
+            repeatDelay(value: any): any;
 
-            restart(): Phaser.GameObjects.GameObject;
+            restart(includeDelay: any): Phaser.GameObjects.GameObject;
 
-            resume(): Phaser.GameObjects.GameObject;
+            resume(fromFrame: any): Phaser.GameObjects.GameObject;
 
-            stop(): Phaser.GameObjects.GameObject;
+            stop(dispatchCallbacks: any): Phaser.GameObjects.GameObject;
 
-            timeScale(): any;
+            timeScale(value: any): any;
 
             totalFrames(): any;
 
             totalProgres(): void;
 
-            update(): void;
+            update(timestamp: any, delta: any): void;
 
-            updateFrame(): void;
+            updateFrame(animationFrame: any): void;
 
-            yoyo(): any;
+            yoyo(value: any): any;
 
             destroy(): void;
 
@@ -336,53 +336,53 @@ declare namespace Phaser {
 
             boot(): void;
 
-            add(): Phaser.Animations.AnimationManager;
+            add(key: string, animation: Phaser.Animations.Animation): Phaser.Animations.AnimationManager;
 
-            create(): Phaser.Animations.Animation;
+            create(config: any): Phaser.Animations.Animation;
 
-            fromJSON(): Array.<Phaser.Animations.Animation>;
+            fromJSON(data: string|any, clearCurrentAnimations: boolean): Array.<Phaser.Animations.Animation>;
 
-            generateFrameNames(): Array.<object>;
+            generateFrameNames(key: string, config: any): Array.<object>;
 
-            generateFrameNumbers(): Array.<object>;
+            generateFrameNumbers(key: string, config: any): Array.<object>;
 
-            get(): Phaser.Animations.Animation;
+            get(key: string): Phaser.Animations.Animation;
 
-            load(): Phaser.GameObjects.GameObject;
+            load(child: Phaser.GameObjects.GameObject, key: string, startFrame: string|number): Phaser.GameObjects.GameObject;
 
             pauseAll(): Phaser.Animations.AnimationManager;
 
-            play(): Phaser.Animations.AnimationManager;
+            play(key: string, child: Phaser.GameObjects.GameObject): Phaser.Animations.AnimationManager;
 
-            remove(): Phaser.Animations.Animation;
+            remove(key: string): Phaser.Animations.Animation;
 
             resumeAll(): Phaser.Animations.AnimationManager;
 
-            staggerPlay(): Phaser.Animations.AnimationManager;
+            staggerPlay(key: string, child: Phaser.GameObjects.GameObject, stagger: number): Phaser.Animations.AnimationManager;
 
-            toJSON(): any;
+            toJSON(key: string): any;
 
             destroy(): void;
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -400,13 +400,13 @@ declare namespace Phaser {
 
             events: EventEmitter;
 
-            add(): Phaser.Cache.BaseCache;
+            add(key: string, data: any): Phaser.Cache.BaseCache;
 
-            has(): boolean;
+            has(key: string): boolean;
 
-            get(): any;
+            get(key: string): any;
 
-            remove(): Phaser.Cache.BaseCache;
+            remove(key: string): Phaser.Cache.BaseCache;
 
             destroy(): void;
 
@@ -440,7 +440,7 @@ declare namespace Phaser {
 
             custom: object.<Phaser.Cache.BaseCache>;
 
-            addCustom(): Phaser.Cache.BaseCache;
+            addCustom(key: string): Phaser.Cache.BaseCache;
 
             destroy(): void;
 
@@ -480,19 +480,19 @@ declare namespace Phaser {
 
                 zoomOut: Phaser.Input.Keyboard;
 
-                zoomSpeed: float;
+                zoomSpeed: number;
 
-                accelX: float;
+                accelX: number;
 
-                accelY: float;
+                accelY: number;
 
-                dragX: float;
+                dragX: number;
 
-                dragY: float;
+                dragY: number;
 
-                maxSpeedX: float;
+                maxSpeedX: number;
 
-                maxSpeedY: float;
+                maxSpeedY: number;
 
                 _speedX: number;
 
@@ -506,9 +506,9 @@ declare namespace Phaser {
 
                 stop(): Phaser.Cameras.Controls.SmoothedKeyControl;
 
-                setCamera(): Phaser.Cameras.Controls.SmoothedKeyControl;
+                setCamera(camera: Phaser.Cameras.Scene2D.Camera): Phaser.Cameras.Controls.SmoothedKeyControl;
 
-                update(): void;
+                update(delta: any): void;
 
                 destroy(): void;
 
@@ -528,73 +528,73 @@ declare namespace Phaser {
 
                 viewportHeight: number;
 
-                _zoom: float;
+                _zoom: number;
 
                 near: number;
 
-                setToOrtho(): any;
+                setToOrtho(yDown: any, viewportWidth: any, viewportHeight: any): any;
 
                 update(): any;
 
                 zoom: number;
 
-                setPosition(): Phaser.Cameras.Sprite3D.Camera;
+                setPosition(x: number, y: number, z: number): Phaser.Cameras.Sprite3D.Camera;
 
-                setScene(): Phaser.Cameras.Sprite3D.Camera;
+                setScene(scene: Phaser.Scene): Phaser.Cameras.Sprite3D.Camera;
 
-                setPixelScale(): Phaser.Cameras.Sprite3D.Camera;
+                setPixelScale(value: any): Phaser.Cameras.Sprite3D.Camera;
 
-                add(): any;
+                add(sprite3D: any): any;
 
-                remove(): Phaser.Cameras.Sprite3D.Camera;
+                remove(child: any): Phaser.Cameras.Sprite3D.Camera;
 
                 clear(): Phaser.Cameras.Sprite3D.Camera;
 
                 getChildren(): any[];
 
-                create(): any;
+                create(x: any, y: any, z: any, key: any, frame: any, visible: any): any;
 
-                createMultiple(): any;
+                createMultiple(quantity: any, key: any, frame: any, visible: any): any;
 
-                createRect(): any;
+                createRect(size: any, spacing: any, key: any, frame: any): any;
 
-                randomSphere(): Phaser.Cameras.Sprite3D.Camera;
+                randomSphere(radius: any, sprites: any): Phaser.Cameras.Sprite3D.Camera;
 
-                randomCube(): Phaser.Cameras.Sprite3D.Camera;
+                randomCube(scale: any, sprites: any): Phaser.Cameras.Sprite3D.Camera;
 
-                translateChildren(): Phaser.Cameras.Sprite3D.Camera;
+                translateChildren(vec3: any, sprites: any): Phaser.Cameras.Sprite3D.Camera;
 
-                transformChildren(): Phaser.Cameras.Sprite3D.Camera;
+                transformChildren(mat4: any, sprites: any): Phaser.Cameras.Sprite3D.Camera;
 
-                setViewport(): Phaser.Cameras.Sprite3D.Camera;
+                setViewport(width: number, height: number): Phaser.Cameras.Sprite3D.Camera;
 
-                translate(): Phaser.Cameras.Sprite3D.Camera;
+                translate(x: any, y: any, z: any): Phaser.Cameras.Sprite3D.Camera;
 
-                lookAt(): Phaser.Cameras.Sprite3D.Camera;
+                lookAt(x: any, y: any, z: any): Phaser.Cameras.Sprite3D.Camera;
 
-                rotate(): Phaser.Cameras.Sprite3D.Camera;
+                rotate(radians: any, axis: any): Phaser.Cameras.Sprite3D.Camera;
 
-                rotateAround(): Phaser.Cameras.Sprite3D.Camera;
+                rotateAround(point: any, radians: any, axis: any): Phaser.Cameras.Sprite3D.Camera;
 
-                project(): any;
+                project(vec: any, out: any): any;
 
-                unproject(): any;
+                unproject(vec: any, out: any): any;
 
-                getPickRay(): any;
+                getPickRay(x: any, y: any): any;
 
                 updateChildren(): Phaser.Cameras.Sprite3D.Camera;
 
                 updateBillboardMatrix(): void;
 
-                getPointSize(): any;
+                getPointSize(vec: any, size: any, out: any): any;
 
                 destroy(): void;
 
-                setX(): Phaser.Cameras.Sprite3D.Camera;
+                setX(value: any): Phaser.Cameras.Sprite3D.Camera;
 
-                setY(): Phaser.Cameras.Sprite3D.Camera;
+                setY(value: any): Phaser.Cameras.Sprite3D.Camera;
 
-                setZ(): Phaser.Cameras.Sprite3D.Camera;
+                setZ(value: any): Phaser.Cameras.Sprite3D.Camera;
 
                 x: number;
 
@@ -614,67 +614,67 @@ declare namespace Phaser {
 
                 fieldOfView: number;
 
-                setFOV(): any;
+                setFOV(value: any): any;
 
                 update(): any;
 
-                setPosition(): Phaser.Cameras.Sprite3D.Camera;
+                setPosition(x: number, y: number, z: number): Phaser.Cameras.Sprite3D.Camera;
 
-                setScene(): Phaser.Cameras.Sprite3D.Camera;
+                setScene(scene: Phaser.Scene): Phaser.Cameras.Sprite3D.Camera;
 
-                setPixelScale(): Phaser.Cameras.Sprite3D.Camera;
+                setPixelScale(value: any): Phaser.Cameras.Sprite3D.Camera;
 
-                add(): any;
+                add(sprite3D: any): any;
 
-                remove(): Phaser.Cameras.Sprite3D.Camera;
+                remove(child: any): Phaser.Cameras.Sprite3D.Camera;
 
                 clear(): Phaser.Cameras.Sprite3D.Camera;
 
                 getChildren(): any[];
 
-                create(): any;
+                create(x: any, y: any, z: any, key: any, frame: any, visible: any): any;
 
-                createMultiple(): any;
+                createMultiple(quantity: any, key: any, frame: any, visible: any): any;
 
-                createRect(): any;
+                createRect(size: any, spacing: any, key: any, frame: any): any;
 
-                randomSphere(): Phaser.Cameras.Sprite3D.Camera;
+                randomSphere(radius: any, sprites: any): Phaser.Cameras.Sprite3D.Camera;
 
-                randomCube(): Phaser.Cameras.Sprite3D.Camera;
+                randomCube(scale: any, sprites: any): Phaser.Cameras.Sprite3D.Camera;
 
-                translateChildren(): Phaser.Cameras.Sprite3D.Camera;
+                translateChildren(vec3: any, sprites: any): Phaser.Cameras.Sprite3D.Camera;
 
-                transformChildren(): Phaser.Cameras.Sprite3D.Camera;
+                transformChildren(mat4: any, sprites: any): Phaser.Cameras.Sprite3D.Camera;
 
-                setViewport(): Phaser.Cameras.Sprite3D.Camera;
+                setViewport(width: number, height: number): Phaser.Cameras.Sprite3D.Camera;
 
-                translate(): Phaser.Cameras.Sprite3D.Camera;
+                translate(x: any, y: any, z: any): Phaser.Cameras.Sprite3D.Camera;
 
-                lookAt(): Phaser.Cameras.Sprite3D.Camera;
+                lookAt(x: any, y: any, z: any): Phaser.Cameras.Sprite3D.Camera;
 
-                rotate(): Phaser.Cameras.Sprite3D.Camera;
+                rotate(radians: any, axis: any): Phaser.Cameras.Sprite3D.Camera;
 
-                rotateAround(): Phaser.Cameras.Sprite3D.Camera;
+                rotateAround(point: any, radians: any, axis: any): Phaser.Cameras.Sprite3D.Camera;
 
-                project(): any;
+                project(vec: any, out: any): any;
 
-                unproject(): any;
+                unproject(vec: any, out: any): any;
 
-                getPickRay(): any;
+                getPickRay(x: any, y: any): any;
 
                 updateChildren(): Phaser.Cameras.Sprite3D.Camera;
 
                 updateBillboardMatrix(): void;
 
-                getPointSize(): any;
+                getPointSize(vec: any, size: any, out: any): any;
 
                 destroy(): void;
 
-                setX(): Phaser.Cameras.Sprite3D.Camera;
+                setX(value: any): Phaser.Cameras.Sprite3D.Camera;
 
-                setY(): Phaser.Cameras.Sprite3D.Camera;
+                setY(value: any): Phaser.Cameras.Sprite3D.Camera;
 
-                setZ(): Phaser.Cameras.Sprite3D.Camera;
+                setZ(value: any): Phaser.Cameras.Sprite3D.Camera;
 
                 x: number;
 
@@ -698,7 +698,7 @@ declare namespace Phaser {
     }
 
     class Create {
-        static GenerateTexture(): HTMLCanvasElement;
+        static GenerateTexture(config: any): HTMLCanvasElement;
 
     }
 
@@ -728,13 +728,13 @@ declare namespace Phaser {
 
             p3: Phaser.Math.Vector2;
 
-            getStartPoint(): Phaser.Math.Vector2;
+            getStartPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getResolution(): any;
+            getResolution(divisions: any): any;
 
-            getPoint(): any;
+            getPoint(t: any, out: any): any;
 
-            draw(): Phaser.GameObjects.Graphics;
+            draw(graphics: Phaser.GameObjects.Graphics, pointsTotal: number): Phaser.GameObjects.Graphics;
 
             toJSON(): any;
 
@@ -754,31 +754,31 @@ declare namespace Phaser {
 
             _tmpVec2B: Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(out: Phaser.Geom.Rectangle, accuracy: number): Phaser.Geom.Rectangle;
 
-            getDistancePoints(): Array.<Phaser.Geom.Point>;
+            getDistancePoints(distance: number): Array.<Phaser.Geom.Point>;
 
-            getEndPoint(): Phaser.Math.Vector2;
+            getEndPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
             getLength(): number;
 
-            getLengths(): Array.<number>;
+            getLengths(divisions: number): Array.<number>;
 
-            getPointAt(): Phaser.Math.Vector2;
+            getPointAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getPoints(): Array.<Phaser.Math.Vector2>;
+            getPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getRandomPoint(): Phaser.Math.Vector2;
+            getRandomPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getSpacedPoints(): Array.<Phaser.Math.Vector2>;
+            getSpacedPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getTangent(): Phaser.Math.Vector2;
+            getTangent(t: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTangentAt(): Phaser.Math.Vector2;
+            getTangentAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTFromDistance(): float;
+            getTFromDistance(distance: number, divisions: number): number;
 
-            getUtoTmapping(): number;
+            getUtoTmapping(u: number, distance: number, divisions: number): number;
 
             updateArcLengths(): void;
 
@@ -804,35 +804,35 @@ declare namespace Phaser {
 
             _tmpVec2B: Phaser.Math.Vector2;
 
-            draw(): Phaser.GameObjects.Graphics;
+            draw(graphics: Phaser.GameObjects.Graphics, pointsTotal: number): Phaser.GameObjects.Graphics;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(out: Phaser.Geom.Rectangle, accuracy: number): Phaser.Geom.Rectangle;
 
-            getDistancePoints(): Array.<Phaser.Geom.Point>;
+            getDistancePoints(distance: number): Array.<Phaser.Geom.Point>;
 
-            getEndPoint(): Phaser.Math.Vector2;
+            getEndPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
             getLength(): number;
 
-            getLengths(): Array.<number>;
+            getLengths(divisions: number): Array.<number>;
 
-            getPointAt(): Phaser.Math.Vector2;
+            getPointAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getPoints(): Array.<Phaser.Math.Vector2>;
+            getPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getRandomPoint(): Phaser.Math.Vector2;
+            getRandomPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getSpacedPoints(): Array.<Phaser.Math.Vector2>;
+            getSpacedPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getStartPoint(): Phaser.Math.Vector2;
+            getStartPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTangent(): Phaser.Math.Vector2;
+            getTangent(t: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTangentAt(): Phaser.Math.Vector2;
+            getTangentAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTFromDistance(): float;
+            getTFromDistance(distance: number, divisions: number): number;
 
-            getUtoTmapping(): number;
+            getUtoTmapping(u: number, distance: number, divisions: number): number;
 
             updateArcLengths(): void;
 
@@ -856,27 +856,27 @@ declare namespace Phaser {
 
             _rotation: number;
 
-            getStartPoint(): any;
+            getStartPoint(out: any): any;
 
-            getResolution(): any;
+            getResolution(divisions: any): any;
 
-            getPoint(): any;
+            getPoint(t: any, out: any): any;
 
-            setXRadius(): any;
+            setXRadius(value: any): any;
 
-            setYRadius(): any;
+            setYRadius(value: any): any;
 
-            setWidth(): any;
+            setWidth(value: any): any;
 
-            setHeight(): any;
+            setHeight(value: any): any;
 
-            setStartAngle(): any;
+            setStartAngle(value: any): any;
 
-            setEndAngle(): any;
+            setEndAngle(value: any): any;
 
-            setClockwise(): any;
+            setClockwise(value: any): any;
 
-            setRotation(): any;
+            setRotation(value: any): any;
 
             x: number;
 
@@ -912,33 +912,33 @@ declare namespace Phaser {
 
             _tmpVec2B: Phaser.Math.Vector2;
 
-            draw(): Phaser.GameObjects.Graphics;
+            draw(graphics: Phaser.GameObjects.Graphics, pointsTotal: number): Phaser.GameObjects.Graphics;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(out: Phaser.Geom.Rectangle, accuracy: number): Phaser.Geom.Rectangle;
 
-            getDistancePoints(): Array.<Phaser.Geom.Point>;
+            getDistancePoints(distance: number): Array.<Phaser.Geom.Point>;
 
-            getEndPoint(): Phaser.Math.Vector2;
+            getEndPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
             getLength(): number;
 
-            getLengths(): Array.<number>;
+            getLengths(divisions: number): Array.<number>;
 
-            getPointAt(): Phaser.Math.Vector2;
+            getPointAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getPoints(): Array.<Phaser.Math.Vector2>;
+            getPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getRandomPoint(): Phaser.Math.Vector2;
+            getRandomPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getSpacedPoints(): Array.<Phaser.Math.Vector2>;
+            getSpacedPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getTangent(): Phaser.Math.Vector2;
+            getTangent(t: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTangentAt(): Phaser.Math.Vector2;
+            getTangentAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTFromDistance(): float;
+            getTFromDistance(distance: number, divisions: number): number;
 
-            getUtoTmapping(): number;
+            getUtoTmapping(u: number, distance: number, divisions: number): number;
 
             updateArcLengths(): void;
 
@@ -950,19 +950,19 @@ declare namespace Phaser {
         class LineCurve {
             p0: Phaser.Math.Vector2;
 
-            getBounds(): any;
+            getBounds(out: any): any;
 
-            getStartPoint(): any;
+            getStartPoint(out: any): any;
 
             getResolution(): number;
 
-            getPoint(): any;
+            getPoint(t: any, out: any): any;
 
-            getPointAt(): any;
+            getPointAt(u: any, out: any): any;
 
             getTangent(): any;
 
-            draw(): any;
+            draw(graphics: any): any;
 
             toJSON(): any;
 
@@ -982,25 +982,25 @@ declare namespace Phaser {
 
             _tmpVec2B: Phaser.Math.Vector2;
 
-            getDistancePoints(): Array.<Phaser.Geom.Point>;
+            getDistancePoints(distance: number): Array.<Phaser.Geom.Point>;
 
-            getEndPoint(): Phaser.Math.Vector2;
+            getEndPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
             getLength(): number;
 
-            getLengths(): Array.<number>;
+            getLengths(divisions: number): Array.<number>;
 
-            getPoints(): Array.<Phaser.Math.Vector2>;
+            getPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getRandomPoint(): Phaser.Math.Vector2;
+            getRandomPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getSpacedPoints(): Array.<Phaser.Math.Vector2>;
+            getSpacedPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getTangentAt(): Phaser.Math.Vector2;
+            getTangentAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTFromDistance(): float;
+            getTFromDistance(distance: number, divisions: number): number;
 
-            getUtoTmapping(): number;
+            getUtoTmapping(u: number, distance: number, divisions: number): number;
 
             updateArcLengths(): void;
 
@@ -1014,9 +1014,9 @@ declare namespace Phaser {
 
             p0: Phaser.Math.Vector2;
 
-            getPoint(): any;
+            getPoint(t: any, out: any): any;
 
-            getPointAt(): any;
+            getPointAt(u: any, out: any): any;
 
             getResolution(): any;
 
@@ -1044,45 +1044,45 @@ declare namespace Phaser {
 
             _tmpVec2B: Phaser.Math.Vector2;
 
-            add(): Phaser.Curves.Path;
+            add(curve: Phaser.Curves.Curve): Phaser.Curves.Path;
 
-            circleTo(): Phaser.Curves.Path;
+            circleTo(radius: number, clockwise: boolean, rotation: number): Phaser.Curves.Path;
 
             closePath(): Phaser.Curves.Path;
 
-            cubicBezierTo(): Phaser.Curves.Path;
+            cubicBezierTo(x: number, y: number, control1X: Phaser.Math.Vector2, control1Y: Phaser.Math.Vector2, control2X: Phaser.Math.Vector2, control2Y: Phaser.Math.Vector2): Phaser.Curves.Path;
 
             destroy(): void;
 
-            draw(): Phaser.GameObjects.Graphics;
+            draw(graphics: Phaser.GameObjects.Graphics, pointsTotal: number): Phaser.GameObjects.Graphics;
 
-            ellipseTo(): Phaser.Curves.Path;
+            ellipseTo(xRadius: number, yRadius: number, startAngle: number, endAngle: number, clockwise: boolean, rotation: number): Phaser.Curves.Path;
 
-            fromJSON(): Phaser.Curves.Path;
+            fromJSON(data: any): Phaser.Curves.Path;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(out: Phaser.Geom.Rectangle, accuracy: number): Phaser.Geom.Rectangle;
 
             getCurveLengths(): any[];
 
-            getEndPoint(): Phaser.Math.Vector2;
+            getEndPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
             getLength(): number;
 
-            getPoint(): Phaser.Math.Vector2;
+            getPoint(t: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getPoints(): Array.<Phaser.Math.Vector2>;
+            getPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getRandomPoint(): Phaser.Math.Vector2;
+            getRandomPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getSpacedPoints(): Array.<Phaser.Math.Vector2>;
+            getSpacedPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getStartPoint(): Phaser.Math.Vector2;
+            getStartPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            lineTo(): Phaser.Curves.Path;
+            lineTo(x: number|Phaser.Math.Vector2, y: number): Phaser.Curves.Path;
 
-            splineTo(): Phaser.Curves.Path;
+            splineTo(points: any): Phaser.Curves.Path;
 
-            moveTo(): Phaser.Curves.Path;
+            moveTo(x: number, y: number): Phaser.Curves.Path;
 
             toJSON(): any;
 
@@ -1096,15 +1096,15 @@ declare namespace Phaser {
         class SplineCurve {
             points: Array.<Phaser.Math.Vector2>;
 
-            addPoints(): any;
+            addPoints(points: any): any;
 
-            addPoint(): any;
+            addPoint(x: any, y: any): any;
 
-            getStartPoint(): any;
+            getStartPoint(out: any): any;
 
-            getResolution(): any;
+            getResolution(divisions: any): any;
 
-            getPoint(): any;
+            getPoint(t: any, out: any): any;
 
             toJSON(): any;
 
@@ -1124,33 +1124,33 @@ declare namespace Phaser {
 
             _tmpVec2B: Phaser.Math.Vector2;
 
-            draw(): Phaser.GameObjects.Graphics;
+            draw(graphics: Phaser.GameObjects.Graphics, pointsTotal: number): Phaser.GameObjects.Graphics;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(out: Phaser.Geom.Rectangle, accuracy: number): Phaser.Geom.Rectangle;
 
-            getDistancePoints(): Array.<Phaser.Geom.Point>;
+            getDistancePoints(distance: number): Array.<Phaser.Geom.Point>;
 
-            getEndPoint(): Phaser.Math.Vector2;
+            getEndPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
             getLength(): number;
 
-            getLengths(): Array.<number>;
+            getLengths(divisions: number): Array.<number>;
 
-            getPointAt(): Phaser.Math.Vector2;
+            getPointAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getPoints(): Array.<Phaser.Math.Vector2>;
+            getPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getRandomPoint(): Phaser.Math.Vector2;
+            getRandomPoint(out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getSpacedPoints(): Array.<Phaser.Math.Vector2>;
+            getSpacedPoints(divisions: number): Array.<Phaser.Math.Vector2>;
 
-            getTangent(): Phaser.Math.Vector2;
+            getTangent(t: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTangentAt(): Phaser.Math.Vector2;
+            getTangentAt(u: number, out: Phaser.Math.Vector2): Phaser.Math.Vector2;
 
-            getTFromDistance(): float;
+            getTFromDistance(distance: number, divisions: number): number;
 
-            getUtoTmapping(): number;
+            getUtoTmapping(u: number, distance: number, divisions: number): number;
 
             updateArcLengths(): void;
 
@@ -1176,25 +1176,25 @@ declare namespace Phaser {
 
             _frozen: boolean;
 
-            get(): any;
+            get(key: string): any;
 
             getAll(): any;
 
-            query(): any;
+            query(search: string): any;
 
-            set(): Phaser.Data.DataManager;
+            set(key: string, data: any): Phaser.Data.DataManager;
 
-            each(): Phaser.Data.DataManager;
+            each(callback: any, scope: any, arguments: *): Phaser.Data.DataManager;
 
-            merge(): Phaser.Data.DataManager;
+            merge(data: any, overwrite: boolean): Phaser.Data.DataManager;
 
-            remove(): Phaser.Data.DataManager;
+            remove(key: string): Phaser.Data.DataManager;
 
-            pop(): any;
+            pop(key: string): any;
 
-            has(): boolean;
+            has(key: string): boolean;
 
-            setFreeze(): Phaser.Data.DataManager;
+            setFreeze(value: boolean): Phaser.Data.DataManager;
 
             reset(): Phaser.Data.DataManager;
 
@@ -1230,25 +1230,25 @@ declare namespace Phaser {
 
             _frozen: boolean;
 
-            get(): any;
+            get(key: string): any;
 
             getAll(): any;
 
-            query(): any;
+            query(search: string): any;
 
-            set(): Phaser.Data.DataManager;
+            set(key: string, data: any): Phaser.Data.DataManager;
 
-            each(): Phaser.Data.DataManager;
+            each(callback: any, scope: any, arguments: *): Phaser.Data.DataManager;
 
-            merge(): Phaser.Data.DataManager;
+            merge(data: any, overwrite: boolean): Phaser.Data.DataManager;
 
-            remove(): Phaser.Data.DataManager;
+            remove(key: string): Phaser.Data.DataManager;
 
-            pop(): any;
+            pop(key: string): any;
 
-            has(): boolean;
+            has(key: string): boolean;
 
-            setFreeze(): Phaser.Data.DataManager;
+            setFreeze(value: boolean): Phaser.Data.DataManager;
 
             reset(): Phaser.Data.DataManager;
 
@@ -1274,23 +1274,23 @@ declare namespace Phaser {
 
         namespace Align {
             class To {
-                static LeftBottom(): Phaser.GameObjects.GameObject;
+                static LeftBottom(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
-                static LeftCenter(): Phaser.GameObjects.GameObject;
+                static LeftCenter(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
-                static LeftTop(): Phaser.GameObjects.GameObject;
+                static LeftTop(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
-                static RightBottom(): Phaser.GameObjects.GameObject;
+                static RightBottom(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
-                static RightCenter(): Phaser.GameObjects.GameObject;
+                static RightCenter(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
-                static RightTop(): Phaser.GameObjects.GameObject;
+                static RightTop(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
-                static TopCenter(): Phaser.GameObjects.GameObject;
+                static TopCenter(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
-                static TopLeft(): Phaser.GameObjects.GameObject;
+                static TopLeft(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
-                static TopRight(): Phaser.GameObjects.GameObject;
+                static TopRight(gameObject: Phaser.GameObjects.GameObject, alignTo: Phaser.GameObjects.GameObject, offsetX: number, offsetY: number): Phaser.GameObjects.GameObject;
 
             }
 
@@ -1300,19 +1300,19 @@ declare namespace Phaser {
         }
 
         class Bounds {
-            static SetBottom(): Phaser.GameObjects.GameObject;
+            static SetBottom(gameObject: Phaser.GameObjects.GameObject, value: number): Phaser.GameObjects.GameObject;
 
-            static SetCenterX(): Phaser.GameObjects.GameObject;
+            static SetCenterX(gameObject: Phaser.GameObjects.GameObject, x: number): Phaser.GameObjects.GameObject;
 
-            static SetCenterY(): Phaser.GameObjects.GameObject;
+            static SetCenterY(gameObject: Phaser.GameObjects.GameObject, y: number): Phaser.GameObjects.GameObject;
 
-            static SetLeft(): Phaser.GameObjects.GameObject;
+            static SetLeft(gameObject: Phaser.GameObjects.GameObject, value: number): Phaser.GameObjects.GameObject;
 
-            static SetRight(): Phaser.GameObjects.GameObject;
+            static SetRight(gameObject: Phaser.GameObjects.GameObject, value: number): Phaser.GameObjects.GameObject;
 
-            static SetTop(): Phaser.GameObjects.GameObject;
+            static SetTop(gameObject: Phaser.GameObjects.GameObject, value: number): Phaser.GameObjects.GameObject;
 
-            static wrap(): Matter.Vector;
+            static wrap(objectBounds: Matter.Bounds, bounds: Matter.Bounds): Matter.Vector;
 
         }
 
@@ -1320,13 +1320,13 @@ declare namespace Phaser {
         }
 
         class Canvas {
-            static TouchAction(): HTMLCanvasElement;
+            static TouchAction(canvas: HTMLCanvasElement, value: string): HTMLCanvasElement;
 
-            static UserSelect(): HTMLCanvasElement;
+            static UserSelect(canvas: HTMLCanvasElement, value: string): HTMLCanvasElement;
 
-            static BlitImage(): void;
+            static BlitImage(dx: number, dy: number, frame: Phaser.Textures.Frame): void;
 
-            static DrawImage(): void;
+            static DrawImage(src: Phaser.GameObjects.GameObject, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             static GetBlendModes(): any[];
 
@@ -1334,13 +1334,13 @@ declare namespace Phaser {
 
         namespace Canvas {
             class Smoothing {
-                static getPrefix(): string;
+                static getPrefix(context: any): string;
 
-                static enable(): any;
+                static enable(context: any): any;
 
-                static disable(): any;
+                static disable(context: any): any;
 
-                static isEnabled(): boolean;
+                static isEnabled(context: any): boolean;
 
             }
 
@@ -1388,25 +1388,25 @@ declare namespace Phaser {
 
                 init(): void;
 
-                resize(): void;
+                resize(width: number, height: number): void;
 
-                onContextLost(): void;
+                onContextLost(callback: any): void;
 
-                onContextRestored(): void;
+                onContextRestored(callback: any): void;
 
                 resetTransform(): void;
 
-                setBlendMode(): any;
+                setBlendMode(blendMode: any): any;
 
-                setAlpha(): float;
+                setAlpha(alpha: number): number;
 
                 preRender(): void;
 
-                render(): void;
+                render(scene: Phaser.Scene, children: Phaser.GameObjects.DisplayList, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
                 postRender(): void;
 
-                snapshot(): void;
+                snapshot(callback: any, type: any, encoderOptions: any): void;
 
                 destroy(): void;
 
@@ -1436,11 +1436,11 @@ declare namespace Phaser {
 
             transparent(): Phaser.Display.Color;
 
-            setTo(): Phaser.Display.Color;
+            setTo(red: number, green: number, blue: number, alpha: number): Phaser.Display.Color;
 
-            setGLTo(): Phaser.Display.Color;
+            setGLTo(red: number, green: number, blue: number, alpha: number): Phaser.Display.Color;
 
-            setFromRGB(): Phaser.Display.Color;
+            setFromRGB(color: any): Phaser.Display.Color;
 
             update(): Phaser.Display.Color;
 
@@ -1452,39 +1452,39 @@ declare namespace Phaser {
 
             rgba: string;
 
-            redGL: float;
+            redGL: number;
 
-            greenGL: float;
+            greenGL: number;
 
-            blueGL: float;
+            blueGL: number;
 
-            alphaGL: float;
+            alphaGL: number;
 
-            red: float;
+            red: number;
 
-            green: float;
+            green: number;
 
-            blue: float;
+            blue: number;
 
-            alpha: float;
+            alpha: number;
 
-            static ColorToRGBA(): ColorObject;
+            static ColorToRGBA(color: number): ColorObject;
 
-            static ComponentToHex(): string;
+            static ComponentToHex(color: number): string;
 
-            static GetColor(): number;
+            static GetColor(red: number, green: number, blue: number): number;
 
-            static GetColor32(): number;
+            static GetColor32(red: number, green: number, blue: number, alpha: number): number;
 
-            static HexStringToColor(): Phaser.Display.Color;
+            static HexStringToColor(hex: string): Phaser.Display.Color;
 
-            static HSLToColor(): Phaser.Display.Color;
+            static HSLToColor(h: number, s: number, l: number): Phaser.Display.Color;
 
-            static HSVColorWheel(): any[];
+            static HSVColorWheel(s: number, v: number): any[];
 
-            static HSVToRGB(): ColorObject;
+            static HSVToRGB(h: number, s: number, v: number): ColorObject;
 
-            static HueToComponent(): number;
+            static HueToComponent(p: number, q: number, t: number): number;
 
         }
 
@@ -1492,31 +1492,31 @@ declare namespace Phaser {
         }
 
         class Color {
-            static IntegerToColor(): Phaser.Display.Color;
+            static IntegerToColor(input: number): Phaser.Display.Color;
 
-            static IntegerToRGB(): ColorObject;
+            static IntegerToRGB(input: number): ColorObject;
 
-            static ObjectToColor(): Phaser.Display.Color;
+            static ObjectToColor(input: any): Phaser.Display.Color;
 
-            static RandomRGB(): Phaser.Display.Color;
+            static RandomRGB(min: number, max: number): Phaser.Display.Color;
 
-            static RGBStringToColor(): Phaser.Display.Color;
+            static RGBStringToColor(rgb: string): Phaser.Display.Color;
 
-            static RGBToHSV(): any;
+            static RGBToHSV(r: number, g: number, b: number): any;
 
-            static RGBToString(): string;
+            static RGBToString(r: number, g: number, b: number, a: number, prefix: string): string;
 
-            static ValueToColor(): Phaser.Display.Color;
+            static ValueToColor(input: string|number|any): Phaser.Display.Color;
 
         }
 
         namespace Color {
             class Interpolate {
-                static RGBWithRGB(): ColorObject;
+                static RGBWithRGB(r1: number, g1: number, b1: number, r2: number, g2: number, b2: number, length: number, index: number): ColorObject;
 
-                static ColorWithColor(): ColorObject;
+                static ColorWithColor(color1: Phaser.Display.Color, color2: Phaser.Display.Color, length: number, index: number): ColorObject;
 
-                static ColorWithRGB(): ColorObject;
+                static ColorWithRGB(color1: Phaser.Display.Color, r: number, g: number, b: number, length: number, index: number): ColorObject;
 
             }
 
@@ -1534,13 +1534,13 @@ declare namespace Phaser {
     }
 
     class DOM {
-        static AddToDOM(): any;
+        static AddToDOM(element: any, parent: string|any, overflowHidden: boolean): any;
 
-        static DOMContentLoaded(): void;
+        static DOMContentLoaded(callback: any): void;
 
-        static ParseXML(): any;
+        static ParseXML(data: string): any;
 
-        static RemoveFromDOM(): void;
+        static RemoveFromDOM(element: any): void;
 
     }
 
@@ -1562,7 +1562,7 @@ declare namespace Phaser {
 
             stepTimeout: any;
 
-            start(): void;
+            start(callback: any, forceSetTimeOut: boolean): void;
 
             stop(): void;
 
@@ -1582,43 +1582,43 @@ declare namespace Phaser {
 
         eventNames(): any[];
 
-        listeners(): any[];
+        listeners(event: string|symbol): any[];
 
-        listenerCount(): number;
+        listenerCount(event: string|symbol): number;
 
-        emit(): Boolean;
+        emit(event: string|symbol): Boolean;
 
-        on(): EventEmitter;
+        on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-        addListener(): EventEmitter;
+        addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-        once(): EventEmitter;
+        once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-        removeListener(): EventEmitter;
+        removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-        off(): EventEmitter;
+        off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-        removeAllListeners(): EventEmitter;
+        removeAllListeners(event: string|symbol): EventEmitter;
 
         eventNames(): any[];
 
-        listeners(): any[];
+        listeners(event: string|symbol): any[];
 
-        listenerCount(): number;
+        listenerCount(event: string|symbol): number;
 
-        emit(): Boolean;
+        emit(event: string|symbol): Boolean;
 
-        on(): EventEmitter;
+        on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-        addListener(): EventEmitter;
+        addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-        once(): EventEmitter;
+        once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-        removeListener(): EventEmitter;
+        removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-        off(): EventEmitter;
+        off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-        removeAllListeners(): EventEmitter;
+        removeAllListeners(event: string|symbol): EventEmitter;
 
     }
 
@@ -1666,7 +1666,7 @@ declare namespace Phaser {
 
         start(): void;
 
-        step(): void;
+        step(time: number, delta: number): void;
 
         onHidden(): void;
 
@@ -1708,19 +1708,19 @@ declare namespace Phaser {
 
             "displayCallback;": any;
 
-            setSize(): Phaser.GameObjects.DynamicBitmapText;
+            setSize(width: number, height: number): Phaser.GameObjects.DynamicBitmapText;
 
-            setDisplayCallback(): Phaser.GameObjects.DynamicBitmapText;
+            setDisplayCallback(callback: any): Phaser.GameObjects.DynamicBitmapText;
 
-            setFontSize(): Phaser.GameObjects.DynamicBitmapText;
+            setFontSize(size: number): Phaser.GameObjects.DynamicBitmapText;
 
-            setText(): Phaser.GameObjects.DynamicBitmapText;
+            setText(text: string|Array.<string>): Phaser.GameObjects.DynamicBitmapText;
 
-            setScrollX(): Phaser.GameObjects.DynamicBitmapText;
+            setScrollX(value: number): Phaser.GameObjects.DynamicBitmapText;
 
-            setScrollY(): Phaser.GameObjects.DynamicBitmapText;
+            setScrollY(value: number): Phaser.GameObjects.DynamicBitmapText;
 
-            getTextBounds(): any;
+            getTextBounds(round: boolean): any;
 
             width: number;
 
@@ -1728,9 +1728,9 @@ declare namespace Phaser {
 
             toJSON(): any;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.DynamicBitmapText, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, gameObject: Phaser.GameObjects.DynamicBitmapText, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -1752,17 +1752,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -1772,59 +1772,59 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -1832,9 +1832,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -1844,13 +1844,13 @@ declare namespace Phaser {
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -1878,31 +1878,31 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
         }
 
@@ -1920,11 +1920,11 @@ declare namespace Phaser {
 
             _bounds: any;
 
-            setFontSize(): Phaser.GameObjects.BitmapText;
+            setFontSize(size: number): Phaser.GameObjects.BitmapText;
 
-            setText(): Phaser.GameObjects.BitmapText;
+            setText(text: string|Array.<string>): Phaser.GameObjects.BitmapText;
 
-            getTextBounds(): any;
+            getTextBounds(round: boolean): any;
 
             width: number;
 
@@ -1932,9 +1932,9 @@ declare namespace Phaser {
 
             toJSON(): any;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.BitmapText, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, gameObject: Phaser.GameObjects.BitmapText, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -1956,17 +1956,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -1976,59 +1976,59 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -2036,9 +2036,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -2046,19 +2046,19 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -2086,31 +2086,31 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
         }
 
@@ -2122,21 +2122,21 @@ declare namespace Phaser {
 
             renderList: any[];
 
-            create(): Phaser.GameObjects.Blitter.Bob;
+            create(x: number, y: number, frame: string|number|Phaser.Textures.Frame, visible: boolean, index: number): Phaser.GameObjects.Blitter.Bob;
 
-            createFromCallback(): Array.<Phaser.GameObjects.Blitter.Bob>;
+            createFromCallback(callback: any, quantity: number, frame: string, visible: boolean): Array.<Phaser.GameObjects.Blitter.Bob>;
 
-            createMultiple(): Array.<Phaser.GameObjects.Blitter.Bob>;
+            createMultiple(quantity: number, frame: string, visible: boolean): Array.<Phaser.GameObjects.Blitter.Bob>;
 
-            childCanRender(): boolean;
+            childCanRender(child: Phaser.GameObjects.Blitter.Bob): boolean;
 
             getRenderList(): any;
 
             clear(): void;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Blitter, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, gameObject: Phaser.GameObjects.Blitter, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -2158,17 +2158,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -2180,53 +2180,53 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             defaultPipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -2234,13 +2234,13 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -2250,19 +2250,19 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             x: number;
 
@@ -2280,25 +2280,25 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
         }
 
@@ -2322,21 +2322,21 @@ declare namespace Phaser {
 
                 flipY: boolean;
 
-                setFrame(): Phaser.GameObjects.Blitter.Bob;
+                setFrame(frame: any): Phaser.GameObjects.Blitter.Bob;
 
                 resetFlip(): Phaser.GameObjects.Blitter.Bob;
 
-                reset(): Phaser.GameObjects.Blitter.Bob;
+                reset(x: any, y: any, frame: any): Phaser.GameObjects.Blitter.Bob;
 
-                setFlipX(): Phaser.GameObjects.Blitter.Bob;
+                setFlipX(value: any): Phaser.GameObjects.Blitter.Bob;
 
-                setFlipY(): Phaser.GameObjects.Blitter.Bob;
+                setFlipY(value: any): Phaser.GameObjects.Blitter.Bob;
 
-                setFlip(): Phaser.GameObjects.Blitter.Bob;
+                setFlip(x: any, y: any): Phaser.GameObjects.Blitter.Bob;
 
-                setVisible(): Phaser.GameObjects.Blitter.Bob;
+                setVisible(value: any): Phaser.GameObjects.Blitter.Bob;
 
-                setAlpha(): Phaser.GameObjects.Blitter.Bob;
+                setAlpha(value: any): Phaser.GameObjects.Blitter.Bob;
 
                 destroy(): void;
 
@@ -2442,39 +2442,39 @@ declare namespace Phaser {
 
             Velocity: any;
 
-            static CalculateFacesAt(): void;
+            static CalculateFacesAt(tileX: number, tileY: number, layer: Phaser.Tilemaps.LayerData): void;
 
-            static CalculateFacesWithin(): void;
+            static CalculateFacesWithin(tileX: number, tileY: number, width: number, height: number, layer: Phaser.Tilemaps.LayerData): void;
 
-            static Copy(): void;
+            static Copy(srcTileX: number, srcTileY: number, width: number, height: number, destTileX: number, destTileY: number, destTileY: number, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static CreateFromTiles(): Array.<Phaser.GameObjects.Sprite>;
+            static CreateFromTiles(indexes: number|any[], replacements: number|any[], spriteConfig: any, scene: Phaser.Scene, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.GameObjects.Sprite>;
 
-            static CullTiles(): Array.<Phaser.Tilemaps.Tile>;
+            static CullTiles(layer: Phaser.Tilemaps.LayerData, camera: Phaser.Cameras.Scene2D.Camera, outputArray: any[]): Array.<Phaser.Tilemaps.Tile>;
 
-            static Fill(): void;
+            static Fill(index: number, tileX: number, tileY: number, width: number, height: number, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static FilterTiles(): Array.<Phaser.Tilemaps.Tile>;
+            static FilterTiles(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.Tilemaps.Tile>;
 
-            static FindByIndex(): Phaser.Tilemaps.Tile;
+            static FindByIndex(index: number, skip: number, reverse: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            static FindTile(): Phaser.Tilemaps.Tile;
+            static FindTile(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            static ForEachTile(): void;
+            static ForEachTile(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any, layer: Phaser.Tilemaps.LayerData): void;
 
-            static GetTileAt(): Phaser.Tilemaps.Tile;
+            static GetTileAt(tileX: number, tileY: number, nonNull: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            static GetTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            static GetTileAtWorldXY(worldX: number, worldY: number, nonNull: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            static GetTilesWithin(): Array.<Phaser.Tilemaps.Tile>;
+            static GetTilesWithin(tileX: number, tileY: number, width: number, height: number, filteringOptions: any, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.Tilemaps.Tile>;
 
-            static GetTilesWithinShape(): Array.<Phaser.Tilemaps.Tile>;
+            static GetTilesWithinShape(shape: Phaser.Geom.Circle|Phaser.Geom.Line|Phaser.Geom.Rectangle|Phaser.Geom.Triangle, filteringOptions: any, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.Tilemaps.Tile>;
 
-            static GetTilesWithinWorldXY(): Array.<Phaser.Tilemaps.Tile>;
+            static GetTilesWithinWorldXY(worldX: number, worldY: number, width: number, height: number, filteringOptions: any, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.Tilemaps.Tile>;
 
-            static HasTileAt(): boolean;
+            static HasTileAt(tileX: number, tileY: number, layer: Phaser.Tilemaps.LayerData): boolean;
 
-            static HasTileAtWorldXY(): boolean;
+            static HasTileAtWorldXY(worldX: number, worldY: number, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): boolean;
 
         }
 
@@ -2486,25 +2486,25 @@ declare namespace Phaser {
 
                 loadIdentity(): Phaser.GameObjects.Components.TransformMatrix;
 
-                translate(): Phaser.GameObjects.Components.TransformMatrix;
+                translate(x: number, y: number): Phaser.GameObjects.Components.TransformMatrix;
 
-                scale(): Phaser.GameObjects.Components.TransformMatrix;
+                scale(x: number, y: number): Phaser.GameObjects.Components.TransformMatrix;
 
-                rotate(): Phaser.GameObjects.Components.TransformMatrix;
+                rotate(radian: number): Phaser.GameObjects.Components.TransformMatrix;
 
-                multiply(): Phaser.GameObjects.Components.TransformMatrix;
+                multiply(rhs: Phaser.GameObjects.Components.TransformMatrix): Phaser.GameObjects.Components.TransformMatrix;
 
-                transform(): Phaser.GameObjects.Components.TransformMatrix;
+                transform(a: number, b: number, c: number, d: number, tx: number, ty: number): Phaser.GameObjects.Components.TransformMatrix;
 
-                transformPoint(): Phaser.Geom.Point;
+                transformPoint(x: number, y: number, point: Phaser.Geom.Point|Phaser.Math.Vec2|any): Phaser.Geom.Point;
 
                 invert(): Phaser.GameObjects.Components.TransformMatrix;
 
-                setTransform(): Phaser.GameObjects.Components.TransformMatrix;
+                setTransform(a: number, b: number, c: number, d: number, tx: number, ty: number): Phaser.GameObjects.Components.TransformMatrix;
 
                 decomposeMatrix(): any;
 
-                applyITRS(): Phaser.GameObjects.Components.TransformMatrix;
+                applyITRS(x: number, y: number, rotation: number, scaleX: number, scaleY: number): Phaser.GameObjects.Components.TransformMatrix;
 
             }
 
@@ -2554,55 +2554,55 @@ declare namespace Phaser {
 
                 _font: string;
 
-                setStyle(): void;
+                setStyle(style: any, updateText: any): void;
 
-                syncFont(): void;
+                syncFont(canvas: any, context: any): void;
 
-                syncStyle(): void;
+                syncStyle(canvas: any, context: any): void;
 
-                syncShadow(): void;
+                syncShadow(context: any, enabled: any): void;
 
-                update(): Phaser.GameObjects.Text;
+                update(recalculateMetrics: boolean): Phaser.GameObjects.Text;
 
-                setFont(): Phaser.GameObjects.Text;
+                setFont(font: string|any): Phaser.GameObjects.Text;
 
-                setFontFamily(): Phaser.GameObjects.Text;
+                setFontFamily(family: any): Phaser.GameObjects.Text;
 
-                setFontStyle(): Phaser.GameObjects.Text;
+                setFontStyle(style: any): Phaser.GameObjects.Text;
 
-                setFontSize(): Phaser.GameObjects.Text;
+                setFontSize(size: any): Phaser.GameObjects.Text;
 
-                setTestString(): Phaser.GameObjects.Text;
+                setTestString(string: any): Phaser.GameObjects.Text;
 
-                setFixedSize(): Phaser.GameObjects.Text;
+                setFixedSize(width: number, height: number): Phaser.GameObjects.Text;
 
                 setBackgroundColor(): Phaser.GameObjects.Text;
 
-                setFill(): Phaser.GameObjects.Text;
+                setFill(color: string): Phaser.GameObjects.Text;
 
-                setColor(): Phaser.GameObjects.Text;
+                setColor(color: string): Phaser.GameObjects.Text;
 
-                setStroke(): Phaser.GameObjects.Text;
+                setStroke(color: string, thickness: number): Phaser.GameObjects.Text;
 
-                setShadow(): Phaser.GameObjects.Text;
+                setShadow(x: number, y: number, color: string, blur: number, shadowStroke: boolean, shadowFill: boolean): Phaser.GameObjects.Text;
 
-                setShadowOffset(): Phaser.GameObjects.Text;
+                setShadowOffset(x: number, y: number): Phaser.GameObjects.Text;
 
-                setShadowColor(): Phaser.GameObjects.Text;
+                setShadowColor(color: string): Phaser.GameObjects.Text;
 
-                setShadowBlur(): Phaser.GameObjects.Text;
+                setShadowBlur(blur: number): Phaser.GameObjects.Text;
 
-                setShadowStroke(): Phaser.GameObjects.Text;
+                setShadowStroke(enabled: boolean): Phaser.GameObjects.Text;
 
-                setShadowFill(): Phaser.GameObjects.Text;
+                setShadowFill(enabled: boolean): Phaser.GameObjects.Text;
 
-                setWordWrapWidth(): Phaser.GameObjects.Text;
+                setWordWrapWidth(width: number, useAdvancedWrap: boolean): Phaser.GameObjects.Text;
 
-                setWordWrapCallback(): Phaser.GameObjects.Text;
+                setWordWrapCallback(callback: any, scope: any): Phaser.GameObjects.Text;
 
-                setAlign(): Phaser.GameObjects.Text;
+                setAlign(align: string): Phaser.GameObjects.Text;
 
-                setMaxLines(): Phaser.GameObjects.Text;
+                setMaxLines(max: number): Phaser.GameObjects.Text;
 
                 getTextMetrics(): any;
 
@@ -2630,11 +2630,11 @@ declare namespace Phaser {
 
             depthSort(): void;
 
-            sortByDepth(): number;
+            sortByDepth(childA: Phaser.GameObjects.GameObject, childB: Phaser.GameObjects.GameObject): number;
 
-            sortGameObjects(): any[];
+            sortGameObjects(gameObjects: Array.<Phaser.GameObjects.GameObject>): any[];
 
-            getTopGameObject(): Phaser.GameObjects.GameObject;
+            getTopGameObject(gameObjects: Array.<Phaser.GameObjects.GameObject>): Phaser.GameObjects.GameObject;
 
             parent: any;
 
@@ -2642,63 +2642,63 @@ declare namespace Phaser {
 
             position: number;
 
-            add(): any;
+            add(child: any): any;
 
-            addAt(): any;
+            addAt(child: any, index: number): any;
 
-            addMultiple(): any[];
+            addMultiple(children: any[]): any[];
 
-            getAt(): any;
+            getAt(index: number): any;
 
-            getIndex(): number;
+            getIndex(child: any): number;
 
-            sort(): any[];
+            sort(children: any[]): any[];
 
-            sortIndexHandler(): number;
+            sortIndexHandler(childA: any, childB: any): number;
 
-            getByKey(): any;
+            getByKey(property: string, value: any): any;
 
-            getByName(): any;
+            getByName(name: string): any;
 
-            getRandom(): any;
+            getRandom(startIndex: number, length: number): any;
 
-            getFirst(): any;
+            getFirst(property: any, value: any, startIndex: any, endIndex: any): any;
 
-            getAll(): any[];
+            getAll(property: string, value: any, startIndex: number, endIndex: number): any[];
 
-            count(): number;
+            count(property: string, value: any): number;
 
-            swap(): void;
+            swap(child1: any, child2: any): void;
 
-            moveTo(): any;
+            moveTo(child: any, index: number): any;
 
-            remove(): any;
+            remove(child: any): any;
 
-            removeAt(): any;
+            removeAt(index: number): any;
 
-            removeBetween(): any[];
+            removeBetween(beginIndex: number, endIndex: number): any[];
 
             removeAll(): Phaser.Structs.List;
 
-            bringToTop(): any;
+            bringToTop(child: any): any;
 
-            sendToBack(): any;
+            sendToBack(child: any): any;
 
-            moveUp(): any;
+            moveUp(child: any): any;
 
-            moveDown(): any;
+            moveDown(child: any): any;
 
             reverse(): Phaser.Structs.List;
 
             shuffle(): Phaser.Structs.List;
 
-            replace(): any;
+            replace(oldChild: any, newChild: any): any;
 
-            exists(): boolean;
+            exists(child: any): boolean;
 
-            setAll(): void;
+            setAll(key: string, value: any): void;
 
-            each(): void;
+            each(callback: any, thisArg: any, arguments: *): void;
 
             shutdown(): void;
 
@@ -2740,17 +2740,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -2762,23 +2762,23 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -2800,31 +2800,31 @@ declare namespace Phaser {
 
             destroy(): void;
 
-            graphics(): Phaser.GameObjects.Graphics;
+            graphics(config: any): Phaser.GameObjects.Graphics;
 
-            group(): Phaser.GameObjects.Group;
+            group(config: any): Phaser.GameObjects.Group;
 
-            image(): Phaser.GameObjects.Image;
+            image(config: any): Phaser.GameObjects.Image;
 
-            mesh(): Phaser.GameObjects.Mesh;
+            mesh(config: any): Phaser.GameObjects.Mesh;
 
-            particles(): Phaser.GameObjects.Particles.ParticleEmitterManager;
+            particles(config: any): Phaser.GameObjects.Particles.ParticleEmitterManager;
 
-            quad(): Phaser.GameObjects.Quad;
+            quad(config: any): Phaser.GameObjects.Quad;
 
-            sprite(): Phaser.GameObjects.Sprite;
+            sprite(config: any): Phaser.GameObjects.Sprite;
 
-            sprite3D(): Phaser.GameObjects.Sprite3D;
+            sprite3D(config: any): Phaser.GameObjects.Sprite3D;
 
-            text(): Phaser.GameObjects.Text;
+            text(config: any): Phaser.GameObjects.Text;
 
-            tileSprite(): Phaser.GameObjects.TileSprite;
+            tileSprite(config: any): Phaser.GameObjects.TileSprite;
 
-            zone(): Phaser.GameObjects.Zone;
+            zone(config: any): Phaser.GameObjects.Zone;
 
-            tilemap(): Phaser.Tilemaps.Tilemap;
+            tilemap(config: any): Phaser.Tilemaps.Tilemap;
 
-            tween(): Phaser.Tweens.Tween;
+            tween(config: any): Phaser.Tweens.Tween;
 
         }
 
@@ -2842,39 +2842,39 @@ declare namespace Phaser {
 
             boot(): void;
 
-            existing(): Phaser.GameObjects.GameObject;
+            existing(child: Phaser.GameObjects.GameObject): Phaser.GameObjects.GameObject;
 
             shutdown(): void;
 
             destroy(): void;
 
-            graphics(): Phaser.GameObjects.Graphics;
+            graphics(config: any): Phaser.GameObjects.Graphics;
 
-            group(): Phaser.GameObjects.Group;
+            group(children: any[]|any, config: any): Phaser.GameObjects.Group;
 
-            image(): Phaser.GameObjects.Image;
+            image(x: number, y: number, texture: string, frame: string|number): Phaser.GameObjects.Image;
 
-            mesh(): Phaser.GameObjects.Mesh;
+            mesh(x: number, y: number, vertices: any[], uv: any[], colors: any[], alphas: any[], texture: string, frame: string|number): Phaser.GameObjects.Mesh;
 
-            particles(): Phaser.GameObjects.Particles.ParticleEmitterManager;
+            particles(texture: string, frame: string|number|any, emitters: any): Phaser.GameObjects.Particles.ParticleEmitterManager;
 
-            follower(): Phaser.GameObjects.PathFollower;
+            follower(path: Phaser.Curves.Path, x: number, y: number, texture: string, frame: string|number): Phaser.GameObjects.PathFollower;
 
-            quad(): Phaser.GameObjects.Quad;
+            quad(x: number, y: number, texture: string, frame: string|number): Phaser.GameObjects.Quad;
 
-            sprite(): Phaser.GameObjects.Sprite;
+            sprite(x: number, y: number, texture: string, frame: string|number): Phaser.GameObjects.Sprite;
 
-            sprite3D(): Phaser.GameObjects.Sprite3D;
+            sprite3D(x: number, y: number, z: number, texture: string, frame: string|number): Phaser.GameObjects.Sprite3D;
 
-            text(): Phaser.GameObjects.Text;
+            text(x: number, y: number, text: string|Array.<string>, style: any): Phaser.GameObjects.Text;
 
-            tileSprite(): Phaser.GameObjects.TileSprite;
+            tileSprite(x: number, y: number, width: number, height: number, texture: string, frame: string|number): Phaser.GameObjects.TileSprite;
 
-            zone(): Phaser.GameObjects.Zone;
+            zone(x: number, y: number, width: number, height: number): Phaser.GameObjects.Zone;
 
-            tilemap(): Phaser.Tilemaps.Tilemap;
+            tilemap(key: string, tileWidth: number, tileHeight: number, width: number, height: number, data: Array.<Array.<integer>>, insertNull: boolean): Phaser.Tilemaps.Tilemap;
 
-            tween(): Phaser.Tweens.Tween;
+            tween(config: any): Phaser.Tweens.Tween;
 
         }
 
@@ -2900,11 +2900,11 @@ declare namespace Phaser {
 
             _lineWidth: number;
 
-            setDefaultStyles(): Phaser.GameObjects.Graphics;
+            setDefaultStyles(options: any): Phaser.GameObjects.Graphics;
 
-            lineStyle(): Phaser.GameObjects.Graphics;
+            lineStyle(lineWidth: number, color: number, alpha: number): Phaser.GameObjects.Graphics;
 
-            fillStyle(): Phaser.GameObjects.Graphics;
+            fillStyle(color: number, alpha: number): Phaser.GameObjects.Graphics;
 
             beginPath(): Phaser.GameObjects.Graphics;
 
@@ -2914,77 +2914,77 @@ declare namespace Phaser {
 
             strokePath(): Phaser.GameObjects.Graphics;
 
-            fillCircleShape(): Phaser.GameObjects.Graphics;
+            fillCircleShape(circle: Phaser.Geom.Circle): Phaser.GameObjects.Graphics;
 
-            strokeCircleShape(): Phaser.GameObjects.Graphics;
+            strokeCircleShape(circle: Phaser.Geom.Circle): Phaser.GameObjects.Graphics;
 
-            fillCircle(): Phaser.GameObjects.Graphics;
+            fillCircle(x: number, y: number, radius: number): Phaser.GameObjects.Graphics;
 
-            strokeCircle(): Phaser.GameObjects.Graphics;
+            strokeCircle(x: number, y: number, radius: number): Phaser.GameObjects.Graphics;
 
-            fillRectShape(): Phaser.GameObjects.Graphics;
+            fillRectShape(rect: Phaser.Geom.Rectangle): Phaser.GameObjects.Graphics;
 
-            strokeRectShape(): Phaser.GameObjects.Graphics;
+            strokeRectShape(rect: Phaser.Geom.Rectangle): Phaser.GameObjects.Graphics;
 
-            fillRect(): Phaser.GameObjects.Graphics;
+            fillRect(x: number, y: number, width: number, height: number): Phaser.GameObjects.Graphics;
 
-            strokeRect(): Phaser.GameObjects.Graphics;
+            strokeRect(x: number, y: number, width: number, height: number): Phaser.GameObjects.Graphics;
 
-            fillPointShape(): Phaser.GameObjects.Graphics;
+            fillPointShape(point: Phaser.Geom.Point|Phaser.Math.Vector2|any, size: number): Phaser.GameObjects.Graphics;
 
-            fillPoint(): Phaser.GameObjects.Graphics;
+            fillPoint(x: number, y: number, size: number): Phaser.GameObjects.Graphics;
 
-            fillTriangleShape(): Phaser.GameObjects.Graphics;
+            fillTriangleShape(triangle: Phaser.Geom.Triangle): Phaser.GameObjects.Graphics;
 
-            strokeTriangleShape(): Phaser.GameObjects.Graphics;
+            strokeTriangleShape(triangle: Phaser.Geom.Triangle): Phaser.GameObjects.Graphics;
 
-            fillTriangle(): Phaser.GameObjects.Graphics;
+            fillTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): Phaser.GameObjects.Graphics;
 
-            strokeTriangle(): Phaser.GameObjects.Graphics;
+            strokeTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): Phaser.GameObjects.Graphics;
 
-            strokeLineShape(): Phaser.GameObjects.Graphics;
+            strokeLineShape(line: Phaser.Geom.Line): Phaser.GameObjects.Graphics;
 
-            lineBetween(): Phaser.GameObjects.Graphics;
+            lineBetween(x1: number, y1: number, x2: number, y2: number): Phaser.GameObjects.Graphics;
 
-            lineTo(): Phaser.GameObjects.Graphics;
+            lineTo(x: number, y: number): Phaser.GameObjects.Graphics;
 
-            moveTo(): Phaser.GameObjects.Graphics;
+            moveTo(x: number, y: number): Phaser.GameObjects.Graphics;
 
-            lineFxTo(): Phaser.GameObjects.Graphics;
+            lineFxTo(x: number, y: number, width: number, rgb: number): Phaser.GameObjects.Graphics;
 
-            moveFxTo(): Phaser.GameObjects.Graphics;
+            moveFxTo(x: number, y: number, width: number, rgb: number): Phaser.GameObjects.Graphics;
 
-            strokePoints(): Phaser.GameObjects.Graphics;
+            strokePoints(points: any[]|Array.<Phaser.Geom.Point>, autoClose: boolean, endIndex: number): Phaser.GameObjects.Graphics;
 
-            fillPoints(): Phaser.GameObjects.Graphics;
+            fillPoints(points: any[]|Array.<Phaser.Geom.Point>, autoClose: boolean, endIndex: number): Phaser.GameObjects.Graphics;
 
-            strokeEllipseShape(): Phaser.GameObjects.Graphics;
+            strokeEllipseShape(ellipse: Phaser.Geom.Ellipse, smoothness: number): Phaser.GameObjects.Graphics;
 
-            strokeEllipse(): Phaser.GameObjects.Graphics;
+            strokeEllipse(x: number, y: number, width: number, height: number, smoothness: number): Phaser.GameObjects.Graphics;
 
-            fillEllipseShape(): Phaser.GameObjects.Graphics;
+            fillEllipseShape(ellipse: Phaser.Geom.Ellipse, smoothness: number): Phaser.GameObjects.Graphics;
 
-            fillEllipse(): Phaser.GameObjects.Graphics;
+            fillEllipse(x: number, y: number, width: number, height: number, smoothness: number): Phaser.GameObjects.Graphics;
 
-            arc(): Phaser.GameObjects.Graphics;
+            arc(x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise: boolean): Phaser.GameObjects.Graphics;
 
             save(): Phaser.GameObjects.Graphics;
 
             restore(): Phaser.GameObjects.Graphics;
 
-            translate(): Phaser.GameObjects.Graphics;
+            translate(x: number, y: number): Phaser.GameObjects.Graphics;
 
-            scale(): Phaser.GameObjects.Graphics;
+            scale(x: number, y: number): Phaser.GameObjects.Graphics;
 
-            rotate(): Phaser.GameObjects.Graphics;
+            rotate(radians: number): Phaser.GameObjects.Graphics;
 
             clear(): Phaser.GameObjects.Graphics;
 
-            generateTexture(): Phaser.GameObjects.Graphics;
+            generateTexture(key: string|HTMLCanvasElement, width: number, height: number): Phaser.GameObjects.Graphics;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Graphics, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera, renderTargetCtx: any, allowClip: boolean): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, graphics: Phaser.GameObjects.Graphics, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -3006,17 +3006,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -3028,53 +3028,53 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             defaultPipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -3096,31 +3096,31 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
         }
 
@@ -3152,51 +3152,51 @@ declare namespace Phaser {
 
             createMultipleCallback: any;
 
-            create(): Phaser.GameObjects.GameObject;
+            create(x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-            createMultiple(): Array.<Phaser.GameObjects.GameObject>;
+            createMultiple(config: any): Array.<Phaser.GameObjects.GameObject>;
 
-            createFromConfig(): Array.<Phaser.GameObjects.GameObject>;
+            createFromConfig(options: any): Array.<Phaser.GameObjects.GameObject>;
 
-            preUpdate(): void;
+            preUpdate(time: number, delta: number): void;
 
-            add(): Phaser.GameObjects.Group;
+            add(child: Phaser.GameObjects.GameObject, addToScene: boolean): Phaser.GameObjects.Group;
 
-            addMultiple(): Phaser.GameObjects.Group;
+            addMultiple(children: Array.<Phaser.GameObjects.GameObject>, addToScene: boolean): Phaser.GameObjects.Group;
 
-            remove(): Phaser.GameObjects.Group;
+            remove(child: Phaser.GameObjects.GameObject, removeFromScene: boolean): Phaser.GameObjects.Group;
 
-            clear(): Phaser.GameObjects.Group;
+            clear(removeFromScene: boolean): Phaser.GameObjects.Group;
 
-            contains(): boolean;
+            contains(child: Phaser.GameObjects.GameObject): boolean;
 
             getChildren(): Array.<Phaser.GameObjects.GameObject>;
 
             getLength(): number;
 
-            getFirst(): Phaser.GameObjects.GameObject;
+            getFirst(state: boolean, createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-            get(): Phaser.GameObjects.GameObject;
+            get(x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-            getFirstAlive(): Phaser.GameObjects.GameObject;
+            getFirstAlive(createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-            getFirstDead(): Phaser.GameObjects.GameObject;
+            getFirstDead(createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-            playAnimation(): Phaser.GameObjects.Group;
+            playAnimation(key: string, startFrame: string): Phaser.GameObjects.Group;
 
             isFull(): boolean;
 
-            countActive(): number;
+            countActive(value: boolean): number;
 
             getTotalUsed(): number;
 
             getTotalFree(): number;
 
-            setDepth(): Phaser.GameObjects.Group;
+            setDepth(value: number, step: number): Phaser.GameObjects.Group;
 
-            kill(): void;
+            kill(gameObject: Phaser.GameObjects.GameObject): void;
 
-            killAndHide(): void;
+            killAndHide(gameObject: Phaser.GameObjects.GameObject): void;
 
             toggleVisible(): Phaser.GameObjects.Group;
 
@@ -3208,9 +3208,9 @@ declare namespace Phaser {
         }
 
         class Image {
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Image, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Image, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -3232,17 +3232,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -3254,45 +3254,45 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -3302,39 +3302,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -3342,9 +3342,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -3352,13 +3352,13 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -3368,23 +3368,23 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -3412,29 +3412,29 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Image, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Image, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -3456,17 +3456,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -3478,45 +3478,45 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -3526,39 +3526,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -3566,9 +3566,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -3576,13 +3576,13 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -3592,23 +3592,23 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -3636,49 +3636,49 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
-            setAcceleration(): any;
+            setAcceleration(x: any, y: any): any;
 
-            setAccelerationX(): any;
+            setAccelerationX(value: any): any;
 
-            setAccelerationY(): any;
+            setAccelerationY(value: any): any;
 
-            setAngularVelocity(): any;
+            setAngularVelocity(value: any): any;
 
-            setAngularAcceleration(): any;
+            setAngularAcceleration(value: any): any;
 
-            setAngularDrag(): any;
+            setAngularDrag(value: any): any;
 
-            setBounce(): any;
+            setBounce(x: any, y: any): any;
 
-            setBounceX(): any;
+            setBounceX(value: any): any;
 
-            setBounceY(): any;
+            setBounceY(value: any): any;
 
-            setCollideWorldBounds(): any;
+            setCollideWorldBounds(value: any): any;
 
-            setDebug(): any;
+            setDebug(showBody: any, showVelocity: any, bodyColor: any): any;
 
-            setDebugBodyColor(): any;
+            setDebugBodyColor(value: any): any;
 
             debugShowBody: any;
 
@@ -3686,43 +3686,43 @@ declare namespace Phaser {
 
             debugBodyColor: any;
 
-            setDrag(): any;
+            setDrag(x: any, y: any): any;
 
-            setDragX(): any;
+            setDragX(value: any): any;
 
-            setDragY(): any;
+            setDragY(value: any): any;
 
-            enableBody(): any;
+            enableBody(reset: any, x: any, y: any, enableGameObject: any, showGameObject: any): any;
 
-            disableBody(): any;
+            disableBody(disableGameObject: any, hideGameObject: any): any;
 
-            setFriction(): any;
+            setFriction(x: any, y: any): any;
 
-            setFrictionX(): any;
+            setFrictionX(x: any): any;
 
-            setFrictionY(): any;
+            setFrictionY(y: any): any;
 
-            setGravity(): any;
+            setGravity(x: any, y: any): any;
 
-            setGravityX(): any;
+            setGravityX(x: any): any;
 
-            setGravityY(): any;
+            setGravityY(y: any): any;
 
-            setImmovable(): any;
+            setImmovable(value: any): any;
 
-            setMass(): any;
+            setMass(value: any): any;
 
-            setOffset(): any;
+            setOffset(x: any, y: any): any;
 
-            setCircle(): any;
+            setCircle(radius: any, offsetX: any, offsetY: any): any;
 
-            setVelocity(): any;
+            setVelocity(x: any, y: any): any;
 
-            setVelocityX(): any;
+            setVelocityX(x: any): any;
 
-            setVelocityY(): any;
+            setVelocityY(y: any): any;
 
-            setMaxVelocity(): any;
+            setMaxVelocity(x: any, y: any): any;
 
         }
 
@@ -3748,17 +3748,17 @@ declare namespace Phaser {
 
             scrollFactorY: number;
 
-            set(): Phaser.GameObjects.Light;
+            set(x: number, y: number, radius: number, r: number, g: number, b: number, intensity: number): Phaser.GameObjects.Light;
 
-            setScrollFactor(): Phaser.GameObjects.Light;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.Light;
 
-            setColor(): Phaser.GameObjects.Light;
+            setColor(rgb: number): Phaser.GameObjects.Light;
 
-            setIntensity(): Phaser.GameObjects.Light;
+            setIntensity(intensity: number): Phaser.GameObjects.Light;
 
-            setPosition(): Phaser.GameObjects.Light;
+            setPosition(x: number, y: number): Phaser.GameObjects.Light;
 
-            setRadius(): Phaser.GameObjects.Light;
+            setRadius(radius: number): Phaser.GameObjects.Light;
 
         }
 
@@ -3780,19 +3780,19 @@ declare namespace Phaser {
 
             disable(): Phaser.GameObjects.LightsManager;
 
-            cull(): Array.<Phaser.GameObjects.Light>;
+            cull(camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.GameObjects.Light>;
 
-            forEachLight(): Phaser.GameObjects.LightsManager;
+            forEachLight(callback: any): Phaser.GameObjects.LightsManager;
 
-            setAmbientColor(): Phaser.GameObjects.LightsManager;
+            setAmbientColor(rgb: any): Phaser.GameObjects.LightsManager;
 
             getMaxVisibleLights(): number;
 
             getLightCount(): number;
 
-            addLight(): Phaser.GameObjects.Light;
+            addLight(x: number, y: number, radius: number, rgb: number, intensity: number): Phaser.GameObjects.Light;
 
-            removeLight(): Phaser.GameObjects.LightsManager;
+            removeLight(light: Phaser.GameObjects.Light): Phaser.GameObjects.LightsManager;
 
             shutdown(): void;
 
@@ -3826,19 +3826,19 @@ declare namespace Phaser {
 
             disable(): Phaser.GameObjects.LightsManager;
 
-            cull(): Array.<Phaser.GameObjects.Light>;
+            cull(camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.GameObjects.Light>;
 
-            forEachLight(): Phaser.GameObjects.LightsManager;
+            forEachLight(callback: any): Phaser.GameObjects.LightsManager;
 
-            setAmbientColor(): Phaser.GameObjects.LightsManager;
+            setAmbientColor(rgb: any): Phaser.GameObjects.LightsManager;
 
             getMaxVisibleLights(): number;
 
             getLightCount(): number;
 
-            addLight(): Phaser.GameObjects.Light;
+            addLight(x: number, y: number, radius: number, rgb: number, intensity: number): Phaser.GameObjects.Light;
 
-            removeLight(): Phaser.GameObjects.LightsManager;
+            removeLight(light: Phaser.GameObjects.Light): Phaser.GameObjects.LightsManager;
 
             shutdown(): void;
 
@@ -3856,9 +3856,9 @@ declare namespace Phaser {
 
             alphas: Float32Array;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Mesh, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Mesh, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -3880,17 +3880,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -3902,45 +3902,45 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -3950,39 +3950,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -3990,9 +3990,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -4000,7 +4000,7 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -4010,19 +4010,19 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             x: number;
 
@@ -4040,31 +4040,31 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
         }
 
@@ -4100,11 +4100,11 @@ declare namespace Phaser {
 
                 bounce: number;
 
-                scaleX: float;
+                scaleX: number;
 
-                scaleY: float;
+                scaleY: number;
 
-                alpha: float;
+                alpha: number;
 
                 angle: number;
 
@@ -4124,19 +4124,19 @@ declare namespace Phaser {
 
                 delayCurrent: number;
 
-                lifeT: float;
+                lifeT: number;
 
                 data: any;
 
                 isAlive(): boolean;
 
-                fire(): void;
+                fire(x: number, y: number): void;
 
-                computeVelocity(): void;
+                computeVelocity(emitter: Phaser.GameObjects.Particles.ParticleEmitter, delta: number, step: number, processors: any[]): void;
 
-                checkBounds(): void;
+                checkBounds(emitter: Phaser.GameObjects.Particles.ParticleEmitter): void;
 
-                update(): boolean;
+                update(delta: number, step: number, processors: any[]): boolean;
 
             }
 
@@ -4192,13 +4192,13 @@ declare namespace Phaser {
 
                 bounce: number;
 
-                scaleX: float;
+                scaleX: number;
 
-                scaleY: float;
+                scaleY: number;
 
                 tint: number;
 
-                alpha: float;
+                alpha: number;
 
                 lifespan: number;
 
@@ -4268,59 +4268,59 @@ declare namespace Phaser {
 
                 _frameCounter: number;
 
-                fromJSON(): Phaser.GameObjects.Particles.ParticleEmitter;
+                fromJSON(config: any): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                toJSON(): any;
+                toJSON(output: any): any;
 
-                startFollow(): Phaser.GameObjects.Particles.ParticleEmitter;
+                startFollow(target: any, offsetX: number, offsetY: number, trackVisible: boolean): Phaser.GameObjects.Particles.ParticleEmitter;
 
                 stopFollow(): Phaser.GameObjects.Particles.ParticleEmitter;
 
                 getFrame(): Phaser.Textures.Frame;
 
-                setFrame(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setFrame(frames: any[]|string|number|any, pickRandom: boolean, quantity: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setRadial(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setRadial(value: boolean): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setPosition(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setPosition(x: number, y: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setBounds(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setBounds(x: number|any, y: number, width: number, height: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setSpeedX(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setSpeedX(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setSpeedY(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setSpeedY(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setSpeed(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setSpeed(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setScaleX(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setScaleX(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setScaleY(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setScaleY(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setScale(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setScale(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setGravityX(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setGravityX(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setGravityY(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setGravityY(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setGravity(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setGravity(x: number, y: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setAlpha(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setAlpha(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setEmitterAngle(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setEmitterAngle(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setAngle(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setAngle(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setLifespan(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setLifespan(value: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setQuantity(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setQuantity(quantity: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setFrequency(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setFrequency(frequency: number, quantity: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setEmitZone(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setEmitZone(zoneConfig: any): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                setDeathZone(): Phaser.GameObjects.Particles.ParticleEmitter;
+                setDeathZone(zoneConfig: any): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                reserve(): Phaser.GameObjects.Particles.ParticleEmitter;
+                reserve(particleCount: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
                 getAliveParticleCount(): number;
 
@@ -4330,15 +4330,15 @@ declare namespace Phaser {
 
                 atLimit(): boolean;
 
-                onParticleEmit(): Phaser.GameObjects.Particles.ParticleEmitter;
+                onParticleEmit(callback: any, context: any): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                onParticleDeath(): Phaser.GameObjects.Particles.ParticleEmitter;
+                onParticleDeath(callback: any, context: any): Phaser.GameObjects.Particles.ParticleEmitter;
 
                 killAll(): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                forEachAlive(): Phaser.GameObjects.Particles.ParticleEmitter;
+                forEachAlive(callback: any, thisArg: any): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                forEachDead(): Phaser.GameObjects.Particles.ParticleEmitter;
+                forEachDead(callback: any, thisArg: any): Phaser.GameObjects.Particles.ParticleEmitter;
 
                 start(): Phaser.GameObjects.Particles.ParticleEmitter;
 
@@ -4348,29 +4348,29 @@ declare namespace Phaser {
 
                 depthSort(): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                flow(): Phaser.GameObjects.Particles.ParticleEmitter;
+                flow(frequency: number, count: number): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                explode(): Phaser.GameObjects.Particles.Particle;
+                explode(count: number, x: number, y: number): Phaser.GameObjects.Particles.Particle;
 
-                emitParticleAt(): Phaser.GameObjects.Particles.Particle;
+                emitParticleAt(x: number, y: number, count: number): Phaser.GameObjects.Particles.Particle;
 
-                emitParticle(): Phaser.GameObjects.Particles.Particle;
+                emitParticle(count: number, x: number, y: number): Phaser.GameObjects.Particles.Particle;
 
-                preUpdate(): void;
+                preUpdate(time: any, delta: any): void;
 
-                depthSortCallback(): number;
+                depthSortCallback(a: any, b: any): number;
 
-                indexSortCallback(): number;
+                indexSortCallback(a: any, b: any): number;
 
-                setBlendMode(): Phaser.GameObjects.GameObject;
+                setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
                 scrollFactorX: number;
 
                 scrollFactorY: number;
 
-                setScrollFactor(): Phaser.GameObjects.GameObject;
+                setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
-                setVisible(): Phaser.GameObjects.GameObject;
+                setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             }
 
@@ -4380,7 +4380,7 @@ declare namespace Phaser {
             class ParticleEmitterManager {
                 blendMode: number;
 
-                timeScale: float;
+                timeScale: number;
 
                 texture: Phaser.Textures.Texture;
 
@@ -4392,23 +4392,23 @@ declare namespace Phaser {
 
                 wells: Phaser.Structs.List;
 
-                setTexture(): Phaser.GameObjects.Particles.ParticleEmitterManager;
+                setTexture(key: string, frame: string|number): Phaser.GameObjects.Particles.ParticleEmitterManager;
 
-                setFrame(): Phaser.GameObjects.Particles.ParticleEmitterManager;
+                setFrame(frame: string|number): Phaser.GameObjects.Particles.ParticleEmitterManager;
 
-                setEmitterFrames(): Phaser.GameObjects.Particles.ParticleEmitterManager;
+                setEmitterFrames(frames: any, emitter: any): Phaser.GameObjects.Particles.ParticleEmitterManager;
 
-                addEmitter(): Phaser.GameObjects.Particles.ParticleEmitter;
+                addEmitter(emitter: Phaser.GameObjects.Particles.ParticleEmitter): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                createEmitter(): Phaser.GameObjects.Particles.ParticleEmitter;
+                createEmitter(config: any): Phaser.GameObjects.Particles.ParticleEmitter;
 
-                addGravityWell(): Phaser.GameObjects.Particles.GravityWell;
+                addGravityWell(well: Phaser.GameObjects.Particles.GravityWell): Phaser.GameObjects.Particles.GravityWell;
 
-                createGravityWell(): Phaser.GameObjects.Particles.GravityWell;
+                createGravityWell(config: any): Phaser.GameObjects.Particles.GravityWell;
 
-                emitParticle(): Phaser.GameObjects.Particles.ParticleEmitterManager;
+                emitParticle(count: number, x: number, y: number): Phaser.GameObjects.Particles.ParticleEmitterManager;
 
-                emitParticleAt(): Phaser.GameObjects.Particles.ParticleEmitterManager;
+                emitParticleAt(x: number, y: number, count: number): Phaser.GameObjects.Particles.ParticleEmitterManager;
 
                 pause(): Phaser.GameObjects.Particles.ParticleEmitterManager;
 
@@ -4416,7 +4416,7 @@ declare namespace Phaser {
 
                 getProcessors(): any;
 
-                preUpdate(): void;
+                preUpdate(time: any, delta: any): void;
 
             }
 
@@ -4444,13 +4444,13 @@ declare namespace Phaser {
 
             _prevDirection: number;
 
-            setPath(): Phaser.GameObjects.PathFollower;
+            setPath(path: Phaser.Curves.Path, config: any): Phaser.GameObjects.PathFollower;
 
-            setRotateToPath(): Phaser.GameObjects.PathFollower;
+            setRotateToPath(value: any, offset: any, verticalAdjust: any): Phaser.GameObjects.PathFollower;
 
             isFollowing(): boolean;
 
-            start(): Phaser.GameObjects.PathFollower;
+            start(config: any, startAt: number): Phaser.GameObjects.PathFollower;
 
             pause(): Phaser.GameObjects.PathFollower;
 
@@ -4458,17 +4458,17 @@ declare namespace Phaser {
 
             stop(): Phaser.GameObjects.PathFollower;
 
-            preUpdate(): void;
+            preUpdate(time: any, delta: any): void;
 
             anims: any;
 
-            play(): any;
+            play(key: string, ignoreIfPlaying: boolean, startFrame: number|string): any;
 
             toJSON(): any;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Sprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Sprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -4490,17 +4490,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -4510,37 +4510,37 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             parent: Phaser.GameObjects.GameObject;
 
@@ -4588,43 +4588,43 @@ declare namespace Phaser {
 
             _updateParams: any[];
 
-            delay(): Phaser.GameObjects.GameObject;
+            delay(value: number): Phaser.GameObjects.GameObject;
 
-            delayedPlay(): Phaser.GameObjects.GameObject;
+            delayedPlay(delay: any, key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
             getCurrentKey(): any;
 
-            load(): Phaser.GameObjects.GameObject;
+            load(key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
-            paused(): any;
+            paused(value: any): any;
 
-            progress(): any;
+            progress(value: any): any;
 
-            remove(): void;
+            remove(event: any): void;
 
-            repeat(): any;
+            repeat(value: any): any;
 
-            repeatDelay(): any;
+            repeatDelay(value: any): any;
 
-            restart(): Phaser.GameObjects.GameObject;
+            restart(includeDelay: any): Phaser.GameObjects.GameObject;
 
-            timeScale(): any;
+            timeScale(value: any): any;
 
             totalFrames(): any;
 
             totalProgres(): void;
 
-            updateFrame(): void;
+            updateFrame(animationFrame: any): void;
 
-            yoyo(): any;
+            yoyo(value: any): any;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -4634,39 +4634,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -4674,9 +4674,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -4684,13 +4684,13 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -4700,23 +4700,23 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -4744,25 +4744,25 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
         }
 
@@ -4786,13 +4786,13 @@ declare namespace Phaser {
 
             bottomRightY: number;
 
-            topLeftAlpha: float;
+            topLeftAlpha: number;
 
-            topRightAlpha: float;
+            topRightAlpha: number;
 
-            bottomLeftAlpha: float;
+            bottomLeftAlpha: number;
 
-            bottomRightAlpha: float;
+            bottomRightAlpha: number;
 
             topLeftColor: number;
 
@@ -4802,13 +4802,13 @@ declare namespace Phaser {
 
             bottomRightColor: number;
 
-            setTopLeft(): Phaser.GameObjects.Quad;
+            setTopLeft(x: number, y: number): Phaser.GameObjects.Quad;
 
-            setTopRight(): Phaser.GameObjects.Quad;
+            setTopRight(x: number, y: number): Phaser.GameObjects.Quad;
 
-            setBottomLeft(): Phaser.GameObjects.Quad;
+            setBottomLeft(x: number, y: number): Phaser.GameObjects.Quad;
 
-            setBottomRight(): Phaser.GameObjects.Quad;
+            setBottomRight(x: number, y: number): Phaser.GameObjects.Quad;
 
             resetPosition(): Phaser.GameObjects.Quad;
 
@@ -4826,9 +4826,9 @@ declare namespace Phaser {
 
             alphas: Float32Array;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Mesh, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Mesh, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -4850,17 +4850,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -4872,45 +4872,45 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -4920,39 +4920,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -4960,9 +4960,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -4970,7 +4970,7 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -4980,19 +4980,19 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             x: number;
 
@@ -5010,31 +5010,31 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
         }
 
@@ -5044,15 +5044,15 @@ declare namespace Phaser {
         class Sprite {
             anims: any;
 
-            preUpdate(): void;
+            preUpdate(time: number, delta: number): void;
 
-            play(): any;
+            play(key: string, ignoreIfPlaying: boolean, startFrame: number|string): any;
 
             toJSON(): any;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Sprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Sprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -5074,17 +5074,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -5094,37 +5094,37 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             parent: Phaser.GameObjects.GameObject;
 
@@ -5172,49 +5172,49 @@ declare namespace Phaser {
 
             _updateParams: any[];
 
-            delay(): Phaser.GameObjects.GameObject;
+            delay(value: number): Phaser.GameObjects.GameObject;
 
-            delayedPlay(): Phaser.GameObjects.GameObject;
+            delayedPlay(delay: any, key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
             getCurrentKey(): any;
 
-            load(): Phaser.GameObjects.GameObject;
+            load(key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
-            pause(): Phaser.GameObjects.GameObject;
+            pause(atFrame: any): Phaser.GameObjects.GameObject;
 
-            paused(): any;
+            paused(value: any): any;
 
-            progress(): any;
+            progress(value: any): any;
 
-            remove(): void;
+            remove(event: any): void;
 
-            repeat(): any;
+            repeat(value: any): any;
 
-            repeatDelay(): any;
+            repeatDelay(value: any): any;
 
-            restart(): Phaser.GameObjects.GameObject;
+            restart(includeDelay: any): Phaser.GameObjects.GameObject;
 
-            resume(): Phaser.GameObjects.GameObject;
+            resume(fromFrame: any): Phaser.GameObjects.GameObject;
 
-            stop(): Phaser.GameObjects.GameObject;
+            stop(dispatchCallbacks: any): Phaser.GameObjects.GameObject;
 
-            timeScale(): any;
+            timeScale(value: any): any;
 
             totalFrames(): any;
 
             totalProgres(): void;
 
-            updateFrame(): void;
+            updateFrame(animationFrame: any): void;
 
-            yoyo(): any;
+            yoyo(value: any): any;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -5224,39 +5224,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -5264,9 +5264,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -5274,13 +5274,13 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -5290,23 +5290,23 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -5334,37 +5334,37 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             anims: any;
 
-            preUpdate(): void;
+            preUpdate(time: number, delta: number): void;
 
-            play(): any;
+            play(key: string, ignoreIfPlaying: boolean, startFrame: number|string): any;
 
             toJSON(): any;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Sprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Sprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -5386,17 +5386,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -5406,37 +5406,37 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             parent: Phaser.GameObjects.GameObject;
 
@@ -5484,49 +5484,49 @@ declare namespace Phaser {
 
             _updateParams: any[];
 
-            delay(): Phaser.GameObjects.GameObject;
+            delay(value: number): Phaser.GameObjects.GameObject;
 
-            delayedPlay(): Phaser.GameObjects.GameObject;
+            delayedPlay(delay: any, key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
             getCurrentKey(): any;
 
-            load(): Phaser.GameObjects.GameObject;
+            load(key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
-            pause(): Phaser.GameObjects.GameObject;
+            pause(atFrame: any): Phaser.GameObjects.GameObject;
 
-            paused(): any;
+            paused(value: any): any;
 
-            progress(): any;
+            progress(value: any): any;
 
-            remove(): void;
+            remove(event: any): void;
 
-            repeat(): any;
+            repeat(value: any): any;
 
-            repeatDelay(): any;
+            repeatDelay(value: any): any;
 
-            restart(): Phaser.GameObjects.GameObject;
+            restart(includeDelay: any): Phaser.GameObjects.GameObject;
 
-            resume(): Phaser.GameObjects.GameObject;
+            resume(fromFrame: any): Phaser.GameObjects.GameObject;
 
-            stop(): Phaser.GameObjects.GameObject;
+            stop(dispatchCallbacks: any): Phaser.GameObjects.GameObject;
 
-            timeScale(): any;
+            timeScale(value: any): any;
 
             totalFrames(): any;
 
             totalProgres(): void;
 
-            updateFrame(): void;
+            updateFrame(animationFrame: any): void;
 
-            yoyo(): any;
+            yoyo(value: any): any;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -5536,39 +5536,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -5576,9 +5576,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -5586,13 +5586,13 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -5602,23 +5602,23 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -5646,49 +5646,49 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
-            setAcceleration(): any;
+            setAcceleration(x: any, y: any): any;
 
-            setAccelerationX(): any;
+            setAccelerationX(value: any): any;
 
-            setAccelerationY(): any;
+            setAccelerationY(value: any): any;
 
-            setAngularVelocity(): any;
+            setAngularVelocity(value: any): any;
 
-            setAngularAcceleration(): any;
+            setAngularAcceleration(value: any): any;
 
-            setAngularDrag(): any;
+            setAngularDrag(value: any): any;
 
-            setBounce(): any;
+            setBounce(x: any, y: any): any;
 
-            setBounceX(): any;
+            setBounceX(value: any): any;
 
-            setBounceY(): any;
+            setBounceY(value: any): any;
 
-            setCollideWorldBounds(): any;
+            setCollideWorldBounds(value: any): any;
 
-            setDebug(): any;
+            setDebug(showBody: any, showVelocity: any, bodyColor: any): any;
 
-            setDebugBodyColor(): any;
+            setDebugBodyColor(value: any): any;
 
             debugShowBody: any;
 
@@ -5696,43 +5696,43 @@ declare namespace Phaser {
 
             debugBodyColor: any;
 
-            setDrag(): any;
+            setDrag(x: any, y: any): any;
 
-            setDragX(): any;
+            setDragX(value: any): any;
 
-            setDragY(): any;
+            setDragY(value: any): any;
 
-            enableBody(): any;
+            enableBody(reset: any, x: any, y: any, enableGameObject: any, showGameObject: any): any;
 
-            disableBody(): any;
+            disableBody(disableGameObject: any, hideGameObject: any): any;
 
-            setFriction(): any;
+            setFriction(x: any, y: any): any;
 
-            setFrictionX(): any;
+            setFrictionX(x: any): any;
 
-            setFrictionY(): any;
+            setFrictionY(y: any): any;
 
-            setGravity(): any;
+            setGravity(x: any, y: any): any;
 
-            setGravityX(): any;
+            setGravityX(x: any): any;
 
-            setGravityY(): any;
+            setGravityY(y: any): any;
 
-            setImmovable(): any;
+            setImmovable(value: any): any;
 
-            setMass(): any;
+            setMass(value: any): any;
 
-            setOffset(): any;
+            setOffset(x: any, y: any): any;
 
-            setCircle(): any;
+            setCircle(radius: any, offsetX: any, offsetY: any): any;
 
-            setVelocity(): any;
+            setVelocity(x: any, y: any): any;
 
-            setVelocityX(): any;
+            setVelocityX(x: any): any;
 
-            setVelocityY(): any;
+            setVelocityY(y: any): any;
 
-            setMaxVelocity(): any;
+            setMaxVelocity(x: any, y: any): any;
 
         }
 
@@ -5754,9 +5754,9 @@ declare namespace Phaser {
 
             _visible: boolean;
 
-            project(): void;
+            project(camera: Phaser.Cameras.Sprite3D.Camera): void;
 
-            setVisible(): Phaser.GameObjects.Sprite3D;
+            setVisible(value: boolean): Phaser.GameObjects.Sprite3D;
 
             visible: boolean;
 
@@ -5786,17 +5786,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -5808,23 +5808,23 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -5858,57 +5858,57 @@ declare namespace Phaser {
 
             initRTL(): void;
 
-            runWordWrap(): string;
+            runWordWrap(text: string): string;
 
-            advancedWordWrap(): string;
+            advancedWordWrap(text: string, context: CanvasRenderingContext2D, wordWrapWidth: number): string;
 
-            basicWordWrap(): string;
+            basicWordWrap(text: string, context: CanvasRenderingContext2D, wordWrapWidth: number): string;
 
-            getWrappedText(): Array.<string>;
+            getWrappedText(text: string): Array.<string>;
 
-            setText(): Phaser.GameObjects.Text;
+            setText(value: string|Array.<string>): Phaser.GameObjects.Text;
 
-            setStyle(): Phaser.GameObjects.Text;
+            setStyle(style: any): Phaser.GameObjects.Text;
 
-            setFont(): Phaser.GameObjects.Text;
+            setFont(font: string): Phaser.GameObjects.Text;
 
-            setFontFamily(): Phaser.GameObjects.Text;
+            setFontFamily(family: string): Phaser.GameObjects.Text;
 
-            setFontSize(): Phaser.GameObjects.Text;
+            setFontSize(size: number): Phaser.GameObjects.Text;
 
-            setFontStyle(): Phaser.GameObjects.Text;
+            setFontStyle(style: string): Phaser.GameObjects.Text;
 
-            setFixedSize(): Phaser.GameObjects.Text;
+            setFixedSize(width: number, height: number): Phaser.GameObjects.Text;
 
-            setBackgroundColor(): Phaser.GameObjects.Text;
+            setBackgroundColor(color: string): Phaser.GameObjects.Text;
 
-            setFill(): Phaser.GameObjects.Text;
+            setFill(color: string): Phaser.GameObjects.Text;
 
-            setColor(): Phaser.GameObjects.Text;
+            setColor(color: string): Phaser.GameObjects.Text;
 
-            setStroke(): Phaser.GameObjects.Text;
+            setStroke(color: string, thickness: number): Phaser.GameObjects.Text;
 
-            setShadow(): Phaser.GameObjects.Text;
+            setShadow(x: number, y: number, color: string, blur: number, shadowStroke: boolean, shadowFill: boolean): Phaser.GameObjects.Text;
 
-            setShadowOffset(): Phaser.GameObjects.Text;
+            setShadowOffset(x: number, y: number): Phaser.GameObjects.Text;
 
-            setShadowColor(): Phaser.GameObjects.Text;
+            setShadowColor(color: string): Phaser.GameObjects.Text;
 
-            setShadowBlur(): Phaser.GameObjects.Text;
+            setShadowBlur(blur: number): Phaser.GameObjects.Text;
 
-            setShadowStroke(): Phaser.GameObjects.Text;
+            setShadowStroke(enabled: boolean): Phaser.GameObjects.Text;
 
-            setShadowFill(): Phaser.GameObjects.Text;
+            setShadowFill(enabled: boolean): Phaser.GameObjects.Text;
 
-            setWordWrapWidth(): Phaser.GameObjects.Text;
+            setWordWrapWidth(width: number|null, useAdvancedWrap: boolean): Phaser.GameObjects.Text;
 
-            setWordWrapCallback(): Phaser.GameObjects.Text;
+            setWordWrapCallback(callback: any, scope: any): Phaser.GameObjects.Text;
 
-            setAlign(): Phaser.GameObjects.Text;
+            setAlign(align: string): Phaser.GameObjects.Text;
 
-            setPadding(): Phaser.GameObjects.Text;
+            setPadding(left: number|any, top: number, right: number, bottom: number): Phaser.GameObjects.Text;
 
-            setMaxLines(): Phaser.GameObjects.Text;
+            setMaxLines(max: number): Phaser.GameObjects.Text;
 
             updateText(): Phaser.GameObjects.Text;
 
@@ -5918,9 +5918,9 @@ declare namespace Phaser {
 
             preDestroy(): void;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Text, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Text, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -5942,17 +5942,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -5962,45 +5962,45 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -6010,39 +6010,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -6050,9 +6050,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -6060,17 +6060,17 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -6098,25 +6098,25 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
         }
 
@@ -6148,9 +6148,9 @@ declare namespace Phaser {
 
             destroy(): void;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.TileSprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.TileSprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -6172,17 +6172,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -6192,45 +6192,45 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -6240,39 +6240,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -6280,9 +6280,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -6290,13 +6290,13 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -6306,23 +6306,23 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             texture: Phaser.Textures.Texture;
 
             frame: Phaser.Textures.Frame;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            setFrame(): Phaser.GameObjects.GameObject;
+            setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
             clearTint(): Phaser.GameObjects.GameObject;
 
-            setTint(): Phaser.GameObjects.GameObject;
+            setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
             tintTopLeft: number;
 
@@ -6350,25 +6350,25 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
         }
 
@@ -6388,13 +6388,13 @@ declare namespace Phaser {
 
             boot(): void;
 
-            add(): Phaser.GameObjects.GameObject;
+            add(child: Phaser.GameObjects.GameObject): Phaser.GameObjects.GameObject;
 
-            preUpdate(): void;
+            preUpdate(time: number, delta: number): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
-            remove(): Phaser.GameObjects.GameObject;
+            remove(child: Phaser.GameObjects.GameObject): Phaser.GameObjects.GameObject;
 
             removeAll(): Phaser.GameObjects.UpdateList;
 
@@ -6418,15 +6418,15 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSize(): Phaser.GameObjects.Zone;
+            setSize(width: number, height: number, resizeInput: boolean): Phaser.GameObjects.Zone;
 
-            setDisplaySize(): Phaser.GameObjects.Zone;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.Zone;
 
-            setCircleDropZone(): Phaser.GameObjects.Zone;
+            setCircleDropZone(radius: number): Phaser.GameObjects.Zone;
 
-            setRectangleDropZone(): Phaser.GameObjects.Zone;
+            setRectangleDropZone(width: number, height: number): Phaser.GameObjects.Zone;
 
-            setDropZone(): Phaser.GameObjects.Zone;
+            setDropZone(shape: any, callback: any): Phaser.GameObjects.Zone;
 
             renderCanvas(): void;
 
@@ -6452,17 +6452,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -6474,55 +6474,55 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             x: number;
 
@@ -6540,31 +6540,31 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
         }
 
@@ -6586,19 +6586,19 @@ declare namespace Phaser {
 
             _diameter: number;
 
-            contains(): boolean;
+            contains(x: number, y: number): boolean;
 
-            getPoint(): Phaser.Geom.Point;
+            getPoint(position: number, out: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
-            getPoints(): Array.<Phaser.Geom.Point>;
+            getPoints(quantity: number, stepRate: number, output: any[]): Array.<Phaser.Geom.Point>;
 
-            getRandomPoint(): Phaser.Geom.Point;
+            getRandomPoint(point: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
-            setTo(): Phaser.Geom.Circle;
+            setTo(x: number, y: number, radius: number): Phaser.Geom.Circle;
 
             setEmpty(): Phaser.Geom.Circle;
 
-            setPosition(): Phaser.Geom.Circle;
+            setPosition(x: number, y: number): Phaser.Geom.Circle;
 
             isEmpty(): boolean;
 
@@ -6614,33 +6614,33 @@ declare namespace Phaser {
 
             bottom: number;
 
-            static Circumference(): number;
+            static Circumference(circle: Phaser.Geom.Circle): number;
 
-            static CircumferencePoint(): Phaser.Geom.Point;
+            static CircumferencePoint(circle: Phaser.Geom.Circle, angle: number, out: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
-            static Clone(): Phaser.Geom.Circle;
+            static Clone(source: Phaser.Geom.Circle|any): Phaser.Geom.Circle;
 
-            static Contains(): boolean;
+            static Contains(circle: Phaser.Geom.Circle, x: number, y: number): boolean;
 
-            static ContainsPoint(): boolean;
+            static ContainsPoint(circle: Phaser.Geom.Circle, point: Phaser.Geom.Point|any): boolean;
 
-            static ContainsRect(): boolean;
+            static ContainsRect(circle: Phaser.Geom.Circle, rect: Phaser.Geom.Rectangle|any): boolean;
 
-            static CopyFrom(): Phaser.Geom.Circle;
+            static CopyFrom(source: Phaser.Geom.Circle, dest: Phaser.Geom.Circle): Phaser.Geom.Circle;
 
-            static Equals(): boolean;
+            static Equals(circle: Phaser.Geom.Circle, toCompare: Phaser.Geom.Circle): boolean;
 
-            static GetBounds(): Phaser.Geom.Rectangle;
+            static GetBounds(circle: Phaser.Geom.Circle, out: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            static GetPoint(): Phaser.Geom.Point;
+            static GetPoint(circle: Phaser.Geom.Circle, position: number, out: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
-            static GetPoints(): Array.<Phaser.Geom.Point>;
+            static GetPoints(circle: Phaser.Geom.Circle, quantity: number, stepRate: number, output: any[]): Array.<Phaser.Geom.Point>;
 
-            static Offset(): Phaser.Geom.Circle;
+            static Offset(circle: Phaser.Geom.Circle, x: number, y: number): Phaser.Geom.Circle;
 
-            static OffsetPoint(): Phaser.Geom.Circle;
+            static OffsetPoint(circle: Phaser.Geom.Circle, point: Phaser.Geom.Point|any): Phaser.Geom.Circle;
 
-            static Random(): Phaser.Geom.Point;
+            static Random(circle: Phaser.Geom.Circle, point: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
         }
 
@@ -6656,21 +6656,21 @@ declare namespace Phaser {
 
             height: number;
 
-            contains(): boolean;
+            contains(x: number, y: number): boolean;
 
-            getPoint(): Phaser.Geom.Point;
+            getPoint(position: number, out: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
-            getPoints(): Array.<Phaser.Geom.Point>;
+            getPoints(quantity: number, stepRate: number, output: any[]): Array.<Phaser.Geom.Point>;
 
-            getRandomPoint(): Phaser.Geom.Point;
+            getRandomPoint(point: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
-            setTo(): Phaser.Geom.Ellipse;
+            setTo(x: number, y: number, width: number, height: number): Phaser.Geom.Ellipse;
 
             setEmpty(): Phaser.Geom.Ellipse;
 
-            setPosition(): Phaser.Geom.Ellipse;
+            setPosition(x: number, y: number): Phaser.Geom.Ellipse;
 
-            setSize(): Phaser.Geom.Ellipse;
+            setSize(width: number, height: number): Phaser.Geom.Ellipse;
 
             isEmpty(): boolean;
 
@@ -6686,19 +6686,19 @@ declare namespace Phaser {
 
             bottom: number;
 
-            static Equals(): boolean;
+            static Equals(ellipse: Phaser.Geom.Ellipse, toCompare: Phaser.Geom.Ellipse): boolean;
 
-            static GetBounds(): Phaser.Geom.Rectangle;
+            static GetBounds(ellipse: Phaser.Geom.Ellipse, out: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            static GetPoint(): Phaser.Geom.Point;
+            static GetPoint(ellipse: Phaser.Geom.Ellipse, position: number, out: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
-            static GetPoints(): Array.<Phaser.Geom.Point>;
+            static GetPoints(ellipse: Phaser.Geom.Ellipse, quantity: number, stepRate: number, output: any[]): Array.<Phaser.Geom.Point>;
 
-            static Offset(): Phaser.Geom.Ellipse;
+            static Offset(ellipse: Phaser.Geom.Ellipse, x: number, y: number): Phaser.Geom.Ellipse;
 
-            static OffsetPoint(): Phaser.Geom.Ellipse;
+            static OffsetPoint(ellipse: Phaser.Geom.Ellipse, point: Phaser.Geom.Point|any): Phaser.Geom.Ellipse;
 
-            static Random(): Phaser.Geom.Point;
+            static Random(ellipse: Phaser.Geom.Ellipse, point: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
         }
 
@@ -6706,27 +6706,27 @@ declare namespace Phaser {
         }
 
         class Intersects {
-            static LineToCircle(): boolean;
+            static LineToCircle(line: Phaser.Geom.Line, circle: Phaser.Geom.Circle, nearest: Phaser.Geom.Point): boolean;
 
-            static LineToLine(): boolean;
+            static LineToLine(line1: Phaser.Geom.Line, line2: Phaser.Geom.Line, out: Phaser.Geom.Point): boolean;
 
-            static LineToRectangle(): boolean;
+            static LineToRectangle(line: Phaser.Geom.Line, rect: Phaser.Geom.Rectangle|any): boolean;
 
-            static PointToLine(): boolean;
+            static PointToLine(point: Phaser.Geom.Point, line: Phaser.Geom.Line): boolean;
 
-            static PointToLineSegment(): boolean;
+            static PointToLineSegment(point: Phaser.Geom.Point, line: Phaser.Geom.Line): boolean;
 
-            static RectangleToRectangle(): boolean;
+            static RectangleToRectangle(rectA: Phaser.Geom.Rectangle, rectB: Phaser.Geom.Rectangle): boolean;
 
-            static RectangleToTriangle(): boolean;
+            static RectangleToTriangle(rect: Phaser.Geom.Rectangle, triangle: Phaser.Geom.Triangle): boolean;
 
-            static RectangleToValues(): boolean;
+            static RectangleToValues(rect: Phaser.Geom.Rectangle, left: number, right: number, top: number, bottom: number, tolerance: number): boolean;
 
-            static TriangleToCircle(): boolean;
+            static TriangleToCircle(triangle: Phaser.Geom.Triangle, circle: Phaser.Geom.Circle): boolean;
 
-            static TriangleToLine(): boolean;
+            static TriangleToLine(triangle: Phaser.Geom.Triangle, line: Phaser.Geom.Line): boolean;
 
-            static TriangleToTriangle(): boolean;
+            static TriangleToTriangle(triangleA: Phaser.Geom.Triangle, triangleB: Phaser.Geom.Triangle): boolean;
 
         }
 
@@ -6742,13 +6742,13 @@ declare namespace Phaser {
 
             y2: number;
 
-            getPoint(): Phaser.Geom.Point;
+            getPoint(position: any, output: any): Phaser.Geom.Point;
 
-            getPoints(): any;
+            getPoints(quantity: any, stepRate: any, output: any): any;
 
-            getRandomPoint(): any;
+            getRandomPoint(point: any): any;
 
-            setTo(): Phaser.Geom.Line;
+            setTo(x1: any, y1: any, x2: any, y2: any): Phaser.Geom.Line;
 
             getPointA(): any;
 
@@ -6762,31 +6762,31 @@ declare namespace Phaser {
 
             bottom: number;
 
-            static NormalAngle(): number;
+            static NormalAngle(line: Phaser.Geom.Line): number;
 
-            static NormalX(): number;
+            static NormalX(line: Phaser.Geom.Line): number;
 
-            static NormalY(): number;
+            static NormalY(line: Phaser.Geom.Line): number;
 
-            static Offset(): Phaser.Geom.Line;
+            static Offset(line: Phaser.Geom.Line, x: number, y: number): Phaser.Geom.Line;
 
-            static PerpSlope(): number;
+            static PerpSlope(line: Phaser.Geom.Line): number;
 
-            static Random(): Phaser.Geom.Point;
+            static Random(line: Phaser.Geom.Line, out: Phaser.Geom.Point|any): Phaser.Geom.Point;
 
-            static ReflectAngle(): number;
+            static ReflectAngle(lineA: Phaser.Geom.Line, lineB: Phaser.Geom.Line): number;
 
-            static Rotate(): Phaser.Geom.Line;
+            static Rotate(line: Phaser.Geom.Line, angle: number): Phaser.Geom.Line;
 
-            static RotateAroundPoint(): Phaser.Geom.Line;
+            static RotateAroundPoint(line: Phaser.Geom.Line, point: Phaser.Geom.Point|any, angle: number): Phaser.Geom.Line;
 
-            static RotateAroundXY(): Phaser.Geom.Line;
+            static RotateAroundXY(line: Phaser.Geom.Line, x: number, y: number, angle: number): Phaser.Geom.Line;
 
-            static SetToAngle(): Phaser.Geom.Line;
+            static SetToAngle(line: Phaser.Geom.Line, x: number, y: number, angle: number, length: number): Phaser.Geom.Line;
 
-            static Slope(): number;
+            static Slope(line: Phaser.Geom.Line): number;
 
-            static Width(): number;
+            static Width(line: Phaser.Geom.Line): number;
 
         }
 
@@ -6798,13 +6798,13 @@ declare namespace Phaser {
 
             y: number;
 
-            setTo(): Phaser.Geom.Point;
+            setTo(x: number, y: number): Phaser.Geom.Point;
 
-            static Project(): Phaser.Geom.Point;
+            static Project(pointA: Phaser.Geom.Point, pointB: Phaser.Geom.Point, out: Phaser.Geom.Point): Phaser.Geom.Point;
 
-            static ProjectUnit(): Phaser.Geom.Point;
+            static ProjectUnit(pointA: Phaser.Geom.Point, pointB: Phaser.Geom.Point, out: Phaser.Geom.Point): Phaser.Geom.Point;
 
-            static SetMagnitude(): Phaser.Geom.Point;
+            static SetMagnitude(point: Phaser.Geom.Point, magnitude: number): Phaser.Geom.Point;
 
         }
 
@@ -6816,13 +6816,13 @@ declare namespace Phaser {
 
             points: Array.<Phaser.Geom.Point>;
 
-            contains(): any;
+            contains(x: any, y: any): any;
 
-            setTo(): Phaser.Geom.Polygon;
+            setTo(points: any): Phaser.Geom.Polygon;
 
             calculateArea(): number;
 
-            static Reverse(): Phaser.Geom.Polygon;
+            static Reverse(polygon: Phaser.Geom.Polygon): Phaser.Geom.Polygon;
 
         }
 
@@ -6838,21 +6838,21 @@ declare namespace Phaser {
 
             height: number;
 
-            contains(): any;
+            contains(x: any, y: any): any;
 
-            getPoint(): any;
+            getPoint(position: any, output: any): any;
 
-            getPoints(): any;
+            getPoints(quantity: any, stepRate: any, output: any): any;
 
-            getRandomPoint(): any;
+            getRandomPoint(point: any): any;
 
-            setTo(): Phaser.Geom.Rectangle;
+            setTo(x: any, y: any, width: any, height: any): Phaser.Geom.Rectangle;
 
             setEmpty(): Phaser.Geom.Rectangle;
 
-            setPosition(): Phaser.Geom.Rectangle;
+            setPosition(x: any, y: any): Phaser.Geom.Rectangle;
 
-            setSize(): Phaser.Geom.Rectangle;
+            setSize(width: any, height: any): Phaser.Geom.Rectangle;
 
             isEmpty(): boolean;
 
@@ -6876,9 +6876,9 @@ declare namespace Phaser {
 
             centerY: number;
 
-            static Scale(): Phaser.Geom.Rectangle;
+            static Scale(rect: Phaser.Geom.Rectangle, x: number, y: number): Phaser.Geom.Rectangle;
 
-            static Union(): Phaser.Geom.Rectangle;
+            static Union(rectA: Phaser.Geom.Rectangle, rectB: Phaser.Geom.Rectangle, out: Phaser.Geom.Rectangle): Phaser.Geom.Rectangle;
 
         }
 
@@ -6898,15 +6898,15 @@ declare namespace Phaser {
 
             y3: number;
 
-            contains(): any;
+            contains(x: any, y: any): any;
 
-            getPoint(): any;
+            getPoint(position: any, output: any): any;
 
-            getPoints(): any;
+            getPoints(quantity: any, stepRate: any, output: any): any;
 
-            getRandomPoint(): any;
+            getRandomPoint(point: any): any;
 
-            setTo(): Phaser.Geom.Triangle;
+            setTo(x1: any, y1: any, x2: any, y2: any, x3: any, y3: any): Phaser.Geom.Triangle;
 
             getLineA(): any;
 
@@ -6978,17 +6978,17 @@ declare namespace Phaser {
 
             updateBounds(): void;
 
-            update(): void;
+            update(time: number): void;
 
-            hitTest(): any[];
+            hitTest(x: number, y: number, gameObjects: any[], camera: Phaser.Cameras.Scene2D.Camera, output: any[]): any[];
 
-            pointWithinHitArea(): boolean;
+            pointWithinHitArea(gameObject: Phaser.GameObjects.GameObject, x: number, y: number): boolean;
 
-            pointWithinInteractiveObject(): boolean;
+            pointWithinInteractiveObject(object: Phaser.Input.InteractiveObject, x: number, y: number): boolean;
 
-            transformX(): number;
+            transformX(pageX: number): number;
 
-            transformY(): number;
+            transformY(pageY: number): number;
 
             getOffsetX(): number;
 
@@ -7052,63 +7052,63 @@ declare namespace Phaser {
 
             preUpdate(): any;
 
-            clear(): any;
+            clear(gameObject: any): any;
 
-            disable(): void;
+            disable(gameObject: any): void;
 
-            enable(): any;
+            enable(gameObject: any, shape: any, callback: any): any;
 
-            hitTestPointer(): any;
+            hitTestPointer(pointer: any): any;
 
-            processDownEvents(): any;
+            processDownEvents(pointer: any): any;
 
-            processDragEvents(): any;
+            processDragEvents(pointer: any, time: any): any;
 
-            processMoveEvents(): any;
+            processMoveEvents(pointer: any): any;
 
-            processOverOutEvents(): any;
+            processOverOutEvents(pointer: any): any;
 
-            processUpEvents(): void;
+            processUpEvents(pointer: any): void;
 
-            queueForInsertion(): any;
+            queueForInsertion(child: any): any;
 
-            queueForRemoval(): any;
+            queueForRemoval(child: any): any;
 
-            setDraggable(): any;
+            setDraggable(gameObjects: any, value: any): any;
 
-            setHitArea(): any;
+            setHitArea(gameObjects: any, shape: any, callback: any): any;
 
-            setHitAreaCircle(): any;
+            setHitAreaCircle(gameObjects: any, x: any, y: any, radius: any, callback: any): any;
 
-            setHitAreaEllipse(): any;
+            setHitAreaEllipse(gameObjects: any, x: any, y: any, width: any, height: any, callback: any): any;
 
-            setHitAreaFromTexture(): any;
+            setHitAreaFromTexture(gameObjects: any, callback: any): any;
 
-            setHitAreaRectangle(): any;
+            setHitAreaRectangle(gameObjects: any, x: any, y: any, width: any, height: any, callback: any): any;
 
-            setHitAreaTriangle(): any;
+            setHitAreaTriangle(gameObjects: any, x1: any, y1: any, x2: any, y2: any, x3: any, y3: any, callback: any): any;
 
             setPollAlways(): any;
 
             setPollOnMove(): any;
 
-            setPollRate(): any;
+            setPollRate(value: any): any;
 
-            setGlobalTopOnly(): any;
+            setGlobalTopOnly(value: any): any;
 
-            setTopOnly(): any;
+            setTopOnly(value: any): any;
 
-            sortGameObjects(): any;
+            sortGameObjects(gameObjects: any): any;
 
-            sortHandlerGO(): any;
+            sortHandlerGO(childA: any, childB: any): any;
 
-            sortHandlerIO(): any;
+            sortHandlerIO(childA: any, childB: any): any;
 
-            sortInteractiveObjects(): any;
+            sortInteractiveObjects(interactiveObjects: any): any;
 
             stopPropagation(): any;
 
-            update(): any;
+            update(time: any, delta: any): any;
 
             shutdown(): void;
 
@@ -7122,23 +7122,23 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -7146,13 +7146,13 @@ declare namespace Phaser {
         }
 
         class Keyboard {
-            static DownDuration(): boolean;
+            static DownDuration(key: Phaser.Input.Keyboard.Key, duration: number): boolean;
 
-            static JustDown(): boolean;
+            static JustDown(key: Phaser.Input.Keyboard.Key): boolean;
 
-            static JustUp(): boolean;
+            static JustUp(key: Phaser.Input.Keyboard.Key): boolean;
 
-            static UpDuration(): boolean;
+            static UpDuration(key: Phaser.Input.Keyboard.Key, duration: number): boolean;
 
         }
 
@@ -7182,17 +7182,17 @@ declare namespace Phaser {
 
                 createCursorKeys(): any;
 
-                addKeys(): any;
+                addKeys(keys: any): any;
 
-                addKey(): any;
+                addKey(keyCode: any): any;
 
-                removeKey(): void;
+                removeKey(keyCode: any): void;
 
-                addKeyCapture(): void;
+                addKeyCapture(keyCodes: any): void;
 
-                removeKeyCapture(): void;
+                removeKeyCapture(keyCodes: any): void;
 
-                createCombo(): any;
+                createCombo(keys: any, config: any): any;
 
                 update(): any;
 
@@ -7202,23 +7202,23 @@ declare namespace Phaser {
 
                 eventNames(): any[];
 
-                listeners(): any[];
+                listeners(event: string|symbol): any[];
 
-                listenerCount(): number;
+                listenerCount(event: string|symbol): number;
 
-                emit(): Boolean;
+                emit(event: string|symbol): Boolean;
 
-                on(): EventEmitter;
+                on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                addListener(): EventEmitter;
+                addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                once(): EventEmitter;
+                once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                removeListener(): EventEmitter;
+                removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                off(): EventEmitter;
+                off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                removeAllListeners(): EventEmitter;
+                removeAllListeners(event: string|symbol): EventEmitter;
 
             }
 
@@ -7288,7 +7288,7 @@ declare namespace Phaser {
 
                 requestPointerLock(): void;
 
-                pointerLockChange(): void;
+                pointerLockChange(event: Event): void;
 
                 releasePointerLock(): void;
 
@@ -7350,7 +7350,7 @@ declare namespace Phaser {
 
             movementY: number;
 
-            positionToCamera(): any;
+            positionToCamera(camera: any, output: any): any;
 
             x: number;
 
@@ -7358,17 +7358,17 @@ declare namespace Phaser {
 
             reset(): void;
 
-            touchmove(): void;
+            touchmove(event: any, time: any): void;
 
-            move(): void;
+            move(event: any, time: any): void;
 
-            down(): void;
+            down(event: any, time: any): void;
 
-            touchstart(): void;
+            touchstart(event: any, time: any): void;
 
-            up(): void;
+            up(event: any, time: any): void;
 
-            touchend(): void;
+            touchend(event: any, time: any): void;
 
             noButtonDown(): boolean;
 
@@ -7458,13 +7458,13 @@ declare namespace Phaser {
 
         TEXTURE_ATLAS_JSON_HASH: number;
 
-        static GetURL(): string;
+        static GetURL(file: Phaser.Loader.File, baseURL: string): string;
 
-        static MergeXHRSettings(): Phaser.Loader.XHRSettings;
+        static MergeXHRSettings(global: Phaser.Loader.XHRSettings, local: Phaser.Loader.XHRSettings): Phaser.Loader.XHRSettings;
 
-        static XHRLoader(): XMLHttpRequest;
+        static XHRLoader(file: Phaser.Loader.File, globalXHRSettings: Phaser.Loader.XHRSettings): XMLHttpRequest;
 
-        static XHRSettings(): Phaser.Loader.XHRSettings;
+        static XHRSettings(responseType: string, async: boolean, user: string, password: string, timeout: number): Phaser.Loader.XHRSettings;
 
     }
 
@@ -7490,7 +7490,7 @@ declare namespace Phaser {
 
             bytesLoaded: number;
 
-            percentComplete: float;
+            percentComplete: number;
 
             crossOrigin: string;
 
@@ -7504,25 +7504,25 @@ declare namespace Phaser {
 
             linkParent: boolean;
 
-            setLinkFile(): void;
+            setLinkFile(fileB: Phaser.Loader.File, linkType: string): void;
 
             resetXHR(): void;
 
-            load(): void;
+            load(loader: Phaser.Loader.LoaderPlugin): void;
 
-            onLoad(): void;
+            onLoad(event: ProgressEvent): void;
 
-            onError(): void;
+            onError(event: ProgressEvent): void;
 
-            onProgress(): void;
+            onProgress(event: ProgressEvent): void;
 
-            onProcess(): void;
+            onProcess(callback: any): void;
 
             onComplete(): void;
 
-            static createObjectURL(): void;
+            static createObjectURL(image: Image, blob: Blob, defaultType: string): void;
 
-            static revokeObjectURL(): void;
+            static revokeObjectURL(image: Image): void;
 
         }
 
@@ -7554,7 +7554,7 @@ declare namespace Phaser {
 
                 bytesLoaded: number;
 
-                percentComplete: float;
+                percentComplete: number;
 
                 crossOrigin: string;
 
@@ -7568,19 +7568,19 @@ declare namespace Phaser {
 
                 linkParent: boolean;
 
-                setLinkFile(): void;
+                setLinkFile(fileB: Phaser.Loader.File, linkType: string): void;
 
                 resetXHR(): void;
 
-                load(): void;
+                load(loader: Phaser.Loader.LoaderPlugin): void;
 
-                onLoad(): void;
+                onLoad(event: ProgressEvent): void;
 
-                onError(): void;
+                onError(event: ProgressEvent): void;
 
-                onProgress(): void;
+                onProgress(event: ProgressEvent): void;
 
-                onProcess(): void;
+                onProcess(callback: any): void;
 
                 onComplete(): void;
 
@@ -7610,7 +7610,7 @@ declare namespace Phaser {
 
                 bytesLoaded: number;
 
-                percentComplete: float;
+                percentComplete: number;
 
                 crossOrigin: string;
 
@@ -7624,19 +7624,19 @@ declare namespace Phaser {
 
                 linkParent: boolean;
 
-                setLinkFile(): void;
+                setLinkFile(fileB: Phaser.Loader.File, linkType: string): void;
 
                 resetXHR(): void;
 
-                load(): void;
+                load(loader: Phaser.Loader.LoaderPlugin): void;
 
-                onLoad(): void;
+                onLoad(event: ProgressEvent): void;
 
-                onError(): void;
+                onError(event: ProgressEvent): void;
 
-                onProgress(): void;
+                onProgress(event: ProgressEvent): void;
 
-                onProcess(): void;
+                onProcess(callback: any): void;
 
                 onComplete(): void;
 
@@ -7666,7 +7666,7 @@ declare namespace Phaser {
 
                 bytesLoaded: number;
 
-                percentComplete: float;
+                percentComplete: number;
 
                 crossOrigin: string;
 
@@ -7680,19 +7680,19 @@ declare namespace Phaser {
 
                 linkParent: boolean;
 
-                setLinkFile(): void;
+                setLinkFile(fileB: Phaser.Loader.File, linkType: string): void;
 
                 resetXHR(): void;
 
-                load(): void;
+                load(loader: Phaser.Loader.LoaderPlugin): void;
 
-                onLoad(): void;
+                onLoad(event: ProgressEvent): void;
 
-                onError(): void;
+                onError(event: ProgressEvent): void;
 
-                onProgress(): void;
+                onProgress(event: ProgressEvent): void;
 
-                onProcess(): void;
+                onProcess(callback: any): void;
 
                 onComplete(): void;
 
@@ -7722,7 +7722,7 @@ declare namespace Phaser {
 
                 bytesLoaded: number;
 
-                percentComplete: float;
+                percentComplete: number;
 
                 crossOrigin: string;
 
@@ -7736,19 +7736,19 @@ declare namespace Phaser {
 
                 linkParent: boolean;
 
-                setLinkFile(): void;
+                setLinkFile(fileB: Phaser.Loader.File, linkType: string): void;
 
                 resetXHR(): void;
 
-                load(): void;
+                load(loader: Phaser.Loader.LoaderPlugin): void;
 
-                onLoad(): void;
+                onLoad(event: ProgressEvent): void;
 
-                onError(): void;
+                onError(event: ProgressEvent): void;
 
-                onProgress(): void;
+                onProgress(event: ProgressEvent): void;
 
-                onProcess(): void;
+                onProcess(callback: any): void;
 
                 onComplete(): void;
 
@@ -7778,7 +7778,7 @@ declare namespace Phaser {
 
                 bytesLoaded: number;
 
-                percentComplete: float;
+                percentComplete: number;
 
                 crossOrigin: string;
 
@@ -7792,19 +7792,19 @@ declare namespace Phaser {
 
                 linkParent: boolean;
 
-                setLinkFile(): void;
+                setLinkFile(fileB: Phaser.Loader.File, linkType: string): void;
 
                 resetXHR(): void;
 
-                load(): void;
+                load(loader: Phaser.Loader.LoaderPlugin): void;
 
-                onLoad(): void;
+                onLoad(event: ProgressEvent): void;
 
-                onError(): void;
+                onError(event: ProgressEvent): void;
 
-                onProgress(): void;
+                onProgress(event: ProgressEvent): void;
 
-                onProcess(): void;
+                onProcess(callback: any): void;
 
                 onComplete(): void;
 
@@ -7834,7 +7834,7 @@ declare namespace Phaser {
 
                 bytesLoaded: number;
 
-                percentComplete: float;
+                percentComplete: number;
 
                 crossOrigin: string;
 
@@ -7848,19 +7848,19 @@ declare namespace Phaser {
 
                 linkParent: boolean;
 
-                setLinkFile(): void;
+                setLinkFile(fileB: Phaser.Loader.File, linkType: string): void;
 
                 resetXHR(): void;
 
-                load(): void;
+                load(loader: Phaser.Loader.LoaderPlugin): void;
 
-                onLoad(): void;
+                onLoad(event: ProgressEvent): void;
 
-                onError(): void;
+                onError(event: ProgressEvent): void;
 
-                onProgress(): void;
+                onProgress(event: ProgressEvent): void;
 
-                onProcess(): void;
+                onProcess(callback: any): void;
 
                 onComplete(): void;
 
@@ -7890,7 +7890,7 @@ declare namespace Phaser {
 
                 bytesLoaded: number;
 
-                percentComplete: float;
+                percentComplete: number;
 
                 crossOrigin: string;
 
@@ -7904,19 +7904,19 @@ declare namespace Phaser {
 
                 linkParent: boolean;
 
-                setLinkFile(): void;
+                setLinkFile(fileB: Phaser.Loader.File, linkType: string): void;
 
                 resetXHR(): void;
 
-                load(): void;
+                load(loader: Phaser.Loader.LoaderPlugin): void;
 
-                onLoad(): void;
+                onLoad(event: ProgressEvent): void;
 
-                onError(): void;
+                onError(event: ProgressEvent): void;
 
-                onProgress(): void;
+                onProgress(event: ProgressEvent): void;
 
-                onProcess(): void;
+                onProcess(callback: any): void;
 
                 onComplete(): void;
 
@@ -7964,13 +7964,13 @@ declare namespace Phaser {
 
             boot(): void;
 
-            setBaseURL(): Phaser.Loader.LoaderPlugin;
+            setBaseURL(url: string): Phaser.Loader.LoaderPlugin;
 
-            setPath(): Phaser.Loader.LoaderPlugin;
+            setPath(path: string): Phaser.Loader.LoaderPlugin;
 
-            setCORS(): Phaser.Loader.LoaderPlugin;
+            setCORS(crossOrigin: string): Phaser.Loader.LoaderPlugin;
 
-            addFile(): Phaser.Loader.File;
+            addFile(file: Phaser.Loader.File): Phaser.Loader.File;
 
             isLoading(): boolean;
 
@@ -7982,29 +7982,29 @@ declare namespace Phaser {
 
             processLoadQueue(): void;
 
-            loadFile(): void;
+            loadFile(file: Phaser.Loader.File): void;
 
-            nextFile(): void;
+            nextFile(previousFile: Phaser.Loader.File, success: boolean): void;
 
             finishedLoading(): void;
 
-            processUpdate(): void;
+            processUpdate(file: Phaser.Loader.File): void;
 
-            removeFromQueue(): void;
+            removeFromQueue(file: Phaser.Loader.File): void;
 
             processComplete(): void;
 
             processCallback(): void;
 
-            saveJSON(): any;
+            saveJSON(data: any, filename: any): any;
 
-            save(): Phaser.Loader.LoaderPlugin;
+            save(data: any, filename: any, filetype: any): Phaser.Loader.LoaderPlugin;
 
             reset(): void;
 
-            loadArray(): boolean;
+            loadArray(files: any[]): boolean;
 
-            file(): Phaser.Loader.File;
+            file(file: any): Phaser.Loader.File;
 
             shutdown(): void;
 
@@ -8012,23 +8012,23 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -8038,17 +8038,17 @@ declare namespace Phaser {
     }
 
     class Math {
-        static Average(): number;
+        static Average(values: Array.<number>): number;
 
-        static Bernstein(): number;
+        static Bernstein(n: number, i: number): number;
 
-        static Between(): number;
+        static Between(min: number, max: number): number;
 
-        static CatmullRom(): number;
+        static CatmullRom(t: number, p0: number, p1: number, p2: number, p3: number): number;
 
-        static CeilTo(): number;
+        static CeilTo(value: number, place: number, base: number): number;
 
-        static Clamp(): number;
+        static Clamp(value: number, min: number, max: number): number;
 
         PI2: number;
 
@@ -8062,79 +8062,79 @@ declare namespace Phaser {
 
         RND: Phaser.Math.RandomDataGenerator;
 
-        static DegToRad(): float;
+        static DegToRad(degrees: number): number;
 
-        static Difference(): number;
+        static Difference(a: number, b: number): number;
 
-        static Factorial(): number;
+        static Factorial(value: number): number;
 
-        static FloatBetween(): float;
+        static FloatBetween(min: number, max: number): number;
 
-        static FloorTo(): number;
+        static FloorTo(value: number, place: number, base: number): number;
 
-        static FromPercent(): number;
+        static FromPercent(percent: number, min: number, max: number): number;
 
-        static GetSpeed(): number;
+        static GetSpeed(distance: number, time: number): number;
 
-        static IsEven(): boolean;
+        static IsEven(value: number): boolean;
 
-        static IsEvenStrict(): boolean;
+        static IsEvenStrict(value: number): boolean;
 
-        static Linear(): number;
+        static Linear(p0: number, p1: number, t: number): number;
 
-        static MaxAdd(): number;
+        static MaxAdd(value: number, amount: number, max: number): number;
 
-        static MinSub(): number;
+        static MinSub(value: number, amount: number, min: number): number;
 
-        static Percent(): float;
+        static Percent(value: number, min: number, max: number, upperMax: number): number;
 
-        static RadToDeg(): number;
+        static RadToDeg(radians: number): number;
 
-        static RandomXY(): Phaser.Math.Vector2;
+        static RandomXY(vector: Phaser.Math.Vector2, scale: number): Phaser.Math.Vector2;
 
-        static RandomXYZ(): Phaser.Math.Vector3;
+        static RandomXYZ(vec3: Phaser.Math.Vector3, radius: number): Phaser.Math.Vector3;
 
-        static RandomXYZW(): Phaser.Math.Vector4;
+        static RandomXYZW(vec4: Phaser.Math.Vector4, scale: number): Phaser.Math.Vector4;
 
-        static Rotate(): Phaser.Geom.Point;
+        static Rotate(point: Phaser.Geom.Point|any, angle: number): Phaser.Geom.Point;
 
-        static RotateAround(): Phaser.Geom.Point;
+        static RotateAround(point: Phaser.Geom.Point|any, x: number, y: number, angle: number): Phaser.Geom.Point;
 
-        static RotateAroundDistance(): Phaser.Geom.Point;
+        static RotateAroundDistance(point: Phaser.Geom.Point|any, x: number, y: number, angle: number, distance: number): Phaser.Geom.Point;
 
-        static RotateVec3(): Phaser.Math.Vector3;
+        static RotateVec3(vec: Phaser.Math.Vector3, axis: Phaser.Math.Vector3, radians: number): Phaser.Math.Vector3;
 
-        static RoundAwayFromZero(): number;
+        static RoundAwayFromZero(value: number): number;
 
-        static RoundTo(): number;
+        static RoundTo(value: number, place: number, base: number): number;
 
-        static SinCosTableGenerator(): any;
+        static SinCosTableGenerator(length: number, sinAmp: number, cosAmp: number, frequency: number): any;
 
-        static SmootherStep(): number;
+        static SmootherStep(x: number, min: number, max: number): number;
 
-        static SmoothStep(): number;
+        static SmoothStep(x: number, min: number, max: number): number;
 
-        static TransformXY(): Vector2;
+        static TransformXY(x: number, y: number, positionX: number, positionY: number, rotation: number, scaleX: number, scaleY: number, output: Vector2|Point|any): Vector2;
 
-        static Within(): boolean;
+        static Within(a: number, b: number, tolerance: number): boolean;
 
-        static Wrap(): number;
+        static Wrap(value: number, min: number, max: number): number;
 
     }
 
     namespace Math {
         class Angle {
-            static Normalize(): number;
+            static Normalize(angle: number): number;
 
-            static Reverse(): number;
+            static Reverse(angle: number): number;
 
-            static RotateTo(): number;
+            static RotateTo(currentAngle: number, targetAngle: number, lerp: number): number;
 
-            static ShortestBetween(): number;
+            static ShortestBetween(angle1: number, angle2: number): number;
 
-            static Wrap(): number;
+            static Wrap(angle: number): number;
 
-            static WrapDegrees(): number;
+            static WrapDegrees(angle: number): number;
 
         }
 
@@ -8148,9 +8148,9 @@ declare namespace Phaser {
         }
 
         class Easing {
-            static Linear(): number;
+            static Linear(v: number): number;
 
-            static Stepped(): number;
+            static Stepped(v: number, steps: number): number;
 
         }
 
@@ -8158,7 +8158,7 @@ declare namespace Phaser {
         }
 
         class Fuzzy {
-            static LessThan(): boolean;
+            static LessThan(a: number, b: number, epsilon: number): boolean;
 
         }
 
@@ -8166,7 +8166,7 @@ declare namespace Phaser {
         }
 
         class Interpolation {
-            static Linear(): number;
+            static Linear(v: number, k: number): number;
 
         }
 
@@ -8178,13 +8178,13 @@ declare namespace Phaser {
 
             clone(): any;
 
-            set(): any;
+            set(src: any): any;
 
-            copy(): any;
+            copy(src: any): any;
 
-            fromMat4(): any;
+            fromMat4(m: any): any;
 
-            fromArray(): any;
+            fromArray(a: any): any;
 
             identity(): any;
 
@@ -8196,17 +8196,17 @@ declare namespace Phaser {
 
             determinant(): any;
 
-            multiply(): any;
+            multiply(src: any): any;
 
-            translate(): any;
+            translate(v: any): any;
 
-            rotate(): any;
+            rotate(rad: any): any;
 
-            scale(): any;
+            scale(v: any): any;
 
-            fromQuat(): any;
+            fromQuat(q: any): any;
 
-            normalFromMat4(): any;
+            normalFromMat4(m: any): any;
 
         }
 
@@ -8218,17 +8218,17 @@ declare namespace Phaser {
 
             clone(): any;
 
-            set(): any;
+            set(src: any): any;
 
-            copy(): any;
+            copy(src: any): any;
 
-            fromArray(): any;
+            fromArray(a: any): any;
 
             zero(): any;
 
-            xyz(): any;
+            xyz(x: any, y: any, z: any): any;
 
-            scaling(): any;
+            scaling(x: any, y: any, z: any): any;
 
             identity(): any;
 
@@ -8240,41 +8240,41 @@ declare namespace Phaser {
 
             determinant(): any;
 
-            multiply(): any;
+            multiply(src: any): any;
 
-            multiplyLocal(): any;
+            multiplyLocal(src: any): any;
 
-            translate(): any;
+            translate(v: any): any;
 
-            scale(): any;
+            scale(v: any): any;
 
-            makeRotationAxis(): any;
+            makeRotationAxis(axis: any, angle: any): any;
 
-            rotate(): any;
+            rotate(rad: any, axis: any): any;
 
-            rotateX(): any;
+            rotateX(rad: any): any;
 
-            rotateY(): any;
+            rotateY(rad: any): any;
 
-            rotateZ(): any;
+            rotateZ(rad: any): any;
 
-            fromRotationTranslation(): any;
+            fromRotationTranslation(q: any, v: any): any;
 
-            fromQuat(): any;
+            fromQuat(q: any): any;
 
-            frustum(): any;
+            frustum(left: any, right: any, bottom: any, top: any, near: any, far: any): any;
 
-            perspective(): any;
+            perspective(fovy: any, aspect: any, near: any, far: any): any;
 
-            perspectiveLH(): any;
+            perspectiveLH(width: any, height: any, near: any, far: any): any;
 
-            ortho(): any;
+            ortho(left: any, right: any, bottom: any, top: any, near: any, far: any): any;
 
-            lookAt(): any;
+            lookAt(eye: any, center: any, up: any): any;
 
-            yawPitchRoll(): any;
+            yawPitchRoll(yaw: any, pitch: any, roll: any): any;
 
-            setWorldMatrix(): any;
+            setWorldMatrix(rotation: any, position: any, scale: any, viewMatrix: any, projectionMatrix: any): any;
 
         }
 
@@ -8282,9 +8282,9 @@ declare namespace Phaser {
         }
 
         class Pow2 {
-            static IsSizePowerOfTwo(): boolean;
+            static IsSizePowerOfTwo(width: number, height: number): boolean;
 
-            static IsValuePowerOfTwo(): boolean;
+            static IsValuePowerOfTwo(value: number): boolean;
 
         }
 
@@ -8300,15 +8300,15 @@ declare namespace Phaser {
 
             w: number;
 
-            copy(): any;
+            copy(src: any): any;
 
-            set(): any;
+            set(x: any, y: any, z: any, w: any): any;
 
-            add(): any;
+            add(v: any): any;
 
-            subtract(): any;
+            subtract(v: any): any;
 
-            scale(): any;
+            scale(scale: any): any;
 
             length(): any;
 
@@ -8316,35 +8316,35 @@ declare namespace Phaser {
 
             normalize(): any;
 
-            dot(): any;
+            dot(v: any): any;
 
-            lerp(): any;
+            lerp(v: any, t: any): any;
 
-            rotationTo(): any;
+            rotationTo(a: any, b: any): any;
 
-            setAxes(): any;
+            setAxes(view: any, right: any, up: any): any;
 
             identity(): any;
 
-            setAxisAngle(): any;
+            setAxisAngle(axis: any, rad: any): any;
 
-            multiply(): any;
+            multiply(b: any): any;
 
-            slerp(): any;
+            slerp(b: any, t: any): any;
 
             invert(): any;
 
             conjugate(): any;
 
-            rotateX(): any;
+            rotateX(rad: any): any;
 
-            rotateY(): any;
+            rotateY(rad: any): any;
 
-            rotateZ(): any;
+            rotateZ(rad: any): any;
 
             calculateW(): any;
 
-            fromMat3(): any;
+            fromMat3(mat: any): any;
 
         }
 
@@ -8364,11 +8364,11 @@ declare namespace Phaser {
 
             rnd(): number;
 
-            hash(): number;
+            hash(data: any): number;
 
-            init(): void;
+            init(seeds: string|any[]): void;
 
-            sow(): void;
+            sow(seeds: Array.<any>): void;
 
             integer(): number;
 
@@ -8376,29 +8376,29 @@ declare namespace Phaser {
 
             real(): number;
 
-            integerInRange(): number;
+            integerInRange(min: number, max: number): number;
 
-            between(): number;
+            between(min: number, max: number): number;
 
-            realInRange(): number;
+            realInRange(min: number, max: number): number;
 
             normal(): number;
 
             uuid(): string;
 
-            pick(): any;
+            pick(array: any[]): any;
 
             sign(): number;
 
-            weightedPick(): any;
+            weightedPick(array: any[]): any;
 
-            timestamp(): number;
+            timestamp(min: number, max: number): number;
 
             angle(): number;
 
             rotation(): number;
 
-            state(): string;
+            state(state: string): string;
 
         }
 
@@ -8406,11 +8406,11 @@ declare namespace Phaser {
         }
 
         class Snap {
-            static Ceil(): number;
+            static Ceil(value: number, gap: number, start: number): number;
 
-            static Floor(): number;
+            static Floor(value: number, gap: number, start: number): number;
 
-            static To(): number;
+            static To(value: number, gap: number, start: number): number;
 
         }
 
@@ -8424,33 +8424,33 @@ declare namespace Phaser {
 
             clone(): Phaser.Math.Vector2;
 
-            copy(): Phaser.Math.Vector2;
+            copy(src: any): Phaser.Math.Vector2;
 
-            setFromObject(): Phaser.Math.Vector2;
+            setFromObject(obj: any): Phaser.Math.Vector2;
 
-            set(): Phaser.Math.Vector2;
+            set(x: any, y: any): Phaser.Math.Vector2;
 
-            setToPolar(): Phaser.Math.Vector2;
+            setToPolar(azimuth: any, radius: any): Phaser.Math.Vector2;
 
-            equals(): boolean;
+            equals(v: any): boolean;
 
             angle(): number;
 
-            add(): Phaser.Math.Vector2;
+            add(src: any): Phaser.Math.Vector2;
 
-            subtract(): Phaser.Math.Vector2;
+            subtract(src: any): Phaser.Math.Vector2;
 
-            multiply(): Phaser.Math.Vector2;
+            multiply(src: any): Phaser.Math.Vector2;
 
-            scale(): Phaser.Math.Vector2;
+            scale(value: any): Phaser.Math.Vector2;
 
-            divide(): Phaser.Math.Vector2;
+            divide(src: any): Phaser.Math.Vector2;
 
             negate(): Phaser.Math.Vector2;
 
-            distance(): number;
+            distance(src: any): number;
 
-            distanceSq(): number;
+            distanceSq(src: any): number;
 
             length(): number;
 
@@ -8460,15 +8460,15 @@ declare namespace Phaser {
 
             normalizeRightHand(): Phaser.Math.Vector2;
 
-            dot(): number;
+            dot(src: any): number;
 
-            cross(): number;
+            cross(src: any): number;
 
-            lerp(): Phaser.Math.Vector2;
+            lerp(src: any, t: any): Phaser.Math.Vector2;
 
-            transformMat3(): Phaser.Math.Vector2;
+            transformMat3(mat: any): Phaser.Math.Vector2;
 
-            transformMat4(): Phaser.Math.Vector2;
+            transformMat4(mat: any): Phaser.Math.Vector2;
 
             reset(): Phaser.Math.Vector2;
 
@@ -8488,29 +8488,29 @@ declare namespace Phaser {
 
             clone(): any;
 
-            crossVectors(): any;
+            crossVectors(a: any, b: any): any;
 
-            equals(): any;
+            equals(v: any): any;
 
-            copy(): any;
+            copy(src: any): any;
 
-            set(): any;
+            set(x: any, y: any, z: any): any;
 
-            add(): any;
+            add(v: any): any;
 
-            subtract(): any;
+            subtract(v: any): any;
 
-            multiply(): any;
+            multiply(v: any): any;
 
-            scale(): any;
+            scale(scale: any): any;
 
-            divide(): any;
+            divide(v: any): any;
 
             negate(): any;
 
-            distance(): any;
+            distance(v: any): any;
 
-            distanceSq(): any;
+            distanceSq(v: any): any;
 
             length(): any;
 
@@ -8518,23 +8518,23 @@ declare namespace Phaser {
 
             normalize(): any;
 
-            dot(): any;
+            dot(v: any): any;
 
-            cross(): any;
+            cross(v: any): any;
 
-            lerp(): any;
+            lerp(v: any, t: any): any;
 
-            transformMat3(): any;
+            transformMat3(mat: any): any;
 
-            transformMat4(): any;
+            transformMat4(mat: any): any;
 
-            transformCoordinates(): any;
+            transformCoordinates(mat: any): any;
 
-            transformQuat(): any;
+            transformQuat(q: any): any;
 
-            project(): any;
+            project(mat: any): any;
 
-            unproject(): any;
+            unproject(viewport: any, invProjectionView: any): any;
 
             reset(): any;
 
@@ -8554,17 +8554,17 @@ declare namespace Phaser {
         class Vector4 {
             clone(): any;
 
-            copy(): any;
+            copy(src: any): any;
 
-            equals(): any;
+            equals(v: any): any;
 
-            set(): any;
+            set(x: any, y: any, z: any, w: any): any;
 
-            add(): any;
+            add(v: any): any;
 
-            subtract(): any;
+            subtract(v: any): any;
 
-            scale(): any;
+            scale(scale: any): any;
 
             length(): any;
 
@@ -8572,23 +8572,23 @@ declare namespace Phaser {
 
             normalize(): any;
 
-            dot(): any;
+            dot(v: any): any;
 
-            lerp(): any;
+            lerp(v: any, t: any): any;
 
-            multiply(): any;
+            multiply(v: any): any;
 
-            divide(): any;
+            divide(v: any): any;
 
-            distance(): any;
+            distance(v: any): any;
 
-            distanceSq(): any;
+            distanceSq(v: any): any;
 
             negate(): any;
 
-            transformMat4(): any;
+            transformMat4(mat: any): any;
 
-            transformQuat(): any;
+            transformQuat(q: any): any;
 
             reset(): any;
 
@@ -8604,9 +8604,9 @@ declare namespace Phaser {
 
     namespace Physics {
         class Arcade {
-            static SeparateX(): boolean;
+            static SeparateX(body1: Phaser.Physics.Arcade.Body, body2: Phaser.Physics.Arcade.Body, overlapOnly: boolean, bias: number): boolean;
 
-            static SeparateY(): boolean;
+            static SeparateY(body1: Phaser.Physics.Arcade.Body, body2: Phaser.Physics.Arcade.Body, overlapOnly: boolean, bias: number): boolean;
 
         }
 
@@ -8618,15 +8618,15 @@ declare namespace Phaser {
 
                 defaults: any;
 
-                createCallback(): void;
+                createCallback(child: Phaser.GameObjects.GameObject): void;
 
-                removeCallback(): void;
+                removeCallback(child: Phaser.GameObjects.GameObject): void;
 
-                setVelocity(): Phaser.Physics.Arcade.Group;
+                setVelocity(x: number, y: number, step: number): Phaser.Physics.Arcade.Group;
 
-                setVelocityX(): Phaser.Physics.Arcade.Group;
+                setVelocityX(value: number, step: number): Phaser.Physics.Arcade.Group;
 
-                setVelocityY(): Phaser.Physics.Arcade.Group;
+                setVelocityY(value: number, step: number): Phaser.Physics.Arcade.Group;
 
                 scene: Phaser.Scene;
 
@@ -8648,51 +8648,51 @@ declare namespace Phaser {
 
                 createMultipleCallback: any;
 
-                create(): Phaser.GameObjects.GameObject;
+                create(x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                createMultiple(): Array.<Phaser.GameObjects.GameObject>;
+                createMultiple(config: any): Array.<Phaser.GameObjects.GameObject>;
 
-                createFromConfig(): Array.<Phaser.GameObjects.GameObject>;
+                createFromConfig(options: any): Array.<Phaser.GameObjects.GameObject>;
 
-                preUpdate(): void;
+                preUpdate(time: number, delta: number): void;
 
-                add(): Phaser.GameObjects.Group;
+                add(child: Phaser.GameObjects.GameObject, addToScene: boolean): Phaser.GameObjects.Group;
 
-                addMultiple(): Phaser.GameObjects.Group;
+                addMultiple(children: Array.<Phaser.GameObjects.GameObject>, addToScene: boolean): Phaser.GameObjects.Group;
 
-                remove(): Phaser.GameObjects.Group;
+                remove(child: Phaser.GameObjects.GameObject, removeFromScene: boolean): Phaser.GameObjects.Group;
 
-                clear(): Phaser.GameObjects.Group;
+                clear(removeFromScene: boolean): Phaser.GameObjects.Group;
 
-                contains(): boolean;
+                contains(child: Phaser.GameObjects.GameObject): boolean;
 
                 getChildren(): Array.<Phaser.GameObjects.GameObject>;
 
                 getLength(): number;
 
-                getFirst(): Phaser.GameObjects.GameObject;
+                getFirst(state: boolean, createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                get(): Phaser.GameObjects.GameObject;
+                get(x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                getFirstAlive(): Phaser.GameObjects.GameObject;
+                getFirstAlive(createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                getFirstDead(): Phaser.GameObjects.GameObject;
+                getFirstDead(createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                playAnimation(): Phaser.GameObjects.Group;
+                playAnimation(key: string, startFrame: string): Phaser.GameObjects.Group;
 
                 isFull(): boolean;
 
-                countActive(): number;
+                countActive(value: boolean): number;
 
                 getTotalUsed(): number;
 
                 getTotalFree(): number;
 
-                setDepth(): Phaser.GameObjects.Group;
+                setDepth(value: number, step: number): Phaser.GameObjects.Group;
 
-                kill(): void;
+                kill(gameObject: Phaser.GameObjects.GameObject): void;
 
-                killAndHide(): void;
+                killAndHide(gameObject: Phaser.GameObjects.GameObject): void;
 
                 toggleVisible(): Phaser.GameObjects.Group;
 
@@ -8786,19 +8786,19 @@ declare namespace Phaser {
 
                 _bounds: Phaser.Geom.Rectangle;
 
-                setSize(): Phaser.Physics.Arcade.StaticBody;
+                setSize(width: number, height: number, offsetX: number, offsetY: number): Phaser.Physics.Arcade.StaticBody;
 
-                setCircle(): Phaser.Physics.Arcade.StaticBody;
+                setCircle(radius: number, offsetX: number, offsetY: number): Phaser.Physics.Arcade.StaticBody;
 
                 updateCenter(): void;
 
-                reset(): void;
+                reset(x: number, y: number): void;
 
                 stop(): Phaser.Physics.Arcade.StaticBody;
 
-                getBounds(): any;
+                getBounds(obj: any): any;
 
-                hitTest(): boolean;
+                hitTest(x: number, y: number): boolean;
 
                 deltaAbsX(): number;
 
@@ -8812,11 +8812,11 @@ declare namespace Phaser {
 
                 destroy(): void;
 
-                drawDebug(): void;
+                drawDebug(graphic: Phaser.GameObjects.Graphics): void;
 
                 willDrawDebug(): boolean;
 
-                setMass(): Phaser.Physics.Arcade.StaticBody;
+                setMass(value: number): Phaser.Physics.Arcade.StaticBody;
 
                 x: number;
 
@@ -8840,11 +8840,11 @@ declare namespace Phaser {
 
                 physicsType: number;
 
-                createCallback(): void;
+                createCallback(child: Phaser.GameObjects.GameObject): void;
 
-                removeCallback(): void;
+                removeCallback(child: Phaser.GameObjects.GameObject): void;
 
-                createMultipleCallback(): void;
+                createMultipleCallback(entries: any): void;
 
                 refresh(): Phaser.Physics.Arcade.StaticGroup;
 
@@ -8866,51 +8866,51 @@ declare namespace Phaser {
 
                 runChildUpdate: boolean;
 
-                create(): Phaser.GameObjects.GameObject;
+                create(x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                createMultiple(): Array.<Phaser.GameObjects.GameObject>;
+                createMultiple(config: any): Array.<Phaser.GameObjects.GameObject>;
 
-                createFromConfig(): Array.<Phaser.GameObjects.GameObject>;
+                createFromConfig(options: any): Array.<Phaser.GameObjects.GameObject>;
 
-                preUpdate(): void;
+                preUpdate(time: number, delta: number): void;
 
-                add(): Phaser.GameObjects.Group;
+                add(child: Phaser.GameObjects.GameObject, addToScene: boolean): Phaser.GameObjects.Group;
 
-                addMultiple(): Phaser.GameObjects.Group;
+                addMultiple(children: Array.<Phaser.GameObjects.GameObject>, addToScene: boolean): Phaser.GameObjects.Group;
 
-                remove(): Phaser.GameObjects.Group;
+                remove(child: Phaser.GameObjects.GameObject, removeFromScene: boolean): Phaser.GameObjects.Group;
 
-                clear(): Phaser.GameObjects.Group;
+                clear(removeFromScene: boolean): Phaser.GameObjects.Group;
 
-                contains(): boolean;
+                contains(child: Phaser.GameObjects.GameObject): boolean;
 
                 getChildren(): Array.<Phaser.GameObjects.GameObject>;
 
                 getLength(): number;
 
-                getFirst(): Phaser.GameObjects.GameObject;
+                getFirst(state: boolean, createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                get(): Phaser.GameObjects.GameObject;
+                get(x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                getFirstAlive(): Phaser.GameObjects.GameObject;
+                getFirstAlive(createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                getFirstDead(): Phaser.GameObjects.GameObject;
+                getFirstDead(createIfNull: boolean, x: number, y: number, texture: string, frame: string|number, visible: boolean): Phaser.GameObjects.GameObject;
 
-                playAnimation(): Phaser.GameObjects.Group;
+                playAnimation(key: string, startFrame: string): Phaser.GameObjects.Group;
 
                 isFull(): boolean;
 
-                countActive(): number;
+                countActive(value: boolean): number;
 
                 getTotalUsed(): number;
 
                 getTotalFree(): number;
 
-                setDepth(): Phaser.GameObjects.Group;
+                setDepth(value: number, step: number): Phaser.GameObjects.Group;
 
-                kill(): void;
+                kill(gameObject: Phaser.GameObjects.GameObject): void;
 
-                killAndHide(): void;
+                killAndHide(gameObject: Phaser.GameObjects.GameObject): void;
 
                 toggleVisible(): Phaser.GameObjects.Group;
 
@@ -8960,65 +8960,65 @@ declare namespace Phaser {
 
                 treeMinMax: any;
 
-                enable(): void;
+                enable(object: Phaser.GameObjects.GameObject|Array.<Phaser.GameObjects.GameObject>, type: number): void;
 
-                enableBody(): Phaser.GameObjects.GameObject;
+                enableBody(object: Phaser.GameObjects.GameObject, type: number): Phaser.GameObjects.GameObject;
 
-                remove(): void;
+                remove(object: Phaser.GameObjects.GameObject): void;
 
-                disable(): void;
+                disable(object: Phaser.GameObjects.GameObject|Array.<Phaser.GameObjects.GameObject>): void;
 
-                disableBody(): Phaser.GameObjects.GameObject;
+                disableBody(object: Phaser.GameObjects.GameObject): Phaser.GameObjects.GameObject;
 
                 createDebugGraphic(): Phaser.GameObjects.Graphics;
 
-                setBounds(): Phaser.Physics.Arcade.World;
+                setBounds(x: number, y: number, width: number, height: number, checkLeft: boolean, checkRight: boolean, checkUp: boolean, checkDown: boolean): Phaser.Physics.Arcade.World;
 
-                setBoundsCollision(): Phaser.Physics.Arcade.World;
+                setBoundsCollision(left: boolean, right: boolean, up: boolean, down: boolean): Phaser.Physics.Arcade.World;
 
                 pause(): Phaser.Physics.Arcade.World;
 
                 resume(): Phaser.Physics.Arcade.World;
 
-                addCollider(): Phaser.Physics.Arcade.Collider;
+                addCollider(object1: Phaser.Physics.Arcade.Body, object2: Phaser.Physics.Arcade.Body, collideCallback: any, processCallback: any, callbackContext: any): Phaser.Physics.Arcade.Collider;
 
-                addOverlap(): Phaser.Physics.Arcade.Collider;
+                addOverlap(object1: Phaser.Physics.Arcade.Body, object2: Phaser.Physics.Arcade.Body, collideCallback: any, processCallback: any, callbackContext: any): Phaser.Physics.Arcade.Collider;
 
-                removeCollider(): Phaser.Physics.Arcade.World;
+                removeCollider(collider: Phaser.Physics.Arcade.Collider): Phaser.Physics.Arcade.World;
 
-                update(): void;
+                update(time: number, delta: number): void;
 
                 postUpdate(): void;
 
-                updateMotion(): void;
+                updateMotion(body: Phaser.Physics.Arcade.Body): void;
 
-                computeVelocity(): number;
+                computeVelocity(axis: number, body: Phaser.Physics.Arcade.Body, velocity: number, acceleration: number, drag: number, max: number): number;
 
-                separate(): boolean;
+                separate(body1: Phaser.Physics.Arcade.Body, body2: Phaser.Physics.Arcade.Body, processCallback: any, callbackContext: any, overlapOnly: boolean): boolean;
 
-                separateCircle(): boolean;
+                separateCircle(body1: Phaser.Physics.Arcade.Body, body2: Phaser.Physics.Arcade.Body, overlapOnly: boolean, bias: number): boolean;
 
-                intersects(): boolean;
+                intersects(body1: Phaser.Physics.Arcade.Body, body2: Phaser.Physics.Arcade.Body): boolean;
 
-                circleBodyIntersects(): boolean;
+                circleBodyIntersects(circle: Phaser.Physics.Arcade.Body, body: Phaser.Physics.Arcade.Body): boolean;
 
-                overlap(): boolean;
+                overlap(object1: Phaser.GameObjects.GameObject, object2: Phaser.GameObjects.GameObject, overlapCallback: any, processCallback: any, callbackContext: any): boolean;
 
-                collide(): boolean;
+                collide(object1: Phaser.GameObjects.GameObject, object2: Phaser.GameObjects.GameObject, collideCallback: any, processCallback: any, callbackContext: any): boolean;
 
-                collideObjects(): boolean;
+                collideObjects(object1: Phaser.GameObjects.GameObject, object2: Phaser.GameObjects.GameObject, collideCallback: any, processCallback: any, callbackContext: any, overlapOnly: boolean): boolean;
 
-                collideHandler(): boolean;
+                collideHandler(object1: Phaser.GameObjects.GameObject, object2: Phaser.GameObjects.GameObject, collideCallback: any, processCallback: any, callbackContext: any, overlapOnly: boolean): boolean;
 
-                collideSpriteVsSprite(): boolean;
+                collideSpriteVsSprite(sprite1: Phaser.GameObjects.GameObject, sprite2: Phaser.GameObjects.GameObject, collideCallback: any, processCallback: any, callbackContext: any, overlapOnly: boolean): boolean;
 
-                collideSpriteVsGroup(): boolean;
+                collideSpriteVsGroup(sprite: Phaser.GameObjects.GameObject, group: Phaser.GameObjects.Group, collideCallback: any, processCallback: any, callbackContext: any, overlapOnly: boolean): boolean;
 
-                collideGroupVsTilemapLayer(): boolean;
+                collideGroupVsTilemapLayer(group: Phaser.GameObjects.Group, tilemapLayer: any, collideCallback: any, processCallback: any, callbackContext: any, overlapOnly: boolean): boolean;
 
-                collideSpriteVsTilemapLayer(): boolean;
+                collideSpriteVsTilemapLayer(sprite: Phaser.GameObjects.GameObject, tilemapLayer: any, collideCallback: any, processCallback: any, callbackContext: any, overlapOnly: boolean): boolean;
 
-                collideGroupVsGroup(): boolean;
+                collideGroupVsGroup(group1: Phaser.GameObjects.Group, group2: Phaser.GameObjects.Group, collideCallback: any, processCallback: any, callbackContext: any, overlapOnly: boolean): boolean;
 
                 shutdown(): void;
 
@@ -9032,19 +9032,19 @@ declare namespace Phaser {
         }
 
         class Impact {
-            static SeperateX(): void;
+            static SeperateX(world: Phaser.Physics.Impact.World, left: Phaser.Physics.Impact.Body, right: Phaser.Physics.Impact.Body, weak: Phaser.Physics.Impact.Body): void;
 
-            static SeperateY(): void;
+            static SeperateY(world: Phaser.Physics.Impact.World, top: Phaser.Physics.Impact.Body, bottom: Phaser.Physics.Impact.Body, weak: Phaser.Physics.Impact.Body): void;
 
-            static Solver(): void;
+            static Solver(world: Phaser.Physics.Impact.World, bodyA: Phaser.Physics.Impact.Body, bodyB: Phaser.Physics.Impact.Body): void;
 
-            static UpdateMotion(): void;
+            static UpdateMotion(body: Phaser.Physics.Impact.Body, res: any): void;
 
-            static ParseTileLayers(): any[];
+            static ParseTileLayers(json: any, insertNull: boolean): any[];
 
-            static ParseTilesets(): any[];
+            static ParseTilesets(json: any): any[];
 
-            static ParseWeltmeister(): any;
+            static ParseWeltmeister(name: string, json: any, insertNull: boolean): any;
 
         }
 
@@ -9074,7 +9074,7 @@ declare namespace Phaser {
 
                 collisionMap: Phaser.Physics.Impact.CollisionMap;
 
-                timeScale: float;
+                timeScale: number;
 
                 maxStep: number;
 
@@ -9092,57 +9092,57 @@ declare namespace Phaser {
 
                 _lastId: number;
 
-                setCollisionMap(): CollisionMap;
+                setCollisionMap(key: string|Array.<Array.<integer>>, tileSize: number): CollisionMap;
 
-                setCollisionMapFromTilemapLayer(): Phaser.Physics.Impact.CollisionMap;
+                setCollisionMapFromTilemapLayer(tilemapLayer: StaticTilemapLayer|DynamicTilemapLayer, options: any): Phaser.Physics.Impact.CollisionMap;
 
-                setBounds(): Phaser.Physics.Impact.World;
+                setBounds(x: number, y: number, width: number, height: number, thickness: number, left: boolean, right: boolean, top: boolean, bottom: boolean): Phaser.Physics.Impact.World;
 
-                updateWall(): void;
+                updateWall(add: boolean, position: string, x: number, y: number, width: number, height: number): void;
 
                 createDebugGraphic(): Phaser.GameObjects.Graphics;
 
                 getNextID(): number;
 
-                create(): Phaser.Physics.Impact.Body;
+                create(x: number, y: number, sizeX: number, sizeY: number): Phaser.Physics.Impact.Body;
 
-                remove(): void;
+                remove(object: Phaser.Physics.Impact.Body): void;
 
                 pause(): Phaser.Physics.Impact.World;
 
                 resume(): Phaser.Physics.Impact.World;
 
-                update(): void;
+                update(time: number, delta: number): void;
 
-                checkHash(): void;
+                checkHash(body: Phaser.Physics.Impact.Body, hash: any, size: number): void;
 
-                checkBodies(): void;
+                checkBodies(bodyA: Phaser.Physics.Impact.Body, bodyB: Phaser.Physics.Impact.Body): void;
 
-                setCollidesNever(): Phaser.Physics.Impact.World;
+                setCollidesNever(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setLite(): Phaser.Physics.Impact.World;
+                setLite(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setPassive(): Phaser.Physics.Impact.World;
+                setPassive(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setActive(): Phaser.Physics.Impact.World;
+                setActive(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setFixed(): Phaser.Physics.Impact.World;
+                setFixed(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setTypeNone(): Phaser.Physics.Impact.World;
+                setTypeNone(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setTypeA(): Phaser.Physics.Impact.World;
+                setTypeA(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setTypeB(): Phaser.Physics.Impact.World;
+                setTypeB(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setAvsB(): Phaser.Physics.Impact.World;
+                setAvsB(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setBvsA(): Phaser.Physics.Impact.World;
+                setBvsA(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setCheckAgainstNone(): Phaser.Physics.Impact.World;
+                setCheckAgainstNone(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setCheckAgainstA(): Phaser.Physics.Impact.World;
+                setCheckAgainstA(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
-                setCheckAgainstB(): Phaser.Physics.Impact.World;
+                setCheckAgainstB(bodies: Array.<Phaser.Physics.Impact.Body>): Phaser.Physics.Impact.World;
 
                 shutdown(): void;
 
@@ -9168,7 +9168,7 @@ declare namespace Phaser {
 
         namespace Matter {
             class Body {
-                static init(): void;
+                static init(body: Matter.Body): void;
 
             }
 
@@ -9176,7 +9176,7 @@ declare namespace Phaser {
             }
 
             class Body {
-                static wrap(): Matter.Vector;
+                static wrap(body: Matter.Body, bounds: Matter.Bounds): Matter.Vector;
 
             }
 
@@ -9184,9 +9184,9 @@ declare namespace Phaser {
             }
 
             class MatterImage {
-                renderCanvas(): void;
+                renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Image, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-                renderWebGL(): void;
+                renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Image, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
                 scene: Phaser.Scene;
 
@@ -9208,17 +9208,17 @@ declare namespace Phaser {
 
                 body: Phaser.Physics.Body;
 
-                setActive(): Phaser.GameObjects.GameObject;
+                setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-                setName(): Phaser.GameObjects.GameObject;
+                setName(value: string): Phaser.GameObjects.GameObject;
 
                 setDataEnabled(): Phaser.GameObjects.GameObject;
 
-                setData(): Phaser.GameObjects.GameObject;
+                setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-                getData(): any;
+                getData(key: string): any;
 
-                setInteractive(): Phaser.GameObjects.GameObject;
+                setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
                 update(): void;
 
@@ -9230,45 +9230,45 @@ declare namespace Phaser {
 
                 eventNames(): any[];
 
-                listeners(): any[];
+                listeners(event: string|symbol): any[];
 
-                listenerCount(): number;
+                listenerCount(event: string|symbol): number;
 
-                emit(): Boolean;
+                emit(event: string|symbol): Boolean;
 
-                on(): EventEmitter;
+                on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                addListener(): EventEmitter;
+                addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                once(): EventEmitter;
+                once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                removeListener(): EventEmitter;
+                removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                off(): EventEmitter;
+                off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                removeAllListeners(): EventEmitter;
+                removeAllListeners(event: string|symbol): EventEmitter;
 
                 clearAlpha(): Phaser.GameObjects.GameObject;
 
-                setAlpha(): Phaser.GameObjects.GameObject;
+                setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-                alpha: float;
+                alpha: number;
 
-                alphaTopLeft: float;
+                alphaTopLeft: number;
 
-                alphaTopRight: float;
+                alphaTopRight: number;
 
-                alphaBottomLeft: float;
+                alphaBottomLeft: number;
 
-                alphaBottomRight: float;
+                alphaBottomRight: number;
 
                 blendMode: number;
 
-                setBlendMode(): Phaser.GameObjects.GameObject;
+                setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
                 depth: number;
 
-                setDepth(): Phaser.GameObjects.GameObject;
+                setDepth(value: number): Phaser.GameObjects.GameObject;
 
                 flipX: boolean;
 
@@ -9278,39 +9278,39 @@ declare namespace Phaser {
 
                 toggleFlipY(): Phaser.GameObjects.GameObject;
 
-                setFlipX(): Phaser.GameObjects.GameObject;
+                setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-                setFlipY(): Phaser.GameObjects.GameObject;
+                setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-                setFlip(): Phaser.GameObjects.GameObject;
+                setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
                 resetFlip(): Phaser.GameObjects.GameObject;
 
-                getCenter(): Phaser.Math.Vector2;
+                getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getTopLeft(): Phaser.Math.Vector2;
+                getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getTopRight(): Phaser.Math.Vector2;
+                getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getBottomLeft(): Phaser.Math.Vector2;
+                getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getBottomRight(): Phaser.Math.Vector2;
+                getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getBounds(): Phaser.Geom.Rectangle;
+                getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-                originX: float;
+                originX: number;
 
-                originY: float;
+                originY: number;
 
-                displayOriginX: float;
+                displayOriginX: number;
 
-                displayOriginY: float;
+                displayOriginY: number;
 
-                setOrigin(): Phaser.GameObjects.GameObject;
+                setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
                 setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-                setDisplayOrigin(): Phaser.GameObjects.GameObject;
+                setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
                 updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -9318,9 +9318,9 @@ declare namespace Phaser {
 
                 pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-                initPipeline(): boolean;
+                initPipeline(pipelineName: string): boolean;
 
-                setPipeline(): boolean;
+                setPipeline(pipelineName: string): boolean;
 
                 resetPipeline(): boolean;
 
@@ -9328,13 +9328,13 @@ declare namespace Phaser {
 
                 scaleMode: number;
 
-                setScaleMode(): Phaser.GameObjects.GameObject;
+                setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
                 scrollFactorX: number;
 
                 scrollFactorY: number;
 
-                setScrollFactor(): Phaser.GameObjects.GameObject;
+                setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
                 width: number;
 
@@ -9344,23 +9344,23 @@ declare namespace Phaser {
 
                 displayHeight: number;
 
-                setSizeToFrame(): Phaser.GameObjects.GameObject;
+                setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-                setSize(): Phaser.GameObjects.GameObject;
+                setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-                setDisplaySize(): Phaser.GameObjects.GameObject;
+                setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
                 texture: Phaser.Textures.Texture;
 
                 frame: Phaser.Textures.Frame;
 
-                setTexture(): Phaser.GameObjects.GameObject;
+                setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-                setFrame(): Phaser.GameObjects.GameObject;
+                setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
                 clearTint(): Phaser.GameObjects.GameObject;
 
-                setTint(): Phaser.GameObjects.GameObject;
+                setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
                 tintTopLeft: number;
 
@@ -9388,95 +9388,95 @@ declare namespace Phaser {
 
                 rotation: number;
 
-                setPosition(): Phaser.GameObjects.GameObject;
+                setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-                setRotation(): Phaser.GameObjects.GameObject;
+                setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-                setAngle(): Phaser.GameObjects.GameObject;
+                setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-                setScale(): Phaser.GameObjects.GameObject;
+                setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-                setX(): Phaser.GameObjects.GameObject;
+                setX(value: number): Phaser.GameObjects.GameObject;
 
-                setY(): Phaser.GameObjects.GameObject;
+                setY(value: number): Phaser.GameObjects.GameObject;
 
-                setZ(): Phaser.GameObjects.GameObject;
+                setZ(value: number): Phaser.GameObjects.GameObject;
 
-                setW(): Phaser.GameObjects.GameObject;
+                setW(value: number): Phaser.GameObjects.GameObject;
 
                 visible: boolean;
 
-                setVisible(): Phaser.GameObjects.GameObject;
+                setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
-                setBounce(): any;
+                setBounce(value: any): any;
 
-                setCollisionCategory(): any;
+                setCollisionCategory(value: any): any;
 
-                setCollisionGroup(): any;
+                setCollisionGroup(value: any): any;
 
-                setCollidesWith(): any;
+                setCollidesWith(categories: any): any;
 
-                applyForce(): any;
+                applyForce(force: any): any;
 
-                applyForceFrom(): any;
+                applyForceFrom(position: any, force: any): any;
 
-                thrust(): any;
+                thrust(speed: any): any;
 
-                thrustLeft(): any;
+                thrustLeft(speed: any): any;
 
-                thrustRight(): any;
+                thrustRight(speed: any): any;
 
-                thrustBack(): any;
+                thrustBack(speed: any): any;
 
-                setFriction(): any;
+                setFriction(value: any, air: any, fstatic: any): any;
 
-                setFrictionAir(): any;
+                setFrictionAir(value: any): any;
 
-                setFrictionStatic(): any;
+                setFrictionStatic(value: any): any;
 
-                setIgnoreGravity(): any;
+                setIgnoreGravity(value: any): any;
 
-                setMass(): any;
+                setMass(value: any): any;
 
-                setDensity(): any;
+                setDensity(value: any): any;
 
-                setSensor(): any;
+                setSensor(value: any): any;
 
                 isSensor(): any;
 
-                setRectangle(): any;
+                setRectangle(width: any, height: any, options: any): any;
 
-                setCircle(): any;
+                setCircle(radius: any, options: any): any;
 
-                setPolygon(): any;
+                setPolygon(radius: any, sides: any, options: any): any;
 
-                setTrapezoid(): any;
+                setTrapezoid(width: any, height: any, slope: any, options: any): any;
 
-                setExistingBody(): any;
+                setExistingBody(body: any, addToWorld: any): any;
 
-                setBody(): any;
+                setBody(config: any, options: any): any;
 
-                setSleepThreshold(): any;
+                setSleepThreshold(value: any): any;
 
-                setSleepEvents(): any;
+                setSleepEvents(start: any, end: any): any;
 
-                setSleepStartEvent(): any;
+                setSleepStartEvent(value: any): any;
 
-                setSleepEndEvent(): any;
+                setSleepEndEvent(value: any): any;
 
-                setStatic(): any;
+                setStatic(value: any): any;
 
                 isStatic(): any;
 
                 setFixedRotation(): any;
 
-                setAngularVelocity(): any;
+                setAngularVelocity(value: any): any;
 
-                setVelocityX(): any;
+                setVelocityX(x: any): any;
 
-                setVelocityY(): any;
+                setVelocityY(y: any): any;
 
-                setVelocity(): any;
+                setVelocity(x: any, y: any): any;
 
             }
 
@@ -9518,15 +9518,15 @@ declare namespace Phaser {
             class MatterSprite {
                 anims: any;
 
-                preUpdate(): void;
+                preUpdate(time: number, delta: number): void;
 
-                play(): any;
+                play(key: string, ignoreIfPlaying: boolean, startFrame: number|string): any;
 
                 toJSON(): any;
 
-                renderCanvas(): void;
+                renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.GameObjects.Sprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-                renderWebGL(): void;
+                renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.GameObjects.Sprite, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
                 scene: Phaser.Scene;
 
@@ -9548,17 +9548,17 @@ declare namespace Phaser {
 
                 body: Phaser.Physics.Body;
 
-                setActive(): Phaser.GameObjects.GameObject;
+                setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-                setName(): Phaser.GameObjects.GameObject;
+                setName(value: string): Phaser.GameObjects.GameObject;
 
                 setDataEnabled(): Phaser.GameObjects.GameObject;
 
-                setData(): Phaser.GameObjects.GameObject;
+                setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-                getData(): any;
+                getData(key: string): any;
 
-                setInteractive(): Phaser.GameObjects.GameObject;
+                setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
                 update(): void;
 
@@ -9568,37 +9568,37 @@ declare namespace Phaser {
 
                 eventNames(): any[];
 
-                listeners(): any[];
+                listeners(event: string|symbol): any[];
 
-                listenerCount(): number;
+                listenerCount(event: string|symbol): number;
 
-                emit(): Boolean;
+                emit(event: string|symbol): Boolean;
 
-                on(): EventEmitter;
+                on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                addListener(): EventEmitter;
+                addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                once(): EventEmitter;
+                once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                removeListener(): EventEmitter;
+                removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                off(): EventEmitter;
+                off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                removeAllListeners(): EventEmitter;
+                removeAllListeners(event: string|symbol): EventEmitter;
 
                 clearAlpha(): Phaser.GameObjects.GameObject;
 
-                setAlpha(): Phaser.GameObjects.GameObject;
+                setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-                alpha: float;
+                alpha: number;
 
-                alphaTopLeft: float;
+                alphaTopLeft: number;
 
-                alphaTopRight: float;
+                alphaTopRight: number;
 
-                alphaBottomLeft: float;
+                alphaBottomLeft: number;
 
-                alphaBottomRight: float;
+                alphaBottomRight: number;
 
                 parent: Phaser.GameObjects.GameObject;
 
@@ -9646,49 +9646,49 @@ declare namespace Phaser {
 
                 _updateParams: any[];
 
-                delay(): Phaser.GameObjects.GameObject;
+                delay(value: number): Phaser.GameObjects.GameObject;
 
-                delayedPlay(): Phaser.GameObjects.GameObject;
+                delayedPlay(delay: any, key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
                 getCurrentKey(): any;
 
-                load(): Phaser.GameObjects.GameObject;
+                load(key: any, startFrame: any): Phaser.GameObjects.GameObject;
 
-                pause(): Phaser.GameObjects.GameObject;
+                pause(atFrame: any): Phaser.GameObjects.GameObject;
 
-                paused(): any;
+                paused(value: any): any;
 
-                progress(): any;
+                progress(value: any): any;
 
-                remove(): void;
+                remove(event: any): void;
 
-                repeat(): any;
+                repeat(value: any): any;
 
-                repeatDelay(): any;
+                repeatDelay(value: any): any;
 
-                restart(): Phaser.GameObjects.GameObject;
+                restart(includeDelay: any): Phaser.GameObjects.GameObject;
 
-                resume(): Phaser.GameObjects.GameObject;
+                resume(fromFrame: any): Phaser.GameObjects.GameObject;
 
-                stop(): Phaser.GameObjects.GameObject;
+                stop(dispatchCallbacks: any): Phaser.GameObjects.GameObject;
 
-                timeScale(): any;
+                timeScale(value: any): any;
 
                 totalFrames(): any;
 
                 totalProgres(): void;
 
-                updateFrame(): void;
+                updateFrame(animationFrame: any): void;
 
-                yoyo(): any;
+                yoyo(value: any): any;
 
                 blendMode: number;
 
-                setBlendMode(): Phaser.GameObjects.GameObject;
+                setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
                 depth: number;
 
-                setDepth(): Phaser.GameObjects.GameObject;
+                setDepth(value: number): Phaser.GameObjects.GameObject;
 
                 flipX: boolean;
 
@@ -9698,39 +9698,39 @@ declare namespace Phaser {
 
                 toggleFlipY(): Phaser.GameObjects.GameObject;
 
-                setFlipX(): Phaser.GameObjects.GameObject;
+                setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-                setFlipY(): Phaser.GameObjects.GameObject;
+                setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-                setFlip(): Phaser.GameObjects.GameObject;
+                setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
                 resetFlip(): Phaser.GameObjects.GameObject;
 
-                getCenter(): Phaser.Math.Vector2;
+                getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getTopLeft(): Phaser.Math.Vector2;
+                getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getTopRight(): Phaser.Math.Vector2;
+                getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getBottomLeft(): Phaser.Math.Vector2;
+                getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getBottomRight(): Phaser.Math.Vector2;
+                getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-                getBounds(): Phaser.Geom.Rectangle;
+                getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-                originX: float;
+                originX: number;
 
-                originY: float;
+                originY: number;
 
-                displayOriginX: float;
+                displayOriginX: number;
 
-                displayOriginY: float;
+                displayOriginY: number;
 
-                setOrigin(): Phaser.GameObjects.GameObject;
+                setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
                 setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-                setDisplayOrigin(): Phaser.GameObjects.GameObject;
+                setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
                 updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -9738,9 +9738,9 @@ declare namespace Phaser {
 
                 pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-                initPipeline(): boolean;
+                initPipeline(pipelineName: string): boolean;
 
-                setPipeline(): boolean;
+                setPipeline(pipelineName: string): boolean;
 
                 resetPipeline(): boolean;
 
@@ -9748,13 +9748,13 @@ declare namespace Phaser {
 
                 scaleMode: number;
 
-                setScaleMode(): Phaser.GameObjects.GameObject;
+                setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
                 scrollFactorX: number;
 
                 scrollFactorY: number;
 
-                setScrollFactor(): Phaser.GameObjects.GameObject;
+                setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
                 width: number;
 
@@ -9764,23 +9764,23 @@ declare namespace Phaser {
 
                 displayHeight: number;
 
-                setSizeToFrame(): Phaser.GameObjects.GameObject;
+                setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-                setSize(): Phaser.GameObjects.GameObject;
+                setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-                setDisplaySize(): Phaser.GameObjects.GameObject;
+                setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
                 texture: Phaser.Textures.Texture;
 
                 frame: Phaser.Textures.Frame;
 
-                setTexture(): Phaser.GameObjects.GameObject;
+                setTexture(key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-                setFrame(): Phaser.GameObjects.GameObject;
+                setFrame(frame: string|number): Phaser.GameObjects.GameObject;
 
                 clearTint(): Phaser.GameObjects.GameObject;
 
-                setTint(): Phaser.GameObjects.GameObject;
+                setTint(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
                 tintTopLeft: number;
 
@@ -9808,95 +9808,95 @@ declare namespace Phaser {
 
                 rotation: number;
 
-                setPosition(): Phaser.GameObjects.GameObject;
+                setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-                setRotation(): Phaser.GameObjects.GameObject;
+                setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-                setAngle(): Phaser.GameObjects.GameObject;
+                setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-                setScale(): Phaser.GameObjects.GameObject;
+                setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-                setX(): Phaser.GameObjects.GameObject;
+                setX(value: number): Phaser.GameObjects.GameObject;
 
-                setY(): Phaser.GameObjects.GameObject;
+                setY(value: number): Phaser.GameObjects.GameObject;
 
-                setZ(): Phaser.GameObjects.GameObject;
+                setZ(value: number): Phaser.GameObjects.GameObject;
 
-                setW(): Phaser.GameObjects.GameObject;
+                setW(value: number): Phaser.GameObjects.GameObject;
 
                 visible: boolean;
 
-                setVisible(): Phaser.GameObjects.GameObject;
+                setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
-                setBounce(): any;
+                setBounce(value: any): any;
 
-                setCollisionCategory(): any;
+                setCollisionCategory(value: any): any;
 
-                setCollisionGroup(): any;
+                setCollisionGroup(value: any): any;
 
-                setCollidesWith(): any;
+                setCollidesWith(categories: any): any;
 
-                applyForce(): any;
+                applyForce(force: any): any;
 
-                applyForceFrom(): any;
+                applyForceFrom(position: any, force: any): any;
 
-                thrust(): any;
+                thrust(speed: any): any;
 
-                thrustLeft(): any;
+                thrustLeft(speed: any): any;
 
-                thrustRight(): any;
+                thrustRight(speed: any): any;
 
-                thrustBack(): any;
+                thrustBack(speed: any): any;
 
-                setFriction(): any;
+                setFriction(value: any, air: any, fstatic: any): any;
 
-                setFrictionAir(): any;
+                setFrictionAir(value: any): any;
 
-                setFrictionStatic(): any;
+                setFrictionStatic(value: any): any;
 
-                setIgnoreGravity(): any;
+                setIgnoreGravity(value: any): any;
 
-                setMass(): any;
+                setMass(value: any): any;
 
-                setDensity(): any;
+                setDensity(value: any): any;
 
-                setSensor(): any;
+                setSensor(value: any): any;
 
                 isSensor(): any;
 
-                setRectangle(): any;
+                setRectangle(width: any, height: any, options: any): any;
 
-                setCircle(): any;
+                setCircle(radius: any, options: any): any;
 
-                setPolygon(): any;
+                setPolygon(radius: any, sides: any, options: any): any;
 
-                setTrapezoid(): any;
+                setTrapezoid(width: any, height: any, slope: any, options: any): any;
 
-                setExistingBody(): any;
+                setExistingBody(body: any, addToWorld: any): any;
 
-                setBody(): any;
+                setBody(config: any, options: any): any;
 
-                setSleepThreshold(): any;
+                setSleepThreshold(value: any): any;
 
-                setSleepEvents(): any;
+                setSleepEvents(start: any, end: any): any;
 
-                setSleepStartEvent(): any;
+                setSleepStartEvent(value: any): any;
 
-                setSleepEndEvent(): any;
+                setSleepEndEvent(value: any): any;
 
-                setStatic(): any;
+                setStatic(value: any): any;
 
                 isStatic(): any;
 
                 setFixedRotation(): any;
 
-                setAngularVelocity(): any;
+                setAngularVelocity(value: any): any;
 
-                setVelocityX(): any;
+                setVelocityX(x: any): any;
 
-                setVelocityY(): any;
+                setVelocityY(y: any): any;
 
-                setVelocity(): any;
+                setVelocity(x: any, y: any): any;
 
             }
 
@@ -9918,11 +9918,11 @@ declare namespace Phaser {
 
                 constraint: any;
 
-                onDown(): void;
+                onDown(pointer: Phaser.Input.Pointer): void;
 
                 onUp(): void;
 
-                getBodyPart(): boolean;
+                getBodyPart(body: any, position: any): boolean;
 
                 update(): void;
 
@@ -9952,29 +9952,29 @@ declare namespace Phaser {
 
                 setEventsProxy(): void;
 
-                setBounds(): Phaser.Physics.Matter.World;
+                setBounds(x: number, y: number, width: number, height: number, thickness: number, left: boolean, right: boolean, top: boolean, bottom: boolean): Phaser.Physics.Matter.World;
 
-                updateWall(): void;
+                updateWall(add: any, position: any, x: any, y: any, width: any, height: any): void;
 
                 createDebugGraphic(): Phaser.GameObjects.Graphics;
 
                 disableGravity(): Phaser.Physics.Matter.World;
 
-                setGravity(): Phaser.Physics.Matter.World;
+                setGravity(x: number, y: number, scale: number): Phaser.Physics.Matter.World;
 
-                create(): any;
+                create(x: any, y: any, width: any, height: any, options: any): any;
 
-                add(): Phaser.Physics.Matter.World;
+                add(object: any): Phaser.Physics.Matter.World;
 
-                remove(): Phaser.Physics.Matter.World;
+                remove(object: any, deep: boolean): Phaser.Physics.Matter.World;
 
-                removeConstraint(): Phaser.Physics.Matter.World;
+                removeConstraint(constraint: any, deep: boolean): Phaser.Physics.Matter.World;
 
-                convertTilemapLayer(): Phaser.Physics.Matter.World;
+                convertTilemapLayer(tiles: Phaser.GameObjects.StaticTilemapLayer|Phaser.GameObjects.DynamicTilemapLayer, options: any): Phaser.Physics.Matter.World;
 
-                convertTiles(): Phaser.Physics.Matter.World;
+                convertTiles(tiles: Array.<Phaser.GameObjects.Tile>, options: any): Phaser.Physics.Matter.World;
 
-                nextGroup(): any;
+                nextGroup(isNonColliding: any): any;
 
                 nextCategory(): any;
 
@@ -9982,11 +9982,11 @@ declare namespace Phaser {
 
                 resume(): Phaser.Physics.Matter.World;
 
-                update(): void;
+                update(time: number, delta: number): void;
 
                 postUpdate(): void;
 
-                fromPath(): any;
+                fromPath(path: any, points: any): any;
 
                 shutdown(): void;
 
@@ -9994,63 +9994,63 @@ declare namespace Phaser {
 
                 eventNames(): any[];
 
-                listeners(): any[];
+                listeners(event: string|symbol): any[];
 
-                listenerCount(): number;
+                listenerCount(event: string|symbol): number;
 
-                emit(): Boolean;
+                emit(event: string|symbol): Boolean;
 
-                on(): EventEmitter;
+                on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                addListener(): EventEmitter;
+                addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                once(): EventEmitter;
+                once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                removeListener(): EventEmitter;
+                removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                off(): EventEmitter;
+                off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                removeAllListeners(): EventEmitter;
-
-                eventNames(): any[];
-
-                listeners(): any[];
-
-                listenerCount(): number;
-
-                emit(): Boolean;
-
-                on(): EventEmitter;
-
-                addListener(): EventEmitter;
-
-                once(): EventEmitter;
-
-                removeListener(): EventEmitter;
-
-                off(): EventEmitter;
-
-                removeAllListeners(): EventEmitter;
+                removeAllListeners(event: string|symbol): EventEmitter;
 
                 eventNames(): any[];
 
-                listeners(): any[];
+                listeners(event: string|symbol): any[];
 
-                listenerCount(): number;
+                listenerCount(event: string|symbol): number;
 
-                emit(): Boolean;
+                emit(event: string|symbol): Boolean;
 
-                on(): EventEmitter;
+                on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                addListener(): EventEmitter;
+                addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                once(): EventEmitter;
+                once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-                removeListener(): EventEmitter;
+                removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                off(): EventEmitter;
+                off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-                removeAllListeners(): EventEmitter;
+                removeAllListeners(event: string|symbol): EventEmitter;
+
+                eventNames(): any[];
+
+                listeners(event: string|symbol): any[];
+
+                listenerCount(event: string|symbol): number;
+
+                emit(event: string|symbol): Boolean;
+
+                on(event: string|symbol, fn: any, context: *): EventEmitter;
+
+                addListener(event: string|symbol, fn: any, context: *): EventEmitter;
+
+                once(event: string|symbol, fn: any, context: *): EventEmitter;
+
+                removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
+
+                off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
+
+                removeAllListeners(event: string|symbol): EventEmitter;
 
             }
 
@@ -10092,9 +10092,9 @@ declare namespace Phaser {
 
         DESTROYED: number;
 
-        static GetPhysicsPlugins(): any[];
+        static GetPhysicsPlugins(sys: Phaser.Scenes.Systems): any[];
 
-        static GetScenePlugins(): any[];
+        static GetScenePlugins(sys: Phaser.Scenes.Systems): any[];
 
     }
 
@@ -10116,63 +10116,63 @@ declare namespace Phaser {
 
             processQueue(): void;
 
-            add(): Phaser.Scene;
+            add(key: string, sceneConfig: Phaser.Scene|any|any, autoStart: boolean): Phaser.Scene;
 
-            bootScene(): void;
+            bootScene(scene: Phaser.Scene): void;
 
-            loadComplete(): void;
+            loadComplete(loader: any): void;
 
-            payloadComplete(): void;
+            payloadComplete(loader: any): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
-            render(): void;
+            render(renderer: any): void;
 
-            create(): void;
+            create(scene: Phaser.Scene): void;
 
-            createSceneFromFunction(): Phaser.Scene;
+            createSceneFromFunction(key: string, scene: any): Phaser.Scene;
 
-            createSceneFromInstance(): Phaser.Scene;
+            createSceneFromInstance(key: string, newScene: Phaser.Scene): Phaser.Scene;
 
-            createSceneFromObject(): Phaser.Scene;
+            createSceneFromObject(key: string, sceneConfig: any): Phaser.Scene;
 
-            getKey(): string;
+            getKey(key: string, sceneConfig: Phaser.Scene|any|any): string;
 
-            getScene(): Phaser.Scene;
+            getScene(key: string): Phaser.Scene;
 
-            isActive(): boolean;
+            isActive(key: string): boolean;
 
-            isVisible(): boolean;
+            isVisible(key: string): boolean;
 
-            isSleeping(): boolean;
+            isSleeping(key: string): boolean;
 
-            pause(): Phaser.Scenes.SceneManager;
+            pause(key: string): Phaser.Scenes.SceneManager;
 
-            resume(): Phaser.Scenes.SceneManager;
+            resume(key: string): Phaser.Scenes.SceneManager;
 
-            sleep(): Phaser.Scenes.SceneManager;
+            sleep(key: string): Phaser.Scenes.SceneManager;
 
-            wake(): Phaser.Scenes.SceneManager;
+            wake(key: string): Phaser.Scenes.SceneManager;
 
-            start(): Phaser.Scenes.SceneManager;
+            start(key: string, data: any): Phaser.Scenes.SceneManager;
 
-            stop(): Phaser.Scenes.SceneManager;
+            stop(key: string): Phaser.Scenes.SceneManager;
 
-            switch(): Phaser.Scenes.SceneManager;
+            switch(from: string, to: string): Phaser.Scenes.SceneManager;
 
-            getAt(): Phaser.Scene;
+            getAt(index: number): Phaser.Scene;
 
-            getIndex(): number;
+            getIndex(key: string|Phaser.Scene): number;
 
-            bringToTop(): Phaser.Scenes.SceneManager;
+            bringToTop(scene: string|Phaser.Scene): Phaser.Scenes.SceneManager;
 
-            sendToBack(): Phaser.Scenes.SceneManager;
+            sendToBack(scene: string|Phaser.Scene): Phaser.Scenes.SceneManager;
 
-            moveDown(): Phaser.Scenes.SceneManager;
+            moveDown(scene: string|Phaser.Scene): Phaser.Scenes.SceneManager;
 
-            moveUp(): Phaser.Scenes.SceneManager;
+            moveUp(scene: string|Phaser.Scene): Phaser.Scenes.SceneManager;
 
-            swapPosition(): Phaser.Scenes.SceneManager;
+            swapPosition(keyA: string|Phaser.Scene, keyB: string|Phaser.Scene): Phaser.Scenes.SceneManager;
 
             destroy(): void;
 
@@ -10196,45 +10196,45 @@ declare namespace Phaser {
 
             boot(): void;
 
-            start(): Phaser.Scenes.ScenePlugin;
+            start(key: string, data: any): Phaser.Scenes.ScenePlugin;
 
-            add(): Phaser.Scenes.ScenePlugin;
+            add(key: string, sceneConfig: any, autoStart: boolean): Phaser.Scenes.ScenePlugin;
 
-            launch(): Phaser.Scenes.ScenePlugin;
+            launch(key: string, data: any): Phaser.Scenes.ScenePlugin;
 
-            pause(): Phaser.Scenes.ScenePlugin;
+            pause(key: string): Phaser.Scenes.ScenePlugin;
 
-            resume(): Phaser.Scenes.ScenePlugin;
+            resume(key: string): Phaser.Scenes.ScenePlugin;
 
-            sleep(): Phaser.Scenes.ScenePlugin;
+            sleep(key: string): Phaser.Scenes.ScenePlugin;
 
-            wake(): Phaser.Scenes.ScenePlugin;
+            wake(key: string): Phaser.Scenes.ScenePlugin;
 
-            switch(): Phaser.Scenes.ScenePlugin;
+            switch(key: string): Phaser.Scenes.ScenePlugin;
 
-            stop(): Phaser.Scenes.ScenePlugin;
+            stop(key: string): Phaser.Scenes.ScenePlugin;
 
-            setActive(): Phaser.Scenes.ScenePlugin;
+            setActive(value: boolean): Phaser.Scenes.ScenePlugin;
 
-            setVisible(): Phaser.Scenes.ScenePlugin;
+            setVisible(value: boolean): Phaser.Scenes.ScenePlugin;
 
-            isSleeping(): boolean;
+            isSleeping(key: string): boolean;
 
-            isActive(): boolean;
+            isActive(key: string): boolean;
 
-            isVisible(): boolean;
+            isVisible(key: string): boolean;
 
-            swapPosition(): Phaser.Scenes.ScenePlugin;
+            swapPosition(key: string): Phaser.Scenes.ScenePlugin;
 
-            moveUp(): Phaser.Scenes.ScenePlugin;
+            moveUp(key: string): Phaser.Scenes.ScenePlugin;
 
-            moveDown(): Phaser.Scenes.ScenePlugin;
+            moveDown(key: string): Phaser.Scenes.ScenePlugin;
 
-            bringToTop(): Phaser.Scenes.ScenePlugin;
+            bringToTop(key: string): Phaser.Scenes.ScenePlugin;
 
-            sendToBack(): Phaser.Scenes.ScenePlugin;
+            sendToBack(key: string): Phaser.Scenes.ScenePlugin;
 
-            get(): Phaser.Scene;
+            get(key: string): Phaser.Scene;
 
             shutdown(): void;
 
@@ -10284,13 +10284,13 @@ declare namespace Phaser {
 
             updateList: any;
 
-            init(): void;
+            init(game: Phaser.Game): void;
 
-            install(): void;
+            install(plugin: any[]): void;
 
-            step(): void;
+            step(time: number, delta: number): void;
 
-            render(): void;
+            render(renderer: Phaser.Renderer.Canvas.CanvasRenderer|Phaser.Renderer.WebGL.WebGLRenderer): void;
 
             queueDepthSort(): void;
 
@@ -10310,11 +10310,11 @@ declare namespace Phaser {
 
             isVisible(): boolean;
 
-            setVisible(): Phaser.Scenes.Systems;
+            setVisible(value: boolean): Phaser.Scenes.Systems;
 
-            setActive(): Phaser.Scenes.Systems;
+            setActive(value: boolean): Phaser.Scenes.Systems;
 
-            start(): void;
+            start(data: any): void;
 
             shutdown(): void;
 
@@ -10328,7 +10328,7 @@ declare namespace Phaser {
     }
 
     class Sound {
-        static SoundManagerCreator(): void;
+        static SoundManagerCreator(game: Phaser.Game): void;
 
     }
 
@@ -10372,13 +10372,13 @@ declare namespace Phaser {
 
             pendingRemove: boolean;
 
-            addMarker(): boolean;
+            addMarker(marker: ISoundMarker): boolean;
 
-            updateMarker(): boolean;
+            updateMarker(marker: ISoundMarker): boolean;
 
-            removeMarker(): ISoundMarker;
+            removeMarker(markerName: string): ISoundMarker;
 
-            play(): boolean;
+            play(markerName: string, config: ISoundConfig): boolean;
 
             pause(): boolean;
 
@@ -10390,7 +10390,7 @@ declare namespace Phaser {
 
             resetConfig(): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
             destroy(): void;
 
@@ -10402,23 +10402,23 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -10448,17 +10448,17 @@ declare namespace Phaser {
 
             unlocked: boolean;
 
-            add(): ISound;
+            add(key: string, config: ISoundConfig): ISound;
 
-            addAudioSprite(): IAudioSpriteSound;
+            addAudioSprite(key: string, config: ISoundConfig): IAudioSpriteSound;
 
-            play(): boolean;
+            play(key: string, extra: ISoundConfig|ISoundMarker): boolean;
 
-            playAudioSprite(): boolean;
+            playAudioSprite(key: string, spriteName: string, config: ISoundConfig): boolean;
 
-            remove(): boolean;
+            remove(sound: ISound): boolean;
 
-            removeByKey(): number;
+            removeByKey(key: string): number;
 
             pauseAll(): void;
 
@@ -10472,11 +10472,11 @@ declare namespace Phaser {
 
             onFocus(): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
             destroy(): void;
 
-            forEachActiveSound(): void;
+            forEachActiveSound(callbackfn: any): void;
 
             rate: number;
 
@@ -10484,23 +10484,23 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -10516,7 +10516,7 @@ declare namespace Phaser {
 
             previousTime: number;
 
-            play(): boolean;
+            play(markerName: string, config: ISoundConfig): boolean;
 
             pause(): boolean;
 
@@ -10536,7 +10536,7 @@ declare namespace Phaser {
 
             onFocus(): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
             destroy(): void;
 
@@ -10582,11 +10582,11 @@ declare namespace Phaser {
 
             pendingRemove: boolean;
 
-            addMarker(): boolean;
+            addMarker(marker: ISoundMarker): boolean;
 
-            updateMarker(): boolean;
+            updateMarker(marker: ISoundMarker): boolean;
 
-            removeMarker(): ISoundMarker;
+            removeMarker(markerName: string): ISoundMarker;
 
             applyConfig(): void;
 
@@ -10594,23 +10594,23 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -10632,7 +10632,7 @@ declare namespace Phaser {
 
             _volume: boolean;
 
-            add(): Phaser.Sound.HTML5AudioSound;
+            add(key: string, config: ISoundConfig): Phaser.Sound.HTML5AudioSound;
 
             unlock(): void;
 
@@ -10642,7 +10642,7 @@ declare namespace Phaser {
 
             destroy(): void;
 
-            isLocked(): boolean;
+            isLocked(sound: Phaser.Sound.HTML5AudioSound, prop: string, value: *): boolean;
 
             mute: boolean;
 
@@ -10666,15 +10666,15 @@ declare namespace Phaser {
 
             unlocked: boolean;
 
-            addAudioSprite(): IAudioSpriteSound;
+            addAudioSprite(key: string, config: ISoundConfig): IAudioSpriteSound;
 
-            play(): boolean;
+            play(key: string, extra: ISoundConfig|ISoundMarker): boolean;
 
-            playAudioSprite(): boolean;
+            playAudioSprite(key: string, spriteName: string, config: ISoundConfig): boolean;
 
-            remove(): boolean;
+            remove(sound: ISound): boolean;
 
-            removeByKey(): number;
+            removeByKey(key: string): number;
 
             pauseAll(): void;
 
@@ -10682,29 +10682,29 @@ declare namespace Phaser {
 
             stopAll(): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
-            forEachActiveSound(): void;
+            forEachActiveSound(callbackfn: any): void;
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -10766,23 +10766,23 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -10806,41 +10806,41 @@ declare namespace Phaser {
 
             locked: boolean;
 
-            add(): ISound;
+            add(key: string, config: ISoundConfig): ISound;
 
-            addAudioSprite(): IAudioSpriteSound;
+            addAudioSprite(key: string, config: ISoundConfig): IAudioSpriteSound;
 
             play(): boolean;
 
             playAudioSprite(): boolean;
 
-            remove(): boolean;
+            remove(sound: ISound): boolean;
 
-            removeByKey(): number;
+            removeByKey(key: string): number;
 
             destroy(): void;
 
-            forEachActiveSound(): void;
+            forEachActiveSound(callbackfn: any): void;
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -10874,7 +10874,7 @@ declare namespace Phaser {
 
             totalDuration: number;
 
-            play(): boolean;
+            play(markerName: string, config: ISoundConfig): boolean;
 
             pause(): boolean;
 
@@ -10894,7 +10894,7 @@ declare namespace Phaser {
 
             applyConfig(): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
             destroy(): void;
 
@@ -10936,33 +10936,33 @@ declare namespace Phaser {
 
             pendingRemove: boolean;
 
-            addMarker(): boolean;
+            addMarker(marker: ISoundMarker): boolean;
 
-            updateMarker(): boolean;
+            updateMarker(marker: ISoundMarker): boolean;
 
-            removeMarker(): ISoundMarker;
+            removeMarker(markerName: string): ISoundMarker;
 
             resetConfig(): void;
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -10980,9 +10980,9 @@ declare namespace Phaser {
 
             locked: boolean;
 
-            createAudioContext(): AudioContext;
+            createAudioContext(game: Phaser.Game): AudioContext;
 
-            add(): Phaser.Sound.WebAudioSound;
+            add(key: string, config: ISoundConfig): Phaser.Sound.WebAudioSound;
 
             unlock(): void;
 
@@ -11012,15 +11012,15 @@ declare namespace Phaser {
 
             unlocked: boolean;
 
-            addAudioSprite(): IAudioSpriteSound;
+            addAudioSprite(key: string, config: ISoundConfig): IAudioSpriteSound;
 
-            play(): boolean;
+            play(key: string, extra: ISoundConfig|ISoundMarker): boolean;
 
-            playAudioSprite(): boolean;
+            playAudioSprite(key: string, spriteName: string, config: ISoundConfig): boolean;
 
-            remove(): boolean;
+            remove(sound: ISound): boolean;
 
-            removeByKey(): number;
+            removeByKey(key: string): number;
 
             pauseAll(): void;
 
@@ -11028,29 +11028,29 @@ declare namespace Phaser {
 
             stopAll(): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
-            forEachActiveSound(): void;
+            forEachActiveSound(callbackfn: any): void;
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -11070,63 +11070,63 @@ declare namespace Phaser {
 
             position: number;
 
-            add(): any;
+            add(child: any): any;
 
-            addAt(): any;
+            addAt(child: any, index: number): any;
 
-            addMultiple(): any[];
+            addMultiple(children: any[]): any[];
 
-            getAt(): any;
+            getAt(index: number): any;
 
-            getIndex(): number;
+            getIndex(child: any): number;
 
-            sort(): any[];
+            sort(children: any[]): any[];
 
-            sortIndexHandler(): number;
+            sortIndexHandler(childA: any, childB: any): number;
 
-            getByKey(): any;
+            getByKey(property: string, value: any): any;
 
-            getByName(): any;
+            getByName(name: string): any;
 
-            getRandom(): any;
+            getRandom(startIndex: number, length: number): any;
 
-            getFirst(): any;
+            getFirst(property: any, value: any, startIndex: any, endIndex: any): any;
 
-            getAll(): any[];
+            getAll(property: string, value: any, startIndex: number, endIndex: number): any[];
 
-            count(): number;
+            count(property: string, value: any): number;
 
-            swap(): void;
+            swap(child1: any, child2: any): void;
 
-            moveTo(): any;
+            moveTo(child: any, index: number): any;
 
-            remove(): any;
+            remove(child: any): any;
 
-            removeAt(): any;
+            removeAt(index: number): any;
 
-            removeBetween(): any[];
+            removeBetween(beginIndex: number, endIndex: number): any[];
 
             removeAll(): Phaser.Structs.List;
 
-            bringToTop(): any;
+            bringToTop(child: any): any;
 
-            sendToBack(): any;
+            sendToBack(child: any): any;
 
-            moveUp(): any;
+            moveUp(child: any): any;
 
-            moveDown(): any;
+            moveDown(child: any): any;
 
             reverse(): Phaser.Structs.List;
 
             shuffle(): Phaser.Structs.List;
 
-            replace(): any;
+            replace(oldChild: any, newChild: any): any;
 
-            exists(): boolean;
+            exists(child: any): boolean;
 
-            setAll(): void;
+            setAll(key: string, value: any): void;
 
-            each(): void;
+            each(callback: any, thisArg: any, arguments: *): void;
 
             shutdown(): void;
 
@@ -11152,15 +11152,15 @@ declare namespace Phaser {
 
             size: number;
 
-            set(): Phaser.Structs.Map;
+            set(key: string, value: any): Phaser.Structs.Map;
 
-            get(): any;
+            get(key: string): any;
 
             getArray(): any[];
 
-            has(): boolean;
+            has(key: string): boolean;
 
-            delete(): Phaser.Structs.Map;
+            delete(key: string): Phaser.Structs.Map;
 
             clear(): Phaser.Structs.Map;
 
@@ -11170,11 +11170,11 @@ declare namespace Phaser {
 
             dump(): void;
 
-            each(): Phaser.Structs.Map;
+            each(callback: any): Phaser.Structs.Map;
 
-            contains(): boolean;
+            contains(value: any): boolean;
 
-            merge(): Phaser.Structs.Map;
+            merge(map: Phaser.Structs.Map, override: boolean): Phaser.Structs.Map;
 
         }
 
@@ -11190,9 +11190,9 @@ declare namespace Phaser {
 
             _toProcess: number;
 
-            add(): Phaser.Structs.ProcessQueue;
+            add(item: any): Phaser.Structs.ProcessQueue;
 
-            remove(): Phaser.Structs.ProcessQueue;
+            remove(item: any): Phaser.Structs.ProcessQueue;
 
             update(): any[];
 
@@ -11214,31 +11214,31 @@ declare namespace Phaser {
         class Set {
             entries: any[];
 
-            set(): Phaser.Structs.Set;
+            set(value: any): Phaser.Structs.Set;
 
-            get(): any;
+            get(property: string, value: any): any;
 
             getArray(): any[];
 
-            delete(): Phaser.Structs.Set;
+            delete(value: any): Phaser.Structs.Set;
 
             dump(): void;
 
-            each(): Phaser.Structs.Set;
+            each(callback: any, callbackScope: any): Phaser.Structs.Set;
 
-            iterate(): Phaser.Structs.Set;
+            iterate(callback: any, callbackScope: any): Phaser.Structs.Set;
 
-            iterateLocal(): Phaser.Structs.Set;
+            iterateLocal(callbackKey: string, arguments: *): Phaser.Structs.Set;
 
             clear(): Phaser.Structs.Set;
 
-            contains(): boolean;
+            contains(value: any): boolean;
 
-            union(): Phaser.Structs.Set;
+            union(set: Phaser.Structs.Set): Phaser.Structs.Set;
 
-            intersect(): Phaser.Structs.Set;
+            intersect(set: Phaser.Structs.Set): Phaser.Structs.Set;
 
-            difference(): Phaser.Structs.Set;
+            difference(set: Phaser.Structs.Set): Phaser.Structs.Set;
 
             size: number;
 
@@ -11310,7 +11310,7 @@ declare namespace Phaser {
 
             data: any;
 
-            setTrim(): Phaser.Textures.Frame;
+            setTrim(actualWidth: number, actualHeight: number, destX: number, destY: number, destWidth: number, destHeight: number): Phaser.Textures.Frame;
 
             updateUVs(): Phaser.Textures.Frame;
 
@@ -11338,19 +11338,19 @@ declare namespace Phaser {
         }
 
         class Parsers {
-            static JSONArray(): Phaser.Textures.Texture;
+            static JSONArray(texture: Phaser.Textures.Texture, sourceIndex: number, json: any): Phaser.Textures.Texture;
 
-            static JSONHash(): Phaser.Textures.Texture;
+            static JSONHash(texture: Phaser.Textures.Texture, sourceIndex: number, json: any): Phaser.Textures.Texture;
 
-            static Pyxel(): Phaser.Textures.Texture;
+            static Pyxel(texture: Phaser.Textures.Texture, json: any): Phaser.Textures.Texture;
 
-            static SpriteSheet(): Phaser.Textures.Texture;
+            static SpriteSheet(texture: Phaser.Textures.Texture, sourceIndex: number, x: number, y: number, width: number, height: number, config: any): Phaser.Textures.Texture;
 
-            static SpriteSheetFromAtlas(): Phaser.Textures.Texture;
+            static SpriteSheetFromAtlas(texture: Phaser.Textures.Texture, frame: Phaser.Textures.Frame, config: any): Phaser.Textures.Texture;
 
-            static StarlingXML(): Phaser.Textures.Texture;
+            static StarlingXML(texture: Phaser.Textures.Texture, xml: any): Phaser.Textures.Texture;
 
-            static UnityYAML(): Phaser.Textures.Texture;
+            static UnityYAML(texture: Phaser.Textures.Texture, sourceIndex: number, yaml: any): Phaser.Textures.Texture;
 
         }
 
@@ -11374,23 +11374,23 @@ declare namespace Phaser {
 
             frameTotal: number;
 
-            add(): Phaser.Textures.Frame;
+            add(name: number|string, sourceIndex: number, x: number, y: number, width: number, height: number): Phaser.Textures.Frame;
 
-            has(): boolean;
+            has(name: string): boolean;
 
-            get(): Phaser.Textures.Frame;
+            get(name: string|number): Phaser.Textures.Frame;
 
-            getTextureSourceIndex(): number;
+            getTextureSourceIndex(source: Phaser.Textures.TextureSource): number;
 
-            getFramesFromTextureSource(): Array.<Phaser.Textures.Frame>;
+            getFramesFromTextureSource(sourceIndex: number): Array.<Phaser.Textures.Frame>;
 
-            getFrameNames(): Array.<string>;
+            getFrameNames(includeBase: boolean): Array.<string>;
 
-            getSourceImage(): Image;
+            getSourceImage(name: string|number): Image;
 
-            setDataSource(): void;
+            setDataSource(data: Image|HTMLCanvasElement): void;
 
-            setFilter(): void;
+            setFilter(filterMode: Phaser.Textures.FilterMode.LINEAR|Phaser.Textures.FilterMode.NEAREST): void;
 
             destroy(): void;
 
@@ -11416,71 +11416,71 @@ declare namespace Phaser {
 
             updatePending(): void;
 
-            addBase64(): void;
+            addBase64(key: string, data: any): void;
 
-            addImage(): Phaser.Textures.Texture;
+            addImage(key: string, source: Image, dataSource: Image): Phaser.Textures.Texture;
 
-            generate(): Phaser.Textures.Texture;
+            generate(key: string, config: any): Phaser.Textures.Texture;
 
-            createCanvas(): Phaser.Textures.Texture;
+            createCanvas(key: string, width: number, height: number): Phaser.Textures.Texture;
 
-            addCanvas(): Phaser.Textures.Texture;
+            addCanvas(key: string, source: HTMLCanvasElement): Phaser.Textures.Texture;
 
-            addAtlas(): Phaser.Textures.Texture;
+            addAtlas(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
-            addAtlasJSONArray(): Phaser.Textures.Texture;
+            addAtlasJSONArray(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
-            addAtlasJSONHash(): Phaser.Textures.Texture;
+            addAtlasJSONHash(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
-            addUnityAtlas(): Phaser.Textures.Texture;
+            addUnityAtlas(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
-            addSpriteSheet(): Phaser.Textures.Texture;
+            addSpriteSheet(key: string, source: Image, config: any): Phaser.Textures.Texture;
 
-            addSpriteSheetFromAtlas(): Phaser.Textures.Texture;
+            addSpriteSheetFromAtlas(key: string, config: any): Phaser.Textures.Texture;
 
-            addAtlasStarlingXML(): Phaser.Textures.Texture;
+            addAtlasStarlingXML(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
-            addAtlasPyxel(): Phaser.Textures.Texture;
+            addAtlasPyxel(key: string, source: Image, data: any): Phaser.Textures.Texture;
 
-            create(): Phaser.Textures.Texture;
+            create(key: string, source: Image, width: number, height: number): Phaser.Textures.Texture;
 
-            exists(): boolean;
+            exists(key: string): boolean;
 
-            get(): Phaser.Textures.Texture;
+            get(key: string): Phaser.Textures.Texture;
 
-            cloneFrame(): Phaser.Textures.Frame;
+            cloneFrame(key: string, frame: string|number): Phaser.Textures.Frame;
 
-            getFrame(): Phaser.Textures.Frame;
+            getFrame(key: string, frame: string|number): Phaser.Textures.Frame;
 
             getTextureKeys(): Array.<string>;
 
-            getPixel(): Phaser.Display.Color;
+            getPixel(x: number, y: number, key: string, frame: string|number): Phaser.Display.Color;
 
-            setTexture(): Phaser.GameObjects.GameObject;
+            setTexture(gameObject: Phaser.GameObjects.GameObject, key: string, frame: string|number): Phaser.GameObjects.GameObject;
 
-            each(): void;
+            each(callback: any, scope: any, arguments: *): void;
 
             destroy(): void;
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -11508,9 +11508,9 @@ declare namespace Phaser {
 
             glTexture: any;
 
-            init(): void;
+            init(game: Phaser.Game): void;
 
-            setFilter(): void;
+            setFilter(filterMode: Phaser.Textures.FilterMode.LINEAR|Phaser.Textures.FilterMode.NEAREST): void;
 
             destroy(): void;
 
@@ -11522,65 +11522,65 @@ declare namespace Phaser {
     }
 
     class Tilemaps {
-        static ParseToTilemap(): Phaser.Tilemaps.Tilemap;
+        static ParseToTilemap(scene: Phaser.Scene, key: string, tileWidth: number, tileHeight: number, width: number, height: number, data: Array.<Array.<integer>>, insertNull: boolean): Phaser.Tilemaps.Tilemap;
 
     }
 
     namespace Tilemaps {
         class Components {
-            static IsInLayerBounds(): boolean;
+            static IsInLayerBounds(tileX: number, tileY: number, layer: Phaser.Tilemaps.LayerData): boolean;
 
-            static PutTileAt(): Phaser.Tilemaps.Tile;
+            static PutTileAt(tile: number|Phaser.Tilemaps.Tile, tileX: number, tileY: number, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            static PutTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            static PutTileAtWorldXY(tile: number|Phaser.Tilemaps.Tile, worldX: number, worldY: number, recalculateFaces: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            static PutTilesAt(): void;
+            static PutTilesAt(tile: Array.<integer>|Array.<Array.<integer>>|Array.<Phaser.Tilemaps.Tile>|Array.<Array.<Phaser.Tilemaps.Tile>>, tileX: number, tileY: number, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static Randomize(): void;
+            static Randomize(tileX: number, tileY: number, width: number, height: number, indexes: Array.<integer>, layer: Phaser.Tilemaps.LayerData): void;
 
-            static RemoveTileAt(): Phaser.Tilemaps.Tile;
+            static RemoveTileAt(tile: number|Phaser.Tilemaps.Tile, tileX: number, tileY: number, replaceWithNull: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            static RemoveTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            static RemoveTileAtWorldXY(tile: number|Phaser.Tilemaps.Tile, worldX: number, worldY: number, replaceWithNull: boolean, recalculateFaces: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            static RenderDebug(): void;
+            static RenderDebug(graphics: Phaser.GameObjects.Graphics, styleConfig: any, layer: Phaser.Tilemaps.LayerData): void;
 
-            static ReplaceByIndex(): void;
+            static ReplaceByIndex(findIndex: number, newIndex: number, tileX: number, tileY: number, width: number, height: number, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SetCollision(): void;
+            static SetCollision(indexes: number|any[], collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SetCollisionBetween(): void;
+            static SetCollisionBetween(start: number, stop: number, collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SetCollisionByExclusion(): void;
+            static SetCollisionByExclusion(indexes: Array.<integer>, collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SetCollisionByProperty(): void;
+            static SetCollisionByProperty(properties: any, collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SetCollisionFromCollisionGroup(): void;
+            static SetCollisionFromCollisionGroup(collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SetLayerCollisionIndex(): void;
+            static SetLayerCollisionIndex(tileIndex: number, collides: boolean, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SetTileCollision(): void;
+            static SetTileCollision(tile: Phaser.Tilemaps.Tile, collides: boolean): void;
 
-            static SetTileIndexCallback(): void;
+            static SetTileIndexCallback(indexes: number|any[], callback: any, callbackContext: any, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SetTileLocationCallback(): void;
+            static SetTileLocationCallback(tileX: number, tileY: number, width: number, height: number, callback: any, callbackContext: any, layer: Phaser.Tilemaps.LayerData): void;
 
-            static Shuffle(): void;
+            static Shuffle(tileX: number, tileY: number, width: number, height: number, layer: Phaser.Tilemaps.LayerData): void;
 
-            static SwapByIndex(): void;
+            static SwapByIndex(tileA: number, tileB: number, tileX: number, tileY: number, width: number, height: number, layer: Phaser.Tilemaps.LayerData): void;
 
-            static TileToWorldX(): number;
+            static TileToWorldX(tileX: number, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
-            static TileToWorldXY(): Phaser.Math.Vector2;
+            static TileToWorldXY(tileX: number, tileY: number, point: Phaser.Math.Vector2, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Math.Vector2;
 
-            static TileToWorldY(): number;
+            static TileToWorldY(tileY: number, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
-            static WeightedRandomize(): void;
+            static WeightedRandomize(tileX: number, tileY: number, width: number, height: number, weightedIndexes: Array.<object>, layer: Phaser.Tilemaps.LayerData): void;
 
-            static WorldToTileX(): number;
+            static WorldToTileX(worldX: number, snapToFloor: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
-            static WorldToTileXY(): Phaser.Math.Vector2;
+            static WorldToTileXY(worldX: number, worldY: number, snapToFloor: boolean, point: Phaser.Math.Vector2, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Math.Vector2;
 
-            static WorldToTileY(): number;
+            static WorldToTileY(worldY: number, snapToFloor: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
         }
 
@@ -11600,93 +11600,93 @@ declare namespace Phaser {
 
             culledTiles: any[];
 
-            calculateFacesAt(): Phaser.Tilemaps.DynamicTilemapLayer;
+            calculateFacesAt(tileX: number, tileY: number): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            calculateFacesWithin(): Phaser.Tilemaps.DynamicTilemapLayer;
+            calculateFacesWithin(tileX: number, tileY: number, width: number, height: number): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            createFromTiles(): Array.<Phaser.GameObjects.Sprite>;
+            createFromTiles(indexes: number|any[], replacements: number|any[], spriteConfig: any, scene: Phaser.Scene, camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.GameObjects.Sprite>;
 
-            cull(): Array.<Phaser.Tilemaps.Tile>;
+            cull(camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.Tilemaps.Tile>;
 
-            copy(): Phaser.Tilemaps.DynamicTilemapLayer;
+            copy(srcTileX: number, srcTileY: number, width: number, height: number, destTileX: number, destTileY: number, destTileY: number, recalculateFaces: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
             destroy(): void;
 
-            fill(): Phaser.Tilemaps.DynamicTilemapLayer;
+            fill(index: number, tileX: number, tileY: number, width: number, height: number, recalculateFaces: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            filterTiles(): Array.<Phaser.Tilemaps.Tile>;
+            filterTiles(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any): Array.<Phaser.Tilemaps.Tile>;
 
-            findByIndex(): Phaser.Tilemaps.Tile;
+            findByIndex(index: number, skip: number, reverse: boolean): Phaser.Tilemaps.Tile;
 
-            findTile(): Phaser.Tilemaps.Tile;
+            findTile(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any): Phaser.Tilemaps.Tile;
 
-            forEachTile(): Phaser.Tilemaps.DynamicTilemapLayer;
+            forEachTile(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            getTileAt(): Phaser.Tilemaps.Tile;
+            getTileAt(tileX: number, tileY: number, nonNull: boolean): Phaser.Tilemaps.Tile;
 
-            getTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            getTileAtWorldXY(worldX: number, worldY: number, nonNull: boolean, camera: Phaser.Cameras.Scene2D.Camera): Phaser.Tilemaps.Tile;
 
-            getTilesWithin(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithin(tileX: number, tileY: number, width: number, height: number, filteringOptions: any): Array.<Phaser.Tilemaps.Tile>;
 
-            getTilesWithinShape(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithinShape(shape: Phaser.Geom.Circle|Phaser.Geom.Line|Phaser.Geom.Rectangle|Phaser.Geom.Triangle, filteringOptions: any, camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.Tilemaps.Tile>;
 
-            getTilesWithinWorldXY(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithinWorldXY(worldX: number, worldY: number, width: number, height: number, filteringOptions: any, camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.Tilemaps.Tile>;
 
-            hasTileAt(): boolean;
+            hasTileAt(tileX: number, tileY: number): boolean;
 
-            hasTileAtWorldXY(): boolean;
+            hasTileAtWorldXY(worldX: number, worldY: number, camera: Phaser.Cameras.Scene2D.Camera): boolean;
 
-            putTileAt(): Phaser.Tilemaps.Tile;
+            putTileAt(tile: number|Phaser.Tilemaps.Tile, tileX: number, tileY: number, recalculateFaces: boolean): Phaser.Tilemaps.Tile;
 
-            putTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            putTileAtWorldXY(tile: number|Phaser.Tilemaps.Tile, worldX: number, worldY: number, recalculateFaces: boolean, camera: Phaser.Cameras.Scene2D.Camera): Phaser.Tilemaps.Tile;
 
-            putTilesAt(): Phaser.Tilemaps.DynamicTilemapLayer;
+            putTilesAt(tile: Array.<integer>|Array.<Array.<integer>>|Array.<Phaser.Tilemaps.Tile>|Array.<Array.<Phaser.Tilemaps.Tile>>, tileX: number, tileY: number, recalculateFaces: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            randomize(): Phaser.Tilemaps.DynamicTilemapLayer;
+            randomize(tileX: number, tileY: number, width: number, height: number, indexes: Array.<integer>): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            removeTileAt(): Phaser.Tilemaps.Tile;
+            removeTileAt(tile: number|Phaser.Tilemaps.Tile, tileX: number, tileY: number, replaceWithNull: boolean, recalculateFaces: boolean): Phaser.Tilemaps.Tile;
 
-            removeTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            removeTileAtWorldXY(tile: number|Phaser.Tilemaps.Tile, worldX: number, worldY: number, replaceWithNull: boolean, recalculateFaces: boolean, camera: Phaser.Cameras.Scene2D.Camera): Phaser.Tilemaps.Tile;
 
-            renderDebug(): Phaser.Tilemaps.DynamicTilemapLayer;
+            renderDebug(graphics: Phaser.GameObjects.Graphics, styleConfig: any): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            replaceByIndex(): Phaser.Tilemaps.DynamicTilemapLayer;
+            replaceByIndex(findIndex: number, newIndex: number, tileX: number, tileY: number, width: number, height: number): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            setCollision(): Phaser.Tilemaps.DynamicTilemapLayer;
+            setCollision(indexes: number|any[], collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            setCollisionBetween(): Phaser.Tilemaps.DynamicTilemapLayer;
+            setCollisionBetween(start: number, stop: number, collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            setCollisionByProperty(): Phaser.Tilemaps.DynamicTilemapLayer;
+            setCollisionByProperty(properties: any, collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            setCollisionByExclusion(): Phaser.Tilemaps.DynamicTilemapLayer;
+            setCollisionByExclusion(indexes: Array.<integer>, collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            setCollisionFromCollisionGroup(): Phaser.Tilemaps.DynamicTilemapLayer;
+            setCollisionFromCollisionGroup(collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            setTileIndexCallback(): Phaser.Tilemaps.DynamicTilemapLayer;
+            setTileIndexCallback(indexes: number|any[], callback: any, callbackContext: any): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            setTileLocationCallback(): Phaser.Tilemaps.DynamicTilemapLayer;
+            setTileLocationCallback(tileX: number, tileY: number, width: number, height: number, callback: any, callbackContext: any): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            shuffle(): Phaser.Tilemaps.DynamicTilemapLayer;
+            shuffle(tileX: number, tileY: number, width: number, height: number): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            swapByIndex(): Phaser.Tilemaps.DynamicTilemapLayer;
+            swapByIndex(tileA: number, tileB: number, tileX: number, tileY: number, width: number, height: number): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            tileToWorldX(): number;
+            tileToWorldX(tileX: number, camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            tileToWorldY(): number;
+            tileToWorldY(tileY: number, camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            tileToWorldXY(): Phaser.Math.Vector2;
+            tileToWorldXY(tileX: number, tileY: number, point: Phaser.Math.Vector2, camera: Phaser.Cameras.Scene2D.Camera): Phaser.Math.Vector2;
 
-            weightedRandomize(): Phaser.Tilemaps.DynamicTilemapLayer;
+            weightedRandomize(tileX: number, tileY: number, width: number, height: number, weightedIndexes: Array.<object>): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            worldToTileX(): number;
+            worldToTileX(worldX: number, snapToFloor: boolean, camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            worldToTileXY(): number;
+            worldToTileXY(worldY: number, snapToFloor: boolean, camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            worldToTileXY(): Phaser.Math.Vector2;
+            worldToTileXY(worldX: number, worldY: number, snapToFloor: boolean, point: Phaser.Math.Vector2, camera: Phaser.Cameras.Scene2D.Camera): Phaser.Math.Vector2;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.Tilemaps.DynamicTilemapLayer, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.Tilemaps.DynamicTilemapLayer, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -11708,17 +11708,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -11728,45 +11728,45 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -11776,39 +11776,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -11816,9 +11816,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -11826,7 +11826,7 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -11836,11 +11836,11 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             x: number;
 
@@ -11858,31 +11858,31 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
         }
 
@@ -11922,9 +11922,9 @@ declare namespace Phaser {
 
             total: number;
 
-            containsImageIndex(): boolean;
+            containsImageIndex(imageIndex: number): boolean;
 
-            addImage(): Phaser.Tilemaps.ImageCollection;
+            addImage(gid: number, image: string): Phaser.Tilemaps.ImageCollection;
 
             layer: Phaser.Tilemaps.LayerData;
 
@@ -12002,7 +12002,7 @@ declare namespace Phaser {
 
             heightInPixels: number;
 
-            alpha: float;
+            alpha: number;
 
             visible: boolean;
 
@@ -12088,11 +12088,11 @@ declare namespace Phaser {
         }
 
         class Parsers {
-            static Parse(): any;
+            static Parse(name: string, mapFormat: number, data: Array.<Array.<integer>>|string|any, tileWidth: number, tileHeight: number, insertNull: boolean): any;
 
-            static Parse2DArray(): any;
+            static Parse2DArray(name: string, data: Array.<Array.<integer>>, tileWidth: number, tileHeight: number, insertNull: boolean): any;
 
-            static ParseCSV(): any;
+            static ParseCSV(name: string, data: string, tileWidth: number, tileHeight: number, insertNull: boolean): any;
 
         }
 
@@ -12126,73 +12126,73 @@ declare namespace Phaser {
 
             vertexCount: number;
 
-            contextRestore(): Phaser.Tilemaps.StaticTilemapLayer;
+            contextRestore(renderer: Phaser.Renderer.WebGLRenderer): Phaser.Tilemaps.StaticTilemapLayer;
 
-            upload(): Phaser.Tilemaps.StaticTilemapLayer;
+            upload(camera: Phaser.Cameras.Scene2D.Camera): Phaser.Tilemaps.StaticTilemapLayer;
 
-            calculateFacesAt(): Phaser.Tilemaps.StaticTilemapLayer;
+            calculateFacesAt(tileX: number, tileY: number): Phaser.Tilemaps.StaticTilemapLayer;
 
-            calculateFacesWithin(): Phaser.Tilemaps.StaticTilemapLayer;
+            calculateFacesWithin(tileX: number, tileY: number, width: number, height: number): Phaser.Tilemaps.StaticTilemapLayer;
 
-            createFromTiles(): Array.<Phaser.GameObjects.Sprite>;
+            createFromTiles(indexes: number|any[], replacements: number|any[], spriteConfig: any, scene: Phaser.Scene, camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.GameObjects.Sprite>;
 
-            cull(): Array.<Phaser.Tilemaps.Tile>;
+            cull(camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.Tilemaps.Tile>;
 
             destroy(): void;
 
-            findByIndex(): Phaser.Tilemaps.Tile;
+            findByIndex(index: number, skip: number, reverse: boolean): Phaser.Tilemaps.Tile;
 
-            findTile(): Phaser.Tilemaps.Tile;
+            findTile(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any): Phaser.Tilemaps.Tile;
 
-            filterTiles(): Array.<Phaser.Tilemaps.Tile>;
+            filterTiles(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any): Array.<Phaser.Tilemaps.Tile>;
 
-            forEachTile(): Phaser.Tilemaps.StaticTilemapLayer;
+            forEachTile(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any): Phaser.Tilemaps.StaticTilemapLayer;
 
-            getTileAt(): Phaser.Tilemaps.Tile;
+            getTileAt(tileX: number, tileY: number, nonNull: boolean): Phaser.Tilemaps.Tile;
 
-            getTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            getTileAtWorldXY(worldX: number, worldY: number, nonNull: boolean, camera: Phaser.Cameras.Scene2D.Camera): Phaser.Tilemaps.Tile;
 
-            getTilesWithin(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithin(tileX: number, tileY: number, width: number, height: number, filteringOptions: any): Array.<Phaser.Tilemaps.Tile>;
 
-            getTilesWithinWorldXY(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithinWorldXY(worldX: number, worldY: number, width: number, height: number, filteringOptions: any, camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.Tilemaps.Tile>;
 
-            getTilesWithinShape(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithinShape(shape: Phaser.Geom.Circle|Phaser.Geom.Line|Phaser.Geom.Rectangle|Phaser.Geom.Triangle, filteringOptions: any, camera: Phaser.Cameras.Scene2D.Camera): Array.<Phaser.Tilemaps.Tile>;
 
-            hasTileAt(): boolean;
+            hasTileAt(tileX: number, tileY: number): boolean;
 
-            hasTileAtWorldXY(): boolean;
+            hasTileAtWorldXY(worldX: number, worldY: number, camera: Phaser.Cameras.Scene2D.Camera): boolean;
 
-            renderDebug(): Phaser.Tilemaps.StaticTilemapLayer;
+            renderDebug(graphics: Phaser.GameObjects.Graphics, styleConfig: any): Phaser.Tilemaps.StaticTilemapLayer;
 
-            setCollision(): Phaser.Tilemaps.StaticTilemapLayer;
+            setCollision(indexes: number|any[], collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.StaticTilemapLayer;
 
-            setCollisionBetween(): Phaser.Tilemaps.StaticTilemapLayer;
+            setCollisionBetween(start: number, stop: number, collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.StaticTilemapLayer;
 
-            setCollisionByProperty(): Phaser.Tilemaps.StaticTilemapLayer;
+            setCollisionByProperty(properties: any, collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.StaticTilemapLayer;
 
-            setCollisionByExclusion(): Phaser.Tilemaps.StaticTilemapLayer;
+            setCollisionByExclusion(indexes: Array.<integer>, collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.StaticTilemapLayer;
 
-            setTileIndexCallback(): Phaser.Tilemaps.StaticTilemapLayer;
+            setTileIndexCallback(indexes: number|any[], callback: any, callbackContext: any): Phaser.Tilemaps.StaticTilemapLayer;
 
-            setCollisionFromCollisionGroup(): Phaser.Tilemaps.StaticTilemapLayer;
+            setCollisionFromCollisionGroup(collides: boolean, recalculateFaces: boolean): Phaser.Tilemaps.StaticTilemapLayer;
 
-            setTileLocationCallback(): Phaser.Tilemaps.StaticTilemapLayer;
+            setTileLocationCallback(tileX: number, tileY: number, width: number, height: number, callback: any, callbackContext: any): Phaser.Tilemaps.StaticTilemapLayer;
 
-            tileToWorldX(): number;
+            tileToWorldX(tileX: number, camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            tileToWorldY(): number;
+            tileToWorldY(tileY: number, camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            tileToWorldXY(): Phaser.Math.Vector2;
+            tileToWorldXY(tileX: number, tileY: number, point: Phaser.Math.Vector2, camera: Phaser.Cameras.Scene2D.Camera): Phaser.Math.Vector2;
 
-            worldToTileX(): number;
+            worldToTileX(worldX: number, snapToFloor: boolean, camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            worldToTileXY(): number;
+            worldToTileXY(worldY: number, snapToFloor: boolean, camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            worldToTileXY(): Phaser.Math.Vector2;
+            worldToTileXY(worldX: number, worldY: number, snapToFloor: boolean, point: Phaser.Math.Vector2, camera: Phaser.Cameras.Scene2D.Camera): Phaser.Math.Vector2;
 
-            renderCanvas(): void;
+            renderCanvas(renderer: Phaser.Renderer.CanvasRenderer, src: Phaser.Tilemaps.StaticTilemapLayer, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
-            renderWebGL(): void;
+            renderWebGL(renderer: Phaser.Renderer.WebGLRenderer, src: Phaser.Tilemaps.StaticTilemapLayer, interpolationPercentage: number, camera: Phaser.Cameras.Scene2D.Camera): void;
 
             scene: Phaser.Scene;
 
@@ -12214,17 +12214,17 @@ declare namespace Phaser {
 
             body: Phaser.Physics.Body;
 
-            setActive(): Phaser.GameObjects.GameObject;
+            setActive(value: boolean): Phaser.GameObjects.GameObject;
 
-            setName(): Phaser.GameObjects.GameObject;
+            setName(value: string): Phaser.GameObjects.GameObject;
 
             setDataEnabled(): Phaser.GameObjects.GameObject;
 
-            setData(): Phaser.GameObjects.GameObject;
+            setData(key: string, value: any): Phaser.GameObjects.GameObject;
 
-            getData(): any;
+            getData(key: string): any;
 
-            setInteractive(): Phaser.GameObjects.GameObject;
+            setInteractive(shape: any, callback: any): Phaser.GameObjects.GameObject;
 
             update(): void;
 
@@ -12234,45 +12234,45 @@ declare namespace Phaser {
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             blendMode: number;
 
-            setBlendMode(): Phaser.GameObjects.GameObject;
+            setBlendMode(value: string|number): Phaser.GameObjects.GameObject;
 
             depth: number;
 
-            setDepth(): Phaser.GameObjects.GameObject;
+            setDepth(value: number): Phaser.GameObjects.GameObject;
 
             flipX: boolean;
 
@@ -12282,39 +12282,39 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
-            getCenter(): Phaser.Math.Vector2;
+            getCenter(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopLeft(): Phaser.Math.Vector2;
+            getTopLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getTopRight(): Phaser.Math.Vector2;
+            getTopRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomLeft(): Phaser.Math.Vector2;
+            getBottomLeft(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBottomRight(): Phaser.Math.Vector2;
+            getBottomRight(output: Phaser.Math.Vector2|any): Phaser.Math.Vector2;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(output: Phaser.Geom.Rectangle|any): Phaser.Geom.Rectangle;
 
-            originX: float;
+            originX: number;
 
-            originY: float;
+            originY: number;
 
-            displayOriginX: float;
+            displayOriginX: number;
 
-            displayOriginY: float;
+            displayOriginY: number;
 
-            setOrigin(): Phaser.GameObjects.GameObject;
+            setOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             setOriginFromFrame(): Phaser.GameObjects.GameObject;
 
-            setDisplayOrigin(): Phaser.GameObjects.GameObject;
+            setDisplayOrigin(x: number, y: number): Phaser.GameObjects.GameObject;
 
             updateDisplayOrigin(): Phaser.GameObjects.GameObject;
 
@@ -12322,9 +12322,9 @@ declare namespace Phaser {
 
             pipeline: Phaser.Renderer.WebGL.WebGLPipeline;
 
-            initPipeline(): boolean;
+            initPipeline(pipelineName: string): boolean;
 
-            setPipeline(): boolean;
+            setPipeline(pipelineName: string): boolean;
 
             resetPipeline(): boolean;
 
@@ -12332,7 +12332,7 @@ declare namespace Phaser {
 
             scaleMode: number;
 
-            setScaleMode(): Phaser.GameObjects.GameObject;
+            setScaleMode(value: number): Phaser.GameObjects.GameObject;
 
             width: number;
 
@@ -12342,11 +12342,11 @@ declare namespace Phaser {
 
             displayHeight: number;
 
-            setSizeToFrame(): Phaser.GameObjects.GameObject;
+            setSizeToFrame(frame: Phaser.Textures.Frame): Phaser.GameObjects.GameObject;
 
-            setSize(): Phaser.GameObjects.GameObject;
+            setSize(width: number, height: number): Phaser.GameObjects.GameObject;
 
-            setDisplaySize(): Phaser.GameObjects.GameObject;
+            setDisplaySize(width: number, height: number): Phaser.GameObjects.GameObject;
 
             x: number;
 
@@ -12364,31 +12364,31 @@ declare namespace Phaser {
 
             rotation: number;
 
-            setPosition(): Phaser.GameObjects.GameObject;
+            setPosition(x: number, y: number, z: number, w: number): Phaser.GameObjects.GameObject;
 
-            setRotation(): Phaser.GameObjects.GameObject;
+            setRotation(radians: number): Phaser.GameObjects.GameObject;
 
-            setAngle(): Phaser.GameObjects.GameObject;
+            setAngle(degrees: number): Phaser.GameObjects.GameObject;
 
-            setScale(): Phaser.GameObjects.GameObject;
+            setScale(x: number, y: number): Phaser.GameObjects.GameObject;
 
-            setX(): Phaser.GameObjects.GameObject;
+            setX(value: number): Phaser.GameObjects.GameObject;
 
-            setY(): Phaser.GameObjects.GameObject;
+            setY(value: number): Phaser.GameObjects.GameObject;
 
-            setZ(): Phaser.GameObjects.GameObject;
+            setZ(value: number): Phaser.GameObjects.GameObject;
 
-            setW(): Phaser.GameObjects.GameObject;
+            setW(value: number): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
             scrollFactorX: number;
 
             scrollFactorY: number;
 
-            setScrollFactor(): Phaser.GameObjects.GameObject;
+            setScrollFactor(x: number, y: number): Phaser.GameObjects.GameObject;
 
         }
 
@@ -12396,43 +12396,43 @@ declare namespace Phaser {
         }
 
         class Tile {
-            containsPoint(): boolean;
+            containsPoint(x: number, y: number): boolean;
 
-            containsPoint(): Phaser.Tilemaps.Tile;
+            containsPoint(tile: Phaser.Tilemaps.Tile): Phaser.Tilemaps.Tile;
 
             getCollisionGroup(): any;
 
             getTileData(): any;
 
-            getLeft(): number;
+            getLeft(camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            getRight(): number;
+            getRight(camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            getTop(): number;
+            getTop(camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            getBottom(): number;
+            getBottom(camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            getBounds(): Phaser.Geom.Rectangle;
+            getBounds(camera: Phaser.Cameras.Scene2D.Camera, output: any): Phaser.Geom.Rectangle;
 
-            getCenterX(): number;
+            getCenterX(camera: Phaser.Cameras.Scene2D.Camera): number;
 
-            getCenterY(): number;
+            getCenterY(camera: Phaser.Cameras.Scene2D.Camera): number;
 
             destroy(): void;
 
-            intersects(): boolean;
+            intersects(x: number, y: number, right: number, bottom: number): boolean;
 
-            isInteresting(): boolean;
+            isInteresting(collides: boolean, faces: boolean): boolean;
 
-            resetCollision(): Phaser.Tilemaps.Tile;
+            resetCollision(recalculateFaces: boolean): Phaser.Tilemaps.Tile;
 
             resetFaces(): Phaser.Tilemaps.Tile;
 
-            setCollision(): Phaser.Tilemaps.Tile;
+            setCollision(left: boolean, right: boolean, up: boolean, down: boolean, recalculateFaces: boolean): Phaser.Tilemaps.Tile;
 
-            setCollisionCallback(): Phaser.Tilemaps.Tile;
+            setCollisionCallback(callback: any, context: any): Phaser.Tilemaps.Tile;
 
-            setSize(): Phaser.Tilemaps.Tile;
+            setSize(tileWidth: number, tileHeight: number, baseWidth: number, baseHeight: number): Phaser.Tilemaps.Tile;
 
             updatePixelXY(): Phaser.Tilemaps.Tile;
 
@@ -12450,17 +12450,17 @@ declare namespace Phaser {
 
             clearAlpha(): Phaser.GameObjects.GameObject;
 
-            setAlpha(): Phaser.GameObjects.GameObject;
+            setAlpha(topLeft: number, topRight: number, bottomLeft: number, bottomRight: number): Phaser.GameObjects.GameObject;
 
-            alpha: float;
+            alpha: number;
 
-            alphaTopLeft: float;
+            alphaTopLeft: number;
 
-            alphaTopRight: float;
+            alphaTopRight: number;
 
-            alphaBottomLeft: float;
+            alphaBottomLeft: number;
 
-            alphaBottomRight: float;
+            alphaBottomRight: number;
 
             flipX: boolean;
 
@@ -12470,17 +12470,17 @@ declare namespace Phaser {
 
             toggleFlipY(): Phaser.GameObjects.GameObject;
 
-            setFlipX(): Phaser.GameObjects.GameObject;
+            setFlipX(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlipY(): Phaser.GameObjects.GameObject;
+            setFlipY(value: boolean): Phaser.GameObjects.GameObject;
 
-            setFlip(): Phaser.GameObjects.GameObject;
+            setFlip(x: boolean, y: boolean): Phaser.GameObjects.GameObject;
 
             resetFlip(): Phaser.GameObjects.GameObject;
 
             visible: boolean;
 
-            setVisible(): Phaser.GameObjects.GameObject;
+            setVisible(value: boolean): Phaser.GameObjects.GameObject;
 
         }
 
@@ -12522,127 +12522,127 @@ declare namespace Phaser {
 
             currentLayerIndex: number;
 
-            addTilesetImage(): Phaser.Tilemaps.Tileset;
+            addTilesetImage(tilesetName: string, key: string, tileWidth: number, tileHeight: number, tileMargin: number, tileSpacing: number, gid: number): Phaser.Tilemaps.Tileset;
 
-            convertLayerToStatic(): Phaser.Tilemaps.StaticTilemapLayer;
+            convertLayerToStatic(layer: string|number|Phaser.Tilemaps.DynamicTilemapLayer): Phaser.Tilemaps.StaticTilemapLayer;
 
             copy(): Phaser.Tilemaps.Tilemap;
 
-            createBlankDynamicLayer(): Phaser.Tilemaps.DynamicTilemapLayer;
+            createBlankDynamicLayer(name: string, tileset: Phaser.Tilemaps.Tileset, width: number, height: number, tileWidth: number, tileHeight: number): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            createDynamicLayer(): Phaser.Tilemaps.DynamicTilemapLayer;
+            createDynamicLayer(layerID: number|string, tileset: Phaser.Tilemaps.Tileset, x: number, y: number): Phaser.Tilemaps.DynamicTilemapLayer;
 
-            createFromObjects(): Array.<Phaser.GameObjects.Sprite>;
+            createFromObjects(name: string, id: number|string, spriteConfig: any, scene: Phaser.Scene): Array.<Phaser.GameObjects.Sprite>;
 
-            createFromTiles(): Array.<Phaser.GameObjects.Sprite>;
+            createFromTiles(indexes: number|any[], replacements: number|any[], spriteConfig: any, scene: Phaser.Scene, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.GameObjects.Sprite>;
 
-            createStaticLayer(): Phaser.Tilemaps.StaticTilemapLayer;
+            createStaticLayer(layerID: number|string, tileset: Phaser.Tilemaps.Tileset, x: number, y: number): Phaser.Tilemaps.StaticTilemapLayer;
 
             destroy(): void;
 
-            fill(): Phaser.Tilemaps.Tilemap;
+            fill(index: number, tileX: number, tileY: number, width: number, height: number, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            filterObjects(): Array.<object>;
+            filterObjects(objectLayer: Phaser.Tilemaps.ObjectLayer|string, callback: any, context: any): Array.<object>;
 
-            filterTiles(): Array.<Phaser.Tilemaps.Tile>;
+            filterTiles(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.Tilemaps.Tile>;
 
-            findByIndex(): Phaser.Tilemaps.Tile;
+            findByIndex(index: number, skip: number, reverse: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            findObject(): any;
+            findObject(objectLayer: Phaser.Tilemaps.ObjectLayer|string, callback: any, context: any): any;
 
-            findTile(): Phaser.Tilemaps.Tile;
+            findTile(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            forEachTile(): Phaser.Tilemaps.Tilemap;
+            forEachTile(callback: any, context: any, tileX: number, tileY: number, width: number, height: number, filteringOptions: any, layer: LayerData): Phaser.Tilemaps.Tilemap;
 
-            getImageIndex(): number;
+            getImageIndex(name: string): number;
 
-            getIndex(): number;
+            getIndex(location: any[], name: string): number;
 
-            getLayer(): Phaser.Tilemaps.LayerData;
+            getLayer(layer: string|number|Phaser.Tilemaps.DynamicTilemapLayer|Phaser.Tilemaps.StaticTilemapLayer): Phaser.Tilemaps.LayerData;
 
-            getObjectLayer(): Phaser.Tilemaps.ObjectLayer;
+            getObjectLayer(name: string): Phaser.Tilemaps.ObjectLayer;
 
-            getLayerIndex(): number;
+            getLayerIndex(layer: string|number|Phaser.Tilemaps.DynamicTilemapLayer|Phaser.Tilemaps.StaticTilemapLayer): number;
 
-            getLayerIndexByName(): number;
+            getLayerIndexByName(name: string): number;
 
-            getTileAt(): Phaser.Tilemaps.Tile;
+            getTileAt(tileX: number, tileY: number, nonNull: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            getTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            getTileAtWorldXY(worldX: number, worldY: number, nonNull: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            getTilesWithin(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithin(tileX: number, tileY: number, width: number, height: number, filteringOptions: any, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.Tilemaps.Tile>;
 
-            getTilesWithinShape(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithinShape(shape: Phaser.Geom.Circle|Phaser.Geom.Line|Phaser.Geom.Rectangle|Phaser.Geom.Triangle, filteringOptions: any, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.Tilemaps.Tile>;
 
-            getTilesWithinWorldXY(): Array.<Phaser.Tilemaps.Tile>;
+            getTilesWithinWorldXY(worldX: number, worldY: number, width: number, height: number, filteringOptions: any, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Array.<Phaser.Tilemaps.Tile>;
 
-            getTilesetIndex(): number;
+            getTilesetIndex(name: string): number;
 
-            hasTileAt(): boolean;
+            hasTileAt(tileX: number, tileY: number, layer: Phaser.Tilemaps.LayerData): boolean;
 
-            hasTileAtWorldXY(): boolean;
+            hasTileAtWorldXY(worldX: number, worldY: number, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): boolean;
 
             layer: Phaser.Tilemaps.LayerData;
 
-            putTileAt(): Phaser.Tilemaps.Tile;
+            putTileAt(tile: number|Phaser.Tilemaps.Tile, tileX: number, tileY: number, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            putTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            putTileAtWorldXY(tile: number|Phaser.Tilemaps.Tile, worldX: number, worldY: number, recalculateFaces: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            putTilesAt(): Phaser.Tilemaps.Tilemap;
+            putTilesAt(tile: Array.<integer>|Array.<Array.<integer>>|Array.<Phaser.Tilemaps.Tile>|Array.<Array.<Phaser.Tilemaps.Tile>>, tileX: number, tileY: number, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            randomize(): Phaser.Tilemaps.Tilemap;
+            randomize(tileX: number, tileY: number, width: number, height: number, indexes: Array.<integer>, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            calculateFacesAt(): Phaser.Tilemaps.Tilemap;
+            calculateFacesAt(tileX: number, tileY: number, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            calculateFacesWithin(): Phaser.Tilemaps.Tilemap;
+            calculateFacesWithin(tileX: number, tileY: number, width: number, height: number, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
             removeAllLayers(): Phaser.Tilemaps.Tilemap;
 
-            removeTileAt(): Phaser.Tilemaps.Tile;
+            removeTileAt(tile: number|Phaser.Tilemaps.Tile, tileX: number, tileY: number, replaceWithNull: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            removeTileAtWorldXY(): Phaser.Tilemaps.Tile;
+            removeTileAtWorldXY(tile: number|Phaser.Tilemaps.Tile, worldX: number, worldY: number, replaceWithNull: boolean, recalculateFaces: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tile;
 
-            renderDebug(): Phaser.Tilemaps.Tilemap;
+            renderDebug(graphics: Phaser.GameObjects.Graphics, styleConfig: any, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            replaceByIndex(): Phaser.Tilemaps.Tilemap;
+            replaceByIndex(findIndex: number, newIndex: number, tileX: number, tileY: number, width: number, height: number, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            setCollision(): Phaser.Tilemaps.Tilemap;
+            setCollision(indexes: number|any[], collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            setCollisionBetween(): Phaser.Tilemaps.Tilemap;
+            setCollisionBetween(start: number, stop: number, collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            setCollisionByProperty(): Phaser.Tilemaps.Tilemap;
+            setCollisionByProperty(properties: any, collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            setCollisionByExclusion(): Phaser.Tilemaps.Tilemap;
+            setCollisionByExclusion(indexes: Array.<integer>, collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            setCollisionFromCollisionGroup(): Phaser.Tilemaps.Tilemap;
+            setCollisionFromCollisionGroup(collides: boolean, recalculateFaces: boolean, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            setTileIndexCallback(): Phaser.Tilemaps.Tilemap;
+            setTileIndexCallback(indexes: number|any[], callback: any, callbackContext: any, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            setTileLocationCallback(): Phaser.Tilemaps.Tilemap;
+            setTileLocationCallback(tileX: number, tileY: number, width: number, height: number, callback: any, callbackContext: any, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            setLayer(): Phaser.Tilemaps.Tilemap;
+            setLayer(layer: string|number|Phaser.Tilemaps.DynamicTilemapLayer|Phaser.Tilemaps.StaticTilemapLayer): Phaser.Tilemaps.Tilemap;
 
-            setBaseTileSize(): Phaser.Tilemaps.Tilemap;
+            setBaseTileSize(tileWidth: number, tileHeight: number): Phaser.Tilemaps.Tilemap;
 
-            setLayerTileSize(): Phaser.Tilemaps.Tilemap;
+            setLayerTileSize(tileWidth: number, tileHeight: number, layer: string|number|Phaser.Tilemaps.DynamicTilemapLayer|Phaser.Tilemaps.StaticTilemapLayer): Phaser.Tilemaps.Tilemap;
 
-            shuffle(): Phaser.Tilemaps.Tilemap;
+            shuffle(tileX: number, tileY: number, width: number, height: number, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            swapByIndex(): Phaser.Tilemaps.Tilemap;
+            swapByIndex(tileA: number, tileB: number, tileX: number, tileY: number, width: number, height: number, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            tileToWorldX(): number;
+            tileToWorldX(tileX: number, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
-            tileToWorldY(): number;
+            tileToWorldY(tileY: number, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
-            tileToWorldXY(): Phaser.Math.Vector2;
+            tileToWorldXY(tileX: number, tileY: number, point: Phaser.Math.Vector2, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Math.Vector2;
 
-            weightedRandomize(): Phaser.Tilemaps.Tilemap;
+            weightedRandomize(tileX: number, tileY: number, width: number, height: number, weightedIndexes: Array.<object>, layer: Phaser.Tilemaps.LayerData): Phaser.Tilemaps.Tilemap;
 
-            worldToTileX(): number;
+            worldToTileX(worldX: number, snapToFloor: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
-            worldToTileY(): number;
+            worldToTileY(worldY: number, snapToFloor: boolean, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): number;
 
-            worldToTileXY(): Phaser.Math.Vector2;
+            worldToTileXY(worldX: number, worldY: number, snapToFloor: boolean, point: Phaser.Math.Vector2, camera: Phaser.Cameras.Scene2D.Camera, layer: Phaser.Tilemaps.LayerData): Phaser.Math.Vector2;
 
             _isStaticCall(): boolean;
 
@@ -12678,23 +12678,23 @@ declare namespace Phaser {
 
             texCoordinates: Array.<object>;
 
-            getTileProperties(): any;
+            getTileProperties(tileIndex: number): any;
 
-            getTileData(): any;
+            getTileData(tileIndex: number): any;
 
-            getTileCollisionGroup(): any;
+            getTileCollisionGroup(tileIndex: number): any;
 
-            containsTileIndex(): boolean;
+            containsTileIndex(tileIndex: number): boolean;
 
-            getTileTextureCoordinates(): any;
+            getTileTextureCoordinates(tileIndex: number): any;
 
-            setImage(): Phaser.Tilemaps.Tileset;
+            setImage(texture: Phaser.Textures.Texture): Phaser.Tilemaps.Tileset;
 
-            setTileSize(): Phaser.Tilemaps.Tileset;
+            setTileSize(tileWidth: number, tileHeight: number): Phaser.Tilemaps.Tileset;
 
-            setSpacing(): Phaser.Tilemaps.Tileset;
+            setSpacing(margin: number, spacing: number): Phaser.Tilemaps.Tileset;
 
-            updateTileData(): Phaser.Tilemaps.Tileset;
+            updateTileData(imageWidth: number, imageHeight: number): Phaser.Tilemaps.Tileset;
 
         }
 
@@ -12714,7 +12714,7 @@ declare namespace Phaser {
 
             now: number;
 
-            timeScale: float;
+            timeScale: number;
 
             paused: boolean;
 
@@ -12726,17 +12726,17 @@ declare namespace Phaser {
 
             boot(): void;
 
-            addEvent(): Phaser.Time.TimerEvent;
+            addEvent(config: any): Phaser.Time.TimerEvent;
 
-            delayedCall(): any;
+            delayedCall(delay: number, callback: any, args: any[], callbackScope: any): any;
 
             clearPendingEvents(): Phaser.Time.Clock;
 
             removeAllEvents(): Phaser.Time.Clock;
 
-            preUpdate(): void;
+            preUpdate(time: number, delta: number): void;
 
-            update(): void;
+            update(time: number, delta: number): void;
 
             shutdown(): void;
 
@@ -12772,7 +12772,7 @@ declare namespace Phaser {
 
             hasDispatched: boolean;
 
-            reset(): Phaser.Time.TimerEvent;
+            reset(config: any): Phaser.Time.TimerEvent;
 
             getProgress(): number;
 
@@ -12784,7 +12784,7 @@ declare namespace Phaser {
 
             getElapsedSeconds(): number;
 
-            remove(): void;
+            remove(dispatchCallback: any): void;
 
             destroy(): void;
 
@@ -12830,17 +12830,17 @@ declare namespace Phaser {
 
         REMOVED: number;
 
-        static TweenData(): Phaser.Tweens.TweenData;
+        static TweenData(target: any, key: string, getEnd: any, getStart: any, ease: any, delay: number, duration: number, yoyo: boolean, hold: number, repeat: number, repeatDelay: number, flipX: boolean, flipY: boolean): Phaser.Tweens.TweenData;
 
     }
 
     namespace Tweens {
         class Builders {
-            static NumberTweenBuilder(): Phaser.Tweens.Tween;
+            static NumberTweenBuilder(parent: Phaser.Tweens.TweenManager|Phaser.Tweens.Timeline, config: any, defaults: any): Phaser.Tweens.Tween;
 
-            static TimelineBuilder(): Phaser.Tweens.Timeline;
+            static TimelineBuilder(manager: Phaser.Tweens.TweenManager, config: any): Phaser.Tweens.Timeline;
 
-            static TweenBuilder(): Phaser.Tweens.Tween;
+            static TweenBuilder(parent: Phaser.Tweens.TweenManager|Phaser.Tweens.Timeline, config: any, defaults: any): Phaser.Tweens.Tween;
 
         }
 
@@ -12888,37 +12888,37 @@ declare namespace Phaser {
 
             totalProgress: number;
 
-            setTimeScale(): Phaser.Tweens.Timeline;
+            setTimeScale(value: number): Phaser.Tweens.Timeline;
 
             getTimeScale(): number;
 
             isPlaying(): boolean;
 
-            add(): Phaser.Tweens.Timeline;
+            add(config: any): Phaser.Tweens.Timeline;
 
-            queue(): Phaser.Tweens.Timeline;
+            queue(tween: any): Phaser.Tweens.Timeline;
 
-            hasOffset(): boolean;
+            hasOffset(tween: Phaser.Tweens.Tween): boolean;
 
-            isOffsetAbsolute(): boolean;
+            isOffsetAbsolute(value: number): boolean;
 
-            isOffsetRelative(): boolean;
+            isOffsetRelative(value: string): boolean;
 
-            getRelativeOffset(): number;
+            getRelativeOffset(value: string, base: number): number;
 
             calcDuration(): void;
 
             init(): boolean;
 
-            resetTweens(): void;
+            resetTweens(resetFromLoop: boolean): void;
 
-            setCallback(): Phaser.Tweens.Timeline;
+            setCallback(type: string, callback: any, params: any[], scope: any): Phaser.Tweens.Timeline;
 
             play(): void;
 
             nextState(): void;
 
-            update(): boolean;
+            update(timestamp: number, delta: number): boolean;
 
             stop(): void;
 
@@ -12926,29 +12926,29 @@ declare namespace Phaser {
 
             resume(): Phaser.Tweens.Timeline;
 
-            hasTarget(): boolean;
+            hasTarget(target: any): boolean;
 
             destroy(): void;
 
             eventNames(): any[];
 
-            listeners(): any[];
+            listeners(event: string|symbol): any[];
 
-            listenerCount(): number;
+            listenerCount(event: string|symbol): number;
 
-            emit(): Boolean;
+            emit(event: string|symbol): Boolean;
 
-            on(): EventEmitter;
+            on(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            addListener(): EventEmitter;
+            addListener(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            once(): EventEmitter;
+            once(event: string|symbol, fn: any, context: *): EventEmitter;
 
-            removeListener(): EventEmitter;
+            removeListener(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            off(): EventEmitter;
+            off(event: string|symbol, fn: any, context: *, once: boolean): EventEmitter;
 
-            removeAllListeners(): EventEmitter;
+            removeAllListeners(event: string|symbol): EventEmitter;
 
         }
 
@@ -13008,7 +13008,7 @@ declare namespace Phaser {
 
             getValue(): any;
 
-            setTimeScale(): Phaser.Tweens.Tween;
+            setTimeScale(value: number): Phaser.Tweens.Tween;
 
             getTimeScale(): number;
 
@@ -13016,9 +13016,9 @@ declare namespace Phaser {
 
             isPaused(): boolean;
 
-            hasTarget(): boolean;
+            hasTarget(target: any): boolean;
 
-            updateTo(): Phaser.Tweens.Tween;
+            updateTo(key: string, value: any, startToCurrent: boolean): Phaser.Tweens.Tween;
 
             restart(): void;
 
@@ -13030,25 +13030,25 @@ declare namespace Phaser {
 
             pause(): Phaser.Tweens.Tween;
 
-            play(): void;
+            play(resetFromTimeline: boolean): void;
 
-            resetTweenData(): void;
+            resetTweenData(resetFromLoop: boolean): void;
 
             resume(): Phaser.Tweens.Tween;
 
-            seek(): void;
+            seek(toPosition: number): void;
 
-            setCallback(): Phaser.Tweens.Tween;
+            setCallback(type: string, callback: any, params: any[], scope: any): Phaser.Tweens.Tween;
 
-            stop(): void;
+            stop(resetTo: number): void;
 
-            update(): boolean;
+            update(timestamp: number, delta: number): boolean;
 
-            setStateFromEnd(): number;
+            setStateFromEnd(tween: Phaser.Tweens.Tween, tweenData: Phaser.Tweens.TweenData, diff: number): number;
 
-            setStateFromStart(): number;
+            setStateFromStart(tween: Phaser.Tweens.Tween, tweenData: Phaser.Tweens.TweenData, diff: number): number;
 
-            updateTweenData(): boolean;
+            updateTweenData(tween: Phaser.Tweens.Tween, tweenData: Phaser.Tweens.TweenData, delta: number): boolean;
 
         }
 
@@ -13074,43 +13074,43 @@ declare namespace Phaser {
 
             boot(): void;
 
-            createTimeline(): Phaser.Tweens.Timeline;
+            createTimeline(config: any): Phaser.Tweens.Timeline;
 
-            timeline(): Phaser.Tweens.Timeline;
+            timeline(config: any): Phaser.Tweens.Timeline;
 
-            create(): Phaser.Tweens.Tween;
+            create(config: any): Phaser.Tweens.Tween;
 
-            add(): Phaser.Tweens.Tween;
+            add(config: any): Phaser.Tweens.Tween;
 
-            existing(): Phaser.Tweens.TweenManager;
+            existing(tween: Phaser.Tweens.Tween): Phaser.Tweens.TweenManager;
 
-            addCounter(): Phaser.Tweens.Tween;
+            addCounter(config: any): Phaser.Tweens.Tween;
 
             preUpdate(): void;
 
-            update(): void;
+            update(timestamp: number, delta: number): void;
 
-            makeActive(): Phaser.Tweens.TweenManager;
+            makeActive(tween: Phaser.Tweens.Tween): Phaser.Tweens.TweenManager;
 
-            each(): void;
+            each(callback: any, scope: any, arguments: *): void;
 
             getAllTweens(): Array.<Phaser.Tweens.Tween>;
 
             getGlobalTimeScale(): number;
 
-            getTweensOf(): Array.<Phaser.Tweens.Tween>;
+            getTweensOf(target: any|any[]): Array.<Phaser.Tweens.Tween>;
 
-            isTweening(): boolean;
+            isTweening(target: any): boolean;
 
             killAll(): Phaser.Tweens.TweenManager;
 
-            killTweensOf(): Phaser.Tweens.TweenManager;
+            killTweensOf(target: any|any[]): Phaser.Tweens.TweenManager;
 
             pauseAll(): Phaser.Tweens.TweenManager;
 
             resumeAll(): Phaser.Tweens.TweenManager;
 
-            setGlobalTimeScale(): Phaser.Tweens.TweenManager;
+            setGlobalTimeScale(value: number): Phaser.Tweens.TweenManager;
 
             shutdown(): void;
 
@@ -13124,15 +13124,15 @@ declare namespace Phaser {
     }
 
     class Utils {
-        static getTintFromFloats(): number;
+        static getTintFromFloats(r: number, g: number, b: number, a: number): number;
 
-        static getTintAppendFloatAlpha(): number;
+        static getTintAppendFloatAlpha(rgb: number, a: number): number;
 
-        static getTintAppendFloatAlphaAndSwap(): number;
+        static getTintAppendFloatAlphaAndSwap(rgb: number, a: number): number;
 
-        static getFloatsFromUintRGB(): number;
+        static getFloatsFromUintRGB(rgb: number): number;
 
-        static getComponentCount(): number;
+        static getComponentCount(attributes: number): number;
 
         static NOOP(): void;
 
@@ -13140,43 +13140,43 @@ declare namespace Phaser {
 
     namespace Utils {
         class Array {
-            static NumberArray(): Array.<number>;
+            static NumberArray(start: number, end: number, prefix: string, suffix: string): Array.<number>;
 
-            static NumberArrayStep(): Array.<number>;
+            static NumberArrayStep(start: number, end: number, step: number): Array.<number>;
 
-            static QuickSelect(): void;
+            static QuickSelect(arr: any, k: any, left: any, right: any, compare: any): void;
 
-            static Range(): any;
+            static Range(a: any, b: any, options: any): any;
 
-            static RemoveRandomElement(): any;
+            static RemoveRandomElement(array: any[], start: number, length: number): any;
 
-            static RotateLeft(): any;
+            static RotateLeft(array: any[], total: number): any;
 
-            static RotateRight(): any;
+            static RotateRight(array: any[], total: number): any;
 
-            static Shuffle(): any[];
+            static Shuffle(array: any[]): any[];
 
-            static SpliceOne(): any;
+            static SpliceOne(array: any[], index: number): any;
 
         }
 
         namespace Array {
             class Matrix {
-                static MatrixToString(): string;
+                static MatrixToString(matrix: any[]): string;
 
-                static ReverseColumns(): any[];
+                static ReverseColumns(matrix: any[]): any[];
 
-                static ReverseRows(): any[];
+                static ReverseRows(matrix: any[]): any[];
 
-                static Rotate180(): any[];
+                static Rotate180(matrix: any[]): any[];
 
-                static RotateLeft(): any[];
+                static RotateLeft(matrix: any[]): any[];
 
-                static RotateMatrix(): any[];
+                static RotateMatrix(matrix: any[], direction: number|string): any[];
 
-                static RotateRight(): any[];
+                static RotateRight(matrix: any[]): any[];
 
-                static TransposeMatrix(): any[];
+                static TransposeMatrix(array: any[]): any[];
 
             }
 
@@ -13186,11 +13186,11 @@ declare namespace Phaser {
         }
 
         class Object {
-            static IsPlainObject(): boolean;
+            static IsPlainObject(obj: any): boolean;
 
-            static Merge(): any;
+            static Merge(obj1: any, obj2: any): any;
 
-            static MergeRight(): any;
+            static MergeRight(obj1: any, obj2: any): any;
 
         }
 
@@ -13198,11 +13198,11 @@ declare namespace Phaser {
         }
 
         class String {
-            static Pad(): string;
+            static Pad(str: string, len: number, pad: string, dir: number): string;
 
-            static ReverseString(): string;
+            static ReverseString(string: string): string;
 
-            static UppercaseFirst(): string;
+            static UppercaseFirst(str: string): string;
 
         }
 
